@@ -1,0 +1,26 @@
+<script setup>
+import { ref } from 'vue'
+
+const count = ref(0)
+const props = defineProps({
+        title: {type: String}, 
+        buttonText: {type: String, default: 'Link'}
+    })
+
+</script>
+
+<template>
+    <div class="border px-4 py-2 shadow bg-white grid grid-rows-[1.25rem_1fr_auto] gap-4">
+        <h3 class="font-bold text-lg grid align-content-center ">
+            {{title}}
+        </h3>
+        <div class="py-2_ text-sm">    
+            <slot></slot>
+        </div>
+        <div class="py-2_ grid justify-center ">
+            <a href="#" class="px-2 py-1 bg-blue-600 text-white text-sm text-center rounded">
+                {{buttonText}}
+            </a> 
+        </div>
+    </div>
+</template>
