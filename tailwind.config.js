@@ -23,7 +23,11 @@ module.exports = {
          indigo: colors.indigo,
          yellow: colors.yellow,
     },
-    extend: {},
+    extend: {
+      screens: {
+        '8xl': '1920px'
+      }
+    },
   },
   plugins: [],
 }

@@ -11,7 +11,7 @@
     </div>  
   </div>
   
-  <div class="mt-8 grid lg:grid-cols-2 gap-8">
+  <div class="mt-8 grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
     <DatenBox title="Ausbildung">
       <ul>
         <li>2003 - 2009 WU Wien</li>

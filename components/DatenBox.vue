@@ -40,7 +40,8 @@
                     {{title}} bearbeiten
                 </header>
                 
-                <main class="px-4 py-2" style="height: calc(80vh - 3rem - 3rem); overflow-y: auto;">
+                <main class="px-4 py-2" 
+                    style="height: calc(100% + 1rem); overflow-y: auto;">
 
                     <div class="grid grid-cols-2">
                         <div>
@@ -67,19 +68,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-sm">
-                                <td class="border-b border-r px-2 py-1">September 2001</td>
-                                <td class="border-b border-r px-2 py-1">Juli 2005</td>
-                                <td class="border-b border-r px-2 py-1">HAK Wr Neustadt</td>
-                            </tr>
-                            <tr class="text-sm">
-                                <td class="border-b border-r px-2 py-1">September 2001</td>
-                                <td class="border-b border-r px-2 py-1">Juli 2005</td>
-                                <td class="border-b border-r px-2 py-1">HAK Wr Neustadt</td>
-                            </tr>
-                            <tr class="text-sm">
-                                <td class="border-b border-r px-2 py-1">September 2001</td>
-                                <td class="border-b border-r px-2 py-1">Juli 2005</td>
+                            <tr v-for="i in [1,2,3,4,5,6,7,8,9,10,11,12,13]" class="text-sm">
+                                <td class="border-b border-r px-2 py-1">September {{2001 + i}}</td>
+                                <td class="border-b border-r px-2 py-1">Juli {{2005 + i}}</td>
                                 <td class="border-b border-r px-2 py-1">HAK Wr Neustadt</td>
                             </tr>
                         </tbody>
@@ -103,8 +94,8 @@
         width: 60vw;
         max-width: 1200px;
         height: 80vh;
-        max-height: 720px;
-        min-height: 16rem;
+        max-height: 640px;
+        min-height: 32rem;
     }
 
     dialog::backdrop {
