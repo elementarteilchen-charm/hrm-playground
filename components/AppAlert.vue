@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="border rounded-xl border-red-300 p-4 w-1/2 mx-auto text-center shadow-md">
+  <div class="border rounded border-red-300 p-4 w-1/2 mx-auto text-center shadow-md">
     <h1 class="font-bold text-xl py-2">{{title}}</h1>
     <slot />
     <div class="py-4">

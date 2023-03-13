@@ -1,10 +1,9 @@
 <script setup>
-import { ref } from 'vue'
 
-const count = ref(0)
 const props = defineProps({
         title: {type: String}, 
-        buttonText: {type: String, default: 'Link'}
+        buttonText: {type: String, default: 'Link'},
+        buttonLink: {type: String, default: '#'}
     })
 
 </script>
@@ -14,11 +13,11 @@ const props = defineProps({
         <h3 class="font-bold text-lg grid align-content-center ">
             {{title}}
         </h3>
-        <div class="py-2_ text-sm">    
+        <div class="text-sm">    
             <slot></slot>
         </div>
-        <div class="py-2_ grid justify-center ">
-            <a href="#" class="px-2 py-1 bg-blue-600 text-white text-sm text-center rounded">
+        <div class="grid justify-center ">
+            <a v-show="buttonLink != '#'" :href="buttonLink" class="px-2 py-1 bg-blue-600 text-white text-sm text-center rounded">
                 {{buttonText}}
             </a> 
         </div>
