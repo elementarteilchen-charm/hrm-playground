@@ -8,10 +8,11 @@
 
 </script>
 <template>
-    <div class="grid self-start pt-1 text-sm font-bold">
+    <div class="grid self-start pt-1 text-sm_ text-gray-400 font-light_">
         {{label}}
     </div>
     <div class="">
-        <input class="px-2 py-1 border border-gray-300 rounded" :class="width" type="text" :value="value" />
+        <input class="px-2 py-1 border border-gray-300 rounded" :class="width" type="text" 
+        :value="value" />
     </div>
 </template>

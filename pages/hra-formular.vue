@@ -62,7 +62,7 @@
             <StammdatenAdresse />
           </div>
           <div v-show="tabs[2] == activeTab.tab" class="px-2">
-            {{activeTab}}
+            <StammdatenNotfallkontakte />
           </div>
         <div class="mt-6">          
         </div>
