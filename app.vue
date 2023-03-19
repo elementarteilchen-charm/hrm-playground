@@ -20,8 +20,8 @@
               </a>
             </li>
             <li>
-              <a href="/meine-anfragen" class="hover:underline text-blue-600">
-                Meine Anfragen
+              <a href="/hra-formular" class="hover:underline text-blue-600">
+                HRA Stammdaten
               </a>
             </li>
             <li>easylearn</li>
@@ -29,7 +29,7 @@
         </nav>
       </div>
       
-      <div class="p-6  max-w-[1600px] mx-auto" 
+      <div class="p-6  max-w-[1600px] mx-auto_" 
           style="height: calc(100vh - 4rem - 2rem); overflow-y: auto;">
         <NuxtPage />
       </div>
