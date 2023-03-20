@@ -8,7 +8,7 @@
 
 </script>
 <template>
-    <div class="grid self-start pt-1 text-sm_ text-gray-400 font-light_">
+    <div class="grid self-start pt-1 text-sm text-gray-700 font-light_">
         {{label}}
     </div>
     <div class="">
