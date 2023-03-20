@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-rows-[4rem_1fr_2rem] h-screen">
+  <div class="grid grid-rows-[4rem_1fr_1rem] h-screen">
     <div class="bg-blue-600 text-white h-16">Nav top</div>
     <div class="grid grid-cols-[12rem_1fr] bg-gray-100">
       
@@ -29,12 +29,12 @@
         </nav>
       </div>
       
-      <div class="p-6  max-w-[1600px] mx-auto_" 
-          style="height: calc(100vh - 4rem - 2rem); overflow-y: auto;">
+      <div class="p-6  max-w-[1600px] bg-white" 
+          style="height: calc(100vh - 4rem - 1rem); overflow-y: auto;">
         <NuxtPage />
       </div>
 
     </div>
-    <div class="bg-blue-600 text-white text-sm">Footer</div>
+    <div class="bg-gray-600 text-white text-gray-200 text-xs">Footer</div>
   </div>
 </template>
