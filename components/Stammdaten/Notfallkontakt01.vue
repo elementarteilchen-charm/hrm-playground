@@ -14,7 +14,7 @@
     let kontakt = reactive(kontaktDaten);
 
     function showDialog() {
-      document.getElementById('daten-dialog').showModal();
+      document.getElementById('notfallkontakt-dialog').showModal();
     }
   
     function saveData() {
@@ -53,7 +53,7 @@
     </div>
   
   
-  <dialog  id="daten-dialog"  @close="saveData()" class="rounded-lg shadow-lg bg-white p-0">
+  <dialog  id="notfallkontakt-dialog"  @close="saveData()" class="rounded-lg shadow-lg bg-white p-0">
       <form action="" method="dialog" class="h-full">
           <div class="grid grid-rows-[3rem_1fr_3rem] h-full">
           

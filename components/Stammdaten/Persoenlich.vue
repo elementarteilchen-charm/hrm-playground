@@ -13,6 +13,7 @@
           <InputText label="Vorname" value="Stephanie"/>
           <InputText label="Nachname" value="Babunek"/>
           <InputSelect label="Titel nach dem Namen" :options="['-', 'BA','Mag.', 'MSc.']" width="w-32"/>
+          <InputDate label="Geburtsdatum" value="2000-03-14"/>
         </div>
     
       <div class="grid grid-row-1 gap-4 pb-4">
