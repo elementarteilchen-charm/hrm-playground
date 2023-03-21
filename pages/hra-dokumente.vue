@@ -11,11 +11,14 @@
         'Aus der Bewerbung', 
     ];
   const ordner = [
-        '01 ABC', '02 ABC', '03 ABC', '04 ABC', '05 ABC', '06 ABC',
+        '01 Bewerbungen und Zeugnisse', '02 Bewilligungen', '03 Verträge', '04 Infos + Beurteilungen', '05 Dokumente + Urkunden', '07 Diverses', '08 Austritt'
     ];
   const dokumentKategorien = [
-        'Lebenslauf', 'Meldezettel', 'Reisepasskopie', '04 ABC', '05 ABC', '06 ABC',
-    ];
+        "Anmeldebescheinigung", "Arbeitsbestätigung", "Aufenthaltstitel", "Beschäftigungsbewilligung", "Datenschutzerklärung",
+        "Dienstvertrag", "Diplom", "Ersatz", "FXT", "HAS", "Homeoffice", "Inskriptionsbestätigung", "Konkurrenzklausel",
+        "Lehrabschlussprüfung", "Maturazeugnis", "Meldezettel", "Personalausweis", "Personaldatenblatt", "Reisepass", "RWR",
+        "Schuldaten", "Schulzeugnisse", "Sprachzertifikate", "Uni", "Verpflichtungserklärung", 
+      ];
   const bewerberUploads = [
         'Lebenslauf Babunek.pdf', 'Motivationsschreiben Stephanie Babunek.pdf', 
         'Meldezettel.pdf', 'Email Zusage.msg', 'Reisepass.jpg', 'Zeugnis Bachelor Babunek 2019.pdf'
@@ -24,24 +27,31 @@
   let dokumente = [
           {
             uploadDateiname: "Lebenslauf Babunek.pdf",
-            ordner: "01 ABC",
+            ordner: "01 Bewerbungen und Zeugnisse",
             kategorie: "Lebenslauf",
-            digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek.pdf ]",
+            digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
             uebernehmen: true,
           },
           {
             uploadDateiname: "Motivationsschreiben Stephanie Babunek.pdf",
-            ordner: "01 ABC",
+            ordner: "01 Bewerbungen und Zeugnisse",
             kategorie: "Lebenslauf",
-            digitaleAkteDateiname: "2023-03-14 [ Motivationsschreiben Stephanie Babunek.pdf ]",
+            digitaleAkteDateiname: "2023-03-14 [ Motivationsschreiben Stephanie Babunek ].pdf",
             uebernehmen: true,
           },
           {
             uploadDateiname: "Reispass Babunek.pdf",
-            ordner: "02 ABC",
-            kategorie: "Reisepasskopie",
-            digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek.pdf ]",
+            ordner: "05 Dokumente + Urkunden",
+            kategorie: "Reisepass",
+            digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
             uebernehmen: false,
+          },
+          {
+            uploadDateiname: "Babunek Bescheid Beschäftigungsbewilligung.pdf",
+            ordner: "02 Bewilligungen",
+            kategorie: "Beschäftigungsbewilligung",
+            digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
+            uebernehmen: true,
           },
       ];
 
@@ -96,15 +106,13 @@
           <template v-for="dokument in dokumente">
             
             <div class="border rounded shadow-md bg-white px-4 py-2 grid grid-rows-[auto_1fr_auto]">
-              <!-- :class="[{'bg-green-100': dokument.uebernehmen} ]" -->
-              <!-- <h3 class="font-bold leading-tight py-2">{{dokument.uploadDateiname}}</h3> -->
-              <span class="text-sm text-orange-600">{{dokument.kategorie}}</span>
               <div class="flex justify-between items-start pb-2">
-                <h3 class="font-bold leading-tight ">{{dokument.uploadDateiname}}</h3>
+                <span class="text-sm text-orange-600">{{dokument.kategorie}}</span>
                 <div v-if="dokument.uebernehmen" class="w-6 h-6 text-green-600 flex-shrink-0">
                   <CheckCircleIcon />
                 </div>
               </div>
+              <h3 class="font-bold leading-tight ">{{dokument.uploadDateiname}}</h3>
               <main>
                 <ul class="text-sm">
                   
@@ -179,12 +187,10 @@
                       Datei 
                     </div>
                     <div class="font-bold">{{dokumente[0].uploadDateiname}}</div>
-                    <InputSelect label="Kategorie" :options="dokumentKategorien" />
-                    <InputSelect label="Ordner" :options="ordner" />
-                    <InputText label="Dateiname" :value="dokumente[0].digitaleAkteDateiname" width="w-full"/>
-                    <div class="col-span-2">
-                      RadioButton Übernehmen Ja/Nein
-                    </div>
+                    <InputSelect label="Kategorie" :options="dokumentKategorien" width="w-4/5"/>
+                    <InputSelect label="Ordner" :options="ordner" width="w-4/5"/>
+                    <InputText label="Dateiname" :value="dokumente[0].digitaleAkteDateiname" width="w-4/5"/>
+                    <InputRadio label="Übernehmen" :options="['Ja', 'Nein']" />
                 </div>
               </main>
 
