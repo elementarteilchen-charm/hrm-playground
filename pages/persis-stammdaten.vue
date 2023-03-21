@@ -1,18 +1,33 @@
+
 <script setup>
   import { ArrowRightCircleIcon } from '@heroicons/vue/24/outline' 
   import { ArrowDownCircleIcon } from '@heroicons/vue/24/outline' 
   import { PlusCircleIcon } from '@heroicons/vue/24/outline' 
   import { ChevronRightIcon } from '@heroicons/vue/24/outline' 
-
   import { reactive } from 'vue'
+
   const tabs = [
-        'Persönlich', 
+        'Persönliche Daten', 
         'Adresse', 
         'Notfallkontakt',
-        'Adresse02', 
-        'Persönlich02', 
+        'Familienstand'
     ];
   const activeTab = reactive({ tab: tabs[0] });
+
+	
+
+	// Organisationsstruktur;{'label': "Verrechnungsmandant:", 'type': "Text"},
+	// Organisationsstruktur;{'label': "Standort:", 'type': "Text"},
+	// Organisationsstruktur;{'label': "Abteilungsmandant Matator:", 'type': "Text"},
+	// Organisationsstruktur;{'label': "Abteilung:", 'type': "Text"},
+
+	// Stammdaten 3;{'label': "Mitarbeiter Kurzzeichen:", 'type': "Text"},
+	// Stammdaten 3;{'label': "E-Mail Büro:", 'type': "Text"},
+	// Stammdaten 3;{'label': "User ID:", 'type': "Text"},
+	// Stammdaten 3;{'label': "Durchwahl:", 'type': "Text"},
+	
+	// Stammdaten 3;{'label': "Notfallkontakt:", 'type': "Text"},
+
 </script>
 
 <template>
@@ -35,13 +50,12 @@
       <nav class="bg-white border-b border-t border-blue-700">
         <ul class="flex space-x-4">
           <li class="p-2 border-blue-700 font-bold bg-blue-700 text-white cursor-pointer">Stammdaten</li>
-          <li class="border-transparent p-2 hover:border-blue-600 cursor-pointer">Schulbildung</li>
-          <li class="border-transparent p-2 hover:border-blue-600 cursor-pointer">Berufsweg</li>
+          <li class="border-transparent p-2 hover:bg-blue-600 cursor-pointer">Schulbildung</li>
+          <li class="border-transparent p-2 hover:bg-blue-600 cursor-pointer">Berufsweg</li>
         </ul>
       </nav>
 
       <main class="mt-2">
-        
         
         <div class="">
           
@@ -59,24 +73,15 @@
         </div>
 
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-16">
-            <StammdatenPersoenlich />
-            <StammdatenLand />
+            <StammdatenPersoenlicheDaten />
           </div>
           <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
-            <StammdatenAdresse />
-          </div>
-          <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
-            <StammdatenNotfallkontakt01 />
-          </div>
-          <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
             <StammdatenAdresse02 />
           </div>
-          <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-16">
-            <StammdatenPersoenlich02 />
-            <StammdatenLand />
-            <StammdatenAdresse />
+          <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
             <StammdatenNotfallkontakte />
           </div>
+          
         
 
         <div class="p-2 mt-6 flex justify-start space-x-4 items-center text-sm">

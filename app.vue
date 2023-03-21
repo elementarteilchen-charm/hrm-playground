@@ -24,6 +24,11 @@
                 HRA Stammdaten
               </a>
             </li>
+            <li>
+              <a href="/persis-stammdaten" class="hover:underline text-blue-600">
+                Persis Stammdaten
+              </a>
+            </li>
             <li>easylearn</li>
           </ul>
         </nav>

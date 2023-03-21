@@ -9,7 +9,7 @@
       <div class="grid lg:grid-cols-2 gap-4">
       
         <div class="mt-0 grid grid-cols-[minmax(6rem,auto)_1fr] gap-4 ">          
-          <InputSelect label="Titel vor dem Namen" :options="['BA','Mag.', 'MSc.']" width="w-32"/>
+          <InputSelect label="Titel vor dem Namen" :options="['BA','Mag.', 'MSc.']" width="w-48"/>
           <InputText label="Vorname" value="Stephanie"/>
           <InputText label="Nachname" value="Babunek"/>
           <InputSelect label="Titel nach dem Namen" :options="['-', 'BA','Mag.', 'MSc.']" width="w-32"/>
