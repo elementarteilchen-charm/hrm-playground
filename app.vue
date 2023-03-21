@@ -25,11 +25,10 @@
               </a>
             </li>
             <li>
-              <a href="/persis-stammdaten" class="hover:underline text-blue-600">
-                Persis Stammdaten
+              <a href="/hra-dokumente" class="hover:underline text-blue-600">
+                HRA Dokumente
               </a>
             </li>
-            <li>easylearn</li>
           </ul>
         </nav>
       </div>
