@@ -24,7 +24,11 @@
                 HRA Stammdaten
               </a>
             </li>
-            <li>easylearn</li>
+            <li>
+              <a href="/hra-dokumente" class="hover:underline text-blue-600">
+                HRA Dokumente
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
