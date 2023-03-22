@@ -53,6 +53,27 @@
             digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
             uebernehmen: true,
           },
+          {
+            uploadDateiname: "Motivationsschreiben Stephanie Babunek.pdf",
+            ordner: "01 Bewerbungen und Zeugnisse",
+            kategorie: "Lebenslauf",
+            digitaleAkteDateiname: "2023-03-14 [ Motivationsschreiben Stephanie Babunek ].pdf",
+            uebernehmen: true,
+          },
+          {
+            uploadDateiname: "Reispass Babunek.pdf",
+            ordner: "05 Dokumente + Urkunden",
+            kategorie: "Reisepass",
+            digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
+            uebernehmen: false,
+          },
+          {
+            uploadDateiname: "Babunek Bescheid Beschäftigungsbewilligung.pdf",
+            ordner: "02 Bewilligungen",
+            kategorie: "Beschäftigungsbewilligung",
+            digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
+            uebernehmen: true,
+          },
       ];
 
   const activeTab = reactive({ tab: tabs[0] });
@@ -129,7 +150,12 @@
         </div>
 
         <div class="grid grid-row-[2rem_1fr_2rm] text-sm">
-          
+          <div>
+            Tabelle mit Modal <br>
+            Im Modal alle Attribute editieren <br>
+            Tabelle filtern / sortieren
+
+          </div>
           <header class="grid grid-cols-[8rem_32rem_16rem_48rem_auto] gap-4 bg-gray-500 text-white py-2 px-2">
             <div>Ordner</div>
             <div>Datei</div>
