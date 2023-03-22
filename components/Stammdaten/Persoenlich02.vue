@@ -3,8 +3,9 @@
 </script>
 
 <template>
-  <div>
-    <h3 class="text-lg font-bold text-gray-700 mt-8 mb-4">Name und Geburtsdatum</h3>
+  <h3 class="text-lg font-bold text-gray-700">Persönlich</h3>
+  <div class="bg-gray-100 p-4 rounded">
+    <h3 class="text-lg_ font-bold text-gray-700  mb-4">Name und Geburtsdatum</h3>
     <div class="grid grid-row-1 gap-4 border-r">
       <div class="grid lg:grid-cols-2 gap-4">
       

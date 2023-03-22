@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <h3 class="text-lg font-bold  mt-8 mb-4">Name und Geburtsdatum</h3>
+    <h3 class="text-lg font-bold  mt-4 mb-4">Name und Geburtsdatum</h3>
     <div class="grid grid-row-1 gap-8 border-r">
       <div class="grid lg:grid-cols-2">
       
