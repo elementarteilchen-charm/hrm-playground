@@ -1,36 +1,41 @@
+<script setup>
+  import { PlusCircleIcon, ChevronRightIcon } from '@heroicons/vue/24/outline' ;  
+</script>
+
 <template>
   <div class="grid grid-rows-[4rem_1fr_1rem] h-screen">
-    <div class="bg-blue-600 text-white h-16">Nav top</div>
+    <div class="bg-blue-700 text-white h-16">HRA</div>
     <div class="grid grid-cols-[12rem_1fr] bg-white">
       
       <div class="bg-gray-200 border-r">
         <nav class="p-6 text-sm">
-          <ul>
-            <li>
-              <a href="/" class="hover:underline text-blue-600">
-                Start
-              </a>
+          <ul class="space-y-3">
+            <li class="flex gap-2 items-center">
+              <ChevronRightIcon class="w-4 h-4 text-blue-700"/>
+              <a href="/" class="hover:underline text-blue-700">
+                Start</a>
             </li>
-            <li><a href="/" class="hover:underline text-blue-600">
-                Mein Team
-              </a></li>
+            <li class="flex gap-2 items-center">
+              <ChevronRightIcon class="w-4 h-4 text-blue-700"/>
+              <a href="/hra-eintritte" class="hover:underline text-blue-700">
+                Eintritte</a>
+            </li>
+            <li class="flex gap-2 items-center">
+              <ChevronRightIcon class="w-4 h-4 text-blue-700"/>
+              <a href="/" class="hover:underline text-blue-700">
+                Abwesenheiten</a>
+            </li>
             <li>
-              <a href="/meine-daten" class="hover:underline text-blue-600">
+              <hr>  
+            </li>
+            <li>
+              <a href="/meine-daten" class="hover:underline text-blue-700">
                 Meine Daten
               </a>
             </li>
+
             <li>
-              <a href="/hra-formular" class="hover:underline text-blue-600">
-                HRA Stammdaten
-              </a>
-            </li>
-            <li>
-              <a href="/hra-formular-sidebar" class="hover:underline text-blue-600">
-                HRA Stammdaten 02
-              </a>
-            </li>
-            <li>
-              <a href="/hra-dokumente" class="hover:underline text-blue-600">
+              <a href="/hra-dokumente" class="hover:underline text-blue-700">
                 HRA Dokumente
               </a>
             </li>
