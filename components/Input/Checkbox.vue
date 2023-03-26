@@ -3,7 +3,8 @@
         label: {type: String}, 
         name: {type: String, default: 'Checkbox'}, 
         checked: {type: Boolean, default: false}, 
-        width: {type: String, default: ''}
+        labelStyle: {type: String, default: ''},
+        checkboxStyle: {type: String, default: ''}
     })
 
     let checkboxToggle = props.checked;
@@ -11,8 +12,8 @@
 
 <template>
     <div class="space-x-2 inline flex items-center">
-        <input type="checkbox" v-model="checkboxToggle"  :id="name" :name="name" />
-        <label :for="name" class="" :class="width">{{label}}</label>
+        <input type="checkbox" v-model="checkboxToggle"  :class="checkboxStyle" :id="name" :name="name" />
+        <label :for="name" :class="labelStyle">{{label}}</label>
     </div>
         
 </template>
