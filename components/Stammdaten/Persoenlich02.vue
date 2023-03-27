@@ -18,7 +18,6 @@
         </div>
     
       <div class="grid grid-row-1 gap-4 pb-4">
-        <!-- <StammdatenNativerName />   -->
         <StammdatenNativerNameModal />
       </div>
       </div>

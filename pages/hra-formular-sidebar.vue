@@ -17,7 +17,6 @@
 
 <template>
   
-  <!-- <Suche /> -->
   <div class="mt-2 w-100">
     <div class="bg-white p-4 border rounded flex items-center justify-between">
       <div class="font-bold">

@@ -28,7 +28,7 @@
       
     <div class="border rounded px-4 py-2 bg-white">
       <div class="flex justify-between">
-        <h3 class="text-lg font-bold text-gray-700 ">Andere Schreibweisen</h3>        
+        <h3 class="font-bold text-gray-700 ">Andere Schreibweisen</h3>        
         <button @click="showDialog()">
           <PencilSquareIcon class=" w-5 h-5 place-self-center text-blue-600 hover:text-blue-500"/>
         </button>
