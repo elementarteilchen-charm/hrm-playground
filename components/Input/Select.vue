@@ -2,17 +2,21 @@
     const props = defineProps({
         label: {type: String}, 
         options: {type: Array, default: []},
+        selected: {type: String, default: ''},
         width: {type: String, default: 'w-32'}
     })
 
+let selectedOption = props.selected ? props.selected : props.options[0];
+
 </script>
 <template>
-    <div class="grid self-start mt-2 text-sm text-gray-700">
+    <div v-if="label" class="grid self-start mt-2 text-sm text-gray-700">
         {{label}}
     </div>
-    <div>
-        <select name="" id="" class="px-2 py-1 border border-gray-300 rounded" :class="width">
-            <option v-for="option in options" value="">{{option}}</option>
+    <div class="w-full">
+        <select v-model="selectedOption" name="" id="" 
+                class="px-2 py-1 border border-gray-300 rounded" :class="width">
+            <option v-for="option in options" :value="option">{{option}}</option>
         </select>
     </div>
 </template>
