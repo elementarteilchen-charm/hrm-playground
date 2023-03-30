@@ -49,7 +49,7 @@
      
         <div class="px-4 py-6 border-l">
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenDokumenteUebernehmen02 />
+            <StammdatenDokumenteUebernehmen />
           </div>
 
           <div class="p-2 mt-8 flex justify-end space-x-4 items-center text-sm">

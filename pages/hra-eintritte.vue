@@ -8,10 +8,8 @@
 
   const tabs = [
         'Persönlich', 
-        'Adresse', 
+        'Adressen', 
         'Notfallkontakt',
-        'Adresse02', 
-        'Persönlich02', 
     ];
   let topMenuItems = [
       {
@@ -69,24 +67,20 @@
         
         <div class="px-4 py-4 border-l">
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenPersoenlich02 />
+            <StammdatenPersoenlich />
             <StammdatenLand />
+            <StammdatenFamilienstand />
           </div>
           <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenAdresse />
           </div>
           <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
-            <StammdatenNotfallkontakt01 />
+            <StammdatenNotfallkontakt />
           </div>
           <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
             <StammdatenAdresse02 />
           </div>
-          <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-16">
-            <StammdatenPersoenlich02 />
-            <StammdatenLand />
-            <StammdatenAdresse />
-            <StammdatenNotfallkontakte />
-          </div>
+
         
 
           <div class="p-2 mt-6 border-t flex justify-end space-x-4 items-center text-sm">

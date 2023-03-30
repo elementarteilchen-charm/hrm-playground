@@ -7,20 +7,20 @@
   import { reactive } from 'vue'
 
   const tabs = [
-        'Matador', 
-        'Gecko', 
-        'Visitenkarten',
+        'Kontaktdaten', 
+        'Adressen', 
+        'Notfallkontakt',
     ];
   let topMenuItems = [
       {
         linkText: "Stammdaten",
         link: "hra-eintritte",
-        active: false
+        active: true
       },
       {
         linkText: "Organisationsdaten",
         link: "hra-organisationsdaten",
-        active: true
+        active: false
       },
       {
         linkText: "Ausbildung",
@@ -67,10 +67,17 @@
         
         <div class="px-4 py-4 border-l">
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenPersoenlich02 />
-            <StammdatenLand />
+            <StammdatenKontaktdaten />
+
           </div>
-         
+          <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+            <StammdatenAdresse />
+          </div>
+          <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
+            <StammdatenNotfallkontakt />
+          </div>
+
+
         
 
           <div class="p-2 mt-6 border-t flex justify-end space-x-4 items-center text-sm">
