@@ -14,7 +14,7 @@
 <template>
     
     <div  class="grid self-start pt-1 text-sm text-gray-700">
-        <span v-if="label">{{label}}</span>
+        <span v-if="label" class="whitespace-nowrap">{{label}}</span>
     </div>
     <div class="space-x-2 flex items-center">
         <input type="checkbox" v-model="checkboxToggle"  :class="checkboxStyle" :id="name" :name="name" />

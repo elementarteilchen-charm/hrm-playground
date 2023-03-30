@@ -1,4 +1,24 @@
+export const angehoerige = [
+    {
+      notfallkontakt: true,
+      nachweis: false,
+      verwandtschaftsgrad: 'Bruder',
+      name: 'Babunek',
+      vorname: 'Robert',
+      telefon: '+43 676 444 3456',
+      handy: '',
+    },
+    {
+      notfallkontakt: false,
+      nachweis: true,
+      verwandtschaftsgrad: 'Ehemann',
+      name: 'Babunek',
+      vorname: 'Peter',
+      telefon: '',
+      handy: '',
+    }
 
+  ];
 export const ordner = [
       '01 Bewerbungen und Zeugnisse', '02 Bewilligungen', '03 Verträge', '04 Infos + Beurteilungen', '05 Dokumente + Urkunden', '07 Diverses', '08 Austritt'
   ];

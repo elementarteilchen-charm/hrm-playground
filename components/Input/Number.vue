@@ -13,7 +13,7 @@
         {{label}}
     </div>
     <div class="w-full">
-        <input class="px-2 py-1 border border-gray-300 rounded" :class="width" type="text" 
+        <input class="px-2 py-1 border border-gray-300 rounded" :class="width" type="number" 
         :value="value" :readonly="readonly" width="w-16"/>
     </div>
 </template>

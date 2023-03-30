@@ -10,6 +10,9 @@
         'Persönlich', 
         'Adressen', 
         'Notfallkontakt',
+        'Bankdaten',
+        'Behinderung',
+        'Familienangehörige',
     ];
   let topMenuItems = [
       {
@@ -77,8 +80,15 @@
           <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
             <StammdatenNotfallkontakt />
           </div>
-          <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
-            <StammdatenAdresse02 />
+          
+           <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
+            <StammdatenBankverbindung />
+          </div>
+          <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
+            <StammdatenBehinderung />
+          </div>
+          <div v-show="tabs[5] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
+            <StammdatenFamilienangehoerige />
           </div>
 
         
