@@ -12,7 +12,7 @@
           <InputText label="Behinderten Nummer" value="" width="w-64"/>
           <InputDate label="Seit" />
           <InputDate label="Befristet bis" />
-          <InputText label="Anmerkung" value="" width="w-64"/>
+          <InputTextarea label="Anmerkung" text="Nach einem Unfall kam es leider zu einer 25% Gehbehinderung." />
           
         </div>
       </div>

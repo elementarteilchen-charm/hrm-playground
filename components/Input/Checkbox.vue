@@ -17,8 +17,8 @@
         <span v-if="label" class="whitespace-nowrap">{{label}}</span>
     </div>
     <div class="space-x-2 flex items-center">
-        <input type="checkbox" v-model="checkboxToggle"  :class="checkboxStyle" :id="name" :name="name" />
-        <label :for="name" :class="labelStyle">{{checkboxLabel}}</label>
+        <input type="checkbox" v-model="checkboxToggle" class="rounded-lg w-4 h-4" :class="checkboxStyle" :id="name" :name="name" />
+        <label :for="name"  :class="labelStyle">{{checkboxLabel}}</label>
     </div>
     
 </template>
