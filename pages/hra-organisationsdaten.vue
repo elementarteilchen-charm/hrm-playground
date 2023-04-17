@@ -7,20 +7,20 @@
   import { reactive } from 'vue'
 
   const tabs = [
-        'Kontaktdaten', 
-        'Adressen', 
-        'Notfallkontakt',
+        'Info', 
+        // 'Adressen', 
+        // 'Notfallkontakt',
     ];
   let topMenuItems = [
       {
         linkText: "Stammdaten",
         link: "hra-eintritte",
-        active: true
+        active: false
       },
       {
         linkText: "Organisationsdaten",
         link: "hra-organisationsdaten",
-        active: false
+        active: true
       },
       {
         linkText: "Ausbildung",
@@ -52,7 +52,7 @@
 
     <div class="bg-white border border-t-4 rounded overflow-hidden">
 
-      <main class="grid lg:grid-cols-[10rem_1fr]">
+      <main class="grid lg:grid-cols-[12rem_1fr]">
             
         <nav class="mt-4">
           <ul class="text-sm">
@@ -66,24 +66,19 @@
         </nav>
         
         <div class="px-4 py-4 border-l">
+          
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenKontaktdaten />
+            <StammdatenOrganisation />
 
-          </div>
-          <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenAdresse />
-          </div>
-          <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
-            <StammdatenNotfallkontakt />
           </div>
 
 
         
 
-          <div class="p-2 mt-6 border-t flex justify-end space-x-4 items-center text-sm">
+         <!--  <div class="p-2 mt-6 border-t flex justify-end space-x-4 items-center text-sm">
             <a href="" class="text-blue-700 hover:underline">Abbrechen</a>
             <button class="px-4 py-2 bg-blue-700 text-white hover:bg-blue-700">Speichern</button>
-          </div>
+          </div> -->
         </div>
 
       </main>

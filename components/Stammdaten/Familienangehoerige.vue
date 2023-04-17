@@ -5,15 +5,24 @@
 <template>
     <h3 class="text-lg font-bold text-gray-900 ">Familienangehörige verwalten</h3>
 
+    <Anmerkung>
+      Ich habe hier 2 Dinge vermischt bzw gleichzeitig dargestellt. <br>
+      Die Familienangehörigen sind eine 1:N Relation zur Person (MA*in) <br>
+      Bei Klick auf den Edit Stift soll man die Daten bearbeiten können.
+      Das kann entweder so wie unten passieren oder über ein Modal (wie bei Notfallkontakt)
+    </Anmerkung>
+    
       <table class="table w-full text-sm bg-gray-50">
         <thead class="bg-gray-300 text-left">
-          <th class="px-2 py-1 text-sm ">Beziehung</th>
-          <th class="px-2 py-1 text-sm ">Name</th>
-          <th class="px-2 py-1 text-sm ">Vorname</th>
-          <th class="px-2 py-1 text-sm ">Telefon</th>
-          <th class="px-2 py-1 text-sm ">Handy</th>
-          <th class="px-2 py-1 text-sm text-center">Notfallkontakt</th>
-          <th class="px-2 py-1 text-sm text-center"> </th>
+          <tr>
+            <th class="px-2 py-1 text-sm ">Beziehung</th>
+            <th class="px-2 py-1 text-sm ">Name</th>
+            <th class="px-2 py-1 text-sm ">Vorname</th>
+            <th class="px-2 py-1 text-sm ">Telefon</th>
+            <th class="px-2 py-1 text-sm ">Handy</th>
+            <th class="px-2 py-1 text-sm text-center">Notfallkontakt</th>
+            <th class="px-2 py-1 text-sm text-center"> </th>
+          </tr>
         </thead>
         <tbody class="bg-white_ ">
           <tr v-for="person in angehoerige" class="h-10">
@@ -46,7 +55,7 @@
             </div>
             <div class="grid grid-rows-3 grid-row-start gap-2">
                 <div class="grid grid-cols-[minmax(4rem,min-content)_1fr] gap-2">
-                  <InputText label="Name" required="1"/>
+                  <InputText label="Name" required/>
                 </div>
                 <div class="grid grid-cols-[minmax(4rem,min-content)_1fr] gap-2">
                   <InputText label="Vorname" />

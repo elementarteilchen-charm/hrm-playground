@@ -23,7 +23,7 @@ function saveData() {
 </script>
 <template>
     <div>
-        <h3 class="text-lg font-bold text-gray-700 mt-4 mb-2"> Notfallkontakt</h3>
+        <h3 class="text-lg font-bold text-gray-700 mt-4_ mb-2"> Notfallkontakt</h3>
         <LayoutFormSection title="Daten">
             <div class="grid lg:grid-cols-3 gap-4">
                 <!-- Card -->

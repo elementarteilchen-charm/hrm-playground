@@ -8,7 +8,7 @@
 
   const tabs = [
         'Persönlich', 
-        'Adressen', 
+        'Adressen und Kontakt', 
         'Notfallkontakt',
         'Bankdaten',
         'Behinderung',
@@ -55,8 +55,8 @@
 
     <div class="bg-white border border-t-4 rounded overflow-hidden">
 
-      <main class="grid lg:grid-cols-[10rem_1fr]">
-            
+      <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
+          
         <nav class="mt-4">
           <ul class="text-sm">
             <li v-for="tab, index in tabs" 
@@ -77,17 +77,17 @@
           <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenAdresse />
           </div>
-          <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
+          <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenNotfallkontakt />
           </div>
           
-           <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
+           <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenBankverbindung />
           </div>
-          <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
+          <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenBehinderung />
           </div>
-          <div v-show="tabs[5] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-8">
+          <div v-show="tabs[5] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenFamilienangehoerige />
           </div>
 
