@@ -67,7 +67,7 @@
             </li>
           </ul>
 
-          <div class="mt-4 _bg-gray-200 px-2 py-4 flex flex-col space-y-3">
+          <div class="mt-4 border-t border-b px-2 py-6 flex flex-col space-y-3">
             <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
               Speichern
             </a>
@@ -78,14 +78,7 @@
         </nav>
         
         <div class="px-4 py-4 border-l">
-          <div class=" _bg-gray-100 px-2 py-4 flex justify-end space-x-3">
-            <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
-              Abbrechen
-            </a>
-            <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
-              Speichern
-            </a>
-          </div>
+
 
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenPersoenlich />

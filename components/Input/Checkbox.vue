@@ -18,7 +18,10 @@
     </div>
     <div class="space-x-2 flex items-center">
         <input type="checkbox" v-model="checkboxToggle" class="rounded-lg w-4 h-4" :class="checkboxStyle" :id="name" :name="name" />
-        <label :for="name"  :class="labelStyle">{{checkboxLabel}}</label>
+        <label :for="name"  :class="labelStyle">
+            <span v-if="checkboxLabel">{{checkboxLabel}}</span>
+            <span v-else><slot></slot></span>
+        </label>
     </div>
     
 </template>

@@ -16,9 +16,8 @@
           <InputSelect label="Titel&nbsp;nach&nbsp;dem&nbsp;Namen" :options="['-', 'BA','Mag.', 'MSc.']" width="w-32"/>
           
           <InputDate label="Geburtsdatum" value="2000-03-14"/>
-          <InputText label="SozialversicherungsNr" value="1450"/>
+          <InputText label="SozialversicherungsNr" value="1450" width="w-32"/>
           
-          <InputSelect label="Konfession" :options="['-', 'Röm. Kath.','Evangelisch', 'Muslim']" width="w-32"/>
         </div>
         <div class="">
            <StammdatenNativerNameModal />

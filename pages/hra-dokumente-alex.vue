@@ -10,34 +10,31 @@
 
   let topMenuItems = [
       { linkText: "Stammdaten", link: "hra-eintritte", active: false },
+      { linkText: "Organisationsdaten", link: "hra-organisationsdaten", active: false },
       { linkText: "Ausbildung", link: "schulbildung", active: false },
       { linkText: "Dokumente", link: "hra-dokumente", active: true },
       { linkText: "Vertrag", link: "vertragsdaten", active: false }
     ];
 
   const tabs = [
-        'Dokumente verwalten', 
-        'Dokumente übernehmen', 
+        'Übernehmen', 
+        'Aus der Bewerbung', 
     ];
   
-  const activeTab = reactive({ tab: tabs[1] });
+  const activeTab = reactive({ tab: tabs[0] });
   
 </script>
 
 <template>
-  <div class="text-sm text-blue-700 font-light mb-4 ml-4 ">
-    breadcrumb > breadcrumb
-  </div>
-
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
     
     <EintretendePersonHeader vorname="Stephanie" anrede="Fr." nachname="Babunek"/>
     
-    <NavigationTopMenu :topMenuItems="topMenuItems" :activeMenuItem="topMenuItems[2]"/>
+    <NavigationTopMenu :topMenuItems="topMenuItems" :activeMenuItem="topMenuItems[3]"/>
 
     <div class="bg-white border border-t-4 border-t-gray-300 rounded overflow-hidden">
   
-      <main class="grid lg:grid-cols-[minmax(min-content,12rem)_1fr]">
+      <main class="grid lg:grid-cols-[12rem_1fr]">
             
         <nav class="pt-6">
           <ul class="text-sm">
@@ -52,9 +49,6 @@
      
         <div class="px-4 py-6 border-l">
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenDokumenteVerwalten />
-          </div>
-          <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenDokumenteUebernehmen />
           </div>
 
