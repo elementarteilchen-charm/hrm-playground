@@ -60,15 +60,33 @@
         <nav class="mt-4">
           <ul class="text-sm">
             <li v-for="tab, index in tabs" 
-                class="pl-4 pr-8 py-3 flex hover:bg-gray-200"
-                :class="[{'bg-gray-400 text-white font-bold': tab == activeTab.tab}]">
+                class="border-l-4 border-transparent pl-4 pr-8 py-3 flex hover:bg-gray-200"
+                :class="[{'border-l-4 border-blue-500 text-blue-700 font-bold': tab == activeTab.tab}]">
                 <a href="#" @click="activeTab.tab = tab">
                   {{tab}}</a>
             </li>
           </ul>
+
+          <div class="mt-4 _bg-gray-200 px-2 py-4 flex flex-col space-y-3">
+            <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
+              Speichern
+            </a>
+            <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
+              Abbrechen
+            </a>
+          </div>
         </nav>
         
         <div class="px-4 py-4 border-l">
+          <div class=" _bg-gray-100 px-2 py-4 flex justify-end space-x-3">
+            <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
+              Abbrechen
+            </a>
+            <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
+              Speichern
+            </a>
+          </div>
+
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenPersoenlich />
             <StammdatenLand />
