@@ -79,7 +79,7 @@ function saveData() {
     </div>
 </template>
 <style>
-dialog {
+/*dialog {
     width: 50vw;
     min-width: 32rem;
     max-width: 800px;
@@ -89,5 +89,5 @@ dialog {
 
 dialog::backdrop {
     background: rgba(0.2, 0.2, 0.2, 0.4);
-}
+}*/
 </style>

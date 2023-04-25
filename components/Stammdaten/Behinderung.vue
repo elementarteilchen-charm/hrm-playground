@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h3 class="text-lg font-bold text-gray-900 ">Behinderung</h3>
+  <h3 class="text-lg font-bold text-gray-900 ">Invalidität</h3>
   
   <LayoutFormSection title="Behinderung">
       <div class="grid lg:grid-cols-1 gap-4">
@@ -12,8 +12,7 @@
           <InputText label="Behinderten Nummer" value="" width="w-64"/>
           <InputDate label="Seit" />
           <InputDate label="Befristet bis" />
-          <InputTextarea label="Anmerkung">
-            Nach einem Unfall kam es leider zu einer 25% Gehbehinderung.
+          <InputTextarea label="Anmerkung" text="Nach einem Unfall kam es leider zu einer 25% Gehbehinderung.">
           </InputTextarea>
           
         </div>

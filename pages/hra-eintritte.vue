@@ -9,10 +9,10 @@
   const tabs = [
         'Persönlich', 
         'Adressen und Kontakt', 
-        'Notfallkontakt',
-        'Bankdaten',
-        'Behinderung',
+        'Bankverbindung',
         'Familienangehörige',
+        'Invalidität',
+        'Notfallkontakt',
     ];
   let topMenuItems = [
       {
@@ -77,7 +77,7 @@
           </div>
         </nav>
         
-        <div class="px-4 py-4 border-l">
+        <div class="px-4 py-4 border-l pb-12">
 
 
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
@@ -88,26 +88,26 @@
           <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenAdresse />
           </div>
-          <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenNotfallkontakt />
+          <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+            <StammdatenFamilienangehoerige />
           </div>
           
-           <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+           <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenBankverbindung />
           </div>
           <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenBehinderung />
           </div>
           <div v-show="tabs[5] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenFamilienangehoerige />
+            <StammdatenNotfallkontakt />
           </div>
 
         
 
-          <div class="p-2 mt-6 border-t flex justify-end space-x-4 items-center text-sm">
+          <!-- <div class="p-2 mt-6 border-t flex justify-end space-x-4 items-center text-sm">
             <a href="" class="text-blue-700 hover:underline">Abbrechen</a>
             <button class="px-4 py-2 bg-blue-700 text-white hover:bg-blue-700">Speichern</button>
-          </div>
+          </div> -->
         </div>
 
       </main>

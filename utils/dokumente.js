@@ -2,6 +2,16 @@ export const angehoerige = [
     {
       notfallkontakt: true,
       nachweis: false,
+      verwandtschaftsgrad: 'Mutter',
+      anrede: 'Fr.',
+      name: 'Babunek',
+      vorname: 'Susanne',
+      telefon: '',
+      handy: '+43 676 456 6655',
+    },
+    {
+      notfallkontakt: true,
+      nachweis: false,
       verwandtschaftsgrad: 'Bruder',
       anrede: 'Hr.',
       name: 'Babunek',
@@ -46,37 +56,44 @@ export const bewerberDokumente = [{
           digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
           kategorie: "Lebenslauf",
           uebernehmen: true,
+          status: 'offen'
       },
       {
           uploadDateiname: "Motivationsschreiben Stephanie Babunek.pdf",
           ordner: "01 Bewerbungen und Zeugnisse",
           digitaleAkteDateiname: "2023-03-14 [ Motivationsschreiben Stephanie Babunek ].pdf",
+          kategorie: '',
           uebernehmen: false,
+          status: 'offen'
       },
       {
           uploadDateiname: "Reisepass Babunek.pdf",
           ordner: "05 Dokumente + Urkunden",
           digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
-          uebernehmen: true,
           kategorie: "Reisepasskopie",
+          uebernehmen: true,
+          status: 'übernommen',
       },
       {
           uploadDateiname: "Babunek Bescheid Beschäftigungsbewilligung.pdf",
           ordner: "02 Bewilligungen",
           digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
           uebernehmen: true,
+          status: 'übernommen'
       },
       {
           uploadDateiname: "Praktikumsbestätigung.pdf",
           ordner: "01 Bewerbungen und Zeugnisse",
           digitaleAkteDateiname: "2023-03-14 [ Praktikumsbestätigung Babunek 2021].pdf",
           uebernehmen: false,
+          status: 'offen'
       },
       {
           uploadDateiname: "Email Zusage.msg",
           ordner: "07 Diverses",
           digitaleAkteDateiname: "2023-03-14 [ Email Zusage ].msg",
           uebernehmen: false,
+          status: 'offen'
       },
 
   ];

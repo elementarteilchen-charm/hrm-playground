@@ -90,7 +90,7 @@
 </template>
 
 <style>
-    dialog {
+    dialog.daten-dialog {
         width: 60vw;
         max-width: 1200px;
         height: 80vh;

@@ -2,7 +2,7 @@
     import { PencilSquareIcon, PlusCircleIcon } from '@heroicons/vue/24/outline' 
     import { ref, reactive } from 'vue'
     
-    const modalID = 'nativername-dialog';
+    const modalID = 'nativername';
 
     const kontaktDaten = {
             'reisepass': {'vorname': 'Stephanie', 'nachname': 'Babunek'},
@@ -82,7 +82,7 @@
 </template>
 
 <style>
-    dialog {
+    dialog.nativername {
         width: 50vw;
         min-width: 32rem;
         max-width: 800px;

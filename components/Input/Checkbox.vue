@@ -13,7 +13,7 @@
 
 <template>
     
-    <div  class="grid self-start pt-1 text-sm text-gray-700">
+    <div  class="grid self-center _pt-2 text-sm font-bold text-gray-700">
         <span v-if="label" class="whitespace-nowrap">{{label}}</span>
     </div>
     <div class="space-x-2 flex items-center">

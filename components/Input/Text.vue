@@ -10,7 +10,7 @@
 
 </script>
 <template>
-    <div v-if="label" class=" self-start pt-2 text-sm text-gray-700 whitespace-nowrap">
+    <div v-if="label" class=" self-start pt-2 text-sm text-gray-700 font-bold whitespace-nowrap">
         {{label}}<span v-if="required">*</span>
     </div>
     <div class="w-full">
