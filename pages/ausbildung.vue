@@ -15,9 +15,6 @@
   
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
     
-    
-    
-
     <div class="bg-white border rounded overflow-hidden">
       <nav class="">
         <ul class="flex gap-4">

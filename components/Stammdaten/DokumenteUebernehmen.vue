@@ -7,19 +7,19 @@
 <template>
     <h3 class="text-lg font-bold text-gray-900 ">Dokumente aus dem Bewerbermodul übernehmen</h3>
 
-    <div class="bg-gray-100 p-4 rounded ">
+    <div class="bg-gray-100_ _p-4 rounded ">
         {{selectedFiles}}
-        <table class="table-fixed w-full text-sm">
-            <thead>
+        <table class="border bg-white table-fixed w-full text-sm">
+            <thead class="bg-gray-50 border">
                 <tr>
-                    <th class="w-1/2">Dokument</th>
-                    <th>Größe</th>
+                    <th class="py-3 px-4 w-1/2">Dokument</th>
+                    <th class="px-4 text-right">Größe</th>
+                    <th class="px-4 text-right">Datum</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="dokument in bewerberDokumente" class="border-b">
-                    <td class="py-1">
-
+                    <td class="py-4 px-3 ">
                         <div class="space-x-2 flex items-center">
                             <input 
                                     type="checkbox" 
@@ -33,7 +33,42 @@
                             </label>
                         </div>
                     </td>
-                    <td class="text-right">243 kB</td>
+                    <td class="px-3 py-4 text-right">243 kB</td>
+                    <td class="px-3 py-4 text-right">21.04.2023</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="bg-gray-100_ _p-4 rounded ">
+        {{selectedFiles}}
+        <table class="border bg-white table-fixed w-full text-sm">
+            <thead class="bg-gray-50 border">
+                <tr>
+                    <th class="py-3 px-4 w-1/2">Dokument</th>
+                    <th class="px-4 text-right">Größe</th>
+                    <th class="px-4 text-right">Datum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="dok in selectedFiles" class="border-b">
+                    <td class="py-4 px-3 ">
+                        <div class="space-x-2 flex items-center">
+                            <input 
+                                    type="checkbox" 
+                                    
+                                    class="rounded-lg w-4 h-4" 
+                                    :id="dok.uploadDateiname" 
+                                    :value="dok.uploadDateiname"
+                                    :name="dok.uploadDateiname" />
+                            <label >
+                                <a href="" class="text-blue-700 hover:underline">{{dok}}</a>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="px-3 py-4 text-right">243 kB</td>
+                    <td class="px-3 py-4 text-right">21.04.2023</td>
 
                 </tr>
             </tbody>
