@@ -73,9 +73,9 @@ export const bewerberDokumente = [{
           uebernehmen: false,
       },
       {
-          uploadDateiname: "Reisepass Babunek.pdf",
-          ordner: "05 Dokumente + Urkunden",
-          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
+          uploadDateiname: "Email Zusage.msg",
+          ordner: "07 Diverses",
+          digitaleAkteDateiname: "2023-03-14 [ Email Zusage ].msg",
           uebernehmen: false,
       },
 
