@@ -520,532 +520,252 @@
 	"buffers":
 	[
 		{
-			"file": "components/Stammdaten/Adresse.vue",
+			"file": "pages/ausbildung.vue",
 			"settings":
 			{
-				"buffer_size": 1904,
+				"buffer_size": 2029,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
 			"undo_stack":
 			[
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": "."
+					},
+					"AQAAAF0BAAAAAAAAXgEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXQEAAAAAAABdAQAAAAAAAP///////+9/"
+				],
+				[
+					6,
+					1,
+					"left_delete",
+					null,
+					"AQAAAF0BAAAAAAAAXQEAAAAAAAABAAAALg",
+					"AQAAAAAAAAABAAAAXgEAAAAAAABeAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					1,
+					"insert",
+					{
+						"characters": "-->"
+					},
+					"AwAAAF0BAAAAAAAAXgEAAAAAAAAAAAAAXgEAAAAAAABfAQAAAAAAAAAAAABfAQAAAAAAAGABAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXQEAAAAAAABdAQAAAAAAAAAAAAAAAPC/"
+				],
 				[
 					8,
 					1,
 					"insert",
 					{
-						"characters": "\n"
-					},
-					"AQAAAGMAAAAAAAAAZAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAYwAAAAAAAABjAAAAAAAAAAAAAAAAAAAA"
-				],
-				[
-					9,
-					1,
-					"paste",
-					null,
-					"AQAAAGQAAAAAAAAAqgIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAZAAAAAAAAABkAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					10,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAKoCAAAAAAAAqwIAAAAAAAAAAAAAqwIAAAAAAACtAgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAqgIAAAAAAACqAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					15,
-					1,
-					"insert",
-					{
-						"characters": "Kontaktdaten"
-					},
-					"DgAAAIAAAAAAAAAAgQAAAAAAAAAAAAAAgQAAAAAAAACBAAAAAAAAAA0AAABIZWltYXRhZHJlc3NlnwIAAAAAAACfAgAAAAAAAAQAAAAgICAggQAAAAAAAACCAAAAAAAAAAAAAACCAAAAAAAAAIMAAAAAAAAAAAAAAIMAAAAAAAAAhAAAAAAAAAAAAAAAhAAAAAAAAACFAAAAAAAAAAAAAACFAAAAAAAAAIYAAAAAAAAAAAAAAIYAAAAAAAAAhwAAAAAAAAAAAAAAhwAAAAAAAACIAAAAAAAAAAAAAACIAAAAAAAAAIkAAAAAAAAAAAAAAIkAAAAAAAAAigAAAAAAAAAAAAAAigAAAAAAAACLAAAAAAAAAAAAAACLAAAAAAAAAIwAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAgAAAAAAAAACNAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					20,
-					1,
-					"insert",
-					{
-						"characters": "Kontktda"
-					},
-					"CAAAAFUAAAAAAAAAVgAAAAAAAAAAAAAAVgAAAAAAAABXAAAAAAAAAAAAAABXAAAAAAAAAFgAAAAAAAAAAAAAAFgAAAAAAAAAWQAAAAAAAAAAAAAAWQAAAAAAAABaAAAAAAAAAAAAAABaAAAAAAAAAFsAAAAAAAAAAAAAAFsAAAAAAAAAXAAAAAAAAAAAAAAAXAAAAAAAAABdAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAVQAAAAAAAABVAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					21,
-					4,
-					"left_delete",
-					null,
-					"BAAAAFwAAAAAAAAAXAAAAAAAAAABAAAAYVsAAAAAAAAAWwAAAAAAAAABAAAAZFoAAAAAAAAAWgAAAAAAAAABAAAAdFkAAAAAAAAAWQAAAAAAAAABAAAAaw",
-					"AQAAAAAAAAABAAAAXQAAAAAAAABdAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					22,
-					1,
-					"insert",
-					{
-						"characters": "aktdaten"
-					},
-					"CAAAAFkAAAAAAAAAWgAAAAAAAAAAAAAAWgAAAAAAAABbAAAAAAAAAAAAAABbAAAAAAAAAFwAAAAAAAAAAAAAAFwAAAAAAAAAXQAAAAAAAAAAAAAAXQAAAAAAAABeAAAAAAAAAAAAAABeAAAAAAAAAF8AAAAAAAAAAAAAAF8AAAAAAAAAYAAAAAAAAAAAAAAAYAAAAAAAAABhAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAWQAAAAAAAABZAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					23,
-					1,
-					"insert",
-					{
-						"characters": " und"
-					},
-					"BAAAAGEAAAAAAAAAYgAAAAAAAAAAAAAAYgAAAAAAAABjAAAAAAAAAAAAAABjAAAAAAAAAGQAAAAAAAAAAAAAAGQAAAAAAAAAZQAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAYQAAAAAAAABhAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					24,
-					1,
-					"insert",
-					{
 						"characters": " "
-					},
-					"AQAAAGUAAAAAAAAAZgAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAZQAAAAAAAABlAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					31,
-					1,
-					"insert",
-					{
-						"characters": "Mobiln"
-					},
-					"BwAAAEQBAAAAAAAARQEAAAAAAAAAAAAARQEAAAAAAABFAQAAAAAAAAcAAABTdHJhw59lRQEAAAAAAABGAQAAAAAAAAAAAABGAQAAAAAAAEcBAAAAAAAAAAAAAEcBAAAAAAAASAEAAAAAAAAAAAAASAEAAAAAAABJAQAAAAAAAAAAAABJAQAAAAAAAEoBAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAARAEAAAAAAABKAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					32,
-					1,
-					"insert",
-					{
-						"characters": "ummer"
-					},
-					"BQAAAEoBAAAAAAAASwEAAAAAAAAAAAAASwEAAAAAAABMAQAAAAAAAAAAAABMAQAAAAAAAE0BAAAAAAAAAAAAAE0BAAAAAAAATgEAAAAAAAAAAAAATgEAAAAAAABPAQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAASgEAAAAAAABKAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					36,
-					1,
-					"insert",
-					{
-						"characters": "+43"
-					},
-					"BAAAAFgBAAAAAAAAWQEAAAAAAAAAAAAAWQEAAAAAAABZAQAAAAAAABMAAABIYXVwdHN0cmHDn2UgMjMvNS80WQEAAAAAAABaAQAAAAAAAAAAAABaAQAAAAAAAFsBAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAWAEAAAAAAABqAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					37,
-					1,
-					"insert",
-					{
-						"characters": " 664"
-					},
-					"BAAAAFsBAAAAAAAAXAEAAAAAAAAAAAAAXAEAAAAAAABdAQAAAAAAAAAAAABdAQAAAAAAAF4BAAAAAAAAAAAAAF4BAAAAAAAAXwEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAWwEAAAAAAABbAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					38,
-					1,
-					"insert",
-					{
-						"characters": " 55"
-					},
-					"AwAAAF8BAAAAAAAAYAEAAAAAAAAAAAAAYAEAAAAAAABhAQAAAAAAAAAAAABhAQAAAAAAAGIBAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAXwEAAAAAAABfAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					39,
-					1,
-					"insert",
-					{
-						"characters": " 8894"
-					},
-					"BQAAAGIBAAAAAAAAYwEAAAAAAAAAAAAAYwEAAAAAAABkAQAAAAAAAAAAAABkAQAAAAAAAGUBAAAAAAAAAAAAAGUBAAAAAAAAZgEAAAAAAAAAAAAAZgEAAAAAAABnAQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAYgEAAAAAAABiAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					41,
-					1,
-					"insert",
-					{
-						"characters": "3"
 					},
 					"AQAAAGABAAAAAAAAYQEAAAAAAAAAAAAA",
 					"AQAAAAAAAAABAAAAYAEAAAAAAABgAQAAAAAAAAAAAAAAAPC/"
 				],
 				[
-					47,
-					1,
-					"insert",
-					{
-						"characters": "Telefon"
-					},
-					"CAAAAIkBAAAAAAAAigEAAAAAAAAAAAAAigEAAAAAAACKAQAAAAAAAAMAAABQTFqKAQAAAAAAAIsBAAAAAAAAAAAAAIsBAAAAAAAAjAEAAAAAAAAAAAAAjAEAAAAAAACNAQAAAAAAAAAAAACNAQAAAAAAAI4BAAAAAAAAAAAAAI4BAAAAAAAAjwEAAAAAAAAAAAAAjwEAAAAAAACQAQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAiQEAAAAAAACMAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					50,
-					1,
-					"left_delete",
-					null,
-					"AQAAAJkBAAAAAAAAmQEAAAAAAAAEAAAAMzIxMA",
-					"AQAAAAAAAAABAAAAnQEAAAAAAACZAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					51,
-					1,
-					"duplicate_line",
-					null,
-					"AQAAAKoBAAAAAAAA5wEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAmQEAAAAAAACZAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					54,
-					1,
-					"insert",
-					{
-						"characters": "E-Mail:"
-					},
-					"CAAAAMYBAAAAAAAAxwEAAAAAAAAAAAAAxwEAAAAAAADHAQAAAAAAAAcAAABUZWxlZm9uxwEAAAAAAADIAQAAAAAAAAAAAADIAQAAAAAAAMkBAAAAAAAAAAAAAMkBAAAAAAAAygEAAAAAAAAAAAAAygEAAAAAAADLAQAAAAAAAAAAAADLAQAAAAAAAMwBAAAAAAAAAAAAAMwBAAAAAAAAzQEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAxgEAAAAAAADNAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					56,
-					1,
-					"insert",
-					{
-						"characters": ":"
-					},
-					"AQAAAJABAAAAAAAAkQEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAkAEAAAAAAACQAQAAAAAAAAAAAAAAYHZA"
-				],
-				[
-					59,
-					1,
-					"insert",
-					{
-						"characters": ":"
-					},
-					"AQAAAE8BAAAAAAAAUAEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAATwEAAAAAAABPAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					62,
-					1,
-					"cut",
-					null,
-					"AQAAAAoCAAAAAAAACgIAAAAAAADPAAAAIDxkaXYgY2xhc3M9IiBncmlkIGdyaWQtY29scy1bbWlubWF4KDZyZW0sYXV0bylfMWZyXSBnYXAtMiI+ICAgIAogICAgICAgICAgPElucHV0VGV4dCBsYWJlbD0iT3J0IiB2YWx1ZT0iS3JlbXMiIC8+CiAgICAgICAgICA8SW5wdXRTZWxlY3QgbGFiZWw9IkxhbmQiIDpvcHRpb25zPSJbJ0FUJywnREUnLCAnUEwnXSIgd2lkdGg9InctMzIiLz4KICAgICAgPC9kaXY+",
-					"AQAAAAAAAAABAAAACgIAAAAAAADZAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					71,
-					1,
-					"left_delete",
-					null,
-					"AQAAAJ0BAAAAAAAAnQEAAAAAAAAMAAAAd2lkdGg9InctMTYi",
-					"AQAAAAAAAAABAAAAnQEAAAAAAACpAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					77,
-					2,
-					"left_delete",
-					null,
-					"AgAAAM4BAAAAAAAAzgEAAAAAAAAMAAAAd2lkdGg9InctMTYizQEAAAAAAADNAQAAAAAAAAEAAAAg",
-					"AQAAAAAAAAABAAAAzgEAAAAAAADaAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					80,
-					1,
-					"insert",
-					{
-						"characters": "steph0"
-					},
-					"BgAAAMwBAAAAAAAAzQEAAAAAAAAAAAAAzQEAAAAAAADOAQAAAAAAAAAAAADOAQAAAAAAAM8BAAAAAAAAAAAAAM8BAAAAAAAA0AEAAAAAAAAAAAAA0AEAAAAAAADRAQAAAAAAAAAAAADRAQAAAAAAANIBAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAzAEAAAAAAADMAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					81,
-					1,
-					"left_delete",
-					null,
-					"AQAAANEBAAAAAAAA0QEAAAAAAAABAAAAMA",
-					"AQAAAAAAAAABAAAA0gEAAAAAAADSAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					82,
-					1,
-					"insert",
-					{
-						"characters": "89@g"
-					},
-					"BAAAANEBAAAAAAAA0gEAAAAAAAAAAAAA0gEAAAAAAADTAQAAAAAAAAAAAADTAQAAAAAAANQBAAAAAAAAAAAAANQBAAAAAAAA1QEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA0QEAAAAAAADRAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					83,
-					1,
-					"insert",
-					{
-						"characters": "mail.com"
-					},
-					"CAAAANUBAAAAAAAA1gEAAAAAAAAAAAAA1gEAAAAAAADXAQAAAAAAAAAAAADXAQAAAAAAANgBAAAAAAAAAAAAANgBAAAAAAAA2QEAAAAAAAAAAAAA2QEAAAAAAADaAQAAAAAAAAAAAADaAQAAAAAAANsBAAAAAAAAAAAAANsBAAAAAAAA3AEAAAAAAAAAAAAA3AEAAAAAAADdAQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA1QEAAAAAAADVAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					86,
-					1,
-					"run_macro_file",
-					{
-						"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"
-					},
-					"AQAAAPsBAAAAAAAA+wEAAAAAAAAHAAAAICAgICAgIA",
-					"AQAAAAAAAAABAAAAAgIAAAAAAAACAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					87,
-					1,
-					"left_delete",
-					null,
-					"AQAAAPoBAAAAAAAA+gEAAAAAAAABAAAACg",
-					"AQAAAAAAAAABAAAA+wEAAAAAAAD7AQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					88,
-					1,
-					"run_macro_file",
-					{
-						"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"
-					},
-					"AQAAAPABAAAAAAAA8AEAAAAAAAAKAAAAICAgICAgICAgIA",
-					"AQAAAAAAAAABAAAA+gEAAAAAAAD6AQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					89,
-					1,
-					"left_delete",
-					null,
-					"AQAAAO8BAAAAAAAA7wEAAAAAAAABAAAACg",
-					"AQAAAAAAAAABAAAA8AEAAAAAAADwAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					94,
-					1,
-					"insert",
-					{
-						"characters": " width="
-					},
-					"BwAAAN4BAAAAAAAA3wEAAAAAAAAAAAAA3wEAAAAAAADgAQAAAAAAAAAAAADgAQAAAAAAAOEBAAAAAAAAAAAAAOEBAAAAAAAA4gEAAAAAAAAAAAAA4gEAAAAAAADjAQAAAAAAAAAAAADjAQAAAAAAAOQBAAAAAAAAAAAAAOQBAAAAAAAA5QEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA3gEAAAAAAADeAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					95,
-					1,
-					"insert",
-					{
-						"characters": "\"w-64"
-					},
-					"BQAAAOUBAAAAAAAA5gEAAAAAAAAAAAAA5gEAAAAAAADnAQAAAAAAAAAAAADnAQAAAAAAAOgBAAAAAAAAAAAAAOgBAAAAAAAA6QEAAAAAAAAAAAAA6QEAAAAAAADqAQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA5QEAAAAAAADlAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					96,
-					1,
-					"insert",
-					{
-						"characters": "\""
-					},
-					"AQAAAOoBAAAAAAAA6wEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA6gEAAAAAAADqAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					102,
-					1,
-					"paste",
-					null,
-					"AQAAAJ0BAAAAAAAAqQEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAnQEAAAAAAACdAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					106,
-					1,
-					"paste",
-					null,
-					"AQAAAGsBAAAAAAAAdwEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAawEAAAAAAABrAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					115,
-					1,
-					"cut",
-					null,
-					"AQAAAJUDAAAAAAAAlQMAAAAAAAANAAAASGF1cHR3b2huc2l0eg",
-					"AQAAAAAAAAABAAAAlQMAAAAAAACiAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					118,
-					1,
-					"insert",
-					{
-						"characters": "label=\""
-					},
-					"BwAAAIYDAAAAAAAAhwMAAAAAAAAAAAAAhwMAAAAAAACIAwAAAAAAAAAAAACIAwAAAAAAAIkDAAAAAAAAAAAAAIkDAAAAAAAAigMAAAAAAAAAAAAAigMAAAAAAACLAwAAAAAAAAAAAACLAwAAAAAAAIwDAAAAAAAAAAAAAIwDAAAAAAAAjQMAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAhgMAAAAAAACGAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					119,
-					1,
-					"paste",
-					null,
-					"AQAAAI0DAAAAAAAAmgMAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAjQMAAAAAAACNAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					120,
-					1,
-					"insert",
-					{
-						"characters": "\""
-					},
-					"AQAAAJoDAAAAAAAAmwMAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAmgMAAAAAAACaAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					121,
-					1,
-					"insert",
-					{
-						"characters": " "
-					},
-					"AQAAAJsDAAAAAAAAnAMAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAmwMAAAAAAACbAwAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "components/Stammdaten/Land.vue",
-			"settings":
-			{
-				"buffer_size": 1145,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					3,
-					1,
-					"left_delete",
-					null,
-					"AQAAANsDAAAAAAAA2wMAAAAAAAANAAAAd2lkdGg9InctNC81Ig",
-					"AQAAAAAAAAABAAAA2wMAAAAAAADoAwAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "components/Stammdaten/Behinderung.vue",
-			"settings":
-			{
-				"buffer_size": 725,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					4,
-					1,
-					"cut",
-					null,
-					"AQAAACsCAAAAAAAAKwIAAAAAAAA8AAAATmFjaCBlaW5lbSBVbmZhbGwga2FtIGVzIGxlaWRlciB6dSBlaW5lciAyNSUgR2VoYmVoaW5kZXJ1bmcu",
-					"AQAAAAAAAAABAAAAKwIAAAAAAABnAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					7,
-					10,
-					"left_delete",
-					null,
-					"CgAAAC0CAAAAAAAALQIAAAAAAAABAAAALywCAAAAAAAALAIAAAAAAAABAAAAICsCAAAAAAAAKwIAAAAAAAABAAAAIioCAAAAAAAAKgIAAAAAAAABAAAAIikCAAAAAAAAKQIAAAAAAAABAAAAPSgCAAAAAAAAKAIAAAAAAAABAAAAdCcCAAAAAAAAJwIAAAAAAAABAAAAeCYCAAAAAAAAJgIAAAAAAAABAAAAZSUCAAAAAAAAJQIAAAAAAAABAAAAdCQCAAAAAAAAJAIAAAAAAAABAAAAIA",
-					"AQAAAAAAAAABAAAALgIAAAAAAAAuAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
 					9,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AwAAACUCAAAAAAAAJgIAAAAAAAAAAAAAJgIAAAAAAAAwAgAAAAAAAAAAAAAwAgAAAAAAADICAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAJQIAAAAAAAAlAgAAAAAAAAAAAAAAAPC/"
+					4,
+					"left_delete",
+					null,
+					"BAAAAGABAAAAAAAAYAEAAAAAAAABAAAAIF8BAAAAAAAAXwEAAAAAAAABAAAAPl4BAAAAAAAAXgEAAAAAAAABAAAALV0BAAAAAAAAXQEAAAAAAAABAAAALQ",
+					"AQAAAAAAAAABAAAAYQEAAAAAAABhAQAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					10,
 					1,
-					"paste",
-					null,
-					"AQAAADICAAAAAAAAbgIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAMgIAAAAAAAAyAgAAAAAAAAAAAAAAAPC/"
+					"insert",
+					{
+						"characters": "->"
+					},
+					"AgAAAF0BAAAAAAAAXgEAAAAAAAAAAAAAXgEAAAAAAABfAQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXQEAAAAAAABdAQAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					11,
 					1,
 					"insert",
 					{
-						"characters": "\n"
+						"characters": " "
 					},
-					"AgAAAG4CAAAAAAAAbwIAAAAAAAAAAAAAbwIAAAAAAAB7AgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAbgIAAAAAAABuAgAAAAAAAAAAAAAAAPC/"
+					"AQAAAF8BAAAAAAAAYAEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXwEAAAAAAABfAQAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					12,
-					1,
-					"close_tag",
-					null,
-					"AwAAAHsCAAAAAAAAiwIAAAAAAAAAAAAAbwIAAAAAAABvAgAAAAAAAAwAAAAgICAgICAgICAgICBvAgAAAAAAAHkCAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAewIAAAAAAAB7AgAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "components/Input/Textarea.vue",
-			"settings":
-			{
-				"buffer_size": 730,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
 					3,
+					"left_delete",
+					null,
+					"AwAAAF8BAAAAAAAAXwEAAAAAAAABAAAAIF4BAAAAAAAAXgEAAAAAAAABAAAAPl0BAAAAAAAAXQEAAAAAAAABAAAALQ",
+					"AQAAAAAAAAABAAAAYAEAAAAAAABgAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					13,
 					1,
 					"insert",
 					{
-						"characters": "slot"
+						"characters": "=>"
 					},
-					"BAAAAKICAAAAAAAAowIAAAAAAAAAAAAAowIAAAAAAACkAgAAAAAAAAAAAACkAgAAAAAAAKUCAAAAAAAAAAAAAKUCAAAAAAAApgIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAogIAAAAAAACiAgAAAAAAAAAAAAAAAPC/"
+					"AgAAAF0BAAAAAAAAXgEAAAAAAAAAAAAAXgEAAAAAAABfAQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXQEAAAAAAABdAQAAAAAAAAAAAAAAAPC/"
 				],
 				[
+					14,
+					2,
+					"left_delete",
+					null,
+					"AgAAAF4BAAAAAAAAXgEAAAAAAAABAAAAPl0BAAAAAAAAXQEAAAAAAAABAAAAPQ",
+					"AQAAAAAAAAABAAAAXwEAAAAAAABfAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					15,
+					1,
+					"insert",
+					{
+						"characters": "==>"
+					},
+					"AwAAAF0BAAAAAAAAXgEAAAAAAAAAAAAAXgEAAAAAAABfAQAAAAAAAAAAAABfAQAAAAAAAGABAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXQEAAAAAAABdAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					16,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAGABAAAAAAAAYQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYAEAAAAAAABgAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					17,
 					4,
+					"left_delete",
+					null,
+					"BAAAAGABAAAAAAAAYAEAAAAAAAABAAAAIF8BAAAAAAAAXwEAAAAAAAABAAAAPl4BAAAAAAAAXgEAAAAAAAABAAAAPV0BAAAAAAAAXQEAAAAAAAABAAAAPQ",
+					"AQAAAAAAAAABAAAAYQEAAAAAAABhAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					20,
+					1,
+					"left_delete",
+					null,
+					"AQAAAOwBAAAAAAAA7AEAAAAAAAACAAAAICA",
+					"AQAAAAAAAAABAAAA7gEAAAAAAADuAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					25,
+					2,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"
+					},
+					"AgAAAOUBAAAAAAAA5QEAAAAAAAAEAAAAICAgIOQBAAAAAAAA5AEAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAA6QEAAAAAAADpAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					27,
+					1,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"
+					},
+					"AQAAAOgBAAAAAAAA6AEAAAAAAAAEAAAAICAgIA",
+					"AQAAAAAAAAABAAAA7AEAAAAAAADsAQAAAAAAAAAAAAAA4IBA"
+				],
+				[
+					28,
+					1,
+					"left_delete",
+					null,
+					"AQAAAOcBAAAAAAAA5wEAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAA6AEAAAAAAADoAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					30,
+					1,
+					"left_delete",
+					null,
+					"AQAAAOcBAAAAAAAA5wEAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAA6AEAAAAAAADoAQAAAAAAAAAAAAAAADRA"
+				],
+				[
+					31,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAOcBAAAAAAAA6QEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA5wEAAAAAAADnAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					32,
+					1,
+					"insert",
+					{
+						"characters": "ujl"
+					},
+					"AwAAAOkBAAAAAAAA6gEAAAAAAAAAAAAA6gEAAAAAAADrAQAAAAAAAAAAAADrAQAAAAAAAOwBAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA6QEAAAAAAADpAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					33,
+					2,
+					"left_delete",
+					null,
+					"AgAAAOsBAAAAAAAA6wEAAAAAAAABAAAAbOoBAAAAAAAA6gEAAAAAAAABAAAAag",
+					"AQAAAAAAAAABAAAA7AEAAAAAAADsAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					34,
+					1,
+					"insert",
+					{
+						"characters": "l>li"
+					},
+					"BAAAAOoBAAAAAAAA6wEAAAAAAAAAAAAA6wEAAAAAAADsAQAAAAAAAAAAAADsAQAAAAAAAO0BAAAAAAAAAAAAAO0BAAAAAAAA7gEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA6gEAAAAAAADqAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					35,
 					1,
 					"emmet_expand_abbreviation",
 					{
 						"tab": true
 					},
-					"AgAAAKICAAAAAAAAogIAAAAAAAAEAAAAc2xvdKICAAAAAAAArwIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAApgIAAAAAAACmAgAAAAAAAAAAAAAAAPC/"
+					"AgAAAOkBAAAAAAAA6QEAAAAAAAAFAAAAdWw+bGnpAQAAAAAAAAcCAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA7gEAAAAAAADuAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					40,
+					1,
+					"left_delete",
+					null,
+					"AQAAAOkBAAAAAAAA6QEAAAAAAAAeAAAAPHVsPgogICAgICA8bGk+PC9saT4KICAgIDwvdWw+",
+					"AQAAAAAAAAABAAAA6QEAAAAAAAAHAgAAAAAAAP///////+9/"
+				],
+				[
+					41,
+					1,
+					"insert",
+					{
+						"characters": "man"
+					},
+					"AwAAAOkBAAAAAAAA6gEAAAAAAAAAAAAA6gEAAAAAAADrAQAAAAAAAAAAAADrAQAAAAAAAOwBAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA6QEAAAAAAADpAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					56,
+					1,
+					"left_delete",
+					null,
+					"AQAAAOkBAAAAAAAA6QEAAAAAAAADAAAAbWFu",
+					"AQAAAAAAAAABAAAA6QEAAAAAAADsAQAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		}
@@ -1062,6 +782,18 @@
 		"selected_items":
 		[
 			[
+				"emme",
+				"Emmet: Select Next Item"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
 				"install ",
 				"Package Control: Install Package"
 			],
@@ -1071,10 +803,6 @@
 			],
 			[
 				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -1139,15 +867,15 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/alex/Documents/projects/nuxt/hrm-playground",
-		"/Users/alex/Documents/projects/nuxt/hrm-playground/components",
-		"/Users/alex/Documents/projects/nuxt/hrm-playground/components/Input",
-		"/Users/alex/Documents/projects/nuxt/hrm-playground/components/Stammdaten",
-		"/Users/alex/Documents/projects/nuxt/hrm-playground/pages",
-		"/Users/alex/Documents/projects/nuxt/hrm-playground/utils"
+		"/Users/alex/Documents/web-projects/nuxt/hrm-playground",
+		"/Users/alex/Documents/web-projects/nuxt/hrm-playground/pages"
 	],
 	"file_history":
 	[
+		"/Users/alex/Documents/web-projects/nuxt/hrm-playground/components/Stammdaten/Adresse.vue",
+		"/Users/alex/Documents/web-projects/nuxt/hrm-playground/components/Stammdaten/Land.vue",
+		"/Users/alex/Documents/web-projects/nuxt/hrm-playground/components/Stammdaten/Behinderung.vue",
+		"/Users/alex/Documents/web-projects/nuxt/hrm-playground/components/Input/Textarea.vue",
 		"/Users/alex/Documents/projects/nuxt/hrm-playground/components/Stammdaten/Familienangehoerige.vue",
 		"/Users/alex/Documents/projects/nuxt/hrm-playground/pages/hra-organisationsdaten.vue",
 		"/Users/alex/Documents/projects/nuxt/hrm-playground/pages/hra-eintritte.vue",
@@ -1271,15 +999,11 @@
 		"/Users/alex/Documents/web-projects/laravel/tf-automation/app/Http/Controllers/WebhookController.php",
 		"/Users/alex/Documents/web-projects/laravel/tf-automation/resources/views/dashboard/index.blade.php",
 		"/Users/alex/Documents/web-projects/laravel/sso7/app/Http/Controllers/FileUploadController.php",
-		"/Users/alex/Documents/web-projects/laravel/sso7/resources/views/upload/vue.blade.php",
-		"/Users/alex/Documents/web-projects/laravel/sso7/resources/js/components/FileUpload.vue",
-		"/Users/alex/Documents/web-projects/laravel/sso7/storage/logs/laravel.log",
-		"/Users/alex/Documents/web-projects/laravel/sso7/app/Http/Controllers/UserController.php",
-		"/Users/alex/Documents/web-projects/laravel/sso7/routes/web.php"
+		"/Users/alex/Documents/web-projects/laravel/sso7/resources/views/upload/vue.blade.php"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 45.0
 	},
 	"find_in_files":
 	{
@@ -1407,123 +1131,30 @@
 			[
 				{
 					"buffer": 0,
-					"file": "components/Stammdaten/Adresse.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1904,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								940,
-								940
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 247.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "components/Stammdaten/Land.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1145,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								987,
-								987
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "components/Stammdaten/Behinderung.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 725,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								649,
-								649
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "components/Input/Textarea.vue",
+					"file": "pages/ausbildung.vue",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 730,
+						"buffer_size": 2029,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								707,
-								707
+								489,
+								489
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 452.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1535,7 +1166,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 40.0
+		"height": 45.0
 	},
 	"input":
 	{
@@ -1572,7 +1203,7 @@
 	"project": "hrm-playground.sublime-project",
 	"replace":
 	{
-		"height": 76.0
+		"height": 86.0
 	},
 	"save_all_on_build": true,
 	"select_file":
