@@ -73,15 +73,10 @@ export const bewerberDokumente = [{
           uebernehmen: false,
       },
       {
-          uploadDateiname: "Reispass Babunek.pdf",
+          uploadDateiname: "Reisepass Babunek.pdf",
           ordner: "05 Dokumente + Urkunden",
           digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
           uebernehmen: false,
       },
-      {
-          uploadDateiname: "Babunek Bescheid Beschäftigungsbewilligung.pdf",
-          ordner: "02 Bewilligungen",
-          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
-          uebernehmen: true,
-      },
+
   ];

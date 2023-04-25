@@ -13,7 +13,11 @@
         {{label}}<span v-if="required">*</span>
     </div>
     <div class="">
-        <input class="px-2 py-1 border border-gray-300 rounded" :class="width" type="date" 
-        :value="value" />
+        <input 
+            class="px-2 py-1 border border-gray-300 rounded" 
+            :class="width" 
+            style="box-shadow: inset 0 2px 4px 0 rgba(50, 50, 50, 0.1)"
+            type="date" 
+            :value="value" />
     </div>
 </template>
