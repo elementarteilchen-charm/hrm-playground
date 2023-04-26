@@ -16,11 +16,11 @@
     ];
 
   const tabs = [
-        'Dokumente verwalten', 
-        'Dokumente übernehmen', 
+        'Verwalten', 
+        'Übernehmen', 
     ];
   
-  const activeTab = reactive({ tab: tabs[1] });
+  const activeTab = reactive({ tab: tabs[0] });
   
 </script>
 
