@@ -2,7 +2,50 @@
 import { ordner, bewerberDokumente } from '~/utils/dokumente.js'
 import { FolderIcon, DocumentIcon, ArchiveBoxIcon, XCircleIcon } from '@heroicons/vue/24/outline'
 
-const gewaehlteDokumente = [{
+const gewaehlteDokumente = [
+    {
+          uploadDateiname: "Lebenslauf Babunek.pdf",
+          ordner: "01 Bewerbungen und Zeugnisse",
+          digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
+          kategorie: "Lebenslauf",
+          uebernehmen: true,
+      },
+      {
+          uploadDateiname: "Reisepass Babunek.pdf",
+          ordner: "05 Dokumente + Urkunden",
+          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
+          uebernehmen: true,
+          kategorie: "Reisepasskopie",
+      },
+      {
+          uploadDateiname: "Lebenslauf Babunek.pdf",
+          ordner: "01 Bewerbungen und Zeugnisse",
+          digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
+          kategorie: "Lebenslauf",
+          uebernehmen: true,
+      },
+      {
+          uploadDateiname: "Reisepass Babunek.pdf",
+          ordner: "05 Dokumente + Urkunden",
+          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
+          uebernehmen: true,
+          kategorie: "Reisepasskopie",
+      },
+      {
+          uploadDateiname: "Lebenslauf Babunek.pdf",
+          ordner: "01 Bewerbungen und Zeugnisse",
+          digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
+          kategorie: "Lebenslauf",
+          uebernehmen: true,
+      },
+      {
+          uploadDateiname: "Reisepass Babunek.pdf",
+          ordner: "05 Dokumente + Urkunden",
+          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
+          uebernehmen: true,
+          kategorie: "Reisepasskopie",
+      },
+      {
           uploadDateiname: "Lebenslauf Babunek.pdf",
           ordner: "01 Bewerbungen und Zeugnisse",
           digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
@@ -22,6 +65,10 @@ const uploadOrdner = [
     '01 Bewerbungen und Zeugnisse', '02 Bewilligungen', '03 Verträge', '04 Infos + Beurteilungen', '05 Dokumente + Urkunden', '07 Diverses',]
 
 const editMode = ref(true)
+
+function showDialog() {
+      document.getElementById('dokumente-dialog').showModal();
+}
 
 </script>
 <template>
@@ -61,41 +108,8 @@ const editMode = ref(true)
             </tbody>
         </table>
 
-        <table v-if="!editMode" class="bg-white border table-auto w-full text-sm">
-            <thead class="bg-gray-100 border ">
-                <tr>
-                    <th class="px-4 py-3 text-left">Dokument</th>
-                    <th class="w-64">Ordner</th>
-                    <th class="w-64">Kategorie</th>
-                    <th class="px-4">Entfernen</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="dokument in gewaehlteDokumente" class="border-b">
-                    <td class="px-4 py-3">
-                        <InputText :value="dokument.uploadDateiname" width="text-sm w-full"/>
-                    </td>
-                    <td class="text-left px-4 py-3">
-                        <InputSelect :options="ordner" :selected="dokument.ordner" width="w-full text-sm flex-shrink-0" />
-                    </td>
-                    <td class="text-left px-4 py-3">
-                         <InputSelect :options="dokumentKategorien" :selected="dokument.kategorie" width="w-full text-sm flex-shrink-0" />
-                    </td>
-                    
-                    <td >
-                    <div class="px-2 py-3 grid">    
-                        <button class="place-self-center">
-                        <XCircleIcon class="text-gray-400 hover:text-red-600 w-6 h-6"/>
-                        </button>
-                    </div> 
-                </td>
-
-                </tr>
-            </tbody>
-        </table>
         <div class="mt-6 flex justify-end">
-            <button @click="editMode = !editMode" class="text-sm bg-blue-700 text-white px-2 py-1">Dokumente bearbeiten</button>
+            <button @click="showDialog" class="text-sm bg-blue-700 text-white px-2 py-1">Dokumente bearbeiten</button>
         </div>
     </div>
 
@@ -112,4 +126,48 @@ const editMode = ref(true)
         </div>
 
     </div>
+
+    <dialog id="dokumente-dialog" class="modal shadow-lg bg-gray-100 p-4">
+        <form action="" method="dialog" class="h-full">
+            <div class="grid grid-rows-[3rem_1fr_3rem] h-full">
+                <header class="px-4 py-2 h-12  text-lg font-bold ">
+                    Dokumente beschlagworten
+                </header>
+                <main class="px-4 py-2" style="height: calc(100% - 1rem); overflow-y: auto;">
+                    <table  class="bg-white border table-auto w-full text-sm">
+                        <thead class="bg-gray-100 border ">
+                            <tr>
+                                <th class="px-4 py-3 text-left">Dokument</th>
+                                <th class="w-64">Ordner</th>
+                                <th class="w-64">Kategorie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="dokument in gewaehlteDokumente" class="border-b">
+                                <td class="px-4 py-3">
+                                    <InputText :value="dokument.uploadDateiname" width="text-sm w-full"/>
+                                </td>
+                                <td class="text-left px-4 py-3">
+                                    <InputSelect :options="ordner" :selected="dokument.ordner" width="w-full text-sm flex-shrink-0" />
+                                </td>
+                                <td class="text-left px-4 py-3">
+                                     <InputSelect :options="dokumentKategorien" :selected="dokument.kategorie" width="w-full text-sm flex-shrink-0" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  
+                  
+
+                </main>
+
+                <footer class="px-4 h-12">
+                    <div class="flex justify-end space-x-4">
+                        <button class="text-sm text-blue-600 hover:underline">Abbrechen</button>
+                        <button formmethod="dialog" class="bg-blue-700 text-white px-3 py-2">Hinzufügen</button>
+                    </div>
+                </footer>
+            </div>
+        </form>
+    </dialog>
 </template>

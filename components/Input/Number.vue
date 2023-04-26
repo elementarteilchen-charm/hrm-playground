@@ -9,7 +9,7 @@
 
 </script>
 <template>
-    <div v-if="label" class="grid self-start pt-2 text-sm text-gray-700 whitespace-nowrap">
+    <div v-if="label" class="grid self-start pt-2 text-sm  font-bold text-gray-700 whitespace-nowrap">
         {{label}}
     </div>
     <div class="w-full">

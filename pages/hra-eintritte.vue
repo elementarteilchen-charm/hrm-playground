@@ -12,7 +12,6 @@
         'Bankverbindung',
         'Familienangehörige',
         'Invalidität',
-        'Notfallkontakt',
     ];
   let topMenuItems = [
       {
@@ -20,14 +19,14 @@
         link: "hra-eintritte",
         active: true
       },
-      {
-        linkText: "Organisationsdaten",
-        link: "hra-organisationsdaten",
-        active: false
-      },
+      // {
+      //   linkText: "Organisationsdaten",
+      //   link: "hra-organisationsdaten",
+      //   active: false
+      // },
       {
         linkText: "Ausbildung",
-        link: "schulbildung",
+        link: "hra-ausbildung",
         active: false
       },
       {
