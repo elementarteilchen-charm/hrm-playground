@@ -19,9 +19,9 @@
           <InputText label="SozialversicherungsNr" value="1450" width="w-32"/>
           
         </div>
-        <div class="">
+       <!--  <div class="">
            <StammdatenNativerNameModal />
-        </div>
+        </div> -->
     </div>
   
   </LayoutFormSection>
