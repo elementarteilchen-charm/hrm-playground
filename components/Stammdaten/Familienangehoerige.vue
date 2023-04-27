@@ -89,9 +89,9 @@
                   
                     
                   <div class="mt-4 grid grid-cols-2 gap-4">
-                  <!--   <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
-                      <InputCheckbox label="Verstorben" checkboxLabel="Ja" />
-                    </div> -->
+                    <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
+                      <InputToggle label="Verstorben" checkboxLabel="Ja" />
+                    </div>
                     <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
                       <InputDate label="Sterbedatum"/>
                     </div>
