@@ -15,8 +15,8 @@ const options = ['a', 'b', 'c'];
                 <InputSelect label="Staatsangehörigkeit&nbsp;2" :options="['-','DE', 'PL']" width="w-4/5" />
             </div>
         </div>
-        <div class="grid lg:grid-cols-2 gap-4  mt-4">
-            <div class="col-start-2  grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">
+        <div class="grid_ lg:grid-cols-2 gap-4  mt-4">
+            <div class="grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">
                 <InputTextarea label="Bemerkung"  placeholder="Hier wird bei Änderung der Staatsangehörigkeit eine Bemerkung erfasst."/>
             </div>
         </div>

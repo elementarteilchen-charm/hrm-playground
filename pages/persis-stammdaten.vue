@@ -16,18 +16,6 @@
 
 	
 
-	// Organisationsstruktur;{'label': "Verrechnungsmandant:", 'type': "Text"},
-	// Organisationsstruktur;{'label': "Standort:", 'type': "Text"},
-	// Organisationsstruktur;{'label': "Abteilungsmandant Matator:", 'type': "Text"},
-	// Organisationsstruktur;{'label': "Abteilung:", 'type': "Text"},
-
-	// Stammdaten 3;{'label': "Mitarbeiter Kurzzeichen:", 'type': "Text"},
-	// Stammdaten 3;{'label': "E-Mail Büro:", 'type': "Text"},
-	// Stammdaten 3;{'label': "User ID:", 'type': "Text"},
-	// Stammdaten 3;{'label': "Durchwahl:", 'type': "Text"},
-	
-	// Stammdaten 3;{'label': "Notfallkontakt:", 'type': "Text"},
-
 </script>
 
 <template>

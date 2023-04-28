@@ -64,11 +64,6 @@
             <StammdatenAusbildung />
           </div>
         
-
-          <div class="p-2 mt-6 border-t flex justify-end space-x-4 items-center text-sm">
-            <a href="" class="text-blue-700 hover:underline">Abbrechen</a>
-            <button class="px-4 py-2 bg-blue-700 text-white hover:bg-blue-700">Speichern</button>
-          </div>
         </div>
 
       </main>

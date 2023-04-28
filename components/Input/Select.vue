@@ -22,3 +22,4 @@ let selectedOption = props.selected ? props.selected : props.options[0];
         </select>
     </div>
 </template>
+

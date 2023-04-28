@@ -90,7 +90,7 @@
                     
                   <div class="mt-4 grid grid-cols-2 gap-4">
                     <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
-                      <InputToggle label="Verstorben" checkboxLabel="Ja" />
+                      <InputCheckbox label="Verstorben" checkboxLabel="Ja" />
                     </div>
                     <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
                       <InputDate label="Sterbedatum"/>
@@ -108,6 +108,10 @@
                     <div class="border border-gray-400 rounded-md shadow-md w-48 h-12 bg-white p-4 flex space-x-2">
                         <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
                         <div @click="showUploadDialog" class="text-sm place-self-center">Upload Nachweis</div>
+                    </div>
+                    <div class="p-4">
+                      <p>Es ist bereits eine Datei vorhanden:</p>
+                      <a href="" class="text-blue-700 hover:underline">Heiratsurkunde.pdf</a> 
                     </div>
                   </div>
                   

@@ -19,3 +19,8 @@
             :placeholder="placeholder"></textarea>
     </div>
 </template>
+<style>
+    textarea::placeholder {
+        color: #ccc;
+    }
+</style>

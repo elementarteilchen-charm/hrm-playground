@@ -7,7 +7,7 @@
   
   <LayoutFormSection title="Name und Geburtsdatum">
     
-    <div class="grid lg:grid-cols-2 gap-4">
+    <div class="grid lg:grid-cols-1 gap-4">
         <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">
           <InputRadio label="Geschlecht" :options="['Weiblich','Männlich', 'Divers']" name="gender" width="w-48"/>
           <InputSelect label="Titel vor dem Namen" :options="['BA','Mag.', 'MSc.']" width="w-48"/>

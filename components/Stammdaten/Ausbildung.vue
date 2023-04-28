@@ -1,5 +1,7 @@
 <script setup>
   import { CheckCircleIcon, XCircleIcon, PencilIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' 
+
+  
 let schulen = [
   {
     schule: 'Fachhochschule',
