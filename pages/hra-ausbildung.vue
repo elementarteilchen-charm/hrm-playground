@@ -29,7 +29,9 @@
       }
     ];
   const tabs = [
-        'Ausbildung', 
+        'Schulbildung', 
+        'Sprachkenntnisse',
+        'Qualifikationen'
     ];
   const activeTab = reactive({ tab: tabs[0] });
 </script>

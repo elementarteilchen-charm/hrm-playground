@@ -105,17 +105,24 @@
                     <div class="mt-3  px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
                       <InputCheckbox label="Nachweis" checkboxLabel="vorhanden"/>
                     </div>
-                    <div class="border border-gray-400 rounded-md shadow-md w-48 h-12 bg-white p-4 flex space-x-2">
-                        <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
-                        <div @click="showUploadDialog" class="text-sm place-self-center">Upload Nachweis</div>
-                    </div>
-                    <div class="p-4">
-                      <p>Es ist bereits eine Datei vorhanden:</p>
-                      <a href="" class="text-blue-700 hover:underline">Heiratsurkunde.pdf</a> 
-                    </div>
+                    
                   </div>
-                  
 
+                  <section class="border-t mt-6 py-3">
+                    <h3 class="font-bold mb-2">Nachweisdokument</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="border border-gray-400 rounded-md shadow-md w-48 h-24 bg-white p-4 flex space-x-2">
+                          <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
+                          <div @click="showUploadDialog" class="text-sm place-self-center">Upload Nachweis</div>
+                      </div>
+                      <div class="p-4">
+                        <p>Für Babunek Peter ist bereits eine Datei vorhanden:</p>
+                        <a href="" class="text-blue-700 hover:underline">Heiratsurkunde.pdf</a> 
+                      </div>
+                      
+                    </div>
+                  </section>
+                
                 </main>
 
                 <footer class="px-4 h-12">

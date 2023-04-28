@@ -1,4 +1,5 @@
 <script setup>
+  import { CheckCircleIcon, XCircleIcon, PencilIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' 
 
 </script>
 
@@ -47,6 +48,20 @@
 
     </div>
   </LayoutFormSection>
+
+  <LayoutFormSection title="Dokumente">
+    <div class="grid grid-cols-2 gap-4">
+      <div class="border border-gray-300 rounded-md shadow-md w-48 h-24 bg-white p-4 flex space-x-2">
+          <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
+          <div @click="showUploadDialog" class="text-sm place-self-center">Upload</div>
+      </div>
+      <div class="p-4">
+        <p>Vorhandenes Dokument:</p>
+        <a href="" class="text-blue-700 hover:underline">MeldezettelBabunek.pdf</a> 
+      </div>
+    </div>
+  </LayoutFormSection>
+
 
   
 </template>
