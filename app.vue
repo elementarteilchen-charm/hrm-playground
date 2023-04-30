@@ -17,7 +17,7 @@
             </li>
             <li class="flex gap-2 items-center">
               <ChevronRightIcon class="w-4 h-4 text-blue-700"/>
-              <a href="/hra-eintritte" class="hover:underline text-blue-700">
+              <a href="/hra-stammdaten" class="hover:underline text-blue-700">
                 Eintritte</a>
             </li>
             <li class="flex gap-2 items-center">

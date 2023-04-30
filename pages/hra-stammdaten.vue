@@ -1,5 +1,5 @@
 <script setup>
-  import {ArrowRightCircleIcon, ArrowDownCircleIcon, BookmarkIcon, PlusCircleIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
+  import {ArrowRightCircleIcon, XCircleIcon, BookmarkIcon, PlusCircleIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 
   const tabs = [
         'Persönlich', 
@@ -37,18 +37,18 @@
               </li>
             </ul>
 
-            <button >
+            <button @click="showDialog" class="w-full">
             <div 
-              @click="showDialog"
+              
               class="mt-4 space-x-2 flex items-center text-gray-500 bg-gray-100 py-2 pl-4 
                 opacity-80 hover:opacity-100 hover:bg-gray-200 hover:text-gray-800 hover:cursor-pointer">
               <BookmarkIcon class="w-5 h-5" />
-              <div class="">Erinnerungen</div>
+              <div class="text-sm">Erinnerungen</div>
               <div class="rounded-full bg-red-600 text-white text-xs py-1 px-2">3</div>
             </div>
             </button>
 
-            <div class="mt-4 border_ border-b px-2 py-6 flex flex-col space-y-3">
+            <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
               <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
                 Speichern</a>
               <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
@@ -90,16 +90,59 @@
   
   </main>
 
-  <dialog id="erinnerungen-dialog">
-    <header>
-      Erinnerungen
-    </header>
-    <main>
-      Liste der Erinnerungen
-    </main>
-    <footer>
-      <button>Schließen</button>
-    </footer>
+  <dialog 
+        id="erinnerungen-dialog" 
+        class="modal-erinnerungen p-4 border rounded-lg bg-gray-200 " >
+    <form action="" method="dialog">
+      
+      <div class="grid grid-rows-[2rem_1fr_2rem]">
+        <header class="py-3 text-lg font-bold flex items-center justify-between">
+          <div>Erinnerungen</div>
+          <XCircleIcon class="w-6 h-6 text-gray-500" />
+        </header>
 
+        <main class="overflow-auto">
+          <table class="table-fixed text-sm">
+            <thead>
+              <tr>
+                <th>Erinnerung</th>
+                <th>Fällig bis</th>
+                <th>Erfasst von</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="erinnerung in erinnerungen">
+                <td class="px-2 py-1">{{erinnerung.erinnerung}}</td>
+                <td class="px-2 py-1">{{erinnerung.faelligDatum}}</td>
+                <td class="px-2 py-1">{{erinnerung.erstelltVon}}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </main>
+        <footer class=" bg-white">
+          <div class="flex items-center justify-end space-x-4">
+              <button class="text-sm text-blue-600 hover:underline">Abbrechen</button>
+              <button formmethod="dialog" class="bg-blue-700 text-white px-2 py-1">Hinzufügen</button>
+          </div>
+        </footer>  
+      </div>
+      
+    </form>
   </dialog>
 </template>
+
+<style>
+  dialog.modal-erinnerungen {
+    height: 20rem;
+    width: 66vw;
+    overflow-y: hidden;
+    /*left: 10vh;
+    top: calc(66vh - 2rem);*/
+  }
+  
+  
+  dialog.modal-erinnerungen::backdrop {
+      background: rgba(0.2, 0.2, 0.2, 0.3);
+  }
+</style>
