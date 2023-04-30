@@ -1,5 +1,9 @@
 <script setup>
-  import {ArrowRightCircleIcon, XCircleIcon, BookmarkIcon, PlusCircleIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
+  import {
+      UserIcon, UserGroupIcon, CalendarIcon,
+      CheckCircleIcon, XCircleIcon, 
+      BookmarkIcon, PlusCircleIcon, } 
+      from '@heroicons/vue/24/outline'
 
   const tabs = [
         'Persönlich', 
@@ -9,9 +13,14 @@
         'Invalidität',
     ];
   const activeTab = reactive({ tab: tabs[0] });
+  const addNewItem = ref(false);
 
   function  showDialog() {
     document.getElementById('erinnerungen-dialog').showModal();
+  }
+
+  function erinnerungLoeschen() {
+    alert('Wirklich löschen?')
   }
 </script>
 
@@ -81,8 +90,6 @@
           <div v-show="tabs[5] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenNotfallkontakt />
           </div>
-
-        
         </div>
 
       </main>
@@ -92,38 +99,88 @@
 
   <dialog 
         id="erinnerungen-dialog" 
-        class="modal-erinnerungen p-4 border rounded-lg bg-gray-200 " >
+        class="modal-erinnerungen border rounded-lg bg-gray-200 " 
+        style="height: 52vh; width: 66vw; overflow-y: hidden; ">
     <form action="" method="dialog">
       
-      <div class="grid grid-rows-[2rem_1fr_2rem]">
-        <header class="py-3 text-lg font-bold flex items-center justify-between">
-          <div>Erinnerungen</div>
-          <XCircleIcon class="w-6 h-6 text-gray-500" />
+      <div class="grid" :style="{'grid-template-rows: 7rem 1fr 2rem': addNewItem, 'grid-template-rows: 4rem 1fr 2rem': !addNewItem}">
+        
+        <header :class="{'h-12': !addNewItem, 'h-24': addNewItem}">
+          <div class="grid grid-cols-3">          
+            <h1 class="self-center py-2 font-bold text-lg">{{erinnerungen.length}} Erinnerungen</h1>
+            <!-- Nav -->
+            <div class="self-center flex justify-self-center justify-between w-36 gap-2 bg-white rounded-lg overflow-hidden">
+              <div @click="addNewItem = !addNewItem" class="p-2 hover:bg-green-600 hover:text-green-100" title="Neue Erinnerung">
+                <PlusCircleIcon class="w-6 h-6  " />
+              </div>
+              <div class="p-2 hover:bg-green-600 hover:text-green-100" title="Nur eigene Erinnerungen anzeigen">
+                <UserIcon class="w-6 h-6" />
+              </div>
+              <div class="p-2 hover:bg-green-600 hover:text-green-100" title="Alle Erinnerungen anzeigen">
+                <UserGroupIcon class="w-6 h-6" />
+              </div>
+            </div>
+            <div  class="self-center justify-self-end p-2 text-gray-700 bg-white hover:bg-red-600 hover:text-white rounded-lg">
+              <XCircleIcon class="w-6 h-6"/>
+            </div>
+          </div>  
+          <div v-if="addNewItem" class="py-2">
+            <div class="h-12_ flex items-center px-2 py-2 bg-green-100 rounded-lg gap-4 font-bold text-sm ">
+              <InputText name="neueErinnerung" width="w-full"/>
+              <InputDate name="faelligBis" width="text-sm"/>
+              <a href="">X</a>
+              <button>Speichern</button>
+            </div>
+          </div>
         </header>
 
-        <main class="overflow-auto">
-          <table class="table-fixed text-sm">
-            <thead>
-              <tr>
-                <th>Erinnerung</th>
-                <th>Fällig bis</th>
-                <th>Erfasst von</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="erinnerung in erinnerungen">
-                <td class="px-2 py-1">{{erinnerung.erinnerung}}</td>
-                <td class="px-2 py-1">{{erinnerung.faelligDatum}}</td>
-                <td class="px-2 py-1">{{erinnerung.erstelltVon}}</td>
-                
-              </tr>
-            </tbody>
-          </table>
+        <main class="overflow-auto" 
+              style="height: calc(50vh - 7rem);">
+          <div class="grid grid-cols-[3fr_auto_2fr] px-2 py-1 bg-white rounded-lg gap-4 font-bold text-sm ">
+            <div>Erinnerung</div>
+            <div class="w-7">&nbsp;</div>
+            <div class="grid grid-cols-2 items-center gap-4">
+              <div class="justify-self-center pr-6">Datum</div>
+              <div class="pl-4">Erfasst von</div>
+            </div>
+          </div>
+
+          <div  v-for="erinnerung, index in erinnerungen" 
+                class="mt-3 grid grid-cols-[3fr_auto_2fr] px-2 gap-4 text-sm">
+            <div class="self-center">
+              <div class="text-xs font-light text-gray-500">{{erinnerung.seite}}</div>
+              {{erinnerung.erinnerung}}
+            </div>
+            
+            <div class="self-center p-2 rounded-lg">
+              <InputCheckbox :name="erinnerung.erinnerung"/>
+            </div>
+
+            <!-- Action Section -->
+            <div class="grid grid-cols-2 items-center gap-4">
+              <div>
+                <div v-if="erinnerung.faelligDatum" class="flex" title="Datum ändern">
+                  <input type="date" id="faellig" class="py-1 px-0 bg-gray-200 border-none text-sm" :value="erinnerung.faelligDatum">
+                  <label class="self-center" for="faellig"><CalendarIcon class="w-5 h-5" /></label>
+                </div>
+                <div v-else  class="flex" title="Datum ändern">
+                  <input type="date" id="faellig" class="py-1 px-0 bg-gray-200 border-none text-sm" placeholder="nix">
+                  <label class="self-center" for="faellig"><CalendarIcon class="w-5 h-5" /></label>
+                </div>
+              </div>
+            
+              <div class="justify-self-start pl-4 text-sm font-light">
+                {{erinnerung.erstelltVon}}
+              </div>
+              
+            </div>
+          </div>
         </main>
-        <footer class=" bg-white">
+
+        <footer class="h-12 py-1">
           <div class="flex items-center justify-end space-x-4">
               <button class="text-sm text-blue-600 hover:underline">Abbrechen</button>
-              <button formmethod="dialog" class="bg-blue-700 text-white px-2 py-1">Hinzufügen</button>
+              <button formmethod="dialog" class="bg-blue-700 text-white px-2 py-1">Speichern</button>
           </div>
         </footer>  
       </div>
@@ -132,15 +189,7 @@
   </dialog>
 </template>
 
-<style>
-  dialog.modal-erinnerungen {
-    height: 20rem;
-    width: 66vw;
-    overflow-y: hidden;
-    /*left: 10vh;
-    top: calc(66vh - 2rem);*/
-  }
-  
+<style>  
   
   dialog.modal-erinnerungen::backdrop {
       background: rgba(0.2, 0.2, 0.2, 0.3);
