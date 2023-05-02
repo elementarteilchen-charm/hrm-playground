@@ -4,30 +4,6 @@
   import { PlusCircleIcon } from '@heroicons/vue/24/outline' 
   import { ChevronRightIcon } from '@heroicons/vue/24/outline' 
 
-  import { reactive } from 'vue'
-   let topMenuItems = [
-      {
-        linkText: "Stammdaten",
-        link: "hra-eintritte",
-        active: false
-      },
-
-      {
-        linkText: "Ausbildung",
-        link: "hra-ausbildung",
-        active: true
-      },
-      {
-        linkText: "Dokumente",
-        link: "hra-dokumente",
-        active: false
-      },
-      {
-        linkText: "Vertrag",
-        link: "vertragsdaten",
-        active: false
-      }
-    ];
   const tabs = [
         'Schulbildung', 
         'Sprachkenntnisse',
@@ -37,16 +13,13 @@
 </script>
 
 <template>
+  
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
     
     <EintretendePersonHeader vorname="Stephanie" anrede="Fr." nachname="Babunek"/>
+    <NavigationTopMenu :topMenuItems="topMenuItems" active="1"/>
     
-    <NavigationTopMenu :topMenuItems="topMenuItems" :activeMenuItem="topMenuItems[1]"/>
-  </main>
-
-  <main class="grid grid-rows-[auto_auto_auto] gap-8">
-    
-    <div class="bg-white border border-t-4 rounded overflow-hidden">
+    <div class="bg-white border border-t rounded overflow-hidden">
 
       <main class="grid lg:grid-cols-[10rem_1fr]">
 

@@ -79,7 +79,7 @@ function showConfirmation(msg, event) {
       Alle notwendigen Daten für die Personalverrechnung sind vorhanden:
     </p>
     <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">  
-      <InputCheckbox label="Fertig für Personalverrechnung" value="ja" width="w-64"/>
+      <InputCheckbox label="Fertig für Personalverrechnung" />
     </div>
   </LayoutFormSection>
 

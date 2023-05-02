@@ -1,19 +1,8 @@
 <script setup>
-  // dokumente, dokumentKategorien, ordner werden aus 
-  // dem 'utils' Verzeichnis auto-imported
 
   import { ArrowDownCircleIcon } from '@heroicons/vue/24/outline' 
   import { PlusCircleIcon } from '@heroicons/vue/24/outline' 
   import { CheckCircleIcon } from '@heroicons/vue/24/outline' 
-
-  import { reactive } from 'vue';
-
-  let topMenuItems = [
-      { linkText: "Stammdaten", link: "hra-eintritte", active: false },
-      { linkText: "Ausbildung", link: "schulbildung", active: false },
-      { linkText: "Dokumente", link: "hra-dokumente", active: true },
-      { linkText: "Vertrag", link: "vertragsdaten", active: false }
-    ];
 
   const tabs = [
         'Verwalten', 
@@ -25,17 +14,13 @@
 </script>
 
 <template>
-  <div class="text-sm text-blue-700 font-light mb-4 ml-4 ">
-    breadcrumb > breadcrumb
-  </div>
 
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
     
     <EintretendePersonHeader vorname="Stephanie" anrede="Fr." nachname="Babunek"/>
-    
-    <NavigationTopMenu :topMenuItems="topMenuItems" :activeMenuItem="topMenuItems[2]"/>
+    <NavigationTopMenu :topMenuItems="topMenuItems" active="2"/>
 
-    <div class="bg-white border border-t-4 border-t-gray-300 rounded overflow-hidden">
+    <div class="bg-white border border-t border-t-gray-300 rounded overflow-hidden">
   
       <main class="grid lg:grid-cols-[minmax(min-content,12rem)_1fr]">
             
