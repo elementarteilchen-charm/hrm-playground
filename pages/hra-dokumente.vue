@@ -18,7 +18,7 @@
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
     
     <EintretendePersonHeader vorname="Stephanie" anrede="Fr." nachname="Babunek"/>
-    <NavigationTopMenu :topMenuItems="topMenuItems" active="2"/>
+    <NavigationTopMenu :topMenuItems="topMenuItems" :active="2"/>
 
     <div class="bg-white border border-t border-t-gray-300 rounded overflow-hidden">
   
@@ -37,7 +37,7 @@
      
         <div class="px-4 py-6 border-l">
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenDokumenteVerwalten2 />
+            <DokumenteVerwalten />
           </div>
           <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenDokumenteUebernehmen />

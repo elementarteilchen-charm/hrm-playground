@@ -8,3 +8,4 @@ node_modules
 dist
 .DS_Store
 hrm-playground.sublime-workspace
+hrm-playground.sublime-project

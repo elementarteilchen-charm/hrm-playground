@@ -2,6 +2,7 @@
   import {
       UserIcon, UserGroupIcon, CalendarIcon,
       CheckCircleIcon, XCircleIcon, 
+      ClockIcon, PencilIcon,
       BookmarkIcon, PlusCircleIcon, } 
       from '@heroicons/vue/24/outline'
 
@@ -47,14 +48,13 @@
             </ul>
 
             <button @click="showDialog" class="w-full">
-            <div 
-              
-              class="mt-4 space-x-2 flex items-center text-gray-500 bg-gray-100 py-2 pl-4 
-                opacity-80 hover:opacity-100 hover:bg-gray-200 hover:text-gray-800 hover:cursor-pointer">
-              <BookmarkIcon class="w-5 h-5" />
-              <div class="text-sm">Erinnerungen</div>
-              <div class="rounded-full bg-red-600 text-white text-xs py-1 px-2">3</div>
-            </div>
+              <div  
+                class="mt-4 space-x-2 flex items-center text-gray-500 bg-gray-100 py-2 pl-4 
+                  opacity-80 hover:opacity-100 hover:bg-gray-200 hover:text-gray-800 hover:cursor-pointer">
+                <BookmarkIcon class="w-5 h-5" />
+                <div class="text-sm">Erinnerungen</div>
+                <div class="rounded-full bg-red-600 text-white text-xs py-1 px-2">3</div>
+              </div>
             </button>
 
             <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
@@ -68,6 +68,32 @@
         </div>
         
         <div class="px-4 py-4 border-l pb-12">
+          <section class="grid grid-cols-[auto_6rem] gap-2">
+            
+            <div class="flex items-center gap-2 bg-green-100 p-2">
+              <div >                
+                <div class="text-xs inline-flex items-center gap-1">
+                  <CalendarIcon class="w-4 h-4" /> <span>23.5.2023</span>
+                </div>
+                <div class="text-sm">
+                  Die IBAN fehlt noch. Neues Konto wird erst eingerichtet.
+                </div>
+              </div>
+              <div class="ml-auto flex gap-4">
+                <PencilIcon class="w-5 h-5" />
+                <CheckCircleIcon class="w-5 h-5" /> 
+              </div>
+            </div>
+            
+          <button @click="showDialog" class="ml-auto">
+            <div  
+              class=" space-x-2 flex items-center text-gray-500 bg-gray-100 py-2 px-4 
+                opacity-80 hover:opacity-100 hover:bg-gray-200 hover:text-gray-800 hover:cursor-pointer">
+              <BookmarkIcon class="w-5 h-5" />
+              <div class="rounded-full bg-red-600 text-white text-xs py-1 px-2">3</div>
+            </div>
+          </button>
+          </section>
 
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenPersoenlich />
