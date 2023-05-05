@@ -37,7 +37,7 @@
      
         <div class="px-4 py-6 border-l">
           <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <StammdatenDokumenteVerwalten />
+            <StammdatenDokumenteVerwalten2 />
           </div>
           <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenDokumenteUebernehmen />
