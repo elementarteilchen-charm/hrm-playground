@@ -5,8 +5,9 @@
   import { CheckCircleIcon } from '@heroicons/vue/24/outline' 
 
   const tabs = [
+        'Hinzufügen', 
         'Verwalten', 
-        'Übernehmen', 
+        // 'Dokumente hochladen', 
     ];
   
   const activeTab = reactive({ tab: tabs[0] });

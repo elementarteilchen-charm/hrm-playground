@@ -82,7 +82,7 @@ function showConfirmDelete()
         </table>
 
         <div class="mt-6 flex justify-end">
-            <button @click="showEditDialog" class="text-sm bg-blue-700 text-white px-2 py-1">Dokumente bearbeiten</button>
+            <button @click="showAddFileDialog" class="text-sm bg-blue-700 text-white px-2 py-1">Dokumente bearbeiten</button>
         </div>
     </div>
 
