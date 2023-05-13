@@ -1,20 +1,12 @@
 <script setup>
-    
     import {  PencilSquareIcon } from '@heroicons/vue/24/outline' ;
+    
+    const title = "Private Kontaktdaten";
 
-    const props = defineProps({
-        title: {type: String}, 
-        type: {type: String, default: ''},
-        buttonText: {type: String, default: 'Bearbeiten'},
-        buttonLink: {type: String, default: '#'}
-    });
+    function showDialog(dialogId) {
+        document.getElementById(dialogId).showModal();
+    }
 
-    // function showDialog(dialogId) {
-    //     document.getElementById(dialogId).showModal();
-    // }
-    // function closeDialog() {
-    //  document.getElementById('daten-dialog').showModal();   
-    // }
 </script>
 
 <template>
@@ -29,13 +21,24 @@
             </div>
         </header>
         <!-- Daten -->
-        <div class="px-4 py-1 text-sm"> 
-            <slot></slot>
+        <div class="px-4 py-2 text-sm"> 
+            <div class="grid grid-cols-2 gap-4">
+          <ul>
+            <li>Gauermannstraße 43/2</li>
+            <li>2542 Kottingbrunn</li>
+            <li>Österreich</li>
+            <li>—</li>
+          </ul>
+          <ul>
+            <li>jan.ehrenreich@gmx.at</li>
+            <li>+4366488458016</li>
+          </ul>
         </div>    
-        
+    </div>
     </div>
 
-    <!-- <dialog  :id="title"  class="shadow-lg p-0 bg-gray-200" style="width: 50vw; height: 50vh;">
+
+    <dialog  :id="title"  class="shadow-lg p-0 bg-gray-200" style="width: 50vw; height: 50vh;">
         <form action="" method="dialog" class="h-full">
             <div class="grid grid-rows-[auto_1fr_3rem] h-full">
             
@@ -45,23 +48,10 @@
                 
                 <main class="px-4 py-2" 
                     style="height: calc(100% + 1rem); overflow-y: auto;">
-
-                    <div class="space-y-3">
-                        <div>
-                            <label for="datum-von" class="block text-sm font-bold text-gray-700 mr-2">Feld 01</label> 
-                            <input type="text" 
-                                    class="text-sm border rounded py-1 px-2 w-4/5"
-                                    value="01.01.2003" name="datumVon" id="datum-von">
-                        </div>
-                    
-                        <div>
-                            <label for="datum-Bis" class="block text-sm font-bold text-gray-700 mr-2">Feld 02</label>
-                            <input type="text" 
-                                    class="text-sm border rounded py-1 px-2 w-4/5"
-                                    name="datumBis" id="datum-Bis">
-                        </div>
+                    <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">  
+                      <InputText label="Private Email:" value="jan.ehrenreich@gmx.at" width="w-4/5"/>
+                      <InputPhone label="Private Telefonnummer:" value="4366488458016" width="w-4/5"/>
                     </div>
-
                 </main>
 
                 <footer class="px-4 py-2 border-t bg-gray-100">
@@ -72,7 +62,7 @@
                 </footer>
             </div>
         </form>
-    </dialog> -->
+    </dialog>
 </template>
 
 <style>

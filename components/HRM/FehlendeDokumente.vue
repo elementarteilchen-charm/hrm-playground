@@ -1,6 +1,6 @@
 <script setup>
     
-    import {  PencilSquareIcon } from '@heroicons/vue/24/outline' ;
+    import {  PencilSquareIcon, DocumentIcon } from '@heroicons/vue/24/outline' ;
 
     const props = defineProps({
         dokumente: {type: Array, default: []},
@@ -28,9 +28,9 @@
         <!-- Daten -->
         <div class="px-4 py-3 text-sm"> 
             <slot></slot>
-            <li v-for="dok in dokumente" class="mb-2">
-                {{dok}}
-            </li>
+            <div v-for="dok in dokumente" class="mb-2 flex gap-2">
+                <DocumentIcon class="w-5 h-5"/> {{dok}}
+            </div>
         </div>
         <footer class="grid bg-yellow-200 py-2 px-4">
             <button class="place-self-center text-sm">Hochladen</button>
