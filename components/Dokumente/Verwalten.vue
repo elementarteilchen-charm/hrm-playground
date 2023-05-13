@@ -33,10 +33,10 @@ function onDrop(ev) {
 
 </script>
 <template>
-    <h3 class="text-lg font-bold text-gray-900 ">Dokumente im Eintrittsmanagement verwalten</h3>
+    <h3 class="text-lg font-bold text-gray-900 ">Dokumente verwalten</h3>
 
-    <div class="bg-gray-100 p-4 rounded mt-2">
-        <h3 class="font-bold text-gray-700 mb-1">Dokumente hinzufügen</h3>
+<!--     <div class="bg-gray-100 p-4 rounded mt-2">
+        <h3 class="font-bold text-gray-700 mb-1">Dokumente verwalten</h3>
         <p class="text-sm text-gray-700">Dokumente mit Drag&Drop hinzufügen oder mit Mausklick einen Dialog öffnen.</p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-8 mt-4">
@@ -49,11 +49,11 @@ function onDrop(ev) {
             </div>
         </div>
 
-    </div>
+    </div> -->
 
     <div  class="bg-gray-100 p-4 rounded ">
-        <h2 class="font-bold mb-2">Dokumente aus dem Bewerbermodul</h2>
-        <p class="font-light mb-4 text-sm">Ziehen Sie die Dokumente mit der Maus auf den passenden Ordner oben, um sie zu übernehmen.</p>
+        <!-- <h2 class="font-bold mb-2">Dokumente für Fr. Babunek Stephanie</h2>
+        <p class="font-light mb-4 text-sm"></p> -->
 
         <table v-if="editMode" class="bg-white border table-auto w-full text-sm">
             <thead class="bg-gray-100 border ">
