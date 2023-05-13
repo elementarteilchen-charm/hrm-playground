@@ -1,15 +1,13 @@
+<script setup>
+  const fehlendeDokumente = ['Meldezettel', 'Ausbildung Abschlusszeugnis']
+</script>
 <template>
-  <h1 class="text-xl font-bold">Meine Daten</h1>
+  <h1 class="text-3xl font-light mb-3">Meine Daten</h1>
   
-  <HRMProfilHeader />
+  <HRMProfilHeader :fehlendeDokumente="fehlendeDokumente"/>
   
   <div class="mt-8 grid grid-cols-2 gap-8">
-<!--     <DatenBox title="Fehlende Dokumente" type="alert">
-      <ul>
-        <li>2003 - 2009 WU Wien</li>
-        <li>1996 - 2002 BG BRG Baden</li>
-      </ul>
-    </DatenBox> -->
+
      <DatenBox title="Ausbildung" type="">
       <ul>
         <li>2003 - 2009 WU Wien</li>

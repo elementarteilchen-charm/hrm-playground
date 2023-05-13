@@ -3,6 +3,7 @@
     import {  PencilSquareIcon } from '@heroicons/vue/24/outline' ;
 
     const props = defineProps({
+        dokumente: {type: Array, default: []},
         title: {type: String}, 
         type: {type: String, default: ''},
         buttonText: {type: String, default: 'Bearbeiten'},
@@ -18,21 +19,22 @@
 </script>
 
 <template>
-    <div class="border border-gray-300 rounded_ _shadow bg-white pb-3">
-        <header class="pr-2 grid grid-cols-[1fr_2rem] gap-2 bg-gray-200" 
-                :class="{'bg-red-600 text-white': type === 'alert'}">
-            <h3 class="px-4 py-2 font-bold">
-                {{title}}
+    <div class="bg-yellow-300 grid grid-rows-[auto_1fr_auto] rounded overflow-hidden">
+        <header class="pr-2 bg-yellow-200  _border-b-2 border-b-yellow-100" >
+            <h3 class="text-sm px-4 py-2 font-bold">
+                Fehlende Dokumente und Informationen
             </h3>
-            <div @click="showDialog(title)" class="grid place-self-center hover:bg-blue-700 hover:text-white p-1">
-                <PencilSquareIcon class="w-5 h-5 " />
-            </div>
         </header>
         <!-- Daten -->
-        <div class="px-4 py-1 text-sm"> 
+        <div class="px-4 py-3 text-sm"> 
             <slot></slot>
-        </div>    
-        
+            <li v-for="dok in dokumente" class="mb-2">
+                {{dok}}
+            </li>
+        </div>
+        <footer class="grid bg-yellow-200 py-2 px-4">
+            <button class="place-self-center text-sm">Hochladen</button>
+        </footer>    
     </div>
 
     <dialog  :id="title"  class="shadow-lg p-0 bg-gray-200" style="width: 50vw; height: 50vh;">
