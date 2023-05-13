@@ -5,13 +5,12 @@
   import { CheckCircleIcon } from '@heroicons/vue/24/outline' 
 
   const tabs = [
-        'Verwalten', 
         'Hinzufügen', 
-        'Hinzufügen 2', 
-
+        'Verwalten', 
+        // 'Dokumente hochladen', 
     ];
   
-  const activeTab = reactive({ tab: tabs[2] });
+  const activeTab = reactive({ tab: tabs[0] });
   
 </script>
 
@@ -35,13 +34,6 @@
                   {{tab}}</a>
             </li>
           </ul>
-          
-          <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
-            <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
-              Speichern</a>
-            <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
-              Abbrechen</a>
-          </div>
         </nav>
      
         <div class="px-4 py-6 border-l">
@@ -49,13 +41,13 @@
             <DokumenteVerwalten />
           </div>
           <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <DokumenteHinzufuegen />
-          </div>
-          <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-            <DokumenteHinzufuegen02 />
+            <StammdatenDokumenteUebernehmen />
           </div>
 
-          
+          <div class="p-2 mt-8 flex justify-end space-x-4 items-center text-sm">
+            <a href="" class="text-blue-700 hover:underline">Abbrechen</a>
+            <button class="px-4 py-2 bg-blue-700 text-white hover:bg-blue-700">Speichern</button>
+          </div>
         </div>        
         
       </main>

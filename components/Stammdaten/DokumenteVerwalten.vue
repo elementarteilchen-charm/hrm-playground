@@ -2,64 +2,7 @@
 import { ordner, bewerberDokumente } from '~/utils/dokumente.js'
 import { FolderIcon, DocumentIcon, ArchiveBoxIcon, XCircleIcon } from '@heroicons/vue/24/outline'
 
-const gewaehlteDokumente = [
-    {
-          uploadDateiname: "Lebenslauf Babunek.pdf",
-          ordner: "01 Bewerbungen und Zeugnisse",
-          digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
-          kategorie: "Lebenslauf",
-          uebernehmen: true,
-      },
-      {
-          uploadDateiname: "Reisepass Babunek.pdf",
-          ordner: "05 Dokumente + Urkunden",
-          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
-          uebernehmen: true,
-          kategorie: "Reisepasskopie",
-      },
-      {
-          uploadDateiname: "Lebenslauf Babunek.pdf",
-          ordner: "01 Bewerbungen und Zeugnisse",
-          digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
-          kategorie: "Lebenslauf",
-          uebernehmen: true,
-      },
-      {
-          uploadDateiname: "Reisepass Babunek.pdf",
-          ordner: "05 Dokumente + Urkunden",
-          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
-          uebernehmen: true,
-          kategorie: "Reisepasskopie",
-      },
-      {
-          uploadDateiname: "Lebenslauf Babunek.pdf",
-          ordner: "01 Bewerbungen und Zeugnisse",
-          digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
-          kategorie: "Lebenslauf",
-          uebernehmen: true,
-      },
-      {
-          uploadDateiname: "Reisepass Babunek.pdf",
-          ordner: "05 Dokumente + Urkunden",
-          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
-          uebernehmen: true,
-          kategorie: "Reisepasskopie",
-      },
-      {
-          uploadDateiname: "Lebenslauf Babunek.pdf",
-          ordner: "01 Bewerbungen und Zeugnisse",
-          digitaleAkteDateiname: "2023-03-14 [ Lebenslauf Babunek ].pdf",
-          kategorie: "Lebenslauf",
-          uebernehmen: true,
-      },
-      {
-          uploadDateiname: "Reisepass Babunek.pdf",
-          ordner: "05 Dokumente + Urkunden",
-          digitaleAkteDateiname: "2023-03-14 [ Reisepass Babunek ].pdf",
-          uebernehmen: true,
-          kategorie: "Reisepasskopie",
-      },
-]
+
 
 const uploadOrdner = [
     '01 Bewerbungen und Zeugnisse', '02 Bewilligungen', '03 Verträge', '04 Infos + Beurteilungen', '05 Dokumente + Urkunden', '07 Diverses',]

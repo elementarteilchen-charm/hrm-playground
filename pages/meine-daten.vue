@@ -1,22 +1,35 @@
 <template>
   <h1 class="text-xl font-bold">Meine Daten</h1>
   
-  <div class="border bg-white grid lg:grid-cols-[12rem_1fr]">
-    
-    <div>
-      <img src="~/assets/img/avatar.png" alt="">
-    </div>
-    <div>
-      Datenblock
-    </div>  
-  </div>
+  <HRMProfilHeader />
   
-  <div class="mt-8 grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-    <DatenBox title="Ausbildung">
+  <div class="mt-8 grid grid-cols-2 gap-8">
+<!--     <DatenBox title="Fehlende Dokumente" type="alert">
       <ul>
         <li>2003 - 2009 WU Wien</li>
         <li>1996 - 2002 BG BRG Baden</li>
       </ul>
+    </DatenBox> -->
+     <DatenBox title="Ausbildung" type="">
+      <ul>
+        <li>2003 - 2009 WU Wien</li>
+        <li>1996 - 2002 BG BRG Baden</li>
+      </ul>
+    </DatenBox>
+    <DatenBox title="Private Kontaktdaten" buttonText="Daten bearbeiten">
+      <div class="grid grid-cols-2 gap-4">
+        <ul>
+          <li>Gauermannstraße 43/2</li>
+          <li>2542 Kottingbrunn</li>
+          <li>Österreich</li>
+          <li>+4366488458016</li>
+          <li>—</li>
+        </ul>
+        <ul>
+          <li>jan.ehrenreich@gmx.at</li>
+        </ul>
+        
+      </div>
     </DatenBox>
     <DatenBox title="KFZ Kennzeichen">
       <table class="table-fixed w-full mt-8 border" >
