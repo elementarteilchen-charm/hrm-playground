@@ -10,7 +10,7 @@
 </script>
 
 <template>
-    <div class="border border-gray-300 rounded_ _shadow bg-white pb-3">
+    <div class="border border-gray-300 bg-white pb-3">
         <header class="pr-2 grid grid-cols-[1fr_2rem] gap-2 bg-gray-200" 
                 :class="{'bg-red-600 text-white': type === 'alert'}">
             <h3 class="px-4 py-2 font-bold">
