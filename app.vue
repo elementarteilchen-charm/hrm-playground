@@ -61,9 +61,11 @@
         </nav>
       </div>
       
-      <div class="p-6  max-w-[1600px]  bg-gray-100" 
+      <div class="p-6    bg-gray-100" 
           style="height: calc(100vh - 4rem - 1rem); overflow-y: auto;">
-        <NuxtPage />
+          <div class="mx-auto container max-w-5xl">
+            <NuxtPage />
+          </div>
       </div>
 
     </div>
