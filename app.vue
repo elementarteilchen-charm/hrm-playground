@@ -13,7 +13,7 @@
       
       <div class="bg-Blaugrau-10 border-r">
         <nav class="p-6 text-sm">
-          <ul class="space-y-3">
+          <ul class="space-y-2">
             <li class="flex gap-2 items-center">
               <ChevronRightIcon class="w-4 h-4 text-blue-700"/>
               <a href="/" class="hover:underline text-blue-700">
@@ -29,12 +29,27 @@
               <a href="/" class="hover:underline text-blue-700">
                 Abwesenheiten</a>
             </li>
-            <li>
-              <hr>  
+            <li class="pt-4">
+              <span class="font-bold">Self Service</span>
             </li>
-            <li>
-              <a href="/meine-daten" class="hover:underline text-blue-700">
+            <li class="pl-4">
+              <a href="/hrm/personalabteilung-kontaktieren" class="hover:underline text-blue-700">
+                Personalabteilung kontaktieren
+              </a>
+            </li>
+            <li class="pl-4">
+              <a href="/hrm/meine-anfragen" class="hover:underline text-blue-700">
+                Meine Anfragen
+              </a>
+            </li>
+            <li class="pl-4">
+              <a href="/hrm/meine-daten" class="hover:underline text-blue-700">
                 Meine Daten
+              </a>
+            </li>
+            <li class="pl-4">
+              <a href="/hrm/downloads" class="hover:underline text-blue-700">
+                Downloads
               </a>
             </li>
 
@@ -47,7 +62,7 @@
         </nav>
       </div>
       
-      <div class="p-6  max-w-[1600px]  bg-white" 
+      <div class="max-w-[1600px]  bg-Blaugrau-10" 
           style="height: calc(100vh - 4rem - 1rem); overflow-y: auto;">
         <NuxtPage />
       </div>
