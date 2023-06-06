@@ -3,11 +3,15 @@
 </script>
 
 <template>
-  <div class="grid grid-rows-[4rem_1fr_1rem] h-screen">
-    <div class="bg-blue-700 text-white h-16">HRA</div>
-    <div class="grid grid-cols-[12rem_1fr] bg-white">
+  <div class="grid grid-rows-[55px_1fr_1rem] h-screen">
+    
+    <div class="bg-Mittelblau flex items-center h-[55px]">
+      <div class="pl-4 text-2xl place-self-center text-white uppercase">Walter Group HRA</div>
+    </div>
+    
+    <div class="grid grid-cols-[250px_1fr] bg-white">
       
-      <div class="bg-gray-200 border-r">
+      <div class="bg-Blaugrau-10 border-r">
         <nav class="p-6 text-sm">
           <ul class="space-y-3">
             <li class="flex gap-2 items-center">
@@ -43,7 +47,7 @@
         </nav>
       </div>
       
-      <div class="p-6  max-w-[1600px]  bg-gray-100" 
+      <div class="p-6  max-w-[1600px]  bg-white" 
           style="height: calc(100vh - 4rem - 1rem); overflow-y: auto;">
         <NuxtPage />
       </div>

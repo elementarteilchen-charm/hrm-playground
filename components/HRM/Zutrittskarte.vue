@@ -2,7 +2,7 @@
     import {  PencilSquareIcon } from '@heroicons/vue/24/outline' ;
     import { showDialog } from '/utils/modal.js'
     
-    const title = "KFZ Kennzeichen";
+    const title = "Zutrittskarte";
 
 </script>
 
@@ -19,13 +19,11 @@
         <!-- Daten -->
         <div class="px-4 py-2 text-sm"> 
             <div class="grid grid-cols-2 gap-4">
-          <ul>
-            <li>MD 3355 X</li>
-            <li>-</li>
-          </ul>
-
-        </div>    
-    </div>
+              <ul>
+                <li>Kartennummer: 12314576646843</li>
+              </ul>
+            </div>    
+        </div>
     </div>
 
     <LKWWDialog :title="title" >
