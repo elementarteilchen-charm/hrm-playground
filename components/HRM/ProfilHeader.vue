@@ -31,26 +31,8 @@
 	     	</div>
       </div>
 
-	    <HRMFehlendeDokumente :dokumente="fehlendeDokumente" />
+	    <!-- <HRMFehlendeDokumente :dokumente="fehlendeDokumente" /> -->
 	  </div>
 	    
-	    <!-- <div class="grid grid-cols-2 gap-6 bg-red-100">
-	     	
-	     	
-			<div class="text-sm">
-				<h2 class="font-bold text-gray-700">Meine beruflichen Kontaktdaten</h2>
-				<ul>
-					<li>Walter Business Park 1, 2400 Wr. Neudorf, AT</li>
-					<li>+43 2236 1234 56</li>
-					<li>—</li>
-					<li>ehrenreich@walter-group.com</li>
-				</ul>
-			</div> -->
-
-	     
-
-    <!-- <div class="flex justify-end">
-    	<button class="bg-blue-700 text-white px-3 py-2 text-sm">Daten ändern</button>
-    </div> -->
   </div>
 </template>

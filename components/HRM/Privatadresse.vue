@@ -1,8 +1,8 @@
 <script setup>
-    import {  PencilSquareIcon } from '@heroicons/vue/24/outline' ;
-    import {  EnvelopeIcon, PhoneIcon, HomeIcon, InformationCircleIcon, QuestionMarkCircleIcon} from '@heroicons/vue/24/outline' ;
+    import {  PencilSquareIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' ;
+    import {  HomeIcon, InformationCircleIcon, QuestionMarkCircleIcon} from '@heroicons/vue/24/outline' ;
     
-    const title = "Email und Telefon";
+    const title = "Adresse";
 
     function showDialog(dialogId) {
         document.getElementById(dialogId).showModal();
@@ -17,25 +17,24 @@
             <h3 class="px-4 py-2 text-lg font-bold">
                 {{title}}
             </h3>
-            <div class="px-4 flex gap-2">
-                <!-- <InformationCircleIcon class="w-4 h-4 text-orange-500"/>
-                <span class="text-xs text-orange-500">In Bearbeitung</span>
-                <QuestionMarkCircleIcon class="w-4 h-4 text-orange-500"/> -->
+            <div class="px-4 ">
+                <a href="/hrm/meine-anfragen" >
+                    <div class="flex gap-2">
+                        <span class="text-xs text-orange-500">In Bearbeitung</span>
+                        <QuestionMarkCircleIcon class="w-4 h-4 text-orange-500"/>
+                    </div></a>
             </div>
         </header>
         <!-- Daten -->
         <div class="px-4 py-2 text-sm"> 
             <div class="grid grid-cols-[1fr_auto] gap-4">
-                <div class="flex gap-2">
+                <div class="flex gap-2 pt-3">
+                    <HomeIcon class="w-5 h-5 " /> 
                     <ul>
-                        <li class="flex gap-2 pt-3">
-                            <EnvelopeIcon class="w-5 h-5 " /> 
-                            <span>jan.ehrenreich@gmx.at</span>
-                        </li>
-                        <li class="flex gap-2 pt-3">
-                            <PhoneIcon class="w-5 h-5 " /> 
-                            <span>+4366488458016</span>
-                        </li>
+                        <li>Gauermannstraße 43/2</li>
+                        <li>2542 Kottingbrunn</li>
+                        <li>Österreich</li>
+                        <li>—</li>
                     </ul>
                 </div>
                 <div @click="showDialog(title)" 
@@ -46,8 +45,8 @@
                             transition duration-300">
                     <PencilSquareIcon class="w-5 h-5 " />
                 </div>
-        </div>    
-    </div>
+            </div>
+        </div>
     </div>
 
 
@@ -62,8 +61,24 @@
                 <main class="px-4 py-2" 
                     style="height: calc(100% + 1rem); overflow-y: auto;">
                     <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">  
-                      <InputText label="Email:" value="jan.ehrenreich@gmx.at" width="w-4/5"/>
-                      <InputText label="Telefon:" value="+4366488458016" width="w-4/5"/>
+                      <InputText label="Straße:" value="Gauermannstraße 43/2" width="w-4/5"/>
+                      <InputText label="PLZ:" value="2542" width="w-4/5"/>
+                      <InputText label="Ort:" value="Kottingbrunn" width="w-4/5"/>
+                      <InputSelect label="Land:" :options="['AT', 'DE', 'SK']" width="w-4/5"/>
+                    
+                    
+                      <div class="font-bold text-sm text-gray-700">Nachweis:</div>
+                      <div class="flex gap-4">
+                        <div class="border border-gray-300 rounded-md w-32 h-12 bg-white p-4 flex space-x-2" style="box-shadow: rgba(50, 50, 50, 0.1) 0px 2px 4px 0px inset;">
+                            <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
+                            <div @click="showUploadDialog" class="text-sm place-self-center">Meldezettel</div>
+                        </div>
+                        <div class="p-4">
+                          <p>Bitte laden Sie einen Nachweis für Ihre neue Adresse hoch. </p>
+                        </div>
+                        
+                      </div>
+                    
                     </div>
                 </main>
 
