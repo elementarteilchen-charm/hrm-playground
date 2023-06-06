@@ -1,29 +1,31 @@
 <script setup>
     import {  PencilSquareIcon } from '@heroicons/vue/24/outline' ;
     import {  EnvelopeIcon, PhoneIcon, HomeIcon, InformationCircleIcon, QuestionMarkCircleIcon} from '@heroicons/vue/24/outline' ;
+    import { showDialog } from '/utils/modal.js'
     
     const title = "Email und Telefon";
-
-    function showDialog(dialogId) {
-        document.getElementById(dialogId).showModal();
-    }
-
+    const inBearbeitung = ref(false);
 </script>
 
 <template>
-    <div class="border border-gray-300 bg-white pb-3">
-        <header class="pr-2 grid grid-cols-[1fr_auto] gap-2 items-center" 
-                :class="{'bg-red-600 text-white': type === 'alert'}">
-            <h3 class="px-4 py-2 text-lg font-bold">
+    <div class="grid grid-rows-[auto_1fr_auto] border border-gray-300 bg-white">
+        
+        <header class="pr-2 grid grid-cols-[1fr_auto] gap-2 items-center bg-Blaugrau-10" >
+            <h3 class="px-4 py-2 font-bold" @click="inBearbeitung = !inBearbeitung">
                 {{title}}
             </h3>
-            <div class="px-4 flex gap-2">
-                <!-- <InformationCircleIcon class="w-4 h-4 text-orange-500"/>
-                <span class="text-xs text-orange-500">In Bearbeitung</span>
-                <QuestionMarkCircleIcon class="w-4 h-4 text-orange-500"/> -->
+            <div v-if="inBearbeitung" class="px-4">
+                <a href="/hrm/meine-anfragen">
+                    <div class="flex gap-2">
+                        <span class="text-xs text-orange-500">In Bearbeitung</span>
+                        <QuestionMarkCircleIcon class="w-4 h-4 text-orange-500" />
+                    </div>
+                </a>
             </div>
         </header>
+    
         <!-- Daten -->
+
         <div class="px-4 py-2 text-sm"> 
             <div class="grid grid-cols-[1fr_auto] gap-4">
                 <div class="flex gap-2">
@@ -46,8 +48,12 @@
                             transition duration-300">
                     <PencilSquareIcon class="w-5 h-5 " />
                 </div>
-        </div>    
-    </div>
+            </div>
+        </div>
+        <footer class="px-4 py-3 text-sm flex justify-end">
+            <!-- <a class="text-Mittelblau hover:underline flex gap-2" href="/hrm/personalabteilung-kontaktieren"> -->
+                <!-- <span>Adressänderung bekannt geben</span><ChevronRightIcon class="w-5 h-5"/></a> -->
+        </footer>
     </div>
 
 

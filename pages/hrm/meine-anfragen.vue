@@ -9,12 +9,9 @@
     </div>
     
     <div class="px-6">
-  
-      <HRMProfilHeader :fehlendeDokumente="fehlendeDokumente"/>
-      
+        
       <div class="mt-8 grid grid-cols-2 gap-8">
-        <HRMPrivateKontaktdaten />
-        Meine Anfragen
+        Liste meiner aktuellen Anfragen wo ich sehe was gerade in welchem Zustand ist.
       </div>
     </div>
   </div>

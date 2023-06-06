@@ -13,6 +13,7 @@
       
       <div class="mt-8 grid grid-cols-2 gap-8">
         <HRMPrivatadresse />
+        <HRMZutrittskarte />
         <HRMPrivateKontaktdaten />
         <!-- <HRMKFZKennzeichen />  -->
         <!-- <HRMQualifikationen />  -->

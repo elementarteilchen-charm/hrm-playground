@@ -35,6 +35,8 @@ module.exports = {
         'Dungelgrau-8': '#EFEFEF',
         'Blaugrau-25': '#DFE5E8',
         'Blaugrau-10': '#F2F4F6' ,
+        'Orange-10': '#FFE8CD',
+        'Gruen-10': '#CCEECC'
     },
     extend: {
       screens: {
@@ -44,5 +46,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
 }
