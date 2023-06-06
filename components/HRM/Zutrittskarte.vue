@@ -13,21 +13,27 @@
             <h3 class="px-4 py-2 font-bold" @click="inBearbeitung = !inBearbeitung">
                 {{title}}
             </h3>
-            <div v-if="inBearbeitung" class="px-4">
+           <!--  <div v-if="inBearbeitung" class="px-4">
                 <a href="/hrm/meine-anfragen">
                     <div class="flex gap-2">
                         <span class="text-xs text-orange-500">In Bearbeitung</span>
                         <QuestionMarkCircleIcon class="w-4 h-4 text-orange-500" />
                     </div>
                 </a>
-            </div>
-            <!-- <div @click="showDialog(title)" class="grid place-self-center hover:bg-blue-700 hover:text-white p-1">
-                <PencilSquareIcon class="w-5 h-5 " />
             </div> -->
+
         </header>
         
         <!-- Daten -->
-        <div class="px-4 py-3 text-sm">
+        <div class="px-4 py-3 text-sm space-y-3">
+            <div v-if="inBearbeitung" class="px-2 bg-Orange-10 h-8 flex items-center rounded hover:cursor-pointer">
+                    
+                <a class="flex justify-between flex-shrink-0 w-full" href="/hrm/meine-anfragen">
+                        <div class="text-sm text-orange-700">Der Vorgang ist in Bearbeitung</div>
+                        <QuestionMarkCircleIcon class="w-5 h-5 text-orange-700" />
+                </a>
+                    
+            </div>
             <div class="flex gap-2">
                 <CreditCardIcon class="w-5 h-5 " />
                 <span>Kartennummer: 12314576646843</span>
