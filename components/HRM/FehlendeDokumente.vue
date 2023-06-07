@@ -1,92 +1,48 @@
 <script setup>
-    
-    import {  PencilSquareIcon, DocumentIcon } from '@heroicons/vue/24/outline' ;
+    import { showDialog } from '/utils/modal.js'
+    import {    
+        QuestionMarkCircleIcon, CreditCardIcon, ChevronRightIcon, 
+        ArrowRightIcon, PencilSquareIcon, ArchiveBoxIcon, HomeIcon 
+    } from '@heroicons/vue/24/outline' ;
 
-    const props = defineProps({
-        dokumente: {type: Array, default: []},
-        title: {type: String}, 
-        type: {type: String, default: ''},
-        buttonText: {type: String, default: 'Bearbeiten'},
-        buttonLink: {type: String, default: '#'}
-    });
-
-    function showDialog(dialogId) {
-        document.getElementById(dialogId).showModal();
-    }
-    function closeDialog() {
-     document.getElementById('daten-dialog').showModal();   
-    }
+    const inBearbeitung = ref(false);
+    const title = "Fehlende Dokumente"
+    const buttonText = "Dokumente hochladen"
+    const dokumente = ['Reisepass Kopie', 'Abschlusszeugnis Uni', 'Notfallsanitäter Ausbildung'] 
 </script>
 
 <template>
-    <div class="bg-yellow-300 grid grid-rows-[auto_1fr_auto] rounded overflow-hidden">
-        <header class="pr-2 bg-yellow-200  _border-b-2 border-b-yellow-100" >
-            <h3 class="text-sm px-4 py-2 font-bold">
-                Fehlende Dokumente und Informationen
-            </h3>
-        </header>
-        <!-- Daten -->
-        <div class="px-4 py-3 text-sm"> 
-            <slot></slot>
-            <div v-for="dok in dokumente" class="mb-2 flex gap-2">
-                <DocumentIcon class="w-5 h-5"/> {{dok}}
-            </div>
-        </div>
-        <footer class="grid bg-yellow-200 py-2 px-4">
-            <button class="place-self-center text-sm">Hochladen</button>
-        </footer>    
-    </div>
-
-    <dialog  :id="title"  class="shadow-lg p-0 bg-gray-200" style="width: 50vw; height: 50vh;">
-        <form action="" method="dialog" class="h-full">
-            <div class="grid grid-rows-[auto_1fr_3rem] h-full">
+    <div class="col-span-2"> <!-- Die Box soll über die volle Breite gehen -->
+        <div class="grid grid-rows-[auto_1fr_auto] border border-gray-300 bg-white shadow-md">
             
-                <header class="px-4 py-3 text-lg">
-                    {{title}} bearbeiten
-                </header>
-                
-                <main class="px-4 py-2" 
-                    style="height: calc(100% + 1rem); overflow-y: auto;">
-
-                    <div class="space-y-3">
-                        <div>
-                            <label for="datum-von" class="block text-sm font-bold text-gray-700 mr-2">Feld 01</label> 
-                            <input type="text" 
-                                    class="text-sm border rounded py-1 px-2 w-4/5"
-                                    value="01.01.2003" name="datumVon" id="datum-von">
-                        </div>
-                    
-                        <div>
-                            <label for="datum-Bis" class="block text-sm font-bold text-gray-700 mr-2">Feld 02</label>
-                            <input type="text" 
-                                    class="text-sm border rounded py-1 px-2 w-4/5"
-                                    name="datumBis" id="datum-Bis">
-                        </div>
-                    </div>
-
-                </main>
-
-                <footer class="px-4 py-2 border-t bg-gray-100">
-                        <div class="flex justify-end space-x-4">
-                            <button class="text-sm text-blue-600 hover:underline">Schließen</button>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-2 py-1 rounded">Speichern</button>
-                        </div>
-                </footer>
+            <header class="pr-2  text-white bg-red-500" >
+                <h3 class="px-4 py-2 font-bold" @click="inBearbeitung = !inBearbeitung">
+                    {{title}}
+                </h3>
+            </header>
+            
+            <!-- Daten -->
+            
+            <div class="px-4 py-4 text-sm">
+                <div v-if="inBearbeitung" class="px-2 bg-Orange-10 h-8 flex items-center rounded hover:cursor-pointer">
+                    <a class="flex justify-between flex-shrink-0 w-full" href="/hrm/meine-anfragen">
+                            <div class="text-sm text-orange-700">Der Vorgang ist in Bearbeitung</div>
+                            <QuestionMarkCircleIcon class="w-5 h-5 text-orange-700" />
+                    </a>  
+                </div>
+                <div v-for="dok in dokumente" class="mb-2 flex gap-2">
+                    <DocumentIcon class="w-5 h-5"/> {{dok}}
+                </div>
             </div>
-        </form>
-    </dialog>
+
+            <footer class="px-4 py-4 text-sm flex justify-start">
+                <a v-if="buttonText" class="text-Mittelblau font-bold hover:underline flex gap-1" href="/hrm/personalabteilung-kontaktieren">
+                    <span>{{buttonText}}</span><ChevronRightIcon class="w-5 h-5"/></a>
+            </footer>
+        </div>
+    </div>
 </template>
 
 <style>
-    dialog.daten-dialog {
-        width: 60vw;
-        max-width: 1200px;
-        height: 80vh;
-        max-height: 640px;
-        min-height: 32rem;
-    }
 
-    dialog::backdrop {
-      background: rgba(0.2,0.2,0.2, 0.4);  
-    } 
 </style>

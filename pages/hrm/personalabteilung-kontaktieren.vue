@@ -26,9 +26,9 @@ import { QuestionMarkCircleIcon, InformationCircleIcon, ChevronRightIcon, ArrowR
                     </select>
                 </div>
                 
-                <!-- Hinweistext -->
-                <div class="flex mt-8 w-3/4">
-                    <div class="bg-Dungelgrau-8 py-3 px-4 w-full shadow-lg rounded-lg overflow-hidden  border">
+            <!-- Hinweistext -->
+                <div class="flex justify-between w-3/4 bg-Dungelgrau-8 shadow-lg rounded border">
+                    <div class=" py-3 px-4">
                         <article class="prose prose-sm">
                             <p><b>Anleitung für Wohnsitz in Österreich</b></p>
                             <ul>
@@ -51,12 +51,9 @@ import { QuestionMarkCircleIcon, InformationCircleIcon, ChevronRightIcon, ArrowR
                         </article>
                     </div>
 
-                    <div>
-                        <div class="bg-Gruen-10 px-4 rounded-r-xl drop-shadow-lg h-12 flex items-center">
-                            <InformationCircleIcon class="w-8 h-8" />
-                        </div>
-                    </div>
+                    <InformationCircleIcon class="w-5 h-5 mr-4 my-3 flex-shrink-0 text-Dunkelgrau" />
                 </div>
+            <!-- EIngabefelder -->
                 <div>
                     <div>
                         <label class="block text-sm font-bold">Ihre Nachricht</label>

@@ -16,7 +16,7 @@
 	            <div class="grid grid-rows-[auto_1fr_3rem] h-full">
 	        
 	                <header class="px-6 py-6 text-xl text-Blaugrau flex justify-between">
-	                    <div>{{title}} bearbeiten</div>
+	                    <div>{{title}}</div>
 	                    <div>
 	                        <button><XCircleIcon class="w-6 h-6" /></button>
 	                    </div>
