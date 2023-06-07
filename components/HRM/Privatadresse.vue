@@ -8,7 +8,7 @@
 </script>
 <template>
     
-    <div class="grid grid-rows-[auto_1fr_auto] border border-gray-300 bg-white">
+    <div class="grid grid-rows-[auto_1fr_auto] border border-gray-200 bg-white shadow-md">
         
         <header class="pr-2 grid grid-cols-[1fr_auto] gap-2 items-center bg-Blaugrau-10" >
             <h3 class="px-4 py-2 font-bold" @click="inBearbeitung = !inBearbeitung">
@@ -47,8 +47,8 @@
             </div>
         </div>
 
-        <footer class="px-4 py-3 text-sm flex justify-end">
-            <a class="text-Mittelblau hover:underline flex gap-2" href="/hrm/personalabteilung-kontaktieren">
+        <footer class="px-4 py-4 text-sm flex justify-start">
+            <a class="text-Mittelblau font-bold hover:underline flex gap-1" href="/hrm/personalabteilung-kontaktieren">
                 <span>Adressänderung bekannt geben</span><ChevronRightIcon class="w-5 h-5"/></a>
         </footer>
     </div>

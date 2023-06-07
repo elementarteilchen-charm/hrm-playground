@@ -7,5 +7,4 @@ node_modules
 .env
 dist
 .DS_Store
-hrm-playground.sublime-workspace
-hrm-playground.sublime-project
+hrm-playground.sublime-*
