@@ -9,9 +9,11 @@
     </div>
     
     <div class="px-6">
-      <HRMProfilHeader :fehlendeDokumente="fehlendeDokumente"/>
+      <HRMProfilHeader/>
       
       <div class="mt-8 grid grid-cols-2 gap-8">
+        <HRMFehlendeDokumente />
+
         <HRMPrivatadresse />
         <HRMZutrittskarte />
         <HRMPrivateKontaktdaten />

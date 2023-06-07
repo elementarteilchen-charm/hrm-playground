@@ -28,7 +28,7 @@
         <!-- Daten -->
         
         <div class="px-4 py-4 text-sm">
-            <div v-if="inBearbeitung" class="px-2 bg-Orange-10 h-8 flex items-center rounded hover:cursor-pointer">
+            <div v-if="inBearbeitung" class="px-2 mb-3 bg-Orange-10 h-8 flex items-center rounded hover:cursor-pointer">
                 <a class="flex justify-between flex-shrink-0 w-full" href="/hrm/meine-anfragen">
                         <div class="text-sm text-orange-700">Der Vorgang ist in Bearbeitung</div>
                         <QuestionMarkCircleIcon class="w-5 h-5 text-orange-700" />
