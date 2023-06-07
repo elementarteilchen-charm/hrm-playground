@@ -14,5 +14,9 @@ export  const topMenuItems = [
       {
         linkText: "Vertrag",
         link: "hra-vertragsdaten",
+      },
+      {
+        linkText: "Zusammenfassung",
+        link: "/hra/zusammenfassung",
       }
     ];

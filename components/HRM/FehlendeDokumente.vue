@@ -1,14 +1,31 @@
 <script setup>
     import { showDialog } from '/utils/modal.js'
     import {    
-        QuestionMarkCircleIcon, CreditCardIcon, ChevronRightIcon, 
-        ArrowRightIcon, PencilSquareIcon, ArchiveBoxIcon, HomeIcon 
+        QuestionMarkCircleIcon, CreditCardIcon, ChevronRightIcon, ChevronDownIcon, CloudArrowUpIcon,
+        ArrowRightIcon, PencilSquareIcon, ArchiveBoxIcon, HomeIcon, DocumentIcon
     } from '@heroicons/vue/24/outline' ;
 
     const inBearbeitung = ref(false);
+    const showDocumentUpload = ref(false);
     const title = "Fehlende Dokumente"
-    const buttonText = "Dokumente hochladen"
-    const dokumente = ['Reisepass Kopie', 'Abschlusszeugnis Uni', 'Notfallsanitäter Ausbildung'] 
+    // const buttonText = "Dokumente hochladen"
+    const dokumente = ref([
+            {
+                name: 'Reisepass Kopie', 
+                hinweis: 'Bitte laden Sie ein Foto Ihres Reisepasses hoch. Überprüfen Sie ob der ihr Vorname und Nachname gut lesbar sind.',
+                sichtbar: false
+            },
+            {
+                name: 'Abschlusszeugnis Uni', 
+                hinweis: 'Es genügt das Abschlusszeugnis (Bak, Master, Magister) mit Ihrem Namen und dem Stempel der Hochschule.',
+                sichtbar: false
+            },
+            {
+                name: 'Notfallsanitäter Ausbildung',
+                sichtbar: false,
+                hinweis: "Auf der Bestätigung / dem Zeugnis muss Ihr Name und der Name der Ausbildungsstätte sichtbar sein."
+            }
+        ])
 </script>
 
 <template>
@@ -23,15 +40,43 @@
             
             <!-- Daten -->
             
-            <div class="px-4 py-4 text-sm">
-                <div v-if="inBearbeitung" class="px-2 bg-Orange-10 h-8 flex items-center rounded hover:cursor-pointer">
-                    <a class="flex justify-between flex-shrink-0 w-full" href="/hrm/meine-anfragen">
-                            <div class="text-sm text-orange-700">Der Vorgang ist in Bearbeitung</div>
-                            <QuestionMarkCircleIcon class="w-5 h-5 text-orange-700" />
-                    </a>  
-                </div>
-                <div v-for="dok in dokumente" class="mb-2 flex gap-2">
-                    <DocumentIcon class="w-5 h-5"/> {{dok}}
+            <div class="px-4 py-4">
+                <h3 class="font-bold text-lg">Angeforderte Dokumente hochladen</h3>
+                <p class="mb-3">
+                    Bitte laden Sie folgende Dokumente schnellstmöglich hoch.
+                </p>
+
+                <div v-for="dok in dokumente" class="mb-3">
+                    <div @click="dok.sichtbar = !dok.sichtbar" 
+                        :class="{
+                            'bg-Blaugrau-10 border-gray-200 border-x': dok.sichtbar,
+                            'border-transparent': !dok.sichtbar
+                        }"
+                        class="border" >
+                        <div class="flex items-center gap-2 hover:cursor-pointer text-Mittelblau p-2 hover:bg-Blaugrau-10">
+                             <div class="grid hover:text-Hellblau hover:bg-Blaugrau-25 text-Mittelblau">
+                                <CloudArrowUpIcon class="w-5 h-5 place-self-center"/>     
+                             </div>
+                             <span>{{dok.name}}</span>
+                        </div>
+                    </div>
+
+                    <div v-if="dok.sichtbar" class="border-l border-r border-b bg-Blaugrau-10 py-3 px-6">
+                        <p class="my-3 text-Blaugrau text-sm">{{dok.hinweis}}</p>
+                        <div class="mt-6 border shadow-inner h-12 flex items-center justify-center bg-white">
+                            <label for="dokupload" class="flex items-center justify-center gap-4 text-Mittelgrau">
+                                <CloudArrowUpIcon class="w-5 h-5"/>
+                                <span class="text-sm">Dateien zum Hochladen hierher ziehen (max. 5 MB)</span>
+                            </label>
+                            <input id="dokupload" class="hidden" type="file">
+                            
+                        </div>
+                        <div class="mt-6 flex justify-end items-center gap-8">
+                            <a href="" class="text-Mittelblau font-bold hover:underline">Abbrechen</a>
+                            <a href="" class="px-3 py-2 text-white bg-Mittelblau font-bold">Speichern</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

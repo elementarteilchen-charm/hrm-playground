@@ -8,7 +8,7 @@
 
   <LayoutFormSection title="Kontaktdaten">
     <div class="grid lg:grid-cols-2 gap-4">
-        <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] items-baseline gap-2">  
+        <div class=" grid grid-cols-[minmax(12rem,min-content)_1fr] items-baseline gap-2">  
           <InputText label="Mobilnummer:" value="+43 664 355 8894" width="w-64"/>
           <InputText label="Telefon:" value="" width="w-64"/>
           <InputText label="E-Mail:" value="steph89@gmail.com" width="w-64"/>
