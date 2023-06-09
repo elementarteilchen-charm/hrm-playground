@@ -3,6 +3,8 @@
     
     const props = defineProps({
         title: {type: String, default: ''}, 
+        width: {type: String, default: '50vw'},
+        height: {type: String, default: '50vh'}
     })
 
 
@@ -10,7 +12,7 @@
 <template>
 	<dialog :id="title"  
 	        class="shadow-lg p-0 bg-Blaugrau-10" 
-	        style="width: 50vw; height: 50vh;">
+	        :style="'width: ' + width + '; height: ' + height +';'">
 
 	        <form action="" method="dialog" class="h-full">
 	            <div class="grid grid-rows-[auto_1fr_3rem] h-full">
