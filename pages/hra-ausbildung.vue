@@ -17,7 +17,7 @@
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
     
     <EintretendePersonHeader vorname="Stephanie" anrede="Fr." nachname="Babunek"/>
-    <NavigationTopMenu :topMenuItems="topMenuItems" active="1"/>
+    <NavigationTopMenu :topMenuItems="topMenuItems" :active="1"/>
     
     <div class="bg-white border border-t rounded overflow-hidden">
 
