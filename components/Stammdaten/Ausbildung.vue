@@ -1,6 +1,6 @@
 <script setup>
   import { showDialog } from '/utils/modal.js'
-  import { CheckCircleIcon, XCircleIcon, PencilIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' 
+  import { MagnifyingGlassIcon, XCircleIcon, PencilIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' 
   
   const title ="Ausbildung"
 
@@ -11,12 +11,12 @@
       document.getElementById('ausbildung-dialog').showModal(); 
   }
 
+  const showSearchbox = ref(true)
   const gewaehlterSchultyp = ref()
   const gewaehlteSchule = ref()
   const gesuchterSchultyp = ref()
   const gesuchtePLZ = ref()
   const gesuchterOrt = ref()
-  let suchergebnis = schuldaten
 
   const updateSuchergebnis = computed(() => {
     let reSchultyp = new RegExp(gesuchterSchultyp.value,'i')
@@ -29,19 +29,15 @@
   })
 
   const schulenDesSchultyps = computed(() => {
-    suchergebnis = schuldaten.filter(schule => schule.schultyp == gewaehlterSchultyp.value)
     return schuldaten.filter(schule => schule.schultyp == gewaehlterSchultyp.value)
   })
 
   const schulenMitPLZ = computed(() => {
       let re = new RegExp("^" + gesuchtePLZ.value)
-      return suchergebnis.filter(schule => re.test(schule.plz))
       return schuldaten.filter(schule => re.test(schule.plz))
   })
 
   const schulenMitOrt = computed(() => {
-      if (gesuchterOrt.value == '')
-          return
       let re = new RegExp(gesuchterOrt.value, 'i')
       return schuldaten.filter(schule => re.test(schule.ort))
   })
@@ -96,36 +92,40 @@
   </div>
 
   <LKWWDialog :title="title" width="92vw" height="80vh">
-      <fieldset class="border rounded-sm px-3 py-3 mt-3 ">
-        <legend class="font-light text-blue-600 text-lg">Suche</legend>
+      <div  @click="showSearchbox = !showSearchbox"
+                class="flex items-center gap-2 w-24 cursor-pointer bg-Mittelblau hover:bg-Hellblau text-white text-sm font-bold px-4 py-2">
+            <MagnifyingGlassIcon class="w-5 h-5"/>Suche
+      </div>
+      <div class=" ">
+        <div class="grid grid-cols-4 gap-4 items-center" :class="{'hidden_': showSearchbox}">
+        
 
-        <div class="grid grid-cols-4 gap-4">
-
-          <div class="text-sm">
+          <div class="text-sm" :class="{'hidden': showSearchbox}">
             <label for="gesuchterSchultyp" class="font-bold block">Schultyp</label>
             <input type="search" list="schultypenListe" id="gesuchterSchultyp" v-model="gesuchterSchultyp" placeholder="AHS, Fachhochschule, ..." class="w-full text-sm p-1 form-input border-gray-300 rounded"> 
           </div>
 
-          <div class="text-sm">
+          <div class="text-sm" :class="{'hidden': showSearchbox}">
             <label for="gesuchtePLZ" class="font-bold block">PLZ</label>
-            <input type="text" id="gesuchtePLZ" v-model="gesuchtePLZ" class="w-full text-sm p-1 form-input border-gray-300 rounded"> <br>
-            
+            <input type="search" id="gesuchtePLZ" v-model="gesuchtePLZ" class="w-full text-sm p-1 form-input border-gray-300 rounded">
           </div>
-          <div class="text-sm">
+          <div class="text-sm" :class="{'hidden': showSearchbox}">
             <label for="gesuchterOrt" class="font-bold block">Ort</label>
-            <input type="text" id="gesuchterOrt" v-model="gesuchterOrt" class="w-full text-sm p-1 form-input border-gray-300 rounded">
+            <input type="search" id="gesuchterOrt" v-model="gesuchterOrt" class="w-full text-sm p-1 form-input border-gray-300 rounded">
           </div>
+
         </div>
-        <div>
+        
+        <div :class="{'hidden': showSearchbox}">
             <div class="text-Mittelblau font-bold my-3">Suchergebnis</div>
-            <div class="h-32 overflow-auto text-clip text-sm">
+            <div class="h-32 overflow-auto text-clip text-sm bg-white p-3 space-y-1">
               <li v-for="schule in updateSuchergebnis">
-                {{schule.schultyp}} - {{schule.plz}} {{schule.ort}}, {{schule.strasse}}
+                <a class="hover:underline text-Mittelblau" href="">{{schule.schultyp}} - {{schule.plz}} {{schule.ort}}, {{schule.strasse}}</a>
               </li>
             </div>
         </div>
       
-      </fieldset>
+      </div>
 
       
       <fieldset class="border rounded-sm px-3 py-3 mt-3 ">
