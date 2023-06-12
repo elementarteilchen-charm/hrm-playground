@@ -1,6 +1,6 @@
 <script setup>
   import { showDialog } from '/utils/modal.js'
-  import { MagnifyingGlassIcon, XCircleIcon, PencilIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' 
+  import { MagnifyingGlassIcon, CheckCircleIcon, XCircleIcon, PencilIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' 
   
   const title ="Ausbildung"
 
@@ -12,35 +12,34 @@
   }
 
   const showSearchbox = ref(true)
-  const gewaehlterSchultyp = ref()
-  const gewaehlteSchule = ref()
+  const gesuchteSchule = ref()
   const gesuchterSchultyp = ref()
   const gesuchtePLZ = ref()
   const gesuchterOrt = ref()
 
+  
   const updateSuchergebnis = computed(() => {
-    let reSchultyp = new RegExp(gesuchterSchultyp.value,'i')
+  
     let rePlz = new RegExp("^" + gesuchtePLZ.value)
+    let reSchultyp = new RegExp(gesuchterSchultyp.value,'i')
     let reOrt = new RegExp(gesuchterOrt.value, 'i')
+    let result = schuldaten
+
+    if (gesuchterSchultyp != undefined)
+      result = result.filter(schule => reSchultyp.test(schule.Schultyp))
+    if (gesuchtePLZ != undefined)
+      result = result.filter(schule => rePlz.test(schule.Postleitzahl))
+    if (gesuchterOrt != undefined)
+      result = result.filter(schule => reOrt.test(schule.Ort))
+    return result 
+
+    // Alternativ
     return schuldaten
-              .filter(schule => reSchultyp.test(schule.schultyp))
-              .filter(schule => rePlz.test(schule.plz))
-              .filter(schule => reOrt.test(schule.ort))
+              .filter(schule => reOrt.test(schule.Ort))
+              .filter(schule => reSchultyp.test(schule.Schultyp))
+              .filter(schule => rePlz.test(schule.Postleitzahl))
   })
 
-  const schulenDesSchultyps = computed(() => {
-    return schuldaten.filter(schule => schule.schultyp == gewaehlterSchultyp.value)
-  })
-
-  const schulenMitPLZ = computed(() => {
-      let re = new RegExp("^" + gesuchtePLZ.value)
-      return schuldaten.filter(schule => re.test(schule.plz))
-  })
-
-  const schulenMitOrt = computed(() => {
-      let re = new RegExp(gesuchterOrt.value, 'i')
-      return schuldaten.filter(schule => re.test(schule.ort))
-  })
 
 </script>
 
@@ -97,30 +96,32 @@
             <MagnifyingGlassIcon class="w-5 h-5"/>Suche
       </div>
       <div class=" ">
-        <div class="grid grid-cols-4 gap-4 items-center" :class="{'hidden_': showSearchbox}">
+        <div class="grid grid-cols-4 gap-4 items-center">
         
 
           <div class="text-sm" :class="{'hidden': showSearchbox}">
-            <label for="gesuchterSchultyp" class="font-bold block">Schultyp</label>
-            <input type="search" list="schultypenListe" id="gesuchterSchultyp" v-model="gesuchterSchultyp" placeholder="AHS, Fachhochschule, ..." class="w-full text-sm p-1 form-input border-gray-300 rounded"> 
+            <label for="gesuchterSchultyp_" class="font-bold block">Schultyp</label>
+            <input type="search" list="schultypenListe" id="gesuchterSchultyp_" v-model="gesuchterSchultyp" placeholder="AHS, Fachhochschule, ..." class="w-full text-sm p-1 form-input border-gray-300 rounded"> 
           </div>
 
           <div class="text-sm" :class="{'hidden': showSearchbox}">
             <label for="gesuchtePLZ" class="font-bold block">PLZ</label>
-            <input type="search" id="gesuchtePLZ" v-model="gesuchtePLZ" class="w-full text-sm p-1 form-input border-gray-300 rounded">
+            <input type="search"  id="gesuchtePLZ" v-model="gesuchtePLZ" class="w-full text-sm p-1 form-input border-gray-300 rounded">
+  
           </div>
           <div class="text-sm" :class="{'hidden': showSearchbox}">
             <label for="gesuchterOrt" class="font-bold block">Ort</label>
-            <input type="search" id="gesuchterOrt" v-model="gesuchterOrt" class="w-full text-sm p-1 form-input border-gray-300 rounded">
+            <input type="search" list="schulOrtListe" id="gesuchterOrt" v-model="gesuchterOrt" class="w-full text-sm p-1 form-input border-gray-300 rounded">
           </div>
-
         </div>
+
         
         <div :class="{'hidden': showSearchbox}">
             <div class="text-Mittelblau font-bold my-3">Suchergebnis</div>
             <div class="h-32 overflow-auto text-clip text-sm bg-white p-3 space-y-1">
               <li v-for="schule in updateSuchergebnis">
-                <a class="hover:underline text-Mittelblau" href="">{{schule.schultyp}} - {{schule.plz}} {{schule.ort}}, {{schule.strasse}}</a>
+                <a class="hover:underline text-Mittelblau" href="">
+                {{schule.Schultyp}} - {{schule.Postleitzahl}} {{schule.Ort}}, {{schule.Adresse}}</a>
               </li>
             </div>
         </div>
@@ -190,6 +191,10 @@
           
     <datalist id="schultypenListe">
       <option v-for="schultyp in schultypen" :value="schultyp" />
+    </datalist>
+
+    <datalist id="schulOrtListe">
+      <option v-for="schulort in schulOrtListe" :value="schulort" />
     </datalist>
   </LKWWDialog>
   
