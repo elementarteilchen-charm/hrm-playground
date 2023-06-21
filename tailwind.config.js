@@ -33,8 +33,10 @@ module.exports = {
         'Dungelgrau-8': '#EFEFEF',
         'Blaugrau-25': '#DFE5E8',
         'Blaugrau-10': '#F2F4F6' ,
+        'Orange': '#FF8C04',
         'Orange-10': '#FFE8CD',
-        'Gruen-10': '#CCEECC'
+        'Gruen-10': '#CCEECC',
+        'Gruen-logo': '#c3f000'
     },
     extend: {
       screens: {

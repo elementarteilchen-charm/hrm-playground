@@ -20,38 +20,46 @@
 </script>
 
 <template>
-  <LayoutFormSection title="Familienangehörige verwalten">
+  <LayoutFormSection title="Vertragsdatensätze verwalten">
     <h3 class="text-lg font-bold text-gray-900 "></h3>
     
       <table class="table w-full text-sm bg-gray-50">
         <thead class="bg-gray-200 text-left text-gray-500 ">
           <tr>
-            <th class="px-2 py-3 text-sm ">Beziehung</th>
-            <th class="px-2 py-1 text-sm ">Name</th>
-            <th class="px-2 py-1 text-sm ">Vorname</th>
-            <th class="px-2 py-1 text-sm ">Telefon</th>
-            <th class="px-2 py-1 text-sm ">Handy</th>
-            <th class="px-2 py-1 text-sm text-center">Notfallkontakt</th>
-            <th class="px-2 py-1 text-sm text-center"> </th>
+            <th class="px-2 py-3 text-sm ">PersonalNr</th>
+            <th class="px-2 py-1 text-sm ">Neueintritt</th>
+            <th class="px-2 py-1 text-sm ">Dienstantritt</th>
+            <th class="px-2 py-1 text-sm ">DV Beginn</th>
+            <th class="px-2 py-1 text-sm ">DV Ende</th>
+            <th class="px-2 py-1 text-sm ">Mandant</th>
+            <th class="px-2 py-1 text-sm ">Standort</th>
+            <th class="px-2 py-1 text-sm ">Geringfügig Karenz</th>
+            <th class="px-2 py-1 text-sm text-center">Austrittsdatum</th>
+            <th class="px-2 py-1 text-sm text-center">Letzter Arbeitstag</th>
+            <th class="px-2 py-1 text-sm text-center">Techn. Austrittsdatum</th>
           </tr>
         </thead>
         <tbody class="bg-white_ ">
           <tr 
-              v-for="person, index in angehoerige" 
+              v-for="vertrag, index in vertragsdatensaetze" 
               class="h-10 hover:bg-blue-200 hover:cursor-pointer" 
               @click="showDialog(person)">
-            <td class="border-b py-3 px-2 ">{{person.verwandtschaftsgrad}}</td>
-            <td class="border-b py-1 px-2 ">{{person.anrede}} {{person.name}}</td>
-            <td class="border-b py-1 px-2 ">{{person.vorname}}</td>
-            <td class="border-b py-1 px-2 ">{{person.telefon}}</td>
-            <td class="border-b py-1 px-2 ">{{person.handy}}</td>
-            <td class="border-b py-1 px-2 "><CheckCircleIcon class="mx-auto w-5 h-5" v-if="person.notfallkontakt"/></td>
-            <td class="border-b py-1 px-2 "><XCircleIcon class="mx-auto w-5 h-5 text-blue-500 hover:text-blue-600"/></td>
+            <td class="border-b py-3 px-2 ">{{vertrag.personalnr}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.neueintrit}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.dienstantritt}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.dvbeginn}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.dvende}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.mandant}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.standort}}</td>
+            <td class="border-b py-1 px-2 "><CheckCircleIcon class="mx-auto w-5 h-5" v-if="vertrag.geringfuegig"/></td>
+            <td class="border-b py-1 px-2 ">{{vertrag.austrittsdatum}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.letzterArbeitstag}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.technischesAustrittsdatum}}</td>
           </tr>
         </tbody>
       </table>
       <div class="mt-4 flex justify-end">
-        <button @click="showDialog" class="bg-blue-700 text-white px-3 py-2">Weitere Person hinzufügen</button>
+        <button @click="showDialog" class="bg-blue-700 text-white px-3 py-2">Vertragsdatensatz hinzufügen</button>
       </div>
   </LayoutFormSection>
 
