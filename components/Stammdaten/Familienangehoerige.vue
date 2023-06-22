@@ -20,7 +20,8 @@
 </script>
 
 <template>
-  <LayoutFormSection title="Familienangehörige verwalten">
+  <!-- <LayoutFormSection title="Familienangehörige verwalten"> -->
+  <LayoutFormSection >
     <h3 class="text-lg font-bold text-gray-900 "></h3>
     
       <table class="table w-full text-sm bg-gray-50">

@@ -38,9 +38,7 @@ const ma = mitarbeiterListe[0]
     <div class="my-3 text-3xl font-light text-Blaugrau">
         Mitarbeiter*in
     </div>
-    <div class="w-1/4">
-      <Suche />
-    </div>
+    
   </div>
     <main class="grid grid-rows-[auto_auto_auto] gap-8">
         <div class="grid grid-cols-[2fr_5fr_5fr] gap-2  border bg-white">

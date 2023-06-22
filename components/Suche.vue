@@ -1,4 +1,5 @@
 <script setup>
+  
   const gesuchterName = ref()
   const aktiverMA = ref()
   const emit = defineEmits(['MaGewaehlt'])
@@ -36,7 +37,8 @@
       </div>
       <div class="px-4 py-6">
         <div class="font-bold text-xl">
-          {{ma.vorname}} {{ma.name}} 
+          <a href="/hra/mitarbeiterinnen/profil" class="text-Mittelblau hover:underline">
+          {{ma.vorname}} {{ma.name}}</a>
         </div>
         <div>
           {{ma.taetigkeit}}

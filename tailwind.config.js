@@ -35,6 +35,7 @@ module.exports = {
         'Blaugrau-10': '#F2F4F6' ,
         'Orange': '#FF8C04',
         'Orange-10': '#FFE8CD',
+        'Orange-80': '#FFAF4F',
         'Gruen-10': '#CCEECC',
         'Gruen-logo': '#c3f000'
     },

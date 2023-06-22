@@ -41,14 +41,14 @@
               
               <div class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                 <ClockIcon class="w-5 h-5 text-blue-800"/>
-                <a href="/hra/events/suche"  :class="{'font-bold': route.path === '/hra/events/suche'}">
+                <a href="/hra/events/uebersicht"  :class="{'font-bold': route.path === '/hra/events/suche'}">
                   Events & Änderungen</a>
               </div>
-              <ul class="pl-16 py-2 space-y-3">
+              <!-- <ul class="pl-16 py-2 space-y-3">
 
                 <HRAEventMenuItems />
 
-              </ul>
+              </ul> -->
             </li>
             <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
               <ClockIcon class="w-5 h-5 text-blue-800"/>
@@ -102,7 +102,7 @@
         </nav>
       </div>
       
-      <div class="max-w-[1600px]  bg-Blaugrau-10" 
+      <div class="pr-8 max-w-[1600px]  bg-Blaugrau-10" 
           style="height: calc(100vh - 4rem - 1rem); overflow-y: auto;">
         <NuxtPage />
       </div>
