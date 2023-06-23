@@ -1,6 +1,5 @@
 <script setup>
-    import {ExclamationTriangleIcon, CloudArrowUpIcon}
-    from '@heroicons/vue/24/outline'
+    import {ExclamationTriangleIcon, CloudArrowUpIcon} from '@heroicons/vue/24/outline'
     import { showDialog } from '/utils/modal.js'
 
     const tabs = [
@@ -10,10 +9,14 @@
         'Familienangehörige',
         'Benachrichtigungen'
     ];
-    const activeTab = reactive({ tab: tabs[0] });
+    const activeTab = ref(tabs[0]);
     const zeigeAnforderungen = ref(false)
-
+    
+    function newTab(ev) {
+        activeTab.value = tabs[tabs.indexOf(ev)]
+    }
 </script>
+
 <template>
     <div class="flex items-center justify-between">
         <div class="my-3 ml-3 text-3xl font-light text-Blaugrau">
@@ -27,33 +30,19 @@
     <main class="grid grid-rows-[auto_auto_auto] gap-4">
         
         <HRAMitarbeiterInfoBox />
+        
         <div class="my-1 ml-3 text-2xl font-light text-Blaugrau">
             Geburt 
         </div>
         <div class="bg-white border border-t rounded overflow-hidden">
             
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
-                <div>
-                    <nav class="mt-4">
-                        <ul class="text-sm">
-                            <li v-for="tab, index in tabs" class="border-l-4 border-white pl-4 pr-8 py-3 flex hover:bg-gray-200" :class="[{'border-l-4 border-blue-500 text-blue-700 font-bold': tab == activeTab.tab}]">
-                                <a href="#" @click="activeTab.tab = tab">
-                                    {{tab}}</a>
-                            </li>
-                        </ul>
-
-                        <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
-                            <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
-                                Speichern</a>
-                            <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
-                                Abbrechen</a>
-                        </div>
-                    </nav>
-                </div>
+                
+                <NavigationHraTabMenu :tabs="tabs" @newtab="newTab"/>
 
                 <div class="px-4 py-4 border-l pb-12">
 
-                    <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-show="tabs[0] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Geburtstermin</h3>  
                         
                         <LayoutFormSection title="Wochenhilfe">
@@ -75,7 +64,7 @@
                         </div>
                     </div>
 
-                    <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-show="tabs[1] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Geburtsurkunde</h3> 
                         <LayoutFormSection >
                             <div class="w-1/3 grid grid-cols-[2rem_auto] items-center gap-2 hover:cursor-pointer text-Mittelblau p-3 hover:bg-Blaugrau-10 border border-Mittelblau rounded-lg shadow-lg transition">
@@ -85,7 +74,7 @@
                             </div>
                         </LayoutFormSection>
                     </div>
-                    <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-show="tabs[2] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Schulungen</h3>  
                         <LayoutFormSection title="Geplante Schulungen">
                             <ul class="text-sm list-disc">
@@ -114,11 +103,11 @@
                         </LayoutFormSection>
                     </div>
 
-                    <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-show="tabs[3] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Familienangehörige</h3> 
                         <StammdatenFamilienangehoerige />
                     </div>
-                    <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-show="tabs[4] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <LayoutFormSection>
 
                             <div class="space-y-3">

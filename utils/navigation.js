@@ -1,22 +1,22 @@
 export  const topMenuItems = [
       {
         linkText: "Stammdaten",
-        link: "hra-stammdaten",
+        link: "/hra/mitarbeiterinnen/stammdaten",
       },
       {
         linkText: "Ausbildung",
-        link: "hra-ausbildung",
+        link: "/hra/mitarbeiterinnen/ausbildung",
       },
       {
         linkText: "Dokumente",
-        link: "hra-dokumente",
+        link: "/hra/mitarbeiterinnen/dokumente",
       },
       {
         linkText: "Vertrag",
-        link: "hra-vertragsdaten",
+        link: "/hra/mitarbeiterinnen/vertragsdaten",
       },
       {
         linkText: "Zusammenfassung",
-        link: "/hra/zusammenfassung",
+        link: "/hra/mitarbeiterinnen/zusammenfassung",
       }
     ];

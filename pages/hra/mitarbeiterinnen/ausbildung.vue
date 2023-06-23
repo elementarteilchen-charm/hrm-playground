@@ -4,13 +4,11 @@ import {
     BookmarkIcon, PlusCircleIcon, }
 from '@heroicons/vue/24/outline'
 
-const tabs = [
-    'Persönlich',
-    'Adressen und Kontakt',
-    'Bankverbindung',
-    'Familienangehörige',
-    'Invalidität',
-];
+  const tabs = [
+        'Schulbildung', 
+        'Sprachkenntnisse',
+        'Qualifikationen'
+    ];
 
 const activeTab = ref(tabs[0]);
 
@@ -23,7 +21,7 @@ const ma = mitarbeiterListe[0]
 <template>
     <div class="flex items-center justify-between">
         <div class="my-3 ml-3 text-3xl font-light text-Blaugrau">
-            Stammdaten
+            Ausbildung
         </div>
     </div>
     <div class="my-3 flex gap-2 items-center w-full">
@@ -33,7 +31,7 @@ const ma = mitarbeiterListe[0]
         
         <HRAMitarbeiterInfoBox />
 
-        <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="0" />
+        <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="1" />
 
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
@@ -42,32 +40,20 @@ const ma = mitarbeiterListe[0]
 
                 <div class="px-4 py-4 border-l pb-12">
                     <div v-show="tabs[0] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenPersoenlich />
-                        <StammdatenLand />
-                        <StammdatenFamilienstand />
+                        <StammdatenAusbildung />
                     </div>
                     <div v-show="tabs[1] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenAdresse />
+                        <StammdatenSprachkenntnisse />
                     </div>
                     <div v-show="tabs[2] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenBankverbindung />
+                        <StammdatenQualifikationen />
                     </div>
-                    <div v-show="tabs[3] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenFamilienangehoerige />
-                    </div>
-                    <div v-show="tabs[4] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenBehinderung />
-                    </div>
-                    <div v-show="tabs[5] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenNotfallkontakt />
-                    </div>
+                    
                 </div>
             </main>
         </div>
     </main>
 </template>
 <style>
-dialog.modal-erinnerungen::backdrop {
-    background: rgba(0.2, 0.2, 0.2, 0.3);
-}
+
 </style>
