@@ -67,18 +67,59 @@
       Übersicht
     </div>
   
-  <main class="grid  gap-8">
+  <div class="my-3 flex gap-2 items-center w-full">
+      <input class="border rounded border-gray-200 px-4 py-2 w-full" value="" placeholder="Name, Bereich, Abteilung, ...">
+  </div>
+  <main class="grid grid-cols-2 gap-8">
 
-    <div v-for="event in eventHistory" class="flex gap-4">
-      <div class="font-bold">
-        {{event.event}}
-      </div>
-      <div class="font-bold">
-        {{mitarbeiterListe[event.maIndex].name}} {{mitarbeiterListe[event.maIndex].vorname}} 
-      </div>
-      <div>
-        {{event.start}}
-      </div>
+    <div class="bg-white p-4 rounded">
+      <header class="font-bold text-xl mb-2">
+        Events & Änderungen
+      </header>
+      <main>
+        <ul class="space-y-1">
+          <li v-for="item in aktionen.events.items" class="">
+            <a :href="item.link" class="">
+              <div class="flex gap-1 items-center inline-block text-Mittelblau hover:bg-Mittelblau hover:text-white hover:border-Mittelblau transition">
+                <div class="p-1  transition">
+                  <ChevronRightIcon class="w-4 h-4"/>                    
+                </div>
+                {{item.text}}
+              </div>
+            </a>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <div class="bg-Hellgrau p-4 rounded">
+      <header class="font-bold text-xl mb-2">
+        Letzte Aktionen
+      </header>
+      <table class="table-auto w-full">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="text-left py-1 px-1">Mitarbeiter*in</th>
+            <th class="text-left py-1 px-1">Aktion</th>
+            <th class="py-1 px-1">Datum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="event in eventHistory" class="border-b">
+            <td >
+              {{mitarbeiterListe[event.maIndex].name}} {{mitarbeiterListe[event.maIndex].vorname}}     
+            </td>
+            <td class="py-1 px-1">
+              {{event.event}}
+            </td>
+            <td class="text-center">
+              {{event.start}}
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+          
     </div>
     
 

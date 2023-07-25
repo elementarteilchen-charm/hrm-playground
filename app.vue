@@ -1,7 +1,8 @@
 <script setup>
-  import { DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon } from '@heroicons/vue/24/outline' ;  
+  import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon } from '@heroicons/vue/24/outline' ;  
   
   const zeigeHRM = ref(false)
+  // const zeigeHRM = ref(true)
   const route = useRoute()
 </script>
 
@@ -44,11 +45,6 @@
                 <a href="/hra/events/uebersicht"  :class="{'font-bold': route.path === '/hra/events/suche'}">
                   Events & Änderungen</a>
               </div>
-              <!-- <ul class="pl-16 py-2 space-y-3">
-
-                <HRAEventMenuItems />
-
-              </ul> -->
             </li>
             <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
               <ClockIcon class="w-5 h-5 text-blue-800"/>
@@ -64,6 +60,12 @@
               <DocumentTextIcon class="w-5 h-5 text-blue-800"/>
               <a href="/hra-dokumente">
                 Dokumente
+              </a>
+            </li>
+            <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+              <CurrencyEuroIcon class="w-5 h-5 text-blue-800"/>
+              <a href="/hra/personalverrechnung/" :class="{'font-bold': route.path === '/hra/personalverrechnung/'}">
+                Personalverrechnung
               </a>
             </li>
 

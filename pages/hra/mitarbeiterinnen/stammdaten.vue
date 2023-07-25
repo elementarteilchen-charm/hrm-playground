@@ -4,6 +4,8 @@ import {
     BookmarkIcon, PlusCircleIcon, }
 from '@heroicons/vue/24/outline'
 
+topMenuItems.push({link: '/hra/mitarbeiterinnen/suche', linkText: 'Zurück'})
+
 const tabs = [
     'Persönlich',
     'Adressen und Kontakt',
@@ -19,6 +21,7 @@ function newTab(ev) {
 }
 
 const ma = mitarbeiterListe[0]
+
 </script>
 <template>
     <div class="flex items-center justify-between">

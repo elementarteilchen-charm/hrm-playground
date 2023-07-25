@@ -5,71 +5,77 @@
 
   const aktionen = {
     stammdaten: {
-      headline: "Stammdaten",
+      headline: "Eintritt",
       items: [
-        {text: "Stammdaten", process: false, link: "/hra/mitarbeiterinnen/stammdaten"},
-        {text: "Ausbildung", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
-        {text: "Vertrag", process: false, link: "/hra/mitarbeiterinnen/vertrag"},
-        {text: "Dokumente", process: false, link: "/hra/mitarbeiterinnen/dokumente"},
-      ]
-    },
-    events: {
-      headline: "Events & Änderungen",
-      items: [
-        {text: 'Hochzeit', process: true, link: '/hra/events/Hochzeit'},
-        {text: 'Namensaenderung', process: true, link: '/hra/events/Namensaenderung'},
-        {text: 'Geburt', process: false, link: '/hra/events/Geburt'},
-        {text: 'Ernennungen', process: false, link: '/hra/events/Ernennungen'},
-        {text: 'Ummeldungen', process: true, link: '/hra/events/Ummeldungen'},
-        // {text: 'Arbeitszeitmodell', process: false, link: '/hra/events/Arbeitszeitmodell'},
-        // {text: 'Signatur', process: false, link: '/hra/events/Signatur'},
-        // {text: 'Visitenkarten', process: false, link: '/hra/events/Visitenkarten'},
-        {text: 'Zusatzqualifikationen', process: false, link: '/hra/events/Zusatzqualifikationen'},
-        {text: 'Geschenke', process: false, link: '/hra/events/Geschenke'},
-        {text: 'Jubiläum', process: true, link: '/hra/events/Jubiläum'},
-      ]
-    },
-    auszeiten: {
-      headline: "Temporäre Auszeiten",
-      items: [
-        {text: 'Karenz', process: false, link: '/hra/mitarbeiterinnen/karenz'},
-        {text: 'Bildungskarenz', process: true, link: '/hra/mitarbeiterinnen/Bildungskarenz'},
-        {text: 'Karenz', process: false, link: '/hra/mitarbeiterinnen/Karenz'},
-        {text: 'Elternteilzeit', process: false, link: '/hra/mitarbeiterinnen/Elternteilzeit'},
-        {text: 'Wochenhilfe', process: false, link: '/hra/mitarbeiterinnen/Wochenhilfe'},
-        {text: 'Unbezahlter Urlaub', process: true, link: '/hra/mitarbeiterinnen/UnbezahlterUrlaub'},
-        {text: 'Milizübungen', process: false, link: '/hra/mitarbeiterinnen/Milizübungen'},
-        // {text: 'Teilzeit', process: false, link: '/hra/mitarbeiterinnen/Teilzeit'},
-        // {text: 'Geringfügigkeiten', process: false, link: '/hra/mitarbeiterinnen/Geringfügigkeiten'},
+        {text: "Geplante Eintritte", link: "/hra/personalverrechnung/geplanteEintritte"},
+        {text: "Vertrag", link: "/hra/mitarbeiterinnen/vertrag"},
+        {text: "Dokumente", link: "/hra/mitarbeiterinnen/dokumente"},
       ]
     },
     austritt: {
       headline: "Austritt",
       items: [
-        {text: 'Kündigung', process: false, link: '/hra/mitarbeiterinnen/karenz'},
-        {text: 'DG Kündigung', process: false, link: '/hra/mitarbeiterinnen/Bildungskarenz'},
-        {text: 'Pension', process: false, link: '/hra/mitarbeiterinnen/Karenz'},
-        {text: 'Todesfall', process: false, link: '/hra/mitarbeiterinnen/Wochenhilfe'},
+        {text: 'Kündigung', link: '/hra/mitarbeiterinnen/karenz'},
+        {text: 'DG Kündigung', link: '/hra/mitarbeiterinnen/Bildungskarenz'},
+        {text: 'Pension', link: '/hra/mitarbeiterinnen/Karenz'},
+        {text: 'Todesfall', link: '/hra/mitarbeiterinnen/Wochenhilfe'},
       ]
-    }
+    },
+    events: {
+      headline: "Events & Änderungen",
+      items: [
+        {text: 'Hochzeit', link: '/hra/events/Hochzeit'},
+        {text: 'Namensaenderung', link: '/hra/events/Namensaenderung'},
+        {text: 'Geburt', link: '/hra/events/Geburt'},
+        {text: 'Ernennungen', link: '/hra/events/Ernennungen'},
+        {text: 'Ummeldungen', link: '/hra/events/Ummeldungen'},
+        {text: 'Arbeitszeitmodell', link: '/hra/events/Arbeitszeitmodell'},
+        {text: 'Geschenke', link: '/hra/events/Geschenke'},
+        {text: 'Jubiläum', link: '/hra/events/Jubiläum'},
+      ]
+    },
+    auszeiten: {
+      headline: "Temporäre Auszeiten",
+      items: [
+        {text: 'Karenz', link: '/hra/mitarbeiterinnen/karenz'},
+        {text: 'Bildungskarenz', link: '/hra/mitarbeiterinnen/Bildungskarenz'},
+        {text: 'Karenz', link: '/hra/mitarbeiterinnen/Karenz'},
+        {text: 'Wochenhilfe', link: '/hra/mitarbeiterinnen/Wochenhilfe'},
+        {text: 'Unbezahlter Urlaub', link: '/hra/mitarbeiterinnen/UnbezahlterUrlaub'},
+        {text: 'Milizübungen', link: '/hra/mitarbeiterinnen/Milizübungen'},
+        {text: 'Teilzeit', link: '/hra/mitarbeiterinnen/Teilzeit'},
+        {text: 'Elternteilzeit', link: '/hra/mitarbeiterinnen/Elternteilzeit'},
+        {text: 'Geringfügigkeiten', link: '/hra/mitarbeiterinnen/Geringfügigkeiten'},
+      ]
+    },
+    
   } 
 </script>
 
 <template>
-    <div class="my-3 text-3xl font-light text-Blaugrau">
-      Mitarbeiter*in
-    </div>
+  <div class="my-3 text-3xl font-light text-Blaugrau">
+    Personalverrechnung
+  </div>
+  <Anmerkung>
+    Wird nur Personen mit dem Personalverrechnungs-Recht angezeigt
+  </Anmerkung>
   
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
 
-    <div class="my-6">
+    
+<!--     <div class="my-6">
       <HRAProfilHeader />
-    </div>
+    </div> -->
+
+    <div class="my-3 flex gap-2 items-center w-full">
+        <input class="border rounded border-gray-200 px-4 py-2 w-full" value="" placeholder="Name, Bereich, Abteilung, ...">
+    </div>   
+
     <div>
       Liste der letzten Aktionen
     </div>
     <div class="grid grid-cols-4 gap-12">
-      <div v-for="aktion in aktionenFuerMA" class="bg-white p-3 rounded">
+      <div v-for="aktion in aktionen" class="bg-white p-3 rounded">
         <header class="font-bold text-xl mb-2">
           {{aktion.headline}}
         </header>
@@ -88,10 +94,9 @@
           </ul>
         </main>
       </div>
-
-<!--       <div class="bg-white p-3 rounded">
+      <!-- <div class="bg-white p-3 rounded">
         <header class="font-bold text-xl mb-2">
-          Stammdaten
+          Eintritte
         </header>
         <main>
           <ul class="space-y-1">
@@ -107,9 +112,28 @@
             </li>
           </ul>
         </main>
-      </div>
+      </div> -->
+     <!--  <div class="bg-white p-3 rounded">
+        <header class="font-bold text-xl mb-2">
+          Austritte
+        </header>
+        <main>
+          <ul class="space-y-1">
+            <li v-for="item in aktionen.austritt.items" class="">
+              <a :href="item.link" class="">
+                <div class="flex gap-1 items-center inline-block text-Mittelblau hover:bg-Mittelblau hover:text-white hover:border-Mittelblau transition">
+                  <div class="p-1  transition">
+                    <ChevronRightIcon class="w-4 h-4"/>                    
+                  </div>
+                  {{item.text}}
+                </div>
+              </a>
+            </li>
+          </ul>
+        </main>
+      </div> -->
 
-      <div class="bg-white p-4 rounded">
+      <!-- <div class="bg-white p-4 rounded">
         <header class="font-bold text-xl mb-2">
           Events & Änderungen
         </header>
@@ -148,26 +172,8 @@
           </ul>
         </main>
         
-      </div>
-      <div class="bg-white p-3 rounded">
-        <header class="font-bold text-xl mb-2">
-          Austritt
-        </header>
-        <main>
-          <ul class="space-y-1">
-            <li v-for="item in aktionen.austritt.items" class="">
-              <a :href="item.link" class="">
-                <div class="flex gap-1 items-center inline-block text-Mittelblau hover:bg-Mittelblau hover:text-white hover:border-Mittelblau transition">
-                  <div class="p-1  transition">
-                    <ChevronRightIcon class="w-4 h-4"/>                    
-                  </div>
-                  {{item.text}}
-                </div>
-              </a>
-            </li>
-          </ul>
-        </main>
       </div> -->
+
     </div>
     
 

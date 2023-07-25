@@ -12,8 +12,9 @@
       <HRMProfilHeader/>
       
       <div class="mt-8 grid grid-cols-2 gap-8">
-        <HRMFehlendeDokumente />
+        <!-- <HRMFehlendeDokumente /> -->
 
+        <HRMDatenschutz /> 
         <HRMPrivatadresse />
         <HRMZutrittskarte />
         <HRMPrivateKontaktdaten />
