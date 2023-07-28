@@ -1,26 +1,6 @@
 <script setup>
-  import { CheckCircleIcon, XCircleIcon, PencilIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' 
-
+  import { CheckCircleIcon, EnvelopeIcon, XCircleIcon } from '@heroicons/vue/24/outline' 
   const modalID = 'bankverbindung-dialog'
-
-  let bankdaten = [
-    {
-      gueltig_von: '2021.02.21',
-      gueltig_bis: '2023.02.21',
-      bankname: 'ING Bank Śląski',
-      iban: 'PL 51 1050 1155 1000 0092 3293 6014',
-      bic: 'INGBPLPW',
-      kontoinhaber: 'Stephanie Babunek'
-    },
-    {
-      gueltig_von: '2023.03.01',
-      gueltig_bis: '',
-      bankname: 'BAWAG',
-      iban: 'AT76 1420 0200 1296 4561',
-      bic: 'BAWAATWW',
-      kontoinhaber: 'Stephanie Babunek'
-    }
-  ]
 
   function showDialog() {
         document.getElementById(modalID).showModal();
@@ -34,8 +14,18 @@
 </script>
 
 <template>
-  <h3 class="text-lg font-bold text-gray-900 ">Bankverbindung</h3>
-  
+  <div>
+    <h3 class="text-lg font-bold text-gray-900 ">Bankverbindung</h3>
+    <p class="text-gray-400 text-sm flex items-center gap-2">
+      <CheckCircleIcon class="w-4 h-4 text-green-500"/>
+      <span>Diese Daten können direkt geschrieben werden.</span>
+    </p>
+    <p class="text-gray-400 text-sm flex items-center gap-2">
+      <EnvelopeIcon class="w-4 h-4 text-orange-500"/>
+      <span>Es wird eine Emailbenachrichtigung versendet.</span>
+    </p>
+  </div>
+
   <LayoutFormSection title="Bankdaten">
     <table class="table-auto bg-white w-full">
       <thead>
@@ -73,7 +63,7 @@
 
   </LayoutFormSection>
 
-
+<!-- 
   <LayoutFormSection title="Übermittlung an die Personalverrechnung">
     <p class=" text-gray-500 mt-3 mb-6">
       Alle notwendigen Daten für die Personalverrechnung sind vorhanden:
@@ -81,7 +71,7 @@
     <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">  
       <InputCheckbox label="Fertig für Personalverrechnung" />
     </div>
-  </LayoutFormSection>
+  </LayoutFormSection> -->
 
   <dialog id="bankverbindung-dialog" class="modal-bankverbindung shadow-lg bg-gray-100 p-4">
     <form action="" method="dialog" class="h-full">

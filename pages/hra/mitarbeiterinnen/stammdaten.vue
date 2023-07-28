@@ -1,16 +1,18 @@
 <script setup>
 import {
-    UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon,
+     CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon, ArchiveBoxIcon,
     BookmarkIcon, PlusCircleIcon, }
 from '@heroicons/vue/24/outline'
-
-topMenuItems.push({link: '/hra/mitarbeiterinnen/suche', linkText: 'Zurück'})
 
 const tabs = [
     'Persönlich',
     'Adressen und Kontakt',
+    'Staatsangehörigkeit',
     'Bankverbindung',
     'Familienangehörige',
+    'Familienstand',
+    'Sozialversicherung',
+    'Notfallkontakt',
     'Invalidität',
 ];
 
@@ -24,53 +26,64 @@ const ma = mitarbeiterListe[0]
 
 </script>
 <template>
-    <div class="flex items-center justify-between">
-        <div class="my-3 ml-3 text-3xl font-light text-Blaugrau">
-            Stammdaten
-        </div>
+    <div class="flex items-center py-3 justify-between">
+        <h1 class="my-3 text-3xl font-light text-Blaugrau">
+            Persönliche Daten bearbeiten
+        </h1>
+        <HRAMitarbeiterSuchfeld class="w-1/3"/>
+        {{activeTab}}
     </div>
-    <div class="my-3 flex gap-2 items-center w-full">
-        <input class="border rounded border-gray-200 px-4 py-2 w-full" value="" placeholder="Name, Bereich, Abteilung, ...">
-    </div>
+    
+    <HRAMitarbeiterInfoBox class="mb-6"/>
+
     <main class="grid grid-rows-[auto_auto_auto] gap-8">
-        
-        <HRAMitarbeiterInfoBox />
 
         <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="0" />
 
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 
-                <NavigationHraTabMenu :tabs="tabs" @newtab="newTab"/>
+                <nav>
+                    <h3 class="px-4 mt-6 text-lg font-light text-Blaugrau">
+                        Persönliche Daten
+                    </h3>        
+                    
+                    <NavigationHraTabMenu :tabs="tabs" @newtab="newTab"/>
+                </nav>
 
-                <div class="px-4 py-4 border-l pb-12">
-                    <div v-show="tabs[0] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenPersoenlich />
-                        <StammdatenLand />
-                        <StammdatenFamilienstand />
+                <div class="px-4 my-4 border-l pb-12">
+
+                    <div v-show="activeTab == 'Persönlich'" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                        <HRAPersonPersoenlich />
                     </div>
-                    <div v-show="tabs[1] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenAdresse />
+                    <div v-show="activeTab == 'Staatsangehörigkeit'" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                        <HRAPersonStaatsangehoerigkeit />
                     </div>
-                    <div v-show="tabs[2] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenBankverbindung />
+                    <div v-show="activeTab == 'Adressen und Kontakt'" class="px-2 grid grid-rows-1 gap-4">
+                        <HRAPersonAdresse />
                     </div>
-                    <div v-show="tabs[3] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenFamilienangehoerige />
+                    
+                    <div v-show="activeTab == 'Bankverbindung'" class="px-2 grid grid-rows-1 gap-4">
+                        <HRAPersonBankverbindung />
                     </div>
-                    <div v-show="tabs[4] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenBehinderung />
+
+                    <div v-show="activeTab == 'Familienangehörige'" class="px-2 grid grid-rows-1 gap-4">
+                        <HRAPersonFamilienangehoerige />
                     </div>
-                    <div v-show="tabs[5] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenNotfallkontakt />
+                    <div v-show="activeTab == 'Familienstand'" class="px-2 grid grid-rows-1 gap-4">
+                        <HRAPersonFamilienstand />
+                    </div>
+                    <div v-show="activeTab == 'Sozialversicherung'" class="px-2 grid grid-rows-1 gap-4">
+                        <HRAPersonSozialversicherung />
+                    </div>
+                    <div v-show="activeTab == 'Notfallkontakt'" class="px-2 grid grid-rows-1 gap-4">
+                        <HRAPersonNotfallkontakt />
+                    </div>
+                    <div v-show="activeTab == 'Invalidität'" class="px-2 grid grid-rows-1 gap-4">
+                        <HRAPersonInvaliditaet />
                     </div>
                 </div>
             </main>
         </div>
     </main>
 </template>
-<style>
-dialog.modal-erinnerungen::backdrop {
-    background: rgba(0.2, 0.2, 0.2, 0.3);
-}
-</style>

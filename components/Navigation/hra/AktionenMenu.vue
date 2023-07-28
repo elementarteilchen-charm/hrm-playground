@@ -15,7 +15,7 @@
 </script>
 <template>
     <div class="">
-        <nav class="mt-2">
+        <nav class="mt-4">
             <ul class="text-sm">
                 <li v-for="tab, index in tabs" 
                     class="border-l-4 border-white pl-4 pr-8 py-3 flex gap-2 hover:bg-gray-200" 
@@ -28,8 +28,8 @@
                         {{tab}}</a>
                 </li>
             </ul>
-
-            <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
+            <hr>
+            <div class="mt-4 px-2 py-3 flex flex-col space-y-3">
                 <a href="" class="px-3 py-2 bg-Mittelblau text-white text-center">
                     Speichern</a>
                 <a href="" class="px-3 py-2 text-Mittelblau hover:underline text-center">

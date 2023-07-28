@@ -1,13 +1,14 @@
 <script setup>
 import {
-    UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon,
+    CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon,
     BookmarkIcon, PlusCircleIcon, }
 from '@heroicons/vue/24/outline'
 
   const tabs = [
-        'Schulbildung', 
         'Sprachkenntnisse',
-        'Qualifikationen'
+        'Schulbildung', 
+        'Zusatzqualifikationen',
+        'Vordienstzeiten',
     ];
 
 const activeTab = ref(tabs[0]);
@@ -19,15 +20,16 @@ function newTab(ev) {
 const ma = mitarbeiterListe[0]
 </script>
 <template>
-    <div class="flex items-center justify-between">
-        <div class="my-3 ml-3 text-3xl font-light text-Blaugrau">
-            Ausbildung
-        </div>
+    <div class="flex items-center py-3 justify-between">
+        <h1 class="my-3 text-3xl font-light text-Blaugrau">
+            Persönliche Daten bearbeiten
+        </h1>
+        <HRAMitarbeiterSuchfeld class="w-1/3"/>
+        {{activeTab}}
     </div>
-    <div class="my-3 flex gap-2 items-center w-full">
-        <input class="border rounded border-gray-200 px-4 py-2 w-full" value="" placeholder="Name, Bereich, Abteilung, ...">
-    </div>
-    <main class="grid grid-rows-[auto_auto_auto] gap-8">
+    
+    
+    <main class="grid grid-rows-[auto_auto_auto] gap-6">
         
         <HRAMitarbeiterInfoBox />
 
@@ -36,17 +38,28 @@ const ma = mitarbeiterListe[0]
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 
-                <NavigationHraTabMenu :tabs="tabs" @newtab="newTab"/>
+                <nav>
+                    <h3 class="px-4 mt-6 text-lg font-light text-Blaugrau">
+                        Ausbildung und Qualifikationen
+                    </h3>        
+                    
+                    <NavigationHraTabMenu :tabs="tabs" @newtab="newTab"/>
+                </nav>
 
                 <div class="px-4 py-4 border-l pb-12">
-                    <div v-show="tabs[0] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenAusbildung />
+                    <div v-show="'Sprachkenntnisse' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                        <HRAPersonSprachkenntnisse />
                     </div>
-                    <div v-show="tabs[1] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenSprachkenntnisse />
+
+                    <div v-show="'Schulbildung' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                        <HRAPersonAusbildung />
                     </div>
-                    <div v-show="tabs[2] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenQualifikationen />
+
+                    <div v-show="'Zusatzqualifikationen'== activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                        <HRAPersonZusatzqualifikationen />
+                    </div>
+                    <div v-show="'Vordienstzeiten'== activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                        <HRAPersonVordienstzeiten />
                     </div>
                     
                 </div>

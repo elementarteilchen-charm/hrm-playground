@@ -1,9 +1,15 @@
 export const aktionenFuerMA = [
     {
-      headline: "Stammdaten",
+      headline: "Persönlich",
       items: [
         {text: "Stammdaten", process: false, link: "/hra/mitarbeiterinnen/stammdaten"},
-        {text: "Ausbildung", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
+        // {text: "Adressen", process: false, link: "/hra/mitarbeiterinnen/adressen"},
+        // {text: "Bankverbindung", process: false, link: "/hra/mitarbeiterinnen/bankverbindung"},
+        // {text: "Ausbildung", process: false, link: "/hra/mitarbeiterinnen/vertrag"},
+        // {text: "Familienangehörige", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
+        // {text: "Notfallkontakt", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
+        // {text: "Invalidität", process: false, link: "/hra/mitarbeiterinnen/vertrag"},
+        {text: "Ausbildung und Vordienstzeiten", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
         {text: "Vertrag", process: false, link: "/hra/mitarbeiterinnen/vertrag"},
         {text: "Dokumente", process: false, link: "/hra/mitarbeiterinnen/dokumente"},
       ]

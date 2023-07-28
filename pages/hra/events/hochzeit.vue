@@ -28,9 +28,13 @@ const zeigeAnforderungen = ref(false)
     <main class="grid grid-rows-[auto_auto_auto] gap-8">
         <HRAMitarbeiterInfoBox />
         
+        <div class="flex justify-end">
+            <button class="p-4 font-bold text-white bg-Mittelblau">Änderungen durchführen</button>
+        </div>
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 <div>
+                    <h3 class="px-4 pt-4 font-bold text-xl">Hochzeit</h3>
                     <nav class="mt-4">
                         <ul class="text-sm">
                             <li v-for="tab, index in tabs" class="border-l-4 border-white pl-4 pr-8 py-3 flex hover:bg-gray-200" :class="[{'border-l-4 border-blue-500 text-blue-700 font-bold': tab == activeTab.tab}]">
@@ -40,43 +44,26 @@ const zeigeAnforderungen = ref(false)
                         </ul>
 
                         <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
-                            <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
+                            <a href="" class="px-3 py-2 bg-Mittelblau text-white text-center">
                                 Speichern</a>
-                            <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
+                            <a href="" class="px-3 py-2 text-Mittelblau hover:underline text-center">
                                 Abbrechen</a>
                         </div>
                     </nav>
                 </div>
 
                 <div class="px-4 py-4 border-l pb-12">
-                    <div class="bg-Orange rounded p-3 text-white flex items-center gap-2 w-3/4">
+<!--                     <div class="bg-Orange rounded p-3 text-white flex items-center gap-2 w-3/4">
                         <div>
                             <ExclamationTriangleIcon class="w-5 h-5"/>
                         </div>
                         <div>
                             Sie haben diesen Prozess am 20.06.2023 um 12:40 gestartet.
                         </div>
-                    </div>
+                    </div> -->
                     <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         
-                        <div    @click="zeigeAnforderungen = !zeigeAnforderungen" 
-                                class="hover:cursor-pointer text-Mittelblau">
-                            Anforderungen
-                        </div>
-                        <div v-show="zeigeAnforderungen" >
-                            <li>MA*in gibt Heirat bekannt (Email oder Telefonisch, Self Service)</li>
-                            <li>Namensänderung wird vorgenommen</li>
-                            <li>Der neue Name wird im Feld "Name" eingetragen</li>
-                            <li>Der alte Name wird im Feld "Geburtsname" gespeichert.</li>
-                            <li>Status wird auf "Verheiratet" gesetzt</li>
-                            <li>Das Datum der Heirat wird erfasst</li>
-                            <li>Als Familienangehöriger wird der/die Partner*in in Persis erfasst</li>
-                            <li>Über die Checkbox "Nachweis" wird festgehalten, dass die Heiratsurkunde an HR übermittelt wurde.</li>
-                            <li>Heiratsurkunde muss zeitnah an HR übermittelt werden (ist jedoch kein Blocker), damit der Sonderurlaub gewährt werden kann.</li>
-                            <li>Der Sonderurlaub wird in An/Ab verwaltet.</li>
-                            <li>Die Kopie vom neuen Reisepass ist für HR wünschenswert für den korrekten Namen</li>
-                            <li>Notwendig ist der Reisepass für die Meldung an die SVA und die Gehaltsabrechnung</li>
-                        </div>
+                        
 
                         <LayoutFormSection title="Namensänderung">
                           
@@ -105,7 +92,24 @@ const zeigeAnforderungen = ref(false)
                           </section>    
                         </LayoutFormSection>
 
-
+                        <div    @click="zeigeAnforderungen = !zeigeAnforderungen" 
+                                class="hover:cursor-pointer text-Mittelblau">
+                            Anforderungen
+                        </div>
+                        <div v-show="zeigeAnforderungen" >
+                            <li>MA*in gibt Heirat bekannt (Email oder Telefonisch, Self Service)</li>
+                            <li>Namensänderung wird vorgenommen</li>
+                            <li>Der neue Name wird im Feld "Name" eingetragen</li>
+                            <li>Der alte Name wird im Feld "Geburtsname" gespeichert.</li>
+                            <li>Status wird auf "Verheiratet" gesetzt</li>
+                            <li>Das Datum der Heirat wird erfasst</li>
+                            <li>Als Familienangehöriger wird der/die Partner*in in Persis erfasst</li>
+                            <li>Über die Checkbox "Nachweis" wird festgehalten, dass die Heiratsurkunde an HR übermittelt wurde.</li>
+                            <li>Heiratsurkunde muss zeitnah an HR übermittelt werden (ist jedoch kein Blocker), damit der Sonderurlaub gewährt werden kann.</li>
+                            <li>Der Sonderurlaub wird in An/Ab verwaltet.</li>
+                            <li>Die Kopie vom neuen Reisepass ist für HR wünschenswert für den korrekten Namen</li>
+                            <li>Notwendig ist der Reisepass für die Meldung an die SVA und die Gehaltsabrechnung</li>
+                        </div>
 
                     </div>
 

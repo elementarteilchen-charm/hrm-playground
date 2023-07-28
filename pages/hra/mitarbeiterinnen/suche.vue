@@ -1,8 +1,8 @@
 <script setup>
-  import {
-      UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon,
-      BookmarkIcon, PlusCircleIcon, } 
+  import { UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon,
+      BookmarkIcon, PlusCircleIcon} 
       from '@heroicons/vue/24/outline'
+
 
   const aktiverMA = ref()
   function callback(data) {
@@ -22,15 +22,6 @@
       <Suche @ma-gewaehlt="callback"/>
     </div>
     
-    
-
   </main>
 
 </template>
-
-<style>  
-  
-  dialog.modal-erinnerungen::backdrop {
-      background: rgba(0.2, 0.2, 0.2, 0.3);
-  }
-</style>

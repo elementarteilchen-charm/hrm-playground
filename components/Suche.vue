@@ -10,6 +10,7 @@
     alert("Und wohin nun...?")
   }
 
+  function avatar(ma) {return "background-image: url('/img/"  + ma.avatar + "')"; }
 </script>
 
 <template>
@@ -32,11 +33,8 @@
 
   <div v-for="ma in mitarbeiterListe" class="mb-6">
     <div class="grid grid-cols-[2fr_5fr_5fr] gap-2  border bg-white w-4/5">
-      <!-- <div @click="waehleMA(ma)" class="hover:cursor-pointer">
-        <img :src="'/img/' + ma.avatar" alt="">
-      </div> -->
       <a href="/hra/mitarbeiterinnen/stammdaten" >
-        <img :src="'/img/' + ma.avatar" alt="">
+        <div class="bg-cover bg-center h-full" :style="avatar(ma)"></div>
       </a>
       <div class="px-4 py-6">
         <div class="font-bold text-xl">

@@ -1,11 +1,13 @@
 <script setup>
 	const ma = mitarbeiterListe[0]
+ 
+    const avatar = computed(() => {
+        return "background-image: url('/img/"  + ma.avatar + "')";
+        })
 </script>
 <template>
     <div class="grid grid-cols-[2fr_5fr_5fr] gap-2  border bg-white ">
-        <div class="">
-            <img :src="'/img/' + ma.avatar" alt="">
-        </div>
+        <div class="bg-cover bg-center h-full" :style="avatar"></div>
         <div class="px-4 py-6">
             <div class="font-bold text-xl">
                 <a href="/hra/mitarbeiterinnen/profil" class="text-Mittelblau hover:underline">
