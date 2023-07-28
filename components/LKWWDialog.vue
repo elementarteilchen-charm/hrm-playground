@@ -19,6 +19,7 @@
 	        
 	                <header class="px-6 py-6 text-xl text-Blaugrau flex justify-between">
 	                    <div>{{title}}</div>
+	                    <slot name="header"></slot>
 	                    <div>
 	                        <button><XCircleIcon class="w-6 h-6" /></button>
 	                    </div>

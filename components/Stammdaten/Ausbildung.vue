@@ -92,12 +92,14 @@
   </div>
 
   <LKWWDialog :title="title" width="92vw" height="80vh">
-      <div  @click="showSearchbox = !showSearchbox"
-                class="flex items-center gap-2 w-24 cursor-pointer bg-Mittelblau hover:bg-Hellblau text-white text-sm font-bold px-4 py-2">
-            <MagnifyingGlassIcon class="w-5 h-5"/>Suche
-      </div>
-      <div class=" ">
-        <div class="grid grid-cols-4 gap-4 items-center" :class="{'hidden_': showSearchbox}">
+      <template v-slot:header>
+        <div  @click="showSearchbox = !showSearchbox"
+                  class="flex items-center gap-2 w-24 cursor-pointer bg-Mittelblau hover:bg-Hellblau text-white text-sm font-bold px-4 py-1">
+              Suche <MagnifyingGlassIcon class="w-5 h-5"/>
+        </div>
+      </template>
+      <div class="border rounded bg-white p-3 shadow-lg" :class="{'hidden': showSearchbox}">
+        <div class="grid grid-cols-4 gap-4 items-center">
         
 
           <div class="text-sm" :class="{'hidden': showSearchbox}">
@@ -107,7 +109,7 @@
 
           <div class="text-sm" :class="{'hidden': showSearchbox}">
             <label for="gesuchtePLZ" class="font-bold block">PLZ</label>
-            <input type="search" id="gesuchtePLZ" v-model="gesuchtePLZ" class="w-full text-sm p-1 form-input border-gray-300 rounded">
+            <input type="search" list="schulpostleitzahlen" id="gesuchtePLZ" v-model="gesuchtePLZ" class="w-full text-sm p-1 form-input border-gray-300 rounded">
           </div>
           <div class="text-sm" :class="{'hidden': showSearchbox}">
             <label for="gesuchterOrt" class="font-bold block">Ort</label>
@@ -116,12 +118,12 @@
 
         </div>
         
-        <div :class="{'hidden': showSearchbox}">
+        <div class="" :class="{'hidden': showSearchbox}">
             <div class="text-Mittelblau font-bold my-3">Suchergebnis</div>
             <div class="h-32 overflow-auto text-clip text-sm bg-white p-3 space-y-1">
-              <li v-for="schule in updateSuchergebnis">
+              <div v-for="schule in updateSuchergebnis">
                 <a class="hover:underline text-Mittelblau" href="">{{schule.schultyp}} - {{schule.plz}} {{schule.ort}}, {{schule.strasse}}</a>
-              </li>
+              </div>
             </div>
         </div>
       
@@ -132,16 +134,16 @@
               
         <legend class="font-light text-blue-600 text-lg">Schule</legend>
 
-        <div class="grid grid-cols-2 gap-4">
-          <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
-            <!-- <InputSelect label="Schultyp:*" :options="['Fachhochschule', 'Gymnasium', 'HAK', 'HTL']" width="w-full"/> -->
+        <div class="grid lg:grid-cols-2 gap-4">
+          <div class=" px-2 grid grid-cols-[minmax(9rem,auto)_1fr] gap-4">
+            <InputSelect label="Schultyp:*" :options="['Fachhochschule', 'Gymnasium', 'HAK', 'HTL']" width="w-full"/>
             <InputText label="Ort:" value="Eisenstadt" width="w-full"/>
             <InputText label="Postleitzahl" value="7000" width="w-full"/>
             <InputText label="Straße:" value="Campus 1" width="w-full"/>
             <InputSelect label="Land:" :options="['AT','DE', 'PL']" width="w-24" />
           </div>
 
-          <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
+          <div class=" px-2 grid grid-cols-[minmax(9rem,auto)_1fr] gap-4">
             <InputDate label="von:" value="01.10.1994" />
             <InputDate label="bis:" value="30.06.1998" />
             <InputEmptyPlaceholder />
@@ -154,12 +156,12 @@
 
       <fieldset class="border rounded-sm px-3 py-3 mt-3 ">
         <legend class="font-light text-blue-600 text-lg">Abschluss</legend>
-        <div class="grid grid-cols-2 gap-4 ">
-          <div class=" grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
+        <div class="grid lg:grid-cols-2 gap-4 ">
+          <div class=" grid grid-cols-[minmax(9rem,auto)_1fr] gap-4">
             <InputCheckbox label="Abschluss?*:" checkboxLabel="Ja" />
             <InputText label="Abschluss als:" value="Mag.(FH) Diplom fehlt" />
           </div>
-          <div class=" grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
+          <div class=" grid grid-cols-[minmax(9rem,auto)_1fr] gap-4">
             <InputSelect label="Titel vor dem Namen:" :options="['Bacc.','Mag.', 'Ing.']" width="w-32" />
             <InputSelect label="Titel nach dem Namen:" :options="['-', 'MSc.','MBA']" width="w-32" />
           </div>
@@ -168,7 +170,7 @@
         
       <fieldset class="border rounded-sm px-3 py-2 mt-3">
         <legend class="font-light text-blue-600 text-lg">Anrechenbare Werte</legend>
-        <div class="grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
+        <div class="grid grid-cols-[minmax(9rem,auto)_1fr] gap-4">
           <InputText label="Anrechenbare Werte:" value="48,00" width="w-32"/>
           <InputTextarea label="Bemerkungen:" />
         </div>
@@ -190,6 +192,13 @@
           
     <datalist id="schultypenListe">
       <option v-for="schultyp in schultypen" :value="schultyp" />
+      <option v-for="schultyp in schultypen" :value="'01 ' + schultyp" />
+      <option v-for="schultyp in schultypen" :value="'02 ' + schultyp" />
+      <option v-for="schultyp in schultypen" :value="'03 ' + schultyp" />
+      <option v-for="schultyp in schultypen" :value="'04 ' + schultyp" />
+    </datalist>
+    <datalist id="schulpostleitzahlen">
+      <option v-for="plz in 1000" :value="plz" />
     </datalist>
   </LKWWDialog>
   
