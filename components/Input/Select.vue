@@ -10,7 +10,7 @@ let selectedOption = props.selected ? props.selected : props.options[0];
 
 </script>
 <template>
-    <div v-if="label" class="grid self-start mt-2 text-sm font-bold text-gray-700">
+    <div v-if="label" class="self-center text-sm font-bold text-gray-700">
         {{label}}
     </div>
     <div class="w-full">

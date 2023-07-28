@@ -8,20 +8,24 @@
     const inBearbeitung = ref(false);
     const showDocumentUpload = ref(false);
     const title = "Fehlende Dokumente"
-    // const buttonText = "Dokumente hochladen"
     const dokumente = ref([
             {
-                name: 'Reisepass Kopie', 
-                hinweis: 'Bitte laden Sie ein Foto Ihres Reisepasses hoch. Überprüfen Sie ob der ihr Vorname und Nachname gut lesbar sind.',
+                name: 'Dienstzeugnisse', 
+                hinweis: 'Bitte laden Sie die Dokumente hoch',
                 sichtbar: false
             },
             {
-                name: 'Abschlusszeugnis Uni', 
+                name: 'Grundschuldaten', 
                 hinweis: 'Es genügt das Abschlusszeugnis (Bak, Master, Magister) mit Ihrem Namen und dem Stempel der Hochschule.',
                 sichtbar: false
             },
             {
-                name: 'Notfallsanitäter Ausbildung',
+                name: 'Aufenthaltstitel',
+                sichtbar: false,
+                hinweis: "Auf der Bestätigung / dem Zeugnis muss Ihr Name und der Name der Ausbildungsstätte sichtbar sein."
+            },
+            {
+                name: 'Dienstvertrag',
                 sichtbar: false,
                 hinweis: "Auf der Bestätigung / dem Zeugnis muss Ihr Name und der Name der Ausbildungsstätte sichtbar sein."
             }
@@ -46,7 +50,7 @@
                     Bitte laden Sie folgende Dokumente schnellstmöglich hoch.
                 </p>
 
-                <div v-for="dok in dokumente" class="mb-3">
+                <div v-for="dok in dokumente" class="mb-2">
                     <div @click="dok.sichtbar = !dok.sichtbar" 
                         :class="{
                             'bg-Blaugrau-10 border-gray-200 border-x': dok.sichtbar,

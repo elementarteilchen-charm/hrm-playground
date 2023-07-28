@@ -1,35 +1,5 @@
-export const angehoerige = [
-    {
-      notfallkontakt: true,
-      nachweis: false,
-      verwandtschaftsgrad: 'Mutter',
-      anrede: 'Fr.',
-      name: 'Babunek',
-      vorname: 'Susanne',
-      telefon: '',
-      handy: '+43 676 456 6655',
-    },
-    {
-      notfallkontakt: true,
-      nachweis: false,
-      verwandtschaftsgrad: 'Bruder',
-      anrede: 'Hr.',
-      name: 'Babunek',
-      vorname: 'Robert',
-      telefon: '+43 676 444 3456',
-      handy: '',
-    },
-    {
-      notfallkontakt: false,
-      nachweis: true,
-      verwandtschaftsgrad: 'Ehemann',
-      anrede: 'Hr.',
-      name: 'Babunek',
-      vorname: 'Peter',
-      telefon: '',
-      handy: '',
-    }
-
+export const digitaleAkteOrdner = [
+      '01 Bewerbungen und Zeugnisse', '02 Bewilligungen', '03 Verträge', '04 Infos + Beurteilungen', '05 Dokumente + Urkunden', '07 Diverses', '08 Austritt'
   ];
 export const ordner = [
       '01 Bewerbungen und Zeugnisse', '02 Bewilligungen', '03 Verträge', '04 Infos + Beurteilungen', '05 Dokumente + Urkunden', '07 Diverses', '08 Austritt'
@@ -38,7 +8,7 @@ export  const dokumentKategorien_volleListe = [
       "Anmeldebescheinigung", "Arbeitsbestätigung", "Aufenthaltstitel", "Beschäftigungsbewilligung", "Datenschutzerklärung",
       "Dienstvertrag", "Diplom", "Ersatz", "FXT", "HAS", "Homeoffice", "Inskriptionsbestätigung", "Konkurrenzklausel",
       "Lehrabschlussprüfung", "Maturazeugnis", "Meldezettel", "Personalausweis", "Personaldatenblatt", "Reisepass", "RWR",
-      "Schuldaten", "Schulzeugnisse", "Sprachzertifikate", "Uni", "Verpflichtungserklärung",
+      "Schuldaten", "Schulzeugnisse", "Sprachzertifikate", "Sonstiges", "Uni", "Verpflichtungserklärung",
   ];
 
 export  const dokumentKategorien = [

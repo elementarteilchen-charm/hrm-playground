@@ -11,7 +11,10 @@
     ];
   
   const activeTab = reactive({ tab: tabs[0] });
-  
+
+  function newTab(ev) {
+      activeTab.value = tabs[tabs.indexOf(ev)]
+  }
 </script>
 
 <template>
@@ -19,28 +22,20 @@
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
     
     <EintretendePersonHeader vorname="Stephanie" anrede="Fr." nachname="Babunek"/>
-    <NavigationTopMenu :topMenuItems="topMenuItems" :active="2"/>
-
+    
+    <!-- <NavigationTopMenu :topMenuItems="topMenuItems" :active="2"/> -->
+    {{topMenuItems}}
     <div class="bg-white border border-t border-t-gray-300 rounded overflow-hidden">
   
       <main class="grid lg:grid-cols-[minmax(min-content,12rem)_1fr]">
-            
-        <nav class="pt-6">
-          <ul class="text-sm">
-            <li v-for="tab, index in tabs" 
-                class="pl-4 pr-8 py-3 flex hover:bg-gray-200"
-                :class="[{'bg-gray-400 text-white font-bold': tab == activeTab.tab}]">
-                <a href="#" @click="activeTab.tab = tab">
-                  {{tab}}</a>
-            </li>
-          </ul>
-        </nav>
+        <NavigationHraTabMenu :tabs="tabs" @newtab="newTab"/>
+
      
         <div class="px-4 py-6 border-l">
-          <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+          <div v-show="tabs[0] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <DokumenteVerwalten />
           </div>
-          <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+          <div v-show="tabs[1] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
             <StammdatenDokumenteUebernehmen />
           </div>
 

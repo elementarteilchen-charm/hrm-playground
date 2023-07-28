@@ -20,7 +20,9 @@
 </script>
 
 <template>
-    <h3 class="text-lg font-bold text-gray-900 ">Familienangehörige verwalten</h3>
+  <!-- <LayoutFormSection title="Familienangehörige verwalten"> -->
+  <LayoutFormSection >
+    <h3 class="text-lg font-bold text-gray-900 "></h3>
     
       <table class="table w-full text-sm bg-gray-50">
         <thead class="bg-gray-200 text-left text-gray-500 ">
@@ -49,10 +51,10 @@
           </tr>
         </tbody>
       </table>
-      <div class="flex justify-end">
+      <div class="mt-4 flex justify-end">
         <button @click="showDialog" class="bg-blue-700 text-white px-3 py-2">Weitere Person hinzufügen</button>
       </div>
-  
+  </LayoutFormSection>
 
     <dialog id="neue-person-dialog" class="modal shadow-lg bg-gray-100 p-4">
         <form action="" method="dialog" class="h-full">
