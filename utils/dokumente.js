@@ -6,7 +6,7 @@ export const ordner = [
   ];
 export  const dokumentKategorien_volleListe = [
       "Anmeldebescheinigung", "Arbeitsbestätigung", "Aufenthaltstitel", "Beschäftigungsbewilligung", "Datenschutzerklärung",
-      "Dienstvertrag", "Diplom", "Ersatz", "FXT", "HAS", "Homeoffice", "Inskriptionsbestätigung", "Konkurrenzklausel",
+      "Dienstvertrag", "Diplom", "Ersatz", "FXT", "Geburtsurkunde", "HAS", "Homeoffice", "Inskriptionsbestätigung", "Konkurrenzklausel",
       "Lehrabschlussprüfung", "Maturazeugnis", "Meldezettel", "Personalausweis", "Personaldatenblatt", "Reisepass", "RWR",
       "Schuldaten", "Schulzeugnisse", "Sprachzertifikate", "Sonstiges", "Uni", "Verpflichtungserklärung",
   ];

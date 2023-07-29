@@ -2,6 +2,7 @@
     import {ExclamationTriangleIcon, ArrowRightCircleIcon} from '@heroicons/vue/24/outline'
 
     const props = defineProps({
+        heading: { type: String, default: '' },
         tabs: { type: Array, default: [] }
     })
     const activeTab = ref(props.tabs[0]);
@@ -15,6 +16,9 @@
 </script>
 <template>
     <div class="">
+        <h3 v-if="heading" class="px-4 mt-6 text-lg font-light text-Blaugrau">
+            {{heading}}
+        </h3>   
         <nav class="mt-2">
             <ul class="text-sm">
                 <li v-for="tab, index in tabs" 

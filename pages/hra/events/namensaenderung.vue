@@ -9,12 +9,7 @@
     ];
     const ma = mitarbeiterListe[0]
     const activeTab = ref(tabs[0]);
-    const zeigeAnforderungen = ref(false)
-    const zeigeProzessinfo = ref(true)
 
-    function newTab(ev) {
-        activeTab.value = tabs[tabs.indexOf(ev)]
-    }
 </script>
 
 <template>
@@ -23,25 +18,16 @@
             Events & Änderungen
         </h1>
         <HRAMitarbeiterSuchfeld class="w-1/3"/>
-        {{activeTab}}
     </div>
-
         
     <main class="grid grid-rows-[auto_auto_auto] gap-6">
         <HRAMitarbeiterInfoBox />
-        
         <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" :active="0" />
         
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
-                
-                <nav>
-                    <h3 class="px-4 mt-6 text-lg font-light text-Blaugrau">
-                        Namensänderung
-                    </h3>   
-                    <NavigationHraTabMenu :tabs="tabs" @newtab="newTab" />
-                </nav>
 
+                <NavigationHraTabMenu heading="Namensänderung" :tabs="tabs"  @newtab="(ev) => activeTab = ev" />                        
                 <div class="px-4 py-4 border-l pb-12">
                     
                     <div v-if="'Nachname' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
@@ -78,7 +64,10 @@
                                     <InputText label="Nachname Reisepass" value="Aberl-Konrad" />
                                 </div>
                             </div>
-                        <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="" kategorie="Sonstiges" />
+                            <HRAFormsNachweisUploadBox 
+                                    dateiname="" 
+                                    ordner="05 Dokumente + Urkunden" 
+                                    kategorie="Sonstiges" />
                         </LayoutFormSection>
 
                     </div>
@@ -97,6 +86,7 @@
                                 <CheckedItem>IT und Rechnungswesen benachrichtigen</CheckedItem>
                                 <CheckedItem>WND: Personalverrechnung benachrichtigen</CheckedItem>
                                 <CheckedItem>Excel Info Liste an IT, Schulung und Telefonzentrale</CheckedItem>
+                                
                                 <button class="bg-Orange hover:bg-Orange-80 text-white px-3 py-2">Namensänderung durchführen</button>
                             </div>
                         </LayoutFormSection>

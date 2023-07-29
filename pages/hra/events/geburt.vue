@@ -4,7 +4,6 @@
 
     const tabs = [
         'Geburtstermin',
-        'Geburtsurkunde',
         'Schulungen',
         'Familienangehörige',
         'Benachrichtigungen'
@@ -12,76 +11,60 @@
     const activeTab = ref(tabs[0]);
     const zeigeAnforderungen = ref(false)
     
-    function newTab(ev) {
-        activeTab.value = tabs[tabs.indexOf(ev)]
-    }
+
 </script>
 
 <template>
-    <div class="flex items-center justify-between">
-        <div class="my-3 ml-3 text-3xl font-light text-Blaugrau">
+    <div class="flex items-center py-3 justify-between">
+        <h1 class="my-3 text-3xl font-light text-Blaugrau">
             Events & Änderungen
-        </div>
+        </h1>
+        <HRAMitarbeiterSuchfeld class="w-1/3"/>
     </div>
-    <div class="my-3 flex gap-2 items-center w-full">
-        <input class="border rounded border-gray-200 px-4 py-2 w-full" value="" placeholder="Name, Bereich, Abteilung, ...">
-        
-    </div>
-    <main class="grid grid-rows-[auto_auto_auto] gap-4">
-        
+
+
+    <main class="grid grid-rows-[auto_auto_auto] gap-6">
         <HRAMitarbeiterInfoBox />
-        
-        <div class="my-1 ml-3 text-2xl font-light text-Blaugrau">
-            Geburt 
-        </div>
+        <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" :active="2" />
+
         <div class="bg-white border border-t rounded overflow-hidden">
             
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 
-                <NavigationHraTabMenu :tabs="tabs" @newtab="newTab"/>
-
+                <NavigationHraTabMenu heading="Geburt" :tabs="tabs"  @newtab="(ev) => activeTab = ev" />
                 <div class="px-4 py-4 border-l pb-12">
 
-                    <div v-show="tabs[0] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-show="'Geburtstermin' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Geburtstermin</h3>  
                         
                         <LayoutFormSection title="Wochenhilfe">
                           
                           <div class="grid lg:grid-cols-1 gap-4">
                               <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
-                                <InputDate label=" Schwangerschaftsbestätigung" />
+                                <InputDate label="Schwangerschaftsbestätigung" />
                                 <InputDate label="Voraussichtlicher Geburtstermin" />
                                 <InputDate label="Tatsächlicher Geburtstermin" />
                                 <InputDate label="Wochenhilfe Start" />
                                 <InputDate label="Wochenhilfe Ende" />
                               </div>
                           </div>
+                          <HRAFormsNachweisUploadBox 
+                                  dateiname="" 
+                                  ordner="05 Dokumente + Urkunden" 
+                                  kategorie="Geburtsurkunde" />
                         </LayoutFormSection>
-                        <div class="w-1/3 grid grid-cols-[2rem_auto] items-center gap-2 hover:cursor-pointer text-Mittelblau p-3 hover:bg-Blaugrau-10 border border-Mittelblau rounded-lg shadow-lg transition">
-                             
-                            <CloudArrowUpIcon class="w-7 h-7 "/>      
-                             <span>Geburtsurkunde hochladen</span>
-                        </div>
+                       
                     </div>
 
-                    <div v-show="tabs[1] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <h3 class="font-bold text-xl">Geburtsurkunde</h3> 
-                        <LayoutFormSection >
-                            <div class="w-1/3 grid grid-cols-[2rem_auto] items-center gap-2 hover:cursor-pointer text-Mittelblau p-3 hover:bg-Blaugrau-10 border border-Mittelblau rounded-lg shadow-lg transition">
-                                 
-                                <CloudArrowUpIcon class="w-7 h-7 "/>      
-                                 <span>Geburtsurkunde hochladen</span>
-                            </div>
-                        </LayoutFormSection>
-                    </div>
-                    <div v-show="tabs[2] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-show="'Schulungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Schulungen</h3>  
-                        <LayoutFormSection title="Geplante Schulungen">
+                        
+                        <LayoutFormSection>
                             <ul class="text-sm list-disc">
                               <li class="ml-6">12.08.2023: Polnisch B1</li>
                               <li class="ml-6">03.09.2023: Polnisch B2</li>
                             </ul>
-                            <div class="mt-6 grid grid-cols-2 gap-4 items-center">
+                            
                             <div class="my-3 bg-Orange-10 flex gap-4 items-center p-3">
                                 <ExclamationTriangleIcon class="flex-shrink-0 w-6 h-6"/>
                                 <p>
@@ -90,20 +73,22 @@
                                 </p>
                             </div>
                           
-                            <div class="place-self-center my-6">
-                                <!-- <InputCheckbox checkboxLabel="Kursperre aktivieren" /> -->
-                                <button class="px-4 py-2 bg-Orange text-white border-Orange hover:shadow-lg">
-                                    Kursperre jetzt aktivieren
-                                </button>
-                            </div>
-                          </div>
-                          <div>
-                              Die Kursperre wurde am 15.06.2023 von Diren Akbulut aktiviert.
-                          </div>
+                            <button class="px-4 py-2 bg-Orange text-white border-Orange hover:shadow-lg">
+                                Kursperre jetzt aktivieren
+                            </button>
+                            
                         </LayoutFormSection>
+                        <div class="mt-6 border bg-Hellgrau p-3">
+                            <h3 class="text-sm font-bold text-gray-700">Vorherige Aktionen</h3>
+                            <ul>
+                                <li>
+                                    Die Kursperre wurde am 15.06.2023 von Diren Akbulut aktiviert.   
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div v-show="tabs[3] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-show="'Familienangehörige' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Familienangehörige</h3> 
                         <StammdatenFamilienangehoerige />
                     </div>
