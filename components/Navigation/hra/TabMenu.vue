@@ -1,5 +1,5 @@
 <script setup>
-    import {ArrowRightCircleIcon} from '@heroicons/vue/24/outline'
+    import {ExclamationTriangleIcon, ArrowRightCircleIcon} from '@heroicons/vue/24/outline'
 
     const props = defineProps({
         tabs: { type: Array, default: [] }
@@ -23,9 +23,12 @@
                         'border-l-4 border-blue-500 text-blue-700 font-bold': tab == activeTab
                     }]">
 
-                    <span v-if="tab == 'Durchführen'"> <ArrowRightCircleIcon class="w-5 h-5"/></span>
+                    <div class="flex gap-2">
+                        
                     <a href="#" @click="changeTab(tab)">
-                        {{tab}}</a>
+                        {{tab}} </a>
+                    <span v-if="tab == 'Durchführen'"><ExclamationTriangleIcon class="text-orange-500 w-5 h-5"/></span>
+                    </div>
                 </li>
             </ul>
 
