@@ -8,15 +8,44 @@ export  const topMenuItems = [
         link: "/hra/mitarbeiterinnen/ausbildung",
       },
       {
-        linkText: "Dokumente",
-        link: "/hra/mitarbeiterinnen/dokumente",
-      },
-      {
         linkText: "Vertrag",
         link: "/hra/mitarbeiterinnen/vertragsdaten",
       },
       {
-        linkText: "Zusammenfassung",
-        link: "/hra/mitarbeiterinnen/zusammenfassung",
+        linkText: "Dokumente",
+        link: "/hra/mitarbeiterinnen/dokumente",
+      },
+    ];
+
+
+
+export  const eventMenuItems = [
+      {
+        linkText: "Namensaenderung",
+        link: "/hra/events/Namensaenderung",
+      },
+      {
+        linkText: "Hochzeit",
+        link: "/hra/events/Hochzeit",
+      },
+      {
+        linkText: "Geburt",
+        link: "/hra/events/Geburt",
+      },
+      {
+        linkText: "Ernennungen",
+        link: "/hra/events/Ernennungen",
+      },
+      {
+        linkText: "Ummeldungen",
+        link: "/hra/events/Ummeldungen",
+      },
+      {
+        linkText: "Geschenke",
+        link: "/hra/events/Geschenke",
+      },
+      {
+        linkText: "Jubiläum",
+        link: "/hra/events/Jubiläum",
       }
     ];

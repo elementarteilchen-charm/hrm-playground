@@ -10,7 +10,9 @@
 		    <div class="px-4">
 		    
 		        <div class="font-bold text-xl">
-		            {{ma.vorname}} {{ma.name}}
+		            <a href="/hra/mitarbeiterinnen/profil">
+		            	{{ma.vorname}} {{ma.name}}		            	
+		            </a>
 		        </div>
 		        <div class="content-end">
 		            {{ma.taetigkeit}}

@@ -23,8 +23,8 @@ function newTab(ev) {
 }
 
 const ma = mitarbeiterListe[0]
-
 </script>
+
 <template>
     <div class="flex items-center py-3 justify-between">
         <h1 class="my-3 text-3xl font-light text-Blaugrau">

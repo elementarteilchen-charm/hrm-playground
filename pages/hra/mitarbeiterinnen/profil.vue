@@ -56,15 +56,18 @@
 </script>
 
 <template>
-    <div class="my-3 text-3xl font-light text-Blaugrau">
-      Mitarbeiter*in
-    </div>
+  <div class="flex items-center py-3 justify-between">
+      <h1 class="my-3 text-3xl font-light text-Blaugrau">
+          Persönliche Daten bearbeiten
+      </h1>
+      <HRAMitarbeiterSuchfeld class="w-1/3"/>
+      {{activeTab}}
+  </div>
   
+  <HRAMitarbeiterInfoBox class="mb-6"/>
+
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
 
-    <div class="my-6">
-      <HRAProfilHeader />
-    </div>
     <div>
       Liste der letzten Aktionen 
     </div>
