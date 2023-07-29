@@ -92,7 +92,8 @@
                         <h3 class="font-bold text-xl">Familienangehörige</h3> 
                         <StammdatenFamilienangehoerige />
                     </div>
-                    <div v-show="tabs[4] == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    
+                    <div v-show="'Benachrichtigungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <LayoutFormSection>
 
                             <div class="space-y-3">
@@ -125,7 +126,7 @@
         </div>
     </main>
      
-     <div @click="showDialog('Anforderungen')" class="hover:cursor-pointer text-Mittelblau">Anforderungen</div>
+    <div @click="showDialog('Anforderungen')" class="hover:cursor-pointer text-Mittelblau">Anforderungen</div>
 
     <LKWWDialog title="Anforderungen">
             <li>Schwangerschaft wird von MA*in an HR gemeldet (Telefon, Email, Self Service)</li>
