@@ -2,6 +2,7 @@
     import {ExclamationTriangleIcon, TrashIcon, CloudArrowUpIcon} from '@heroicons/vue/24/outline'
     import { showDialog } from '/utils/modal.js'
     const title = "Anforderungen"
+
     const tabs = [
         'Nachname',
         'Stammdatenblatt',
@@ -28,6 +29,7 @@
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
 
                 <NavigationHraTabMenu heading="Namensänderung" :tabs="tabs"  @newtab="(ev) => activeTab = ev" />                        
+                
                 <div class="px-4 py-4 border-l pb-12">
                     
                     <div v-if="'Nachname' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
@@ -82,7 +84,7 @@
                         <LayoutFormSection>
                             <div class="space-y-3">
                                 <CheckedItem>Neuen Namen im System speichern</CheckedItem>
-                                <CheckedItem>Änderung der Email und des Anmeldenamens</CheckedItem>
+                                <CheckedItem>Änderung der Email und des Anmeldenamens von Regina Aberl anstoßen</CheckedItem>
                                 <CheckedItem>IT und Rechnungswesen benachrichtigen</CheckedItem>
                                 <CheckedItem>WND: Personalverrechnung benachrichtigen</CheckedItem>
                                 <CheckedItem>Excel Info Liste an IT, Schulung und Telefonzentrale</CheckedItem>

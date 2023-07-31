@@ -9,7 +9,7 @@ export  const topMenuItems = [
       },
       {
         linkText: "Vertrag",
-        link: "/hra/mitarbeiterinnen/vertragsdaten",
+        link: "/hra/mitarbeiterinnen/vertrag",
       },
       {
         linkText: "Dokumente",
@@ -21,7 +21,7 @@ export  const topMenuItems = [
 
 export  const eventMenuItems = [
       {
-        linkText: "Namensaenderung",
+        linkText: "Namensänderung",
         link: "/hra/events/Namensaenderung",
       },
       {

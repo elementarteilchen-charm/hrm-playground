@@ -3,7 +3,7 @@
 </script>
 <template>
 	<div class="flex gap-2 items-center">
-		<CheckCircleIcon class="w-5 h-5"/>
+		<CheckCircleIcon class="w-5 h-5 flex-shrink-0"/>
 		<slot></slot>
 	</div>
 </template>

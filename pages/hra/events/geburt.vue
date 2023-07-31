@@ -38,7 +38,7 @@
                         <h3 class="font-bold text-xl">Geburtstermin</h3>  
                         
                         <LayoutFormSection title="Wochenhilfe">
-                          
+                          Weitere Geburt hinzufügen
                           <div class="grid lg:grid-cols-1 gap-4">
                               <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                                 <InputDate label="Schwangerschaftsbestätigung" />

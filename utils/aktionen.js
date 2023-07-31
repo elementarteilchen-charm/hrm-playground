@@ -3,13 +3,7 @@ export const aktionenFuerMA = [
       headline: "Persönlich",
       items: [
         {text: "Stammdaten", process: false, link: "/hra/mitarbeiterinnen/stammdaten"},
-        // {text: "Adressen", process: false, link: "/hra/mitarbeiterinnen/adressen"},
-        // {text: "Bankverbindung", process: false, link: "/hra/mitarbeiterinnen/bankverbindung"},
-        // {text: "Ausbildung", process: false, link: "/hra/mitarbeiterinnen/vertrag"},
-        // {text: "Familienangehörige", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
-        // {text: "Notfallkontakt", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
-        // {text: "Invalidität", process: false, link: "/hra/mitarbeiterinnen/vertrag"},
-        {text: "Ausbildung und Vordienstzeiten", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
+        {text: "Ausbildung", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
         {text: "Vertrag", process: false, link: "/hra/mitarbeiterinnen/vertrag"},
         {text: "Dokumente", process: false, link: "/hra/mitarbeiterinnen/dokumente"},
       ]
@@ -17,8 +11,8 @@ export const aktionenFuerMA = [
     {
       headline: "Events & Änderungen",
       items: [
+        {text: 'Namensänderung', process: true, link: '/hra/events/Namensaenderung'},
         {text: 'Hochzeit', process: true, link: '/hra/events/Hochzeit'},
-        {text: 'Namensaenderung', process: true, link: '/hra/events/Namensaenderung'},
         {text: 'Geburt', process: false, link: '/hra/events/Geburt'},
         {text: 'Ernennungen', process: false, link: '/hra/events/Ernennungen'},
         {text: 'Ummeldungen', process: true, link: '/hra/events/Ummeldungen'},

@@ -17,7 +17,12 @@
         <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2 space-y-3">
           <InputRadio label="Geschlecht" :options="['Weiblich','Männlich', 'Divers']" name="gender" width="w-48"/>
           <InputSelect label="Titel vor dem Namen" :options="['BA','Mag.', 'MSc.']" width="w-48"/>
-          <InputText label="Vorname" value="Stephanie"/>
+          <!-- <InputText label="Vorname" value="Stephanie"/> -->
+          <div class="text-sm font-bold">Vorname</div>
+          <div class="">
+            <span class="font-bold px-2">Stephanie</span> 
+           
+          </div>
           <div class="text-sm font-bold">Nachname</div>
           <div class="">
             <span class="font-bold px-2">Babunek</span> 
