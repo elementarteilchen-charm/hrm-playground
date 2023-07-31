@@ -1,14 +1,6 @@
 <script setup>
   
   const gesuchterName = ref()
-  const aktiverMA = ref()
-  const emit = defineEmits(['MaGewaehlt'])
-
-  function waehleMA(ma) {
-    aktiverMA.value = ma
-    alert("Setze aktiverMA = " + ma.name)
-    alert("Und wohin nun...?")
-  }
 
   function avatar(ma) {return "background-image: url('/img/"  + ma.avatar + "')"; }
 </script>
