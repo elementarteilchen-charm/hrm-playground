@@ -1,19 +1,21 @@
 export const vertragsdatensaetze = [
 {
-	personalnr: 12345,
-	mandant: 'WGS',
+	personalnr: "13496",
+	mandant: 'LKW',
 	standort: 'WND',
-	neueintritt: false,
-	dienstantritt: '2023-06-02',
-	dvbeginn: '2020-06-01',
-	dvende: '',
+	neueintritt: true,
+	arbeitsverhaeltnis: 'Angestellter',
+	dienstantritt: '2016-08-01',
+	dvbeginn: '2016-08-01',
+	dvende: '2019-12-31',
 	geringfuegig: false,
 	austrittsdatum: '',
 	letzterArbeitstag: '',
-	technischesAustrittsdatum: ''
+	technischesAustrittsdatum: '',
+	bemerkung: "Ex Praktikum"
 },
 {
-	personalnr: 52345,
+	personalnr: "52345",
 	mandant: 'LKW',
 	standort: 'WND',
 	neueintritt: false,

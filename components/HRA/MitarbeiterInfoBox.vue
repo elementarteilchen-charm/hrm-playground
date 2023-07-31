@@ -10,17 +10,16 @@
 		    <div class="px-4">
 		    
 		        <div class="font-bold text-xl">
-		            <a href="/hra/mitarbeiterinnen/profil">
+		            <a href="/hra/mitarbeiterinnen/profil" class="text-Mittelblau">
 		            	{{ma.vorname}} {{ma.name}}		            	
 		            </a>
 		        </div>
-		        <div class="content-end">
+		        <div class="">
 		            {{ma.taetigkeit}}
 		        </div>
-		        <!-- <h3>Letzte Aktionen</h3> -->
 		    
 		    </div>
-		    <div class="grid grid-cols-3 px-4">
+		    <div class="mt-3 grid grid-cols-3 px-4 py-3">
 		    	
 		        <ul class="text-sm space-y-1 text-Mittelblau">
 		            <li v-for="abteilung in ma.abteilungen">
@@ -35,11 +34,11 @@
 		            <li>Tel: +43 664 88370265</li>
 		        </ul>
 		        <div>
-		        	<strong>Historie</strong>
+		        	<!-- <strong>Historie</strong>
 			        <ul class="text-sm space-y-1 text-Mittelblau">
 			        	<li>Namensänderung</li>
 			        	<li>Reisepass hochgeladen</li>
-			        </ul>
+			        </ul> -->
 		        </div>
 	    	</div>
 	    </div>

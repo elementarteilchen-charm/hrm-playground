@@ -1,21 +1,13 @@
 <script setup>
-  import { CheckCircleIcon, XCircleIcon, PencilIcon, ArchiveBoxIcon } from '@heroicons/vue/24/outline' 
+  import { CheckCircleIcon, XCircleIcon, PencilIcon, TrashIcon } from '@heroicons/vue/24/outline' 
 
-  const thePerson = reactive({})
+  const title = "Vertragsdatensatz"
+  
+  function showDialog(dialogId) {
+        document.getElementById(dialogId).showModal();
+    }
 
-
-  function showDialog(person) {
-      thePerson.name = person.name;
-      thePerson.vorname = person.vorname;
-      thePerson.telefon = person.telefon;
-      thePerson.handy = person.handy;
-      thePerson.notfallkontakt = person.notfallkontakt;
-      document.getElementById('neue-person-dialog').showModal();
-  }
-
-  function showUploadDialog() {
-    document.getElementById('nachweis-upload-dialog').showModal();
-  }
+  const vds = vertragsdatensaetze[0]
 
 </script>
 
@@ -31,168 +23,95 @@
             <th class="px-2 py-1 text-sm ">Dienstantritt</th>
             <th class="px-2 py-1 text-sm ">DV Beginn</th>
             <th class="px-2 py-1 text-sm ">DV Ende</th>
-            <th class="px-2 py-1 text-sm ">Mandant</th>
-            <th class="px-2 py-1 text-sm ">Standort</th>
+            <th class="px-2 py-1 text-sm ">Mandant <br> Standort</th>
+            <!-- <th class="px-2 py-1 text-sm ">Standort</th> -->
             <th class="px-2 py-1 text-sm ">Geringfügig Karenz</th>
             <th class="px-2 py-1 text-sm text-center">Austrittsdatum</th>
             <th class="px-2 py-1 text-sm text-center">Letzter Arbeitstag</th>
             <th class="px-2 py-1 text-sm text-center">Techn. Austrittsdatum</th>
+            <th class="px-2 py-1 text-sm text-center">Edit</th>
           </tr>
         </thead>
         <tbody class="bg-white_ ">
           <tr 
               v-for="vertrag, index in vertragsdatensaetze" 
-              class="h-10 hover:bg-blue-200 hover:cursor-pointer" 
-              @click="showDialog(person)">
+              class="h-10_">
             <td class="border-b py-3 px-2 ">{{vertrag.personalnr}}</td>
             <td class="border-b py-1 px-2 ">{{vertrag.neueintrit}}</td>
             <td class="border-b py-1 px-2 ">{{vertrag.dienstantritt}}</td>
             <td class="border-b py-1 px-2 ">{{vertrag.dvbeginn}}</td>
             <td class="border-b py-1 px-2 ">{{vertrag.dvende}}</td>
-            <td class="border-b py-1 px-2 ">{{vertrag.mandant}}</td>
-            <td class="border-b py-1 px-2 ">{{vertrag.standort}}</td>
+            <td class="border-b py-1 px-2 ">{{vertrag.mandant}} <br> {{vertrag.standort}}</td>
+            <!-- <td class="border-b py-1 px-2 ">{{vertrag.standort}}</td> -->
             <td class="border-b py-1 px-2 "><CheckCircleIcon class="mx-auto w-5 h-5" v-if="vertrag.geringfuegig"/></td>
             <td class="border-b py-1 px-2 ">{{vertrag.austrittsdatum}}</td>
             <td class="border-b py-1 px-2 ">{{vertrag.letzterArbeitstag}}</td>
             <td class="border-b py-1 px-2 ">{{vertrag.technischesAustrittsdatum}}</td>
+            <td class="border-b px-2 ">
+              <div class="flex items-center gap-2 h-full">
+                <a @click="showDialog('Vertragsdatensatz')"><PencilIcon class="w-5 h-5 text-Mittelblau" /></a>
+                <TrashIcon class="w-5 h-5 text-Mittelblau" />
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
       <div class="mt-4 flex justify-end">
-        <button @click="showDialog" class="bg-blue-700 text-white px-3 py-2">Vertragsdatensatz hinzufügen</button>
+        <button @click="showDialog('Vertragsdatensatz')" class="bg-blue-700 text-white px-3 py-2">Vertragsdatensatz hinzufügen</button>
       </div>
   </LayoutFormSection>
 
-    <dialog id="neue-person-dialog" class="modal shadow-lg bg-gray-100 p-4">
-        <form action="" method="dialog" class="h-full">
-            <div class="grid grid-rows-[3rem_1fr_3rem] h-full">
-                <header class="px-4 py-2 h-12  text-lg font-bold ">
-                    Familienangehörigen hinzufügen 
-                </header>
-                <main class="px-4 py-2" style="height: calc(100% - 1rem); overflow-y: auto;">
-                    
-                  <div class="mt-4 grid grid-cols-2 gap-4">
-                    <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
-                      <InputSelect label="Beziehung" :options="['Vater', 'Nicht verwandt']" width="w-48"/>
-                    </div>
-                    <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
-                     <InputCheckbox 
-                              name="Notfallkontakt" label="Notfallkontakt" 
-                              :checked="thePerson.notfallkontakt" 
-                              checkboxLabel="Ja" />  
-                    </div>
+  <dialog id="Vertragsdatensatz" class="shadow-lg p-0 bg-Blaugrau-10" 
+          style="width: 50vw; height: 70vh">
+    <form action="" method="dialog" class="h-full">
+        <div class="grid grid-rows-[auto_1fr_3rem] h-full">
+    
+            <header class="px-6 py-6 text-xl text-Blaugrau flex justify-between">
+                <div>{{title}}</div>
+            </header>
+        
+            <main class="px-6" 
+                style="height: calc(100% -3rem); overflow-y: auto;">
+                <div class="grid lg:grid-cols-2 gap-4">
+                  <div class=" grid grid-cols-[minmax(12rem,min-content)_1fr] items-baseline gap-3">  
+                    <InputSelect label="PersonalNr" :options="[13496, 15673]" :selected="vds.personalnr"/>
+                    <InputDate label="Dienstantritt" :value="vds.dienstantritt"/>
+                    <InputDate label="DV Beginn" :value="vds.dvbeginn"/>
+                    <InputDate label="DV Ende" :value="vds.dvende"/>
+                    <div></div><div></div>
                   </div>
-
-                  <div class="mt-4 grid grid-cols-2 gap-4">
-                    <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
-                      <InputText label="Name*"  width="w-48" :value="thePerson.name"/>
-                      <InputText label="Vorname"  width="w-48" :value="thePerson.vorname"/>
-                      <InputText label="Beruf"  width="w-48"/>
-                    </div>  
-                    <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
-                      <InputText label="Handy" width="w-48" :value="thePerson.handy"/>
-                      <InputText label="Telefon"  width="w-48" :value="thePerson.telefon"/>
-                      
-                    </div>
+                  <div class=" grid grid-cols-[minmax(12rem,min-content)_1fr] items-baseline gap-3">  
+                    <InputCheckbox label="Neueintritt" />
+                    <InputCheckbox label="Grenzgänger" />
+                    <InputCheckbox label="Geringfügig / Karenz" />
+                    <InputSelect label="Mandant" :options="['WGS', 'LKW', 'CTX']"/>
+                    <InputSelect label="Standort" :options="['WND', 'KUF']"/>
+                    <InputSelect label="Arbeitsverhältnis" :options="['Angestellter', 'Praktikant', 'Ferial']"/>
                   </div>
+                </div>
                   
-                    
-                  <div class="mt-4 grid grid-cols-2 gap-4">
-                    <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
-                      <InputCheckbox label="Verstorben" checkboxLabel="Ja" />
-                    </div>
-                    <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
-                      <InputDate label="Sterbedatum"/>
-                    </div>
-                  </div>
-                  
-                  <div class="mt-3  px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
-                      <InputTextarea label="Bemerkung" />
-                  </div>
+                <div class="mt-6 grid grid-cols-[minmax(12rem,min-content)_1fr] items-baseline gap-3">  
+                  <InputDate label="Letzter Arbeitstag" :value="vds.letzterArbeitstag"/>
+                  <InputDate label="Techn. Austrittsdatum" />
+                  <InputSelect label="Art der Kündigung" :options="['DN Kündigung', 'DG Kündigung', 'Einvernehmliche']" width="w-1/2"/>
+                  <InputSelect label="Grund der Kündigung" :options="['DG1', 'DG2', 'DG3']" width="w-1/2"/>
+                </div>
 
-                  <div class="mt-4 grid grid-cols-2 gap-4">
-                    <div class="mt-3  px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
-                      <InputCheckbox label="Nachweis" checkboxLabel="vorhanden"/>
-                    </div>
-                    
-                  </div>
+            </main>
 
-                  <section class="border-t mt-6 py-3">
-                    <h3 class="font-bold mb-2">Nachweisdokument</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                      <div class="border border-gray-400 rounded-md shadow-md w-48 h-24 bg-white p-4 flex space-x-2">
-                          <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
-                          <div @click="showUploadDialog" class="text-sm place-self-center">Upload Nachweis</div>
-                      </div>
-                      <div class="p-4">
-                        <p>Für Babunek Peter ist bereits eine Datei vorhanden:</p>
-                        <a href="" class="text-blue-700 hover:underline">Heiratsurkunde.pdf</a> 
-                      </div>
-                      
-                    </div>
-                  </section>
-                
-                </main>
-
-                <footer class="px-4 h-12">
-                    <div class="flex justify-end space-x-4">
-                        <button class="text-sm text-blue-600 hover:underline">Abbrechen</button>
-                        <button formmethod="dialog" class="bg-blue-700 text-white px-3 py-2">Hinzufügen</button>
-                    </div>
-                </footer>
-            </div>
-        </form>
-    </dialog>
-
-    <dialog id="nachweis-upload-dialog" name="nachweis-upload-dialog" class="modal shadow-lg bg-gray-100 p-4">
-        <div class="grid grid-rows-[3rem_1fr_3rem] h-full">
-          <header class="px-4 py-2 h-12  text-lg font-bold ">
-              Nachweis für Familienangehörigen hochladen 
-          </header>
-          <form action="" method="dialog" class="h-full">
-          <main class="px-4 py-2" style="height: calc(100% - 1rem); overflow-y: auto;">
-              <div>
-                <Anmerkung>
-                  Es ist bereits eine Datei vorhanden:
-                  <a href="" class="text-blue-700 hover:underline">Heiratsurkunde.pdf</a> <br> <br>
-                  Wollen Sie <em>Heiratsurkunde.pdf</em> mit der neuen Datei ersetzen?
-                </Anmerkung>
+            <footer class="px-4 ">
+              <div class="flex justify-end space-x-6">
+                  <button class="text-sm text-Mittelblau font-bold hover:underline">Abbrechen</button>
+                  <button type="submit" class="bg-Mittelblau hover:bg-Hellblau text-white text-sm font-bold px-4 py-2">Speichern</button>
               </div>
-              <div class="my-3 border p-4 rounded w-1/2 bg-white">
-                <label for="fileupload" class="">
-                  <div class="flex space-x-4">
-                    <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
-                    <input type="file" id="fileupload" class="form-input border p-2 rounded ">
-                  </div>
-                  <div class="text-gray-400 text-sm ml-4 mt-2">Datei hier her ziehen oder klicken um eine Datei auszuwählen</div>
-                </label>
-              </div>
-          </main>
-          <footer class="px-4 h-12">
-              <div class="flex justify-end space-x-4">
-                  <button class="text-sm text-blue-600 hover:underline">Abbrechen</button>
-                  <button formmethod="dialog" class="bg-blue-700 text-white px-3 py-2">Hinzufügen</button>
-              </div>
-          </footer>
-            </form>
+            </footer>
         </div>
-    </dialog>
-
+    </form>
+  </dialog>
+  
 </template>
-
 <style>
-dialog.modal {
-  height: 75vh;
-  width: 66vw;
-    
-}
-
-dialog.upload {
-  height: 75vh;
-  width: 66vw;
-    
-}
 dialog::backdrop {
-    background: rgba(0.2, 0.2, 0.2, 0.4);
-}
+      background: rgba(0.2,0.2,0.2, 0.4);  
+    } 
 </style>

@@ -10,11 +10,6 @@ const tabs = [
 ];
 
 const activeTab = ref(tabs[0]);
-
-function newTab(ev) {
-    activeTab.value = tabs[tabs.indexOf(ev)]
-}
-
 const ma = mitarbeiterListe[0]
 </script>
 
@@ -24,7 +19,6 @@ const ma = mitarbeiterListe[0]
             Persönliche Daten bearbeiten
         </h1>
         <HRAMitarbeiterSuchfeld class="w-1/3"/>
-        {{activeTab}}
     </div>
     
     <HRAMitarbeiterInfoBox class="mb-6"/>
@@ -36,39 +30,14 @@ const ma = mitarbeiterListe[0]
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 
-                <NavigationHraTabMenu heading="Vertragsdaten" :tabs="tabs" @newtab="newTab"/>
+                <NavigationHraTabMenu heading="Vertragsdaten" :tabs="tabs"  @newtab="(ev) => activeTab = ev" />                        
 
                 <div class="px-4 my-4 border-l pb-12">
 
                     <div v-show="activeTab == 'Vertrag'" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <HRAVertragVertragsdatensatz />
                     </div>
-                    <div v-show="activeTab == 'Staatsangehörigkeit'" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <HRAPersonStaatsangehoerigkeit />
-                    </div>
-                    <div v-show="activeTab == 'Adressen und Kontakt'" class="px-2 grid grid-rows-1 gap-4">
-                        <HRAPersonAdresse />
-                    </div>
-                    
-                    <div v-show="activeTab == 'Bankverbindung'" class="px-2 grid grid-rows-1 gap-4">
-                        <HRAPersonBankverbindung />
-                    </div>
 
-                    <div v-show="activeTab == 'Familienangehörige'" class="px-2 grid grid-rows-1 gap-4">
-                        <HRAPersonFamilienangehoerige />
-                    </div>
-                    <div v-show="activeTab == 'Familienstand'" class="px-2 grid grid-rows-1 gap-4">
-                        <HRAPersonFamilienstand />
-                    </div>
-                    <div v-show="activeTab == 'Sozialversicherung'" class="px-2 grid grid-rows-1 gap-4">
-                        <HRAPersonSozialversicherung />
-                    </div>
-                    <div v-show="activeTab == 'Notfallkontakt'" class="px-2 grid grid-rows-1 gap-4">
-                        <HRAPersonNotfallkontakt />
-                    </div>
-                    <div v-show="activeTab == 'Invalidität'" class="px-2 grid grid-rows-1 gap-4">
-                        <HRAPersonInvaliditaet />
-                    </div>
                 </div>
             </main>
         </div>

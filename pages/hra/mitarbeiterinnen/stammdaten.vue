@@ -31,7 +31,6 @@ const ma = mitarbeiterListe[0]
             Persönliche Daten bearbeiten
         </h1>
         <HRAMitarbeiterSuchfeld class="w-1/3"/>
-        {{activeTab}}
     </div>
     
     <HRAMitarbeiterInfoBox class="mb-6"/>

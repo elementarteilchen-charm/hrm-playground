@@ -8,7 +8,7 @@
 <template>
   <div class="flex items-center py-3 justify-between">
       <h1 class="my-3 text-3xl font-light text-Blaugrau">
-          Persönliche Daten bearbeiten
+          Daten bearbeiten
       </h1>
       <HRAMitarbeiterSuchfeld class="w-1/3"/>
   </div>
@@ -17,9 +17,9 @@
 
   <main class="grid grid-rows-[auto_auto_auto] gap-8">
 
-    <div>
+<!--     <div>
       Später: Liste der letzten Aktionen 
-    </div>
+    </div> -->
     <div class="grid grid-cols-4 gap-12">
       <div v-for="aktion in aktionenFuerMA" class="bg-white p-3 rounded">
         <header class="font-bold text-xl mb-2">
