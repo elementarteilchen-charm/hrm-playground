@@ -53,7 +53,7 @@ export  const eventMenuItems = [
 export  const abwesenheitenMenuItems = [
       {
         linkText: "Karenz",
-        link: "/hra/abwesenheiten/karenz",
+        link: "/hra/abwesenheiten/elternkarenz",
       },
       {
         linkText: "Bildungskarenz",
@@ -61,7 +61,7 @@ export  const abwesenheitenMenuItems = [
       },
       {
         linkText: "Milizübung",
-        link: "/hra/abwesenheiten/Milizübung",
+        link: "/hra/abwesenheiten/Milizuebung",
       },
       {
         linkText: "Wehr- & Zivildienst  ",

@@ -55,6 +55,12 @@ export const mitarbeiterListe = [
         {von: '01.05.2001', bis: '31.07.2008', anrechenbare_zeit: 32.00,   beruf: 'nicht erfasst', firma: 'ONE GmbH., Wien 21'},
         {von: '01.03.1999', bis: '30.06.2000', anrechenbare_zeit: 16.00,   beruf: 'nicht erfasst', firma: 'Softcom, Wien 12'},
         {von: '01.10.1987', bis: '14.06.1988', anrechenbare_zeit: 0 , beruf: 'nicht erfasst', firma: 'Öst.Bundesheer'},
+      ],
+      milizuebungen: [
+        {von: '01.04.2009', bis: '31.03.2014'},
+        {von: '01.05.2001', bis: '31.07.2008'},
+        {von: '01.03.1999', bis: '30.06.2000'},
+        {von: '01.10.1987', bis: '14.06.1988'},
       ]
     },
     {
