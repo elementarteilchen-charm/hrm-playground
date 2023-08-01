@@ -24,14 +24,14 @@ export const aktionenFuerMA = [
     {
       headline: "Temporäre Auszeiten",
       items: [
-        {text: 'Karenz', process: false, link: '/hra/mitarbeiterinnen/karenz'},
-        {text: 'Elternteilzeit', process: false, link: '/hra/mitarbeiterinnen/Elternteilzeit'},
-        {text: 'Bildungskarenz', process: true, link: '/hra/mitarbeiterinnen/Bildungskarenz'},
-        // {text: 'Wochenhilfe', process: false, link: '/hra/mitarbeiterinnen/Wochenhilfe'},
-        {text: 'Unbezahlter Urlaub', process: true, link: '/hra/mitarbeiterinnen/UnbezahlterUrlaub'},
-        {text: 'Milizübungen', process: false, link: '/hra/mitarbeiterinnen/Milizübungen'},
-        // {text: 'Teilzeit', process: false, link: '/hra/mitarbeiterinnen/Teilzeit'},
-        // {text: 'Geringfügigkeiten', process: false, link: '/hra/mitarbeiterinnen/Geringfügigkeiten'},
+        {text: 'Karenz', process: false, link: '/hra/abwesenheiten/elternkarenz'},
+        {text: 'Elternteilzeit', process: false, link: '/hra/abwesenheiten/elternteilzeit'},
+        {text: 'Bildungskarenz', process: true, link: '/hra/abwesenheiten/bildungskarenz'},
+        // {text: 'Wochenhilfe', process: false, link: '/hra/abwesenheiten/Wochenhilfe'},
+        {text: 'Unbezahlter Urlaub', process: true, link: '/hra/abwesenheiten/unbezahlterurlaub'},
+        {text: 'Milizübungen', process: false, link: '/hra/abwesenheiten/milizübungen'},
+        // {text: 'Teilzeit', process: false, link: '/hra/abwesenheiten/Teilzeit'},
+        // {text: 'Geringfügigkeiten', process: false, link: '/hra/abwesenheiten/Geringfügigkeiten'},
       ]
     },
    {

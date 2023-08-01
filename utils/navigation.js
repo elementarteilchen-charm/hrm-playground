@@ -49,3 +49,31 @@ export  const eventMenuItems = [
         link: "/hra/events/Jubiläum",
       }
     ];
+
+export  const abwesenheitenMenuItems = [
+      {
+        linkText: "Karenz",
+        link: "/hra/abwesenheiten/karenz",
+      },
+      {
+        linkText: "Bildungskarenz",
+        link: "/hra/abwesenheiten/Bildungskarenz",
+      },
+      {
+        linkText: "Milizübung",
+        link: "/hra/abwesenheiten/Milizübung",
+      },
+      {
+        linkText: "Wehr- & Zivildienst  ",
+        link: "/hra/abwesenheiten/wehrdienst",
+      },
+      {
+        linkText: "Unbezahlter Urlaub",
+        link: "/hra/abwesenheiten/unbezahlterurlaub",
+      },
+      {
+        linkText: "Langzeit Krankenstand ",
+        link: "/hra/abwesenheiten/langzeitkrankenstand",
+      },
+
+    ];
