@@ -46,7 +46,7 @@
   </LayoutFormSection>
 
   <div class="flex justify-end">
-    <button @click="showDialog(title)" class="bg-blue-700 text-white px-3 py-2">Ausbildung hinzufügen</button>
+    <button @click="showDialog(title)" class="bg-blue-700 text-white px-3 py-2">Hinzufügen</button>
   </div>
 
   <LKWWDialog :title="title" width="92vw" height="80vh">
