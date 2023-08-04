@@ -4,7 +4,7 @@
         value: {type: String, default: ''}, 
         maxChars: {type: Number, default: 30},
         width: {type: String, default: 'w-32'},
-        required: {type: Boolean, default: false}
+        required: {type: Boolean, default: false},
     })
 
 </script>

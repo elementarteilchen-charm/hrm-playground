@@ -1,8 +1,8 @@
 <script setup>
   import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon } from '@heroicons/vue/24/outline' ;  
   
-  const zeigeHRM = ref(false)
-  // const zeigeHRM = ref(true)
+  // const zeigeHRM = ref(false)
+  const zeigeHRM = ref(true)
   const route = useRoute()
 </script>
 
@@ -81,22 +81,27 @@
                   <span class="font-bold">Self Service</span>
             </li>
             <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-              <a href="/hrm/personalabteilung-kontaktieren" class="hover:underline text-blue-700">
+              <a href="/hrm/personalabteilung-kontaktieren" class="">
                 Personalabteilung kontaktieren
               </a>
             </li>
             <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-              <a href="/hrm/meine-anfragen" class="hover:underline text-blue-700">
+              <a href="/hrm/anfragenbearbeiten" class="">
+                Anfragen bearbeiten
+              </a>
+            </li>
+            <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+              <a href="/hrm/meine-anfragen" class="">
                 Meine Anfragen
               </a>
             </li>
             <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-              <a href="/hrm/meine-daten" class="hover:underline text-blue-700">
+              <a href="/hrm/meine-daten" class="">
                 Meine Daten
               </a>
             </li>
             <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-              <a href="/hrm/downloads" class="hover:underline text-blue-700">
+              <a href="/hrm/downloads" class="">
                 Downloads
               </a>
             </li>

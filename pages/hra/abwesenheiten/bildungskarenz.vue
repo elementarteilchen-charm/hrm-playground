@@ -22,7 +22,7 @@ const zeigeAnforderungen = ref(false)
     </div>
     <main class="grid grid-rows-[auto_auto_auto] gap-6">
         <HRAMitarbeiterInfoBox />
-        <NavigationHraMitarbeiterinnen :topMenuItems="abwesenheitenMenuItems" :active="1" />
+        <NavigationHraMitarbeiterinnen :topMenuItems="abwesenheitenMenuItems" :active="2" />
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 <NavigationHraTabMenu heading="Bildungskarenz" :tabs="tabs" @newtab="(ev) => activeTab = ev" />
@@ -62,6 +62,7 @@ const zeigeAnforderungen = ref(false)
                             <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="WIFI Kurs SocialMedia.pdf" kategorie="Sonstiges" />
                         </LayoutFormSection>
                     </div>
+
                     <div v-show="'AMS Formular' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <p class="text-gray-400 text-sm flex items-center gap-2">
                             <CheckCircleIcon class="w-4 h-4 text-green-500" />
@@ -72,6 +73,7 @@ const zeigeAnforderungen = ref(false)
                             <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="AMS Formular.pdf" kategorie="Sonstiges" />
                         </LayoutFormSection>
                     </div>
+
                     <div v-show="'Firmenvereinbarung' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <LayoutFormSection>
                             <p class="text-gray-400 text-sm flex items-center gap-2 w-1/2 my-3">
@@ -81,9 +83,11 @@ const zeigeAnforderungen = ref(false)
                             <p>Von HR wird eine Firmenvereinbarung erstellt (Dauer, Klauseln, Wiedereintrittsdatum)</p>
                         </LayoutFormSection>
                     </div>
+
                     <div v-show="'Vordienstzeiten' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <HRAPersonVordienstzeiten />
                     </div>
+                    
                 </div>
             </main>
         </div>

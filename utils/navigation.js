@@ -56,6 +56,10 @@ export  const abwesenheitenMenuItems = [
         link: "/hra/abwesenheiten/elternkarenz",
       },
       {
+        linkText: "Familienzeit",
+        link: "/hra/abwesenheiten/familienzeit",
+      },
+      {
         linkText: "Bildungskarenz",
         link: "/hra/abwesenheiten/Bildungskarenz",
       },

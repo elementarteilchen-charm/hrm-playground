@@ -29,14 +29,18 @@
 
                     <div class="flex gap-2">
                         
-                    <a href="#" @click="changeTab(tab)">
+                    <a class="cursor-pointer" @click="changeTab(tab)">
                         {{tab}} </a>
                     <span v-if="tab == 'Durchführen'"><ExclamationTriangleIcon class="text-orange-500 w-5 h-5"/></span>
                     </div>
                 </li>
+                <li>
+                    
+                </li>
             </ul>
 
             <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
+
                 <a href="" class="px-3 py-2 bg-Mittelblau text-white text-center">
                     Speichern</a>
                 <a href="" class="px-3 py-2 text-Mittelblau hover:underline text-center">
