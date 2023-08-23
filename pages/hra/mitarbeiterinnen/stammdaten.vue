@@ -8,6 +8,7 @@ const tabs = [
     'Persönlich',
     'Adressen und Kontakt',
     'Staatsangehörigkeit',
+    'Bewilligungen',
     'Bankverbindung',
     'Familienangehörige',
     'Familienstand',
@@ -64,6 +65,10 @@ const ma = mitarbeiterListe[0]
                     
                     <div v-show="activeTab == 'Bankverbindung'" class="px-2 grid grid-rows-1 gap-4">
                         <HRAPersonBankverbindung />
+                    </div>
+
+                    <div v-show="activeTab == 'Bewilligungen'" class="px-2 grid grid-rows-1 gap-4">
+                        <HRAPersonBewilligungen />
                     </div>
 
                     <div v-show="activeTab == 'Familienangehörige'" class="px-2 grid grid-rows-1 gap-4">
