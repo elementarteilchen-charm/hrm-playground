@@ -16,7 +16,8 @@
             v-model="content"
             class="px-2 py-1 border border-gray-300 rounded text-sm"
             :class="class"
-            :placeholder="placeholder"></textarea>
+            :placeholder="placeholder">
+        </textarea>
     </div>
 </template>
 <style>
