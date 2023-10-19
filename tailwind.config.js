@@ -22,6 +22,8 @@ module.exports = {
         green: colors.green,
         orange: colors.orange,
         yellow: colors.yellow,
+        'Rot': '#DB0000',
+        'Blau': '#3F69FF',
         'Dunkelblau': '#0F2765',
         'Mittelblau': '#00529E',
         'Hellblau': '#4699CE',

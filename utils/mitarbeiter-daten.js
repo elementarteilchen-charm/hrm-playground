@@ -1,4 +1,5 @@
 export const mitarbeiterListe = [{
+        anrede: 'Frau',
         vorname: 'Regina',
         name: 'Aberl',
         taetigkeit: 'Transport Manager (TM)',
@@ -6,6 +7,8 @@ export const mitarbeiterListe = [{
         mandant: 'LKW',
         standort: 'WND',
         email: 'aberl@lkw-walter.com',
+        email_privat: 'regina@aberl.com',
+        geburtsdatum: '23.04.1988',
         durchwahl: '2002',
         mobil: '+43 664 88370265',
         avatar: 'avatar-2.jpg',
@@ -71,6 +74,7 @@ export const mitarbeiterListe = [{
         ]
     },
     {
+        anrede: 'Herr',
         vorname: 'Patrick',
         name: 'Andor',
         taetigkeit: 'Transport Manager (TM)',
@@ -78,12 +82,30 @@ export const mitarbeiterListe = [{
         mandant: 'LKW',
         standort: 'WND',
         email: 'andor@lkw-walter.com',
+        email_privat: 'pat@andor.at',
+        geburtsdatum: '4.3.2000',
         durchwahl: '2002',
         mobil: '+43 664 88370265',
         avatar: 'avatar-3.jpg'
     },
+    {
+        anrede: 'Herr',
+        vorname: 'Sebastian',
+        name: 'Andor',
+        taetigkeit: 'Customer Service (CS)',
+        abteilungen: ['GD GB - DE-Süd / IE - DE•VG26D', 'VDI GB,IE - DE,AT,CZ,SK,PL,Skandi / Lackner', 'SMO Hr. Schauer•SMO3'],
+        mandant: 'LKW',
+        standort: 'WND',
+        email: 'sebastian.andor@lkw-walter.com',
+        email_privat: 'sando@gmx.at',
+        geburtsdatum: '14.9.1987',
+        durchwahl: '2002',
+        mobil: '+43 664 88370265',
+        avatar: 'avatar-5.jpg'
+    },
 
     {
+        anrede: 'Herr',
         vorname: 'Daniel',
         name: 'Steiner',
         taetigkeit: 'Human Resource Recruiting (SSG)',
@@ -91,6 +113,8 @@ export const mitarbeiterListe = [{
         mandant: 'LKW',
         standort: 'KUF',
         email: 'steiner@lkw-walter.com',
+        email_privat: 'danidani@steiner.at',
+        geburtsdatum: '8.6.1999',
         durchwahl: '2004',
         mobil: '+43 664 88370265',
         avatar: 'avatar-4.jpg'
