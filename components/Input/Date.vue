@@ -9,7 +9,7 @@
 
 </script>
 <template>
-    <div class="pt-2 text-sm font-bold text-gray-700">
+    <div class="pt-2_ text-sm font-bold text-gray-700 flex-shrink-0">
         {{label}}<span v-if="required">*</span>
     </div>
     <div class="">

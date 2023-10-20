@@ -95,7 +95,23 @@ const route = useRoute()
                                 Gespräch durchführen
                             </a>
                         </li>
-                      </ul>                        
+                      </ul>         
+                    <div class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                        <ChatBubbleBottomCenterTextIcon class="w-5 h-5 text-blue-800" />
+                        Zukunftsgespräche
+                    </div>    
+                     <ul class="ml-7 space-y-1">
+                        <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                            <a href="/hrm/zukunftsgespraeche/planen">
+                                Planen
+                            </a>
+                        </li>
+                        <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                            <a href="/hrm/zukunftsgespraeche/durchfuehren">
+                                Durchführen
+                            </a>
+                        </li>
+                    </ul>           
                     <ul class="space-y-3">
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                             <span class="">Self Service</span>
