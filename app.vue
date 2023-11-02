@@ -82,10 +82,10 @@ const route = useRoute()
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/entwicklungsgespraeche/durchfuehren">
-                                MA*innen Fragebogen
+                                Durchführen
                             </a>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                        <!-- <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/entwicklungsgespraeche/notizenerfassen">
                                 FK Notizen erfassen
                             </a>
@@ -94,7 +94,7 @@ const route = useRoute()
                             <a href="/hrm/entwicklungsgespraeche/gespraechdurchfuehren">
                                 Gespräch durchführen
                             </a>
-                        </li>
+                        </li> -->
                       </ul>         
                     <div class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
                         <ChatBubbleBottomCenterTextIcon class="w-5 h-5 text-blue-800" />

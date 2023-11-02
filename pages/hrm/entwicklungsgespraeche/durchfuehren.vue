@@ -311,7 +311,7 @@ const modus = ref('FK')
             :modus="modus">
             <template #Gemeinsameansicht>
                 <p class="mt-3">
-                    Gemeinsam mit deiner Führungskraft hast du hier die Möglichkeit Weiterbildungsbedarf zu dokumentieren. Diese Information wird direkt an die Schulungsabteilung weitergeleitet. Die Schulungsabteilung meldet sich im Anschluss mit einem konkreten Lernangebot bei dir.
+                    Gemeinsam mit deiner Führungskraft hast du hier die Möglichkeit Weiterbildungsbedarf zu dokumentieren. Diese Information wird von der Führungskraft an die Schulungsabteilung weitergeleitet. Die Schulungsabteilung meldet sich im Anschluss mit einem konkreten Lernangebot bei dir. 
                 </p>
                 <div class="mt-6 space-y-3">
                     <InputTextarea label="Maßnahmen zur Weiterentwicklung:" class="h-32 w-full"></InputTextarea>
@@ -344,6 +344,9 @@ const modus = ref('FK')
             frage="Momentanes Arbeitszeitmodell"
             :modus="modus">
             <template #Gemeinsameansicht>
+                <p class="mt-3">
+                    Hier ist Platz um über das aktuelle Arbeitszeitmodell zu sprechen. Bleibt das momentane Zeitmodell gleich oder soll sich etwas verändern?
+                </p>
                 <div class="mt-6 space-y-3">
                     <InputRadio label="" :options="['Das Arbeitszeitmodell soll momentan so bleiben wie vereinbart', 'Änderung der Arbeitszeit erwünscht']" />
                 </div>
@@ -358,8 +361,8 @@ const modus = ref('FK')
 <!-- Abschluss -->
         <HRMFeedback 
             v-if="modus == 'GEMEINSAM'"
-            kategorie="# Arbeitszeit" 
-            frage="Abschluss"
+            kategorie="# Abschluss" 
+            frage="Sonstige Anmerkungen"
             :modus="modus">
             <template #Gemeinsameansicht>
                 <p class="mt-3">
@@ -368,6 +371,29 @@ const modus = ref('FK')
                 </p>
                 <div class="mt-6 space-y-3">
                     <InputTextarea label="Gemeinsame Notizen:" class="h-48 w-full"></InputTextarea>
+                </div>
+            </template>
+        </HRMFeedback>
+
+        <HRMFeedback 
+            v-if="modus == 'GEMEINSAM'"
+            kategorie="# Abschluss" 
+            frage="Feedback"
+            :modus="modus">
+            <template #Gemeinsameansicht>
+                <div class="mt-6 space-y-3">
+                    <InputTextarea label="Feedback/Zusammenfassung:" class="h-48 w-full"></InputTextarea>
+                </div>
+                <div class="text-sm leading-normal space-y-3">
+                    <p>
+                        Für das gegenseitige Verständnis hast du hier als Führungskraft die Möglichkeit deinen Mitarbeiter*innen ein zusammenfassendes schriftliches Feedback zu geben.  
+                    </p>
+                    <p>
+                        Im ersten Schritt soll das Feedback den Mitarbeiter*innen aber direkt im Gespräch mündlich gegeben werden. Dieses Feld dient nur für die schriftliche Dokumentation im Nachhinein. Jeder soll zusätzlich zum mündlichen auch ein schriftliches Feedback bekommen.    
+                    </p>
+                    <p>
+                        Für das gegenseitige Verständnis hast du hier als Führungskraft die Möglichkeit deinen Mitarbeiter*innen ein zusammenfassendes schriftliches Feedback zu geben.                        
+                    </p>
                 </div>
             </template>
         </HRMFeedback>

@@ -91,43 +91,43 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
                 <div class="mt-3 space-y-3">
                     <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-Gruen-logo"></InputTextarea>
                 </div>
-            </HRMFeedback>
-        </main>
-
-<!-- FK only -->
-        <main class="mt-12">
-            <HRMFeedback v-if="modus == 'FK'" kategorie="# Langfristige Entwicklungsziele / Wünsche" frage="Einschätzung Führungskraft">
-                
-                
-                 <div class="ml-0 mt-3 space-y-3">
-                    
-                    <InputRadio 
-                        :options="[
-                            'Fachliche Entwicklung im derzeitigen Bereich', 
-                            'Fachliche Entwicklung in einen anderen Bereich',
-                            'Führungslaufbahn',
-                            'Sonstiges']" />
-                    <InputSelect label="Mandant"  width="w-1/2"
-                        :options="['LKW WALTER', 'CONTAINEX', 'WGS', 'WALTER LAGERBETRIEBE']" />
-                    <InputSelect label="Tätigkeit" width="w-1/2" selected="Business Development"
-                        :options="['Sales', 'Transport Management', 'Customer Service', 'Business Development', 'BDO', 'Carrier Management']" />                    
-                </div>
-
-                <div class="mt-3 space-y-3">
-                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
-                </div>
-
                 <div class="text-sm leading-normal space-y-3">
-                    
                     <p>
-                        Hier habt Ihr die Gelegenheit, euch über langfristige Entwicklungsmöglichkeiten, Perspektiven und Wünsche zu unterhalten. Wichtig ist es, realistische und klare Ziele zu besprechen (Entwicklung in Richtung Führungsverantwortung, fachliche Entwicklung im eigenen Bereich oder fachliche Entwicklung in einem fremden oder angrenzenden Tätigkeitsbereich).
+                        Hier habt Ihr die Gelegenheit, euch über langfristige Entwicklungsmöglichkeiten, Perspektiven und Wünsche zu unterhalten. Wichtig ist es, realistische und klare Ziele zu besprechen (Entwicklung in Richtung Führungsverantwortung, fachliche Entwicklung im eigenen Bereich oder fachliche Entwicklung in einem fremden oder angrenzenden Tätigkeitsbereich). 
                     </p>
                     <p>
                         Sprecht über eure Wahrnehmungen, Vorstellungen und Wünsche und gebt euch diesbezüglich auch offenes und ehrliches Feedback. Klarheit am Weg ist für die Weitsicht sehr wichtig.
                     </p>
+
                 </div>
             </HRMFeedback>
         </main>
+
+<!-- FK only -->
+        <HRMFeedback 
+            v-if="modus == 'FK'" 
+            kategorie="# Langfristige Entwicklungsziele / Wünsche" 
+            frage="Einschätzung Führungskraft">
+            
+             <div class="ml-0 mt-3 space-y-3">
+                
+                <InputRadio 
+                    :options="[
+                        'Fachliche Entwicklung im derzeitigen Bereich', 
+                        'Fachliche Entwicklung in einen anderen Bereich',
+                        'Führungslaufbahn',
+                        'Sonstiges']" />
+                <InputSelect label="Mandant"  width="w-1/2"
+                    :options="['LKW WALTER', 'CONTAINEX', 'WGS', 'WALTER LAGERBETRIEBE']" />
+                <InputSelect label="Tätigkeit" width="w-1/2" selected="Business Development"
+                    :options="['Sales', 'Transport Management', 'Customer Service', 'Business Development', 'BDO', 'Carrier Management']" />                    
+            </div>
+
+            <div class="mt-3 space-y-3">
+                <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
+            </div>
+        </HRMFeedback>
+        
 
 <!-- 2 -->
         <main class="mt-12">
@@ -146,10 +146,7 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
 
                 <div class="text-sm leading-normal space-y-3">
                     <p>
-                       Hier ist Platz um über das aktuelle Arbeitszeitmodell zu sprechen. Möglicherweise plant die Person mehr zu arbeiten. Dieser zeitliche Aspekt soll in Hinblick auf die Entwicklung mitberücksichtigt werden. 
-                    </p>
-                    <p>
-                        Möchte sich die Person z.B. in eine Führungsrolle hinein entwickeln, ist es notwendig darüber zu sprechen, welches Zeitmodell dafür notwendig ist.
+                       Hier ist Platz, um über das aktuelle Arbeitszeitmodell zu sprechen. Bleibt das momentane Zeitmodell gleich oder soll sich etwas verändern?
                     </p>
                 </div>
             </HRMFeedback>
@@ -177,10 +174,10 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
                 </div>
                 <div class="text-sm leading-normal space-y-3">
                     <p>
-                      Für das gegenseitige Verständnis hast du hier als Führungskraft die Möglichkeit deinen Mitarbeiter*innen ein zusammenfassendes schriftliches Feedback zu geben. Im ersten Schritt soll das Feedback den Mitarbeiter*innen aber direkt im Gespräch mündlich gegeben werden. 
+                      Für das gegenseitige Verständnis hast du hier als Führungskraft die Möglichkeit deinen Mitarbeiter*innen ein zusammenfassendes schriftliches Feedback zu geben.  Im ersten Schritt soll das Feedback den Mitarbeiter*innen aber direkt im Gespräch mündlich gegeben werden. 
                     </p>
                     <p>
-                     Dieses Feld dient nur für die schriftliche Dokumentation im Nachhinein. Jeder soll zusätzlich zum mündlichen auch ein schriftliches Feedback bekommen.
+                     Dieses Feld dient nur für die schriftliche Dokumentation im nachhinein. Jeder soll zusätzlich zum mündlichen auch ein schriftliches Feedback bekommen.
                     </p>
                 </div>
             </HRMFeedback>
