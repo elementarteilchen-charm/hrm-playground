@@ -15,6 +15,7 @@ const tabs = [
     'Sozialversicherung',
     'Notfallkontakt',
     'Invalidität',
+
 ];
 
 const activeTab = ref(tabs[0]);
@@ -27,16 +28,18 @@ const ma = mitarbeiterListe[0]
 </script>
 
 <template>
-    <div class="flex items-center py-3 justify-between">
-        <h1 class="my-3 text-3xl font-light text-Blaugrau">
+    <div class="px-16 flex items-center py-3 justify-between">    
+        <h1 class=" text-3xl font-light text-Blaugrau">
             Persönliche Daten bearbeiten
         </h1>
         <HRAMitarbeiterSuchfeld class="w-1/3"/>
     </div>
     
-    <HRAMitarbeiterInfoBox class="mb-6"/>
+    <div class="px-16">
+        <HRAMitarbeiterInfoBox class="mb-6"/>   
+    </div>
 
-    <main class="grid grid-rows-[auto_auto_auto] gap-8">
+    <main class="grid grid-rows-[auto_auto_auto] gap-8 px-16">
 
         <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="0" />
 
@@ -86,6 +89,7 @@ const ma = mitarbeiterListe[0]
                     <div v-show="activeTab == 'Invalidität'" class="px-2 grid grid-rows-1 gap-4">
                         <HRAPersonInvaliditaet />
                     </div>
+
                 </div>
             </main>
         </div>

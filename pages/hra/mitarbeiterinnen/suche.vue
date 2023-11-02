@@ -12,11 +12,11 @@
 </script>
 
 <template>
-    <div class="my-3 text-3xl font-light text-Blaugrau">
+    <div class="px-16 my-6 text-3xl font-light text-Blaugrau">
       Mitarbeiter*innen
     </div>
   
-  <main class="grid grid-rows-[auto_auto_auto] gap-8">
+  <main class="px-16 grid grid-rows-[auto_auto_auto] gap-8">
 
     <div class="my-6">
       <Suche @ma-gewaehlt="callback"/>

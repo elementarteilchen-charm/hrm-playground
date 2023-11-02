@@ -78,10 +78,11 @@ function prozessStarten() {
 </script>
 <template>
     <div class="grid grid-rows-[6rem_1fr] gap-6 ">
-        <div class="grid items-center bg-Blaugrau-25 px-6 h-full">
+
+        <div class="grid items-center bg-Blaugrau-25 px-16 h-full">
             <h1 class="text-3xl font-light text-Blaugrau">Zukunftsgespräche</h1>
         </div>
-        <div>
+        <div class="px-16">
             <!--  Content -->
             <div v-if="!neuesZGvereinbaren" class="mt-3 my-6">
                 <InputButton @click="neuesZGvereinbaren = true" >Neues Zukunftsgespräch anlegen</InputButton>
@@ -90,15 +91,13 @@ function prozessStarten() {
                 <div  class="space-y-6">
                     <h2 class="font-bold text-xl">Neues Zukunftsgespräch anlegen</h2>
                     Bitte wählen Sie den/die Mitarbeiter*in aus, mit dem/der Sie das Zukunftsgespräch vereinbaren möchten:
-                    <div class="flex gap-3 items-center">
+                    <div class=" gap-3 items-center">
                         <InputText label="Mitarbeiter*in" :value="dasNeueZG.mitarbeiter" width="w-3/4"/>
                     </div>
-                    <div class="flex gap-3 items-center">
-                        <InputDate label="Geplantes Datum"/>
-                    </div>
+
                     <div>
                     <div class="font-bold text-sm text-gray-900">Themen für das Zukunftsgespräch:</div>
-                        <InputTextarea title="" class="w-4/5 h-36"></InputTextarea>
+                        <InputTextarea title="" class="w-3/4 h-36"></InputTextarea>
                     </div>
                     <InputButton @click="prozessStarten">Zukunftsgespräch anlegen</InputButton>
                 </div>
@@ -125,8 +124,10 @@ function prozessStarten() {
                         </div>
                     </div>
                     <div v-for="gespraech,idx in anstehend" class="border rounded bg-white px-3 py-2">
-                        <div class="grid grid-cols-5">
-                            <div class="col-span-2 flex gap-2 items-center">
+                        
+                        <div class="grid grid-cols-3">
+
+                            <div class="col-span-1 flex gap-2 items-center">
                                 <img :src="'/img/'+ gespraech.avatar " class="w-8 h-8 rounded-full" />
                                 <a class="text-Mittelblau" href="">{{gespraech.mitarbeiter}}</a>
                                 <span class="text-sm text-gray-400">
@@ -139,22 +140,10 @@ function prozessStarten() {
                                     {{gespraech.abteilung}}
                                 </span>
                             </div>
-                            <div class="place-self-center">
-                                <div v-if="gespraech.status=='angefragt'" class="text-gray-400 text-xs">
-                                    Angefragt am
-                                </div>
-                                <div v-if="gespraech.status=='akzeptiert'" class="text-gray-400 text-xs">
-                                    Geplant für
-                                </div>
-                                <div v-if="gespraech.status=='bereitFuerGespraech'" class="text-gray-400 text-xs">
-                                    Geplant für
-                                </div>
-                                <div class="text-xs text-center">{{gespraech.durchzufuehrenBis}}</div>
-                            </div>
                             
-                            <div class="flex gap-2 items-center text-sm text-gray-500 justify-items-start">
+                            <div class="flex gap-2 items-center text-sm text-gray-500 ">
 
-                                <div v-if="gespraech.status == 'angefragt'" class="flex gap-2">
+                                <div v-if="gespraech.status == 'angefragt'" class="flex gap-2 mx-auto">
                                     <ClipboardDocumentListIcon class="w-5 h-5"/>
                                     <div>
                                         <a v-if="gespraech.status == 'angefragt'" 
@@ -165,21 +154,13 @@ function prozessStarten() {
                                     </div>
                                 </div>
 
-                                <div v-if="gespraech.status == 'akzeptiert'" class="flex gap-2">
+                                <div v-if="gespraech.status == 'akzeptiert'" class="flex gap-2 mx-auto">
                                     <ClockIcon class="w-5 h-5 text-green-600"/>
                                     <div>
                                         Geplant
                                     </div>
                                 </div>
 
-                                <div v-if="gespraech.status == 'bereitFuerGespraech'" class="flex gap-2">
-                                    <!-- <ClipboardDocumentListIcon class="w-5 h-5 text-gray-600"/>
-                                    <div>
-                                        <a class="text-Mittelblau font-bold" href="">
-                                            Planen</a>
-                                    </div> -->
-
-                                </div>
 
                             </div>
 
@@ -208,7 +189,7 @@ function prozessStarten() {
                         </div>
                     </div>
                     <div v-for="gespraech in planen" class="border rounded bg-white px-3 py-2">
-                        <div class="grid grid-cols-3">
+                        <div class="grid grid-cols-2">
                             <div class="flex gap-2 items-center">
                                 <img :src="'/img/'+ gespraech.avatar " class="w-8 h-8 rounded-full" />
                                 <a class="text-Mittelblau" href="">{{gespraech.mitarbeiter}}</a>
@@ -221,10 +202,6 @@ function prozessStarten() {
                                 <span class="text-sm text-gray-400">
                                     {{gespraech.abteilung}}
                                 </span>
-                            </div>
-                            <div class="place-self-center">
-                                <div class="text-gray-400 text-xs">Planen bis</div>
-                                <div class="text-xs text-center">{{gespraech.durchzufuehrenBis}}</div>
                             </div>
                             <div class="flex gap-2 items-center text-sm text-gray-500 place-self-end">
                                 <InputButton v-if="gespraech.status=='angefragt'" :secondary="1">
@@ -249,6 +226,7 @@ function prozessStarten() {
             </div>
         </div>
     </div>
+    
     <HRMPopupDialog :title="title" height="40vh" speichern="Akzeptieren">
         <h3 class="font-bold">Wunsch / Vorstellung</h3>
         

@@ -4,6 +4,10 @@ export  const topMenuItems = [
         link: "/hra/mitarbeiterinnen/stammdaten",
       },
       {
+        linkText: "Firmendaten",
+        link: "/hra/firmendaten/",
+      },
+      {
         linkText: "Ausbildung",
         link: "/hra/mitarbeiterinnen/ausbildung",
       },
@@ -28,6 +32,7 @@ export  const eventMenuItems = [
         linkText: "Hochzeit",
         link: "/hra/events/Hochzeit",
       },
+
       {
         linkText: "Geburt",
         link: "/hra/events/Geburt",
@@ -50,6 +55,57 @@ export  const eventMenuItems = [
       }
     ];
 
+  export const eventsAktionen = {
+    stammdaten: {
+      headline: "Stammdaten",
+      items: [
+        {text: "Stammdaten", link: "/hra/mitarbeiterinnen/stammdaten"},
+        {text: "Ausbildung", link: "/hra/mitarbeiterinnen/ausbildung"},
+        {text: "Vertrag", link: "/hra/mitarbeiterinnen/vertrag"},
+        {text: "Dokumente", link: "/hra/mitarbeiterinnen/dokumente"},
+      ]
+    },
+    events: {
+      headline: "Events & Änderungen",
+      items: [
+        {text: 'Hochzeit', link: '/hra/events/Hochzeit'},
+        {text: 'Hochzeit AllInOne', link: '/hra/events/Hochzeit-allinone'},
+        {text: 'Namensaenderung', link: '/hra/events/Namensaenderung'},
+        {text: 'Geburt', link: '/hra/events/Geburt'},
+        {text: 'Ernennungen', link: '/hra/events/Ernennungen'},
+        {text: 'Ummeldungen', link: '/hra/events/Ummeldungen'},
+        {text: 'Arbeitszeitmodell', link: '/hra/events/Arbeitszeitmodell'},
+        {text: 'Signatur', link: '/hra/events/Signatur'},
+        {text: 'Visitenkarten', link: '/hra/events/Visitenkarten'},
+        {text: 'Zusatzqualifikationen', link: '/hra/events/Zusatzqualifikationen'},
+        {text: 'Geschenke', link: '/hra/events/Geschenke'},
+        {text: 'Jubiläum', link: '/hra/events/Jubiläum'},
+      ]
+    },
+    auszeiten: {
+      headline: "Temporäre Auszeiten",
+      items: [
+        {text: 'Karenz', link: '/hra/abwesenheiten/elternkarenz'},
+        {text: 'Bildungskarenz', link: '/hra/abwesenheiten/Bildungskarenz'},
+        {text: 'Karenz', link: '/hra/abwesenheiten/Karenz'},
+        {text: 'Wochenhilfe', link: '/hra/abwesenheiten/Wochenhilfe'},
+        {text: 'Unbezahlter Urlaub', link: '/hra/abwesenheiten/UnbezahlterUrlaub'},
+        {text: 'Milizübungen', link: '/hra/abwesenheiten/Milizübungen'},
+        {text: 'Teilzeit', link: '/hra/abwesenheiten/Teilzeit'},
+        {text: 'Elternteilzeit', link: '/hra/abwesenheiten/Elternteilzeit'},
+        {text: 'Geringfügigkeiten', link: '/hra/abwesenheiten/Geringfügigkeiten'},
+      ]
+    },
+    austritt: {
+      headline: "Austritt",
+      items: [
+        {text: 'Kündigung', link: '/hra/mitarbeiterinnen/karenz'},
+        {text: 'DG Kündigung', link: '/hra/mitarbeiterinnen/Bildungskarenz'},
+        {text: 'Pension', link: '/hra/mitarbeiterinnen/Karenz'},
+        {text: 'Todesfall', link: '/hra/mitarbeiterinnen/Wochenhilfe'},
+      ]
+    }
+  } 
 export  const abwesenheitenMenuItems = [
       {
         linkText: "Karenz",

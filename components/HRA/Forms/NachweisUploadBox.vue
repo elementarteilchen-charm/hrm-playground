@@ -4,14 +4,15 @@
         dateiname: {type: String, default: ''}, 
         ordner: {type: String, default: ''}, 
         kategorie: {type: String, default: ''}, 
+        justify: {type: String, default: 'start'}, 
     })
     const showUploadBox = ref(false)
 </script>
 
 <template>
-	<div class="my-3">
-		<button class="px-3 py-2 border bg-gray-50 hover:bg-Blaugrau-25 text-Mittelblau" @click="showUploadBox = !showUploadBox">
-			Nachweisdokument hochladen
+	<div class="my-3 flex justify-{{justfiy}}">
+		<button class="px-3 py-2 flex gap-2 items-center border border-transparent bg-gray-50 hover:bg-Blaugrau-25 transition text-Mittelblau" @click="showUploadBox = !showUploadBox">
+			<CloudArrowUpIcon class="w-5 h-5"/>Nachweisdokument hochladen
 		</button>
 	</div>
 

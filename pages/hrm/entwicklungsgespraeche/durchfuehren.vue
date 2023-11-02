@@ -5,7 +5,7 @@ import { PlusCircleIcon, ChevronRightIcon, ArrowDownTrayIcon, ClipboardDocumentL
 const zeigeKompetenzabgleich = ref(true)
 </script>
 <template>
-    <div style="background-image: url(/hintergrund.svg);" class="h-screen bg-no-repeat bg-center bg-top">
+    <div  style="background-image: url(/hintergrund.svg);" class="pb-6 h-screen_ bg-no-repeat bg-center bg-top">
         <header class="py-6 px-6">
             <div>
                 <h2 class="font-bold italic text-white text-2xl">WALTER GROUP ENTWICKLUNGSGESPRÄCH</h2>
@@ -221,7 +221,7 @@ const zeigeKompetenzabgleich = ref(true)
                         </h2>
                     </div>
                     <section class="px-[100px]">
-                        <div class="text-sm text-gray-500">
+                        <div class="text-sm_ text-gray-500_">
                             <p class="mt-3">
                                 Hier gibt es die Möglichkeit, konkrete Entwicklungsbereiche zu definieren, die innerhalb eines Jahres umsetzbar sind. Du kannst ein oder mehrere Entwicklungsfelder definieren.
                             </p>

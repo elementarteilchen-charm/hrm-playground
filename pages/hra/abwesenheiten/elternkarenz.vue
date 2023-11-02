@@ -24,12 +24,18 @@ const ma = mitarbeiterListe[0]
 
 </script>
 <template>
-    <div class="flex items-center py-3 justify-between">
-        <h1 class="my-3 text-3xl font-light text-Blaugrau">
-            Abwesenheiten
-        </h1>
-        <HRAMitarbeiterSuchfeld class="w-1/3" />
-    </div>
+    <header class="px-16 mt-3 print:hidden">
+        <div class="text-gray-500 text-sm">
+            <a href="/hra/events" class=" hover:text-Mittelblau ">
+                Abwesenheiten</a> &gt; Elternkarenz
+        </div>
+        <div class="flex items-center py-3 justify-between">
+            <h1 class="my-3 text-3xl font-light text-Blaugrau">
+                Events & Änderungen
+            </h1>
+            <HRAMitarbeiterSuchfeld class="w-1/3" />
+        </div>
+    </header>
     <main class="grid grid-rows-[auto_auto_auto] gap-6">
         <HRAMitarbeiterInfoBox />
         <NavigationHraMitarbeiterinnen :topMenuItems="abwesenheitenMenuItems" :active="0" />

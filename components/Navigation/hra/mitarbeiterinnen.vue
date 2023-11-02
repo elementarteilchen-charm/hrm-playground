@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="flex justify-between">
+    <div class="flex justify-between print:hidden">
         
         <div class="bg-white border rounded overflow-hidden">
           <nav class="">

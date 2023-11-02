@@ -2,7 +2,7 @@
 	const ma = mitarbeiterListe[0]
 </script>
 <template>
-	<div class="grid grid-cols-[10rem_1fr] gap-2 border bg-white">
+	<div class="grid grid-cols-[10rem_1fr] gap-2 border bg-white print:hidden">
 
 	    <div :style="'background-image: url(/img/'+ ma.avatar + ');'" class="bg-cover bg-center"> </div>
 	    

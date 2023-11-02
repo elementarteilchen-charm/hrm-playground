@@ -13,9 +13,6 @@
       document.getElementById('neue-person-dialog').showModal();
   }
 
-  function showUploadDialog() {
-    document.getElementById('nachweis-upload-dialog').showModal();
-  }
 
 </script>
 
@@ -116,21 +113,6 @@
                     </div>
                     
                   </div>
-
-                  <section class="border-t mt-6 py-3">
-                    <h3 class="font-bold mb-2">Nachweisdokument</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                      <div class="border border-gray-400 rounded-md shadow-md w-48 h-24 bg-white p-4 flex space-x-2">
-                          <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
-                          <div @click="showUploadDialog" class="text-sm place-self-center">Upload Nachweis</div>
-                      </div>
-                      <div class="p-4">
-                        <p>Für Babunek Peter ist bereits eine Datei vorhanden:</p>
-                        <a href="" class="text-blue-700 hover:underline">Heiratsurkunde.pdf</a> 
-                      </div>
-                      
-                    </div>
-                  </section>
                 
                 </main>
 
@@ -142,40 +124,6 @@
                 </footer>
             </div>
         </form>
-    </dialog>
-
-    <dialog id="nachweis-upload-dialog" name="nachweis-upload-dialog" class="modal shadow-lg bg-gray-100 p-4">
-        <div class="grid grid-rows-[3rem_1fr_3rem] h-full">
-          <header class="px-4 py-2 h-12  text-lg font-bold ">
-              Nachweis für Familienangehörigen hochladen 
-          </header>
-          <form action="" method="dialog" class="h-full">
-          <main class="px-4 py-2" style="height: calc(100% - 1rem); overflow-y: auto;">
-              <div>
-                <Anmerkung>
-                  Es ist bereits eine Datei vorhanden:
-                  <a href="" class="text-blue-700 hover:underline">Heiratsurkunde.pdf</a> <br> <br>
-                  Wollen Sie <em>Heiratsurkunde.pdf</em> mit der neuen Datei ersetzen?
-                </Anmerkung>
-              </div>
-              <div class="my-3 border p-4 rounded w-1/2 bg-white">
-                <label for="fileupload" class="">
-                  <div class="flex space-x-4">
-                    <ArchiveBoxIcon class="text-gray-400 w-8 h-8 place-self-center" />
-                    <input type="file" id="fileupload" class="form-input border p-2 rounded ">
-                  </div>
-                  <div class="text-gray-400 text-sm ml-4 mt-2">Datei hier her ziehen oder klicken um eine Datei auszuwählen</div>
-                </label>
-              </div>
-          </main>
-          <footer class="px-4 h-12">
-              <div class="flex justify-end space-x-4">
-                  <button class="text-sm text-blue-600 hover:underline">Abbrechen</button>
-                  <button formmethod="dialog" class="bg-blue-700 text-white px-3 py-2">Hinzufügen</button>
-              </div>
-          </footer>
-            </form>
-        </div>
     </dialog>
 
 </template>

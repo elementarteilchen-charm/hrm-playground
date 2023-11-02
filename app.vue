@@ -2,18 +2,18 @@
 import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/outline';
 
 // const zeigeHRM = ref(false)
-const zeigeHRM = ref(true)
+const zeigeHRM = ref(false)
 const route = useRoute()
 </script>
 <template>
     <div class="grid grid-rows-[55px_1fr_1rem] bg-Blaugrau-10 h-screen">
-        <div class="bg-Mittelblau flex items-center h-[55px]">
+        <div class="bg-Mittelblau flex items-center h-[55px] print:hidden">
             <div class="pl-4 text-2xl font-bold italic place-self-center text-white uppercase">Walter Group
                 <span class="text-Gruen-logo">HRA</span></div>
         </div>
 
-        <div class="grid grid-cols-[250px_1fr]">
-            <div class="border-r">
+        <div class="grid grid-cols-[250px_1fr] print:block">
+            <div class="border-r print:hidden">
                 <div class="flex justify-end p-2">
                     <a href="/" class="hover:bg-Mittelblau hover:text-white text-Mittelblau">
                         <Bars3Icon class="w-5 h-5" /></a>
@@ -38,13 +38,13 @@ const route = useRoute()
                         <li class="">
                             <div class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                                 <ClockIcon class="w-5 h-5 text-blue-800" />
-                                <a href="/hra/events/uebersicht" :class="{'font-bold': route.path === '/hra/events/suche'}">
+                                <a href="/hra/events/" :class="{'font-bold': route.path === '/hra/events/'}">
                                     Events & Änderungen</a>
                             </div>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                             <ClockIcon class="w-5 h-5 text-blue-800" />
-                            <a href="/" class="">
+                            <a href="/hra/abwesenheiten/" class="">
                                 Abwesenheiten</a>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
@@ -145,12 +145,12 @@ const route = useRoute()
                 </nav>
             </div>
 
-            <div class="bg-Blaugrau-10" style="height: calc(100vh - 4rem - 1rem); overflow-y: auto;">
-                <div class="px-12 max-w-[1600px]">
+            <div class="bg-Blaugrau-10 print:h-full print:overflow-auto" style="height: calc(100vh - 4rem - 1rem); overflow-y: auto;">
+                <div class="max-w-[1600px] print:w-auto">
                     <NuxtPage />
                 </div>
             </div>
         </div>
-        <div class="bg-gray-600 text-white text-gray-200 text-xs">Footer</div>
+        <div class="bg-gray-600 text-white text-gray-200 text-xs print:hidden">Footer</div>
     </div>
 </template>

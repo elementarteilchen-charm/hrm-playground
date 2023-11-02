@@ -1,5 +1,5 @@
 <script setup>
-    import {ExclamationTriangleIcon, ArrowRightCircleIcon} from '@heroicons/vue/24/outline'
+    import {ExclamationTriangleIcon, ArrowRightCircleIcon, Cog6ToothIcon} from '@heroicons/vue/24/outline'
 
     const props = defineProps({
         heading: { type: String, default: '' },
@@ -28,10 +28,9 @@
                     }]">
 
                     <div class="flex gap-2">
-                        
-                    <a class="cursor-pointer" @click="changeTab(tab)">
-                        {{tab}} </a>
-                    <span v-if="tab == 'Durchführen'"><ExclamationTriangleIcon class="text-orange-500 w-5 h-5"/></span>
+                        <span v-if="tab == 'Durchführen'"><Cog6ToothIcon class="text-orange-500 w-5 h-5"/></span>
+                        <a class="cursor-pointer" @click="changeTab(tab)">
+                            {{tab}} </a>
                     </div>
                 </li>
                 <li>

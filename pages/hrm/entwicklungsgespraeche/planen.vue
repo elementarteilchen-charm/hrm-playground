@@ -77,10 +77,10 @@ const anstehend = [
 </script>
 <template>
     <div class="grid grid-rows-[6rem_1fr] gap-6 ">
-        <div class="grid items-center bg-Blaugrau-25 px-6 h-full">
+        <div class="grid items-center bg-Blaugrau-25 px-16 h-full">
             <h1 class="text-3xl font-light text-Blaugrau">Entwicklungsgespräche</h1>
         </div>
-        <div>
+        <div class="px-16">
             <!--  Content -->
             <div class="bg-white p-3">
                 <div class="flex gap-3 items-center justify-between">

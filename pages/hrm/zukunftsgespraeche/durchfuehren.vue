@@ -74,7 +74,7 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
                 </div>
                 
                 <div class="mt-3 space-y-3">
-                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-Orange"></InputTextarea>
+                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
                 </div>
             </HRMFeedback>
 
@@ -114,7 +114,7 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
                 </div>
 
                 <div class="mt-3 space-y-3">
-                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-Orange"></InputTextarea>
+                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
                 </div>
 
                 <div class="text-sm leading-normal space-y-3">
@@ -171,7 +171,7 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
 
 <!-- 4 -->
         <main class="mt-12">
-            <HRMFeedback v-if="modus == 'GEMEINSAM'" kategorie="# Abschluss" frage="Feedback">
+            <HRMFeedback v-if="modus == 'GEMEINSAM'" kategorie="# Abschluss" frage="Feedback" speichernText="Speichern & abschließen">
                 <div class="mt-3 space-y-3">
                     <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-Gruen-logo"></InputTextarea>
                 </div>

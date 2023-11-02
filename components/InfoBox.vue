@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="border px-4 py-2 shadow bg-white grid grid-rows-[1.25rem_1fr_auto] gap-4">
+    <div class="border px-4 py-2 shadow bg-white grid grid-rows-[1.25rem_1fr_auto] gap-4 print:hidden">
         <h3 class="font-bold text-lg grid align-content-center ">
             {{title}}
         </h3>

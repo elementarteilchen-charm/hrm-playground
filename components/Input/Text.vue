@@ -9,6 +9,9 @@
         disabled: {type: Boolean, default: false}
     })
 
+    const nameAndId = computed(() => {
+        return 'XText' + Math.floor(Math.random() * 1000)
+    })
 </script>
 <template>
     <div v-if="label" class=" self-center pt-2_ text-sm text-gray-700 font-bold whitespace-nowrap">
@@ -21,7 +24,8 @@
             :class="width" 
             style="box-shadow: inset 2px 2px 2px 0 rgba(51, 51, 51, 0.1);"
             type="text" 
-            :value="value" 
+            :name="nameAndId" :id="nameAndId"
+            :value="value"
             :disabled="disabled"/>
     </div>
 </template>

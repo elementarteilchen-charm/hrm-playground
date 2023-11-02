@@ -19,7 +19,8 @@
         <div class="space-x-2 flex items-center">
             <input  type="checkbox" 
                     v-model="checkboxToggle" 
-                    class="rounded-lg w-4 h-4" 
+                    class="border border-gray-300 rounded-sm w-5 h-5" 
+                    style="box-shadow:inset 2px 2px 2px 0 rgba(51, 51, 51, 0.1);" 
                     :class="checkboxStyle" 
                     :id="name" :name="name" />
             <label :for="name"  :class="labelStyle">
