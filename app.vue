@@ -2,7 +2,7 @@
 import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/outline';
 
 // const zeigeHRM = ref(false)
-const zeigeHRM = ref(false)
+const zeigeHRM = ref(true)
 const route = useRoute()
 </script>
 <template>

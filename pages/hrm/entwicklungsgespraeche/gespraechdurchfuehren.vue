@@ -126,6 +126,16 @@
                         <div class="mt-3 space-y-3">
                             <InputTextarea label="Notizen:" class="h-32 w-full"></InputTextarea>
                         </div>
+
+                        <div class="text-sm leading-normal space-y-3">
+                            
+                            <p>
+                                Wie zufrieden bist Du mit der Arbeit deines Mitarbeiters? Ist die Person richtig eingesetzt? Wie funktioniert die Zusammenarbeit im Team? Ist die Person mit gewissen Tätigkeiten über- oder unterfordert? Was läuft gut und was soll verbessert werden?
+                            </p>
+                            <p>
+                                Grundsätzlich basiert das Entwicklungsgespräch auf transparenter und offener Kommunikationsbasis. Themen sollen direkt mit Mitarbeiter*innen besprochen werden.
+                            </p>
+                        </div>
                     </section>
                     <footer class="mt-6 px-[90px] text-sm flex items-center justify-between ">
                         <div>

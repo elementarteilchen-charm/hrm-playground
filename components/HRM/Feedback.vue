@@ -3,6 +3,7 @@
 	
 
     const props = defineProps({
+        modus: {type: String, default: 'MA'},
 	    kategorie: {type: String}, 
 	    frage: {type: String}, 
 	    speichernText: {type: String, default: 'Speichern & nächste Frage'}
@@ -21,7 +22,9 @@
                     </h2>
                 </div>
                 <section class="px-[100px]">
-                	<slot></slot>
+                	<slot v-if="modus == 'MA'"></slot>
+                    <slot v-if="modus == 'FK'" name="Fuehrungskraftansicht"> </slot>
+                    <slot v-if="modus == 'GEMEINSAM'" name="Gemeinsameansicht"> </slot>
                 </section>
 
                 <footer class="mt-6 px-[90px] text-sm flex items-center justify-between ">
