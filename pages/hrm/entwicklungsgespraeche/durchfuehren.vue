@@ -6,17 +6,17 @@ const modus = ref('FK')
 
 </script>
 <template>
-    <div  style="background-image: url(/hintergrund.svg);" class="pb-6 h-screen_ bg-no-repeat bg-center bg-top">
-        <header class="py-6 px-6">
-            <div class="grid grid-cols-2">
+    <div  style="background-image: url(/hintergrund.svg);" class="pb-6 h-screen_ bg-no-repeat bg-center bg-top ">
+        <header class="py-6 px-6 sticky top-0">
+            <div class="grid grid-cols-2 ">
                 <div>
                     <h2 class="font-bold italic text-white text-2xl">WALTER GROUP ENTWICKLUNGSGESPRÄCH</h2>
                     <div class="text-white">Willkommen Michael Hauser!</div>
                 </div>
                 <div class="place-self-end space-x-2">
-                    <button class="text-blue-600" @click="modus='MA'">MA</button>
-                    <button class="text-blue-600" @click="modus='FK'">FK</button>
-                    <button class="text-blue-600" @click="modus='GEMEINSAM'">GEMEINSAM</button>
+                    <button :class="{'text-white': modus == 'MA'}" class="text-blue-600"  @click="modus='MA'">MA</button>
+                    <button :class="{'text-white': modus == 'FK'}" class="text-blue-600" @click="modus='FK'">FK</button>
+                    <button :class="{'text-white': modus == 'GEMEINSAM'}" class="text-blue-600" @click="modus='GEMEINSAM'">GEMEINSAM</button>
                 </div>
             </div>
             
@@ -47,7 +47,7 @@ const modus = ref('FK')
         </header>
 
         <HRMFeedback 
-            v-if="modus != 'GEMEINSAM'"
+            v-if="modus != '_GEMEINSAM'"
             kategorie="# Aufgabengebiete / Tätigkeiten" 
             frage="Hauptaufgaben"
             :modus="modus">
@@ -65,7 +65,7 @@ const modus = ref('FK')
     
             <template #Fuehrungskraftansicht>
                 <div class="mt-3 space-y-3">
-                     <h3 class="font-bold">Meine Hauptaufgaben:</h3>
+                     <h3 class="font-bold">Hauptaufgaben Mitarbeiter*in:</h3>
                      
                      <div class="bg-gray-100 rounded-xl p-3">
                          <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
@@ -78,11 +78,27 @@ const modus = ref('FK')
                         <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
                      </div>
                  </div>
-            </template>        
+            </template>
+            <template #Gemeinsameansicht>
+                <div class="mt-3 space-y-3">
+                     <h3 class="font-bold">Hauptaufgaben Mitarbeiter*in:</h3>
+                     
+                     <div class="bg-gray-100 rounded-xl p-3">
+                         <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
+                         <p>
+                             Carrot cake ice cream sweet roll wafer liquorice jujubes macaroon icing. Topping lemon drops dessert cookie biscuit tiramisu cake. Soufflé muffin sweet halvah wafer shortbread jelly beans.
+                         </p>
+                     </div>
+                     
+                     <div class="mt-3 space-y-3">
+                        <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-green-500"></InputTextarea>
+                     </div>
+                 </div>
+            </template>     
         </HRMFeedback>
 
         <HRMFeedback 
-            v-if="modus != 'GEMEINSAM'"
+            v-if="modus != 'GEMEINSAM_'"
             kategorie="# Aufgabengebiete / Tätigkeiten" 
             frage="Einschätzung der aktuellen Aufgaben/Tätigkeiten"
             :modus="modus">
@@ -102,7 +118,7 @@ const modus = ref('FK')
             </div>
             
             <template #Fuehrungskraftansicht>
-                <h3 class="font-bold">Meine Einschätzung:</h3>
+                <h3 class="font-bold">Einschätzung Mitarbeiter*in:</h3>
                 
                 <div class="bg-gray-100 rounded-xl p-3">
                     <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
@@ -115,10 +131,33 @@ const modus = ref('FK')
                 </div>
                 <div class="text-sm leading-normal space-y-3">
                     <p>
-                        Wie zufrieden bist Du mit der Arbeit deines Mitarbeiters? Ist die Person richtig eingesetzt? Wie funktioniert die Zusammenarbeit im Team? Ist die Person mit gewissen Tätigkeiten über- oder unterfordert? Was läuft gut und was soll verbessert werden?
+                        Wie zufrieden bist du mit der Arbeit deines Mitarbeiters? Ist die Person richtig eingesetzt? Wie funktioniert die Zusammenarbeit im Team? Ist die Person mit gewissen Tätigkeiten über- oder unterfordert? Was läuft gut und was soll verbessert werden?
                     </p>
                     <p>
-                        Grundsätzlich basiert das Entwicklungsgespräch auf transparenter und offener Kommunikationsbasis. Themen sollen direkt mit Mitarbeiter*innen besprochen werden.    
+                        Grundsätzlich basiert das Entwicklungsgespräch auf transparenter und offener Kommunikationsbasis. Themen sollen direkt mit Mitarbeiter*innen besprochen werden.
+                    </p>
+                    
+                </div>
+            </template>
+
+            <template #Gemeinsameansicht>
+                <h3 class="font-bold">Einschätzung Mitarbeiter*in:</h3>
+                
+                <div class="bg-gray-100 rounded-xl p-3">
+                    <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
+                    <p>
+                        Carrot cake ice cream sweet roll wafer liquorice jujubes macaroon icing. Topping lemon drops dessert cookie biscuit tiramisu cake. Soufflé muffin sweet halvah wafer shortbread jelly beans.
+                    </p>
+                </div>
+                <div class="mt-3 space-y-3">
+                    <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-green-500"></InputTextarea>
+                </div>
+                <div class="text-sm leading-normal space-y-3">
+                    <p>
+                        Wie zufrieden bist du mit der Arbeit deines Mitarbeiters? Ist die Person richtig eingesetzt? Wie funktioniert die Zusammenarbeit im Team? Ist die Person mit gewissen Tätigkeiten über- oder unterfordert? Was läuft gut und was soll verbessert werden?
+                    </p>
+                    <p>
+                        Grundsätzlich basiert das Entwicklungsgespräch auf transparenter und offener Kommunikationsbasis. Themen sollen direkt mit Mitarbeiter*innen besprochen werden.
                     </p>
                     
                 </div>
@@ -127,23 +166,38 @@ const modus = ref('FK')
         </HRMFeedback>
 
         <HRMFeedback 
-            v-if="modus == 'MA'"
+            v-if="modus != 'GEMEINSAM'"
             kategorie="# Aufgabengebiete / Tätigkeiten" 
-            frage="Wie zufrieden bist du mit Deinem derzeitigen Aufgabengebiet und mit Deinen Tätigkeiten?"
+            frage="Wie zufrieden bist du mit deinem derzeitigen Aufgabengebiet und mit deinen Tätigkeiten?"
             :modus="modus">
 
             <div class="ml-0 mt-3 space-y-3">
                 <InputRadio label="Ich bin:" :options="['sehr zufrieden', 'zufrieden', 'weniger zufrieden', 'nicht zufrieden']" /> 
             </div>
+            
+            <template #Fuehrungskraftansicht>
+                <div class="mt-3 space-y-3">
+                    <h3 class="font-bold">Einschätzung Mitarbeiter*in:</h3>
+                    <div class="bg-gray-100 rounded-xl p-3">
+                        <ul class="ml-3 list-disc">
+                            <li>Zufrieden</li>
+                        </ul>
+                    </div>    
+                </div>
+                 <div class="mt-3 space-y-3">
+                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
+                </div>
+            </template>
 
         </HRMFeedback>
 
         <!-- 2 -->
         <HRMFeedback
-            v-if="modus != 'GEMEINSAM'"
+            v-if="modus != '_GEMEINSAM'"
             kategorie="# Kompetenzentwicklung" 
             frage="Wie geht es dir bei der Umsetzung der besprochenen Kompetenzpunkte?"
             :modus="modus">
+            
             <p class="mt-3">
                 Hier hast du die Möglichkeit zu kommunizieren, was bisher gut gelaufen ist.
             </p>
@@ -171,13 +225,13 @@ const modus = ref('FK')
 
             <template #Fuehrungskraftansicht>
                 <div class="mt-3 space-y-3">
-                    <h3 class="font-bold">Meine Einschätzung:</h3>
+                    <h3 class="font-bold">Einschätzung Mitarbeiter*in:</h3>
                     <div class="bg-gray-100 rounded-xl p-3">
                         <ul class="ml-3 list-disc">
                             <li>Zufrieden</li>
                         </ul>
                     </div>
-                    <h3 class="font-bold">Mein Feedback:</h3>
+                    <h3 class="font-bold">Feedback Mitarbeiter*in:</h3>
                     
                     <div class="bg-gray-100 rounded-xl p-3">
                         <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
@@ -192,7 +246,37 @@ const modus = ref('FK')
                     <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
                 </div>
                 <div class="text-sm leading-normal space-y-3">
-                    Hier hast du die Möglichkeit zu kommunizieren, was bisher gut gelaufen ist? Wo es Herausforderungen oder Hindernisse gab? Inwieweit wurden die Vereinbarungen bisher umgesetzt und die Entwicklungsziele erreicht? Bei welchen Themen befindet sich dein Mitarbeiter/deine Mitarbeiterin noch in der Umsetzung? Welche Hilfe braucht der/die Mitarbeiter*in für die weitere Umsetzung? 
+                    Hier hast du die Möglichkeit zu kommunizieren, was bisher gut gelaufen ist. <br>
+                    Wo es Herausforderungen oder Hindernisse gab? Inwieweit wurden die Vereinbarungen bisher umgesetzt und die Entwicklungsziele erreicht? Bei welchen Themen befindet sich dein Mitarbeiter/deine Mitarbeiterin noch in der Umsetzung? Welche Hilfe braucht der/die Mitarbeiter*in für die weitere Umsetzung? 
+
+                </div>
+            </template>
+
+            <template #Gemeinsameansicht>
+                <div class="mt-3 space-y-3">
+                    <h3 class="font-bold">Einschätzung Mitarbeiter*in:</h3>
+                    <div class="bg-gray-100 rounded-xl p-3">
+                        <ul class="ml-3 list-disc">
+                            <li>Zufrieden</li>
+                        </ul>
+                    </div>
+                    <h3 class="font-bold">Feedback Mitarbeiter*in:</h3>
+                    
+                    <div class="bg-gray-100 rounded-xl p-3">
+                        <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
+                        <p>
+                            Carrot cake ice cream sweet roll wafer liquorice jujubes macaroon icing. Topping lemon drops dessert cookie biscuit tiramisu cake. Soufflé muffin sweet halvah wafer shortbread jelly beans.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="mt-3 space-y-3">
+                    <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-green-500"></InputTextarea>
+                </div>
+                <div class="text-sm leading-normal space-y-3">
+                    Hier hast du die Möglichkeit zu kommunizieren, was bisher gut gelaufen ist. <br>
+                    Wo es Herausforderungen oder Hindernisse gab? Inwieweit wurden die Vereinbarungen bisher umgesetzt und die Entwicklungsziele erreicht? Bei welchen Themen befindet sich dein Mitarbeiter/deine Mitarbeiterin noch in der Umsetzung? Welche Hilfe braucht der/die Mitarbeiter*in für die weitere Umsetzung? 
 
                 </div>
             </template>
@@ -200,7 +284,7 @@ const modus = ref('FK')
 
         <!-- 3 -->
         <HRMFeedback
-            v-if="modus != 'GEMEINSAM'"
+            v-if="modus != '_GEMEINSAM'"
             kategorie="# Kompetenzentwicklung" 
             frage="Was hat sich seit dem letzten Entwicklungsgespräch verändert?"
             :modus="modus">
@@ -217,7 +301,7 @@ const modus = ref('FK')
             </div>
 
             <template #Fuehrungskraftansicht>
-                <h3 class="font-bold">Meine Einschätzung:</h3>
+                <h3 class="font-bold">Einschätzung Mitarbeiter*in:</h3>
                 
                 <div class="bg-gray-100 rounded-xl p-3">
                     <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
@@ -228,6 +312,30 @@ const modus = ref('FK')
 
                 <div class="mt-3 space-y-3">
                     <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
+                </div>
+                <div class="text-sm leading-normal space-y-3">
+                    <p>
+                        Hier hast du als Führungskraft die Möglichkeit, Feedback zu geben. Wie hast du die bisherige Entwicklung (seit dem letzten EWG) wahrgenommen? Was läuft gut? Was soll sich verbessern? Hole dir Feedback von den richtigen Personen ein.     
+                    </p>
+                    <p>
+                        Sei in deinen Aussagen klar, konkret aber wertschätzend und untermauere deine Wahrnehmung mit Beispielen. Hab keine Scheu davor auch negative Aspekte anzusprechen.
+                    </p>
+                </div>
+
+            </template>
+
+            <template #Gemeinsameansicht>
+                <h3 class="font-bold">Einschätzung Mitarbeiter*in:</h3>
+                
+                <div class="bg-gray-100 rounded-xl p-3">
+                    <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
+                    <p>
+                        Carrot cake ice cream sweet roll wafer liquorice jujubes macaroon icing. Topping lemon drops dessert cookie biscuit tiramisu cake. Soufflé muffin sweet halvah wafer shortbread jelly beans.
+                    </p>
+                </div>
+
+                <div class="mt-3 space-y-3">
+                    <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-green-500"></InputTextarea>
                 </div>
                 <div class="text-sm leading-normal space-y-3">
                     <p>
@@ -283,21 +391,54 @@ const modus = ref('FK')
         </HRMFeedback>
 
         <HRMFeedback 
-            v-if="modus == 'GEMEINSAM'"
             kategorie="# Fachliche Weiterentwicklung" 
             frage="Weitere Fähigkeiten und Talente, die ich einbringen kann / will"
             :modus="modus">
             
+            
+            <p class="mt-3">
+                Nur wenn wir als Unternehmen deine Fähigkeiten und Talente kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier hast du die Möglichkeit diese einzutragen
+            </p>
+            <div class="mt-6 space-y-3">
+                <h3 class="font-bold">Selbsteinschätzung:</h3>
+                <div v-for="skill in ['Moderation', 'Projektmanagement', 'Trainertätigkeit', 'IT Affinität']">
+                    <InputCheckbox :checkboxLabel="skill" />
+                </div>
+                <InputText label="Sonstiges:" width="w-full" />
+            </div>
+            
+
+            <template #Fuehrungskraftansicht>
+                <p class="mt-3">
+                    Nur wenn wir als Unternehmen deine Fähigkeiten und Talente kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier hast du die Möglichkeit diese einzutragen
+                </p>
+                
+                <div class="mt-6 bg-gray-100 rounded-xl p-3">
+
+                    <h3 class="font-bold">Selbsteinschätzung:</h3>
+                    <div v-for="skill in ['Projektmanagement', 'Trainertätigkeit']">
+                        <li>{{skill}}</li>
+                    </div>
+                    <!-- <InputText label="Sonstiges:" width="w-full" /> -->
+                </div>
+                <div class="mt-3 space-y-3">
+                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
+                </div>
+            </template>
             <template #Gemeinsameansicht>
                 <p class="mt-3">
                     Nur wenn wir als Unternehmen deine Fähigkeiten und Talente kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier hast du die Möglichkeit diese einzutragen
                 </p>
-                <div class="mt-6 space-y-3">
-                    <h3 class="font-bold">Selbsteinschätzung</h3>
-                    <div v-for="skill in ['Moderation', 'Projektmanagement', 'Trainertätigkeit', 'IT Affinität']">
-                        <InputCheckbox :checkboxLabel="skill" />
+                <div class="mt-6 bg-gray-100 rounded-xl p-3">
+
+                    <h3 class="font-bold">Selbsteinschätzung:</h3>
+                    <div v-for="skill in ['Projektmanagement', 'Trainertätigkeit']">
+                        <li>{{skill}}</li>
                     </div>
-                    <InputText label="Sonstiges:" width="w-full" />
+                    <!-- <InputText label="Sonstiges:" width="w-full" /> -->
+                </div>
+                <div class="mt-3 space-y-3">
+                    <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-green-500"></InputTextarea>
                 </div>
             </template>
         </HRMFeedback>
@@ -323,16 +464,35 @@ const modus = ref('FK')
 
 <!-- 7 -->
         <HRMFeedback 
-            v-if="modus == 'GEMEINSAM'"
             kategorie="# Fachliche Weiterentwicklung" 
             frage="Langfristige Entwicklungsziele / Wünsche"
             :modus="modus">
-            <template #Gemeinsameansicht>
-                <div class="mt-6 space-y-3">
-                    <InputRadio label="" :options="['Ich bin mit meinem momentanen Aufgabengebiet sehr zufrieden','Langfristig sehe ich mich in einem anderen Bereich']" />
+
+            
+            <div class="mt-6 space-y-3">
+                <InputRadio label="" :options="['Ich bin mit meinem momentanen Aufgabengebiet sehr zufrieden','Langfristig sehe ich mich in einem anderen Bereich']" />
+            </div>
+            <div class="mt-6 space-y-3">
+                <InputTextarea label="Anmerkungen:" class="h-32 w-full"></InputTextarea>
+            </div>
+
+
+            <template #Fuehrungskraftansicht>
+
+                <div class="mt-6 bg-gray-100 rounded-xl p-3">
+                    <li>Langfristig sehe ich mich in einem anderen Bereich</li>
                 </div>
                 <div class="mt-6 space-y-3">
-                    <InputTextarea label="Anmerkungen:" class="h-32 w-full"></InputTextarea>
+                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
+                </div>
+            </template>
+
+            <template #Gemeinsameansicht>
+                <div class="mt-6 bg-gray-100 rounded-xl p-3">
+                    <li>Langfristig sehe ich mich in einem anderen Bereich</li>
+                </div>
+                <div class="mt-6 space-y-3">
+                    <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-green-500"></InputTextarea>
                 </div>
             </template>
         </HRMFeedback>
@@ -351,7 +511,7 @@ const modus = ref('FK')
                     <InputRadio label="" :options="['Das Arbeitszeitmodell soll momentan so bleiben wie vereinbart', 'Änderung der Arbeitszeit erwünscht']" />
                 </div>
                 <div class="mt-6 space-y-3">
-                    <InputTextarea label="Anmerkungen:" class="h-32 w-full"></InputTextarea>
+                    <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full  border-l-4 border-l-green-500"></InputTextarea>
                 </div>
             </template>
         </HRMFeedback>
@@ -361,7 +521,7 @@ const modus = ref('FK')
 <!-- Abschluss -->
         <HRMFeedback 
             v-if="modus == 'GEMEINSAM'"
-            kategorie="# Abschluss" 
+            kategorie="# Anmerkungen" 
             frage="Sonstige Anmerkungen"
             :modus="modus">
             <template #Gemeinsameansicht>
@@ -370,30 +530,28 @@ const modus = ref('FK')
                     Hier gibt es Platz dafür.
                 </p>
                 <div class="mt-6 space-y-3">
-                    <InputTextarea label="Gemeinsame Notizen:" class="h-48 w-full"></InputTextarea>
+                    <InputTextarea label="Gemeinsame Notizen:" class="h-48 w-full  border-l-4 border-l-green-500"></InputTextarea>
                 </div>
             </template>
         </HRMFeedback>
 
         <HRMFeedback 
             v-if="modus == 'GEMEINSAM'"
-            kategorie="# Abschluss" 
+            kategorie="# Anmerkungen" 
             frage="Feedback"
             :modus="modus">
             <template #Gemeinsameansicht>
                 <div class="mt-6 space-y-3">
-                    <InputTextarea label="Feedback/Zusammenfassung:" class="h-48 w-full"></InputTextarea>
+                    <InputTextarea label="Feedback/Zusammenfassung:" class="h-48 w-full  border-l-4 border-l-green-500"></InputTextarea>
                 </div>
                 <div class="text-sm leading-normal space-y-3">
                     <p>
-                        Für das gegenseitige Verständnis hast du hier als Führungskraft die Möglichkeit deinen Mitarbeiter*innen ein zusammenfassendes schriftliches Feedback zu geben.  
+                        Für das gegenseitige Verständnis hast du hier als Führungskraft die Möglichkeit ein zusammenfassendes schriftliches Feedback zu geben.  
                     </p>
                     <p>
-                        Im ersten Schritt soll das Feedback den Mitarbeiter*innen aber direkt im Gespräch mündlich gegeben werden. Dieses Feld dient nur für die schriftliche Dokumentation im Nachhinein. Jeder soll zusätzlich zum mündlichen auch ein schriftliches Feedback bekommen.    
+                       Im ersten Schritt soll das Feedback dem/der Mitarbeiter*in aber direkt im Gespräch mündlich gegeben werden. Dieses Feld dient nur für die schriftliche Dokumentation im Nachhinein. Jeder soll zusätzlich zum mündlichen auch ein schriftliches Feedback bekommen. 
                     </p>
-                    <p>
-                        Für das gegenseitige Verständnis hast du hier als Führungskraft die Möglichkeit deinen Mitarbeiter*innen ein zusammenfassendes schriftliches Feedback zu geben.                        
-                    </p>
+
                 </div>
             </template>
         </HRMFeedback>

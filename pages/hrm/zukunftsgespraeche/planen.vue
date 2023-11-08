@@ -4,7 +4,7 @@ import { ArrowDownTrayIcon, ClockIcon, CheckCircleIcon, ClipboardDocumentListIco
 import { reactive } from 'vue'
 
 const title = "Thema anzeigen";
-const titleFKPlanung = "Gesprächsvorbereitung";
+const titleFKPlanung = "Gesprächsvorbereitung Zukunftsgespräch";
 
 const planen = reactive([{
         mitarbeiter: 'Malgorzata Dorner',
@@ -238,15 +238,12 @@ function prozessStarten() {
         </div>
     </HRMPopupDialog>
 
-    <HRMPopupDialog :title="titleFKPlanung" height="40vh" speichern="Akzeptieren">
+    <HRMPopupDialog :title="titleFKPlanung" height="50vh" ok="Einladung senden">
         
-        <h3 class="font-bold">Thema für das Zukunftsgespräch</h3>
-        <InputTextarea title="Thema:" class="w-full h-24"/>
-        <p>
-            Dann folgt Schritt 2: Formular "Einschätzung Führungskraft"
+        <h3 class="font-bold">Vorstellung Führungskraft</h3>
+        <p class="mt-6 mb-3 text-sm text-gray-500">
+            Sie haben hier die Möglichekeit den Text für die Einladung zum Zukunftsgespräch anzupassen:
         </p>
-        <p>
-            Und dann ist das Gespräch bereit
-        </p>
+        <InputTextarea title="Thema:" class="w-full h-36"/>
     </HRMPopupDialog>
 </template>

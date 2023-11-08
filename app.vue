@@ -13,13 +13,13 @@ const route = useRoute()
         </div>
 
         <div class="grid grid-cols-[250px_1fr] print:block">
-            <div class="border-r print:hidden">
+            <div class="overflow-y-auto border-r print:hidden" style="height: calc(100vh - 55px - 1rem);">
                 <div class="flex justify-end p-2">
                     <a href="/" class="hover:bg-Mittelblau hover:text-white text-Mittelblau">
                         <Bars3Icon class="w-5 h-5" /></a>
                 </div>
                 <nav class="">
-                    <ul class="space-y-3">
+                    <ul class="space-y-1 text-sm">
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                             <UserCircleIcon class="w-5 h-5 text-Mittelblau" />
                             <a href="/hra/mitarbeiterinnen/suche" :class="{'font-bold': route.path === '/hra/mitarbeiterinnen/suche'}">
@@ -71,72 +71,62 @@ const route = useRoute()
                 </div>
                 <nav v-if="zeigeHRM">
                     <div class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
-                        <ChatBubbleBottomCenterTextIcon class="w-5 h-5 text-blue-800" />
+                        <ChatBubbleBottomCenterTextIcon class="w-5 h-5 text-blue-800 flex-shrink-0" />
                         Entwicklungsgespräche
                     </div>
-                    <ul class="ml-7 space-y-1">
-                        <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                    <ul class="ml-7 space-y-1 text-sm">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/entwicklungsgespraeche/planen">
                                 Planen
                             </a>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/entwicklungsgespraeche/durchfuehren">
                                 Durchführen
                             </a>
                         </li>
-                        <!-- <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/entwicklungsgespraeche/notizenerfassen">
-                                FK Notizen erfassen
-                            </a>
-                        </li>
-                        <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/entwicklungsgespraeche/gespraechdurchfuehren">
-                                Gespräch durchführen
-                            </a>
-                        </li> -->
                       </ul>         
-                    <div class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                    <div class="flex gap-2 px-4 py-1 items-center font-bold hover:bg-Hellblau hover:text-white">
                         <ChatBubbleBottomCenterTextIcon class="w-5 h-5 text-blue-800" />
                         Zukunftsgespräche
                     </div>    
                      <ul class="ml-7 space-y-1">
-                        <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/zukunftsgespraeche/planen">
                                 Planen
                             </a>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/zukunftsgespraeche/durchfuehren">
                                 Durchführen
                             </a>
                         </li>
                     </ul>           
-                    <ul class="space-y-3">
-                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                    <ul class="mt-3 space-y-1 text-sm">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <span class="">Self Service</span>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/personalabteilung-kontaktieren" class="">
                                 Personalabteilung kontaktieren
                             </a>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/anfragenbearbeiten" class="">
                                 Anfragen bearbeiten
                             </a>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/meine-anfragen" class="">
                                 Meine Anfragen
                             </a>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/meine-daten" class="">
                                 Meine Daten
                             </a>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
                             <a href="/hrm/downloads" class="">
                                 Downloads
                             </a>
@@ -145,7 +135,7 @@ const route = useRoute()
                 </nav>
             </div>
 
-            <div class="bg-Blaugrau-10 print:h-full print:overflow-auto" style="height: calc(100vh - 4rem - 1rem); overflow-y: auto;">
+            <div class="bg-Blaugrau-10 print:h-full print:overflow-auto" style="height: calc(100vh - 55px - 1rem); overflow-y: auto;">
                 <div class="max-w-[1600px] print:w-auto">
                     <NuxtPage />
                 </div>
