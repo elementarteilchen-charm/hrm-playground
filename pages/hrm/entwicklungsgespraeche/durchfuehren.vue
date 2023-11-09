@@ -6,8 +6,8 @@ const modus = ref('FK')
 
 </script>
 <template>
-    <div  style="background-image: url(/hintergrund.svg);" class="pb-6 h-screen_ bg-no-repeat bg-center bg-top ">
-        <header class="py-6 px-6 sticky top-0">
+    <div  style="background-image: url(/hintergrund.svg);" class="pb-6 bg-no-repeat bg-center bg-top ">
+        <header class="py-6 px-6 ">
             <div class="grid grid-cols-2 ">
                 <div>
                     <h2 class="font-bold italic text-white text-2xl">WALTER GROUP ENTWICKLUNGSGESPRÄCH</h2>

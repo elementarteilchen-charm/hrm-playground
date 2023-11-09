@@ -76,7 +76,7 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
             </template>
 
             <template #Gemeinsameansicht>
-                <h3 class="font-bold">Feedback:</h3>
+                <h3 class="font-bold">Wunsch Vorstellung Mitarbeiter*in:</h3>
                 
                 <div class="bg-gray-100 rounded-xl p-3">
                     <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
@@ -101,81 +101,73 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
         </HRMFeedback>
 
         <HRMFeedback 
-            kategorie="# Langfristige Entwicklungsziele / Wünsche" 
-            frage="Wunsch / Vorstellung Mitarbeiter*in "
-            :modus="modus">
-            
-            <h3 class="font-bold">Feedback:</h3>
-            
-            <div class="bg-gray-100 rounded-xl p-3">
-                <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
-                <p>
-                    Carrot cake ice cream sweet roll wafer liquorice jujubes macaroon icing. Topping lemon drops dessert cookie biscuit tiramisu cake. Soufflé muffin sweet halvah wafer shortbread jelly beans.
-                </p>
-            </div>
-            
-            <div class="mt-3 space-y-3">
-                <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
-            </div>
-        </HRMFeedback>
-
-        <HRMFeedback 
-            kategorie="# Langfristige Entwicklungsziele/Wünsche" 
-            frage="Wunsch/Vorstellung Mitarbeiter*in ">
-
-            <h3 class="font-bold">Feedback:</h3>
-            
-            <div class="bg-gray-100 rounded-xl p-3">
-                <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
-                <p>
-                    Carrot cake ice cream sweet roll wafer liquorice jujubes macaroon icing. Topping lemon drops dessert cookie biscuit tiramisu cake. Soufflé muffin sweet halvah wafer shortbread jelly beans.
-                </p>
-            </div>
-            
-            <div class="mt-3 space-y-3">
-                <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-Gruen-logo"></InputTextarea>
-            </div>
-            <div class="text-sm leading-normal space-y-3">
-                <p>
-                    Hier habt Ihr die Gelegenheit, euch über langfristige Entwicklungsmöglichkeiten, Perspektiven und Wünsche zu unterhalten. Wichtig ist es, realistische und klare Ziele zu besprechen (Entwicklung in Richtung Führungsverantwortung, fachliche Entwicklung im eigenen Bereich oder fachliche Entwicklung in einem fremden oder angrenzenden Tätigkeitsbereich). 
-                </p>
-                <p>
-                    Sprecht über eure Wahrnehmungen, Vorstellungen und Wünsche und gebt euch diesbezüglich auch offenes und ehrliches Feedback. Klarheit am Weg ist für die Weitsicht sehr wichtig.
-                </p>
-
-            </div>
-        </HRMFeedback>
-
-<!-- FK only -->
-        <HRMFeedback 
             v-if="modus == 'FK'" 
+            :modus="modus"
             kategorie="# Langfristige Entwicklungsziele / Wünsche" 
             frage="Einschätzung Führungskraft">
             
-             <div class="ml-0 mt-3 space-y-3">
-                
-                <InputRadio 
-                    :options="[
-                        'Fachliche Entwicklung im derzeitigen Bereich', 
-                        'Fachliche Entwicklung in einen anderen Bereich',
-                        'Führungslaufbahn',
-                        'Sonstiges']" />
-                <InputSelect label="Mandant"  width="w-1/2"
-                    :options="['LKW WALTER', 'CONTAINEX', 'WGS', 'WALTER LAGERBETRIEBE']" />
-                <InputSelect label="Tätigkeit" width="w-1/2" selected="Business Development"
-                    :options="['Sales', 'Transport Management', 'Customer Service', 'Business Development', 'BDO', 'Carrier Management']" />                    
-            </div>
+            <template #Fuehrungskraftansicht>
+                <div class="ml-0 mt-3 space-y-3">
+                    
+                    <InputRadio 
+                        :options="[
+                            'Fachliche Entwicklung im derzeitigen Bereich', 
+                            'Fachliche Entwicklung in einen anderen Bereich',
+                            'Führungslaufbahn',
+                            'Sonstiges']" />
+                    <InputSelect label="Mandant"  width="w-1/2"
+                        :options="['LKW WALTER', 'CONTAINEX', 'WGS', 'WALTER LAGERBETRIEBE']" />
+                    <InputSelect label="Tätigkeit" width="w-1/2" selected="Business Development"
+                        :options="['Sales', 'Transport Management', 'Customer Service', 'Business Development', 'BDO', 'Carrier Management']" />                    
+                </div>
 
-            <div class="mt-3 space-y-3">
-                <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
-            </div>
+                <div class="mt-3 space-y-3">
+                    <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
+                </div>
+            </template>
+
         </HRMFeedback>
         
+        <HRMFeedback 
+            v-if="modus != 'MA'"
+            :modus="modus"
+            kategorie="# Arbeitszeit" 
+            frage="Momentanes Arbeitszeitmodell">
+
+            <template #Fuehrungskraftansicht>
+                <p>
+                   Hier ist Platz, um über das aktuelle Arbeitszeitmodell zu sprechen. Bleibt das momentane Zeitmodell gleich oder soll sich etwas verändern?
+                </p>
+
+                <div class="ml-0 mt-3 space-y-3">
+                    <InputRadio 
+                        :options="[
+                            'Das Arbeitszeitmodell soll momentan so bleiben wie vereinbart', 
+                            'Änderung der Arbeitszeit erwünscht']" />
+                </div>
+
+            </template>
+
+            <template #Gemeinsameansicht>
+                <p>
+                   Hier ist Platz, um über das aktuelle Arbeitszeitmodell zu sprechen. Bleibt das momentane Zeitmodell gleich oder soll sich etwas verändern?
+                </p>
+
+                <div class="ml-0 mt-3 space-y-3 bg-gray-100">
+                    <li>Änderung der Arbeitszeit erwünscht</li>
+                </div>
+
+                <div class="mt-3 space-y-3">
+                    <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-Gruen-logo"></InputTextarea>
+                </div>
+            </template>
+
+        </HRMFeedback>
 
 <!-- 2 -->
 
         <HRMFeedback 
-            v-if="modus == 'GEMEINSAM'" 
+            v-if="modus == '_GEMEINSAM'" 
             kategorie="# Langfristige Entwicklungsziele" 
             frage="Vorstellung Führungskraft"
             :modus="modus">
@@ -222,33 +214,12 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
 
         </HRMFeedback>
 
-        <HRMFeedback 
-            v-if="modus == 'GEMEINSAM'" 
-            kategorie="# Arbeitszeit" 
-            frage="Momentanes Arbeitszeitmodell">
 
-            <p>
-               Hier ist Platz, um über das aktuelle Arbeitszeitmodell zu sprechen. Bleibt das momentane Zeitmodell gleich oder soll sich etwas verändern?
-            </p>
-
-            <div class="ml-0 mt-3 space-y-3">
-                <InputRadio 
-                    :options="[
-                        'Das Arbeitszeitmodell soll momentan so bleiben wie vereinbart', 
-                        'Änderung der Arbeitszeit erwünscht']" />
-            </div>
-
-            <div class="mt-3 space-y-3">
-                <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-Gruen-logo"></InputTextarea>
-            </div>
-
-
-        </HRMFeedback>
 
 <!-- 3 -->
 
         <HRMFeedback v-if="modus == 'GEMEINSAM'" kategorie="# Anmerkungen" frage="Sonstige Anmerkungen">
-            <div class="text-sm leading-normal space-y-3">
+            <div class="leading-normal space-y-3">
                 <p>
                    Gibt es Themen und Anmerkungen die du und dein/e Gesprächspartner*in zusätzlich dokumentieren wollen? Hier gibt es Platz dafür.
                 </p>
@@ -290,3 +261,50 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
 
     </div>
 </template>
+
+
+<!--         <HRMFeedback 
+            kategorie="# Langfristige Entwicklungsziele / Wünsche" 
+            frage="Wunsch / Vorstellung Mitarbeiter*in "
+            :modus="modus">
+            
+            <h3 class="font-bold">Feedback:</h3>
+            
+            <div class="bg-gray-100 rounded-xl p-3">
+                <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
+                <p>
+                    Carrot cake ice cream sweet roll wafer liquorice jujubes macaroon icing. Topping lemon drops dessert cookie biscuit tiramisu cake. Soufflé muffin sweet halvah wafer shortbread jelly beans.
+                </p>
+            </div>
+            
+            <div class="mt-3 space-y-3">
+                <InputTextarea label="Vertrauliche Notiz:" class="h-32 w-full border-l-4 border-l-red-500"></InputTextarea>
+            </div>
+        </HRMFeedback> -->
+<!-- 
+        <HRMFeedback 
+            kategorie="# Langfristige Entwicklungsziele/Wünsche" 
+            frage="Wunsch/Vorstellung Mitarbeiter*in ">
+
+            <h3 class="font-bold">Feedback:</h3>
+            
+            <div class="bg-gray-100 rounded-xl p-3">
+                <p>Sugar plum marzipan jelly beans danish chocolate bar ice cream. Sugar plum shortbread cotton candy muffin pastry. Shortbread shortbread lollipop biscuit chocolate bar.</p>
+                <p>
+                    Carrot cake ice cream sweet roll wafer liquorice jujubes macaroon icing. Topping lemon drops dessert cookie biscuit tiramisu cake. Soufflé muffin sweet halvah wafer shortbread jelly beans.
+                </p>
+            </div>
+            
+            <div class="mt-3 space-y-3">
+                <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-Gruen-logo"></InputTextarea>
+            </div>
+            <div class="text-sm leading-normal space-y-3">
+                <p>
+                    Hier habt Ihr die Gelegenheit, euch über langfristige Entwicklungsmöglichkeiten, Perspektiven und Wünsche zu unterhalten. Wichtig ist es, realistische und klare Ziele zu besprechen (Entwicklung in Richtung Führungsverantwortung, fachliche Entwicklung im eigenen Bereich oder fachliche Entwicklung in einem fremden oder angrenzenden Tätigkeitsbereich). 
+                </p>
+                <p>
+                    Sprecht über eure Wahrnehmungen, Vorstellungen und Wünsche und gebt euch diesbezüglich auch offenes und ehrliches Feedback. Klarheit am Weg ist für die Weitsicht sehr wichtig.
+                </p>
+
+            </div>
+        </HRMFeedback> -->

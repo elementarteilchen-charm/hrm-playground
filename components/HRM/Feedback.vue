@@ -14,9 +14,9 @@
     <main class="mt-12">
         <div class="border border-white rounded-tl-[50px] rounded-br-[50px] rounded-tr-[50px] p-6 bg-white w-3/5 mx-auto shadow-xl">
             <div>
-                <div class="flex items-center justify-center">
-                    <h2 class="uppercase text-Mittelblau font-bold text-center">{{kategorie}}</h2>
-                    <div class="text-gray-400 text-sm w-8 text-right">
+                <div class="flex items-center justify-center gap-4">
+                    <h2 class="flex-1 uppercase text-Mittelblau font-bold text-center">{{kategorie}}</h2>
+                    <div class="text-gray-300 text-xs">
                         {{modus}}
                     </div>
                 </div>
