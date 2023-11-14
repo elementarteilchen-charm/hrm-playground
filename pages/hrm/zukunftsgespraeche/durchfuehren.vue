@@ -136,7 +136,7 @@ const modus = ref('MA') // MA, FK, GEMEINSAM
 
             <template #Fuehrungskraftansicht>
                 <p>
-                   Hier ist Platz, um über das aktuelle Arbeitszeitmodell zu sprechen. Bleibt das momentane Zeitmodell gleich oder soll sich etwas verändern?
+                   Hier ist Platz um über das aktuelle Arbeitszeitmodell zu sprechen. Bleibt das momentane Zeitmodell gleich oder soll sich etwas verändern?
                 </p>
 
                 <div class="ml-0 mt-3 space-y-3">

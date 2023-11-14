@@ -98,7 +98,6 @@ const modus = ref('FK')
         </HRMFeedback>
 
         <HRMFeedback 
-            v-if="modus != 'GEMEINSAM_'"
             kategorie="# Aufgabengebiete / Tätigkeiten" 
             frage="Einschätzung der aktuellen Aufgaben/Tätigkeiten"
             :modus="modus">
@@ -154,10 +153,10 @@ const modus = ref('FK')
                 </div>
                 <div class="text-sm leading-normal space-y-3">
                     <p>
-                        Wie zufrieden bist du mit der Arbeit deines Mitarbeiters? Ist die Person richtig eingesetzt? Wie funktioniert die Zusammenarbeit im Team? Ist die Person mit gewissen Tätigkeiten über- oder unterfordert? Was läuft gut und was soll verbessert werden?
+                        Das Entwicklungsgespräch basiert auf transparenter und offener Kommunikation. Bitte besprecht die Inhalte direkt im Gespräch. Tauscht euch über Themen aus, die euch wichtig sind!
                     </p>
                     <p>
-                        Grundsätzlich basiert das Entwicklungsgespräch auf transparenter und offener Kommunikationsbasis. Themen sollen direkt mit Mitarbeiter*innen besprochen werden.
+                        Hier habt ihr die Möglichkeit über die Zufriedenheit der momentanen Aufgaben/Tätigkeiten zu sprechen. Was läuft gut und was soll verbessert werden? 
                     </p>
                     
                 </div>
@@ -193,7 +192,6 @@ const modus = ref('FK')
 
         <!-- 2 -->
         <HRMFeedback
-            v-if="modus != '_GEMEINSAM'"
             kategorie="# Kompetenzentwicklung" 
             frage="Wie geht es dir bei der Umsetzung der besprochenen Kompetenzpunkte?"
             :modus="modus">
@@ -275,9 +273,8 @@ const modus = ref('FK')
                     <InputTextarea label="Gemeinsame Notiz:" class="h-32 w-full border-l-4 border-l-green-500"></InputTextarea>
                 </div>
                 <div class="text-sm leading-normal space-y-3">
-                    Hier hast du die Möglichkeit zu kommunizieren, was bisher gut gelaufen ist. <br>
-                    Wo es Herausforderungen oder Hindernisse gab? Inwieweit wurden die Vereinbarungen bisher umgesetzt und die Entwicklungsziele erreicht? Bei welchen Themen befindet sich dein Mitarbeiter/deine Mitarbeiterin noch in der Umsetzung? Welche Hilfe braucht der/die Mitarbeiter*in für die weitere Umsetzung? 
-
+                    <p>Hier habt ihr die Möglichkeit euch auszutauschen, was bisher gut gelaufen ist und wo es Herausforderungen und Hindernisse gab. </p>
+                    <p>Inwieweit wurden die Vereinbarungen bisher umgesetzt und die Entwicklungsziele erreicht? Bei welchen Themen wird Unterstützung benötigt?</p>
                 </div>
             </template>
         </HRMFeedback>
@@ -339,10 +336,7 @@ const modus = ref('FK')
                 </div>
                 <div class="text-sm leading-normal space-y-3">
                     <p>
-                        Hier hast du als Führungskraft die Möglichkeit, Feedback zu geben. Wie hast du die bisherige Entwicklung (seit dem letzten EWG) wahrgenommen? Was läuft gut? Was soll sich verbessern? Hole dir Feedback von den richtigen Personen ein.     
-                    </p>
-                    <p>
-                        Sei in deinen Aussagen klar, konkret aber wertschätzend und untermauere deine Wahrnehmung mit Beispielen. Hab keine Scheu davor auch negative Aspekte anzusprechen.
+                        Wie zufrieden seid ihr in Summe mit dem Entwicklungsfortschritt seit dem letzten Entwicklungsgespräch? (Wie war die Situation vor einem Jahr, wie ist die Situation jetzt, welche Entwicklung lag dazwischen)? 
                     </p>
                 </div>
 
@@ -397,7 +391,7 @@ const modus = ref('FK')
             
             
             <p class="mt-3">
-                Nur wenn wir als Unternehmen deine Fähigkeiten und Talente kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier hast du die Möglichkeit diese einzutragen
+                Nur wenn wir als Unternehmen die Fähigkeiten und Talente unserer Mitarbeiter*innen kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier habt ihr die Möglichkeit darüber zu sprechen.
             </p>
             <div class="mt-6 space-y-3">
                 <h3 class="font-bold">Selbsteinschätzung:</h3>
@@ -410,7 +404,8 @@ const modus = ref('FK')
 
             <template #Fuehrungskraftansicht>
                 <p class="mt-3">
-                    Nur wenn wir als Unternehmen deine Fähigkeiten und Talente kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier hast du die Möglichkeit diese einzutragen
+                    Nur wenn wir als Unternehmen die Fähigkeiten und Talente unserer Mitarbeiter*innen kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier habt ihr die Möglichkeit darüber zu sprechen.
+
                 </p>
                 
                 <div class="mt-6 bg-gray-100 rounded-xl p-3">
@@ -427,7 +422,8 @@ const modus = ref('FK')
             </template>
             <template #Gemeinsameansicht>
                 <p class="mt-3">
-                    Nur wenn wir als Unternehmen deine Fähigkeiten und Talente kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier hast du die Möglichkeit diese einzutragen
+                    Nur wenn wir als Unternehmen die Fähigkeiten und Talente unserer Mitarbeiter*innen kennen, können wir deine Entwicklung zielgerichtet begleiten. Hier habt ihr die Möglichkeit darüber zu sprechen.
+
                 </p>
                 <div class="mt-6 bg-gray-100 rounded-xl p-3">
 
