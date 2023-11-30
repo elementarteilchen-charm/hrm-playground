@@ -9,7 +9,7 @@
     <Suche />
   </div>
 
-  <AppAlert title="Stimmen alle Ihre Daten noch?" button-text="Notfallkontakt überprüfen">
+<!--   <AppAlert title="Stimmen alle Ihre Daten noch?" button-text="Notfallkontakt überprüfen">
     Überprüfen Sie jetzt ihre Notfallkontaktdaten!
   </AppAlert>
 
@@ -50,5 +50,5 @@
     </InfoBox>
 
     
-  </div>
+  </div> -->
 </template>

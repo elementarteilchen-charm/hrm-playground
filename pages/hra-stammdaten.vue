@@ -26,53 +26,68 @@
   }
 </script>
 <template>
-    <main class="grid grid-rows-[auto_auto_auto] gap-8">
+    
+    <main class="grid grid-rows-[auto_auto_auto] gap-8 mt-4">
+        <header class="px-16">
+            <div class="text-xs font-light text-Blaugrau">
+                Eintrittsmanagement > Eintrittsdaten bearbeiten
+            </div>
+            <h2 class="text-3xl text-Blaugrau">Details der eintretenden Person bearbeiten</h2>
+        </header>   
+
         <EintretendePersonHeader vorname="Stephanie" anrede="Fr." nachname="Babunek" />
-        <NavigationTopMenu :topMenuItems="topMenuItems" :active="0" />
-        <div class="bg-white border border-t rounded overflow-hidden">
-            <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
-                <div>
-                    <nav class="mt-4">
-                        <ul class="text-sm">
-                            <li v-for="tab, index in tabs" class="border-l-4 border-white pl-4 pr-8 py-3 flex hover:bg-gray-200" :class="[{'border-l-4 border-blue-500 text-blue-700 font-bold': tab == activeTab.tab}]">
-                                <a href="#" @click="activeTab.tab = tab">
-                                    {{tab}}</a>
-                            </li>
-                        </ul>
 
-                        <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
-                            <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
-                                Speichern</a>
-                            <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
-                                Abbrechen</a>
+        <div class="px-16">
+            <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="0" />
+        </div>
+        
+
+        <div class="px-16">
+            <div class="bg-white border border-t rounded overflow-hidden">
+                <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
+                    <div>
+                        <nav class="mt-4">
+                            <ul class="text-sm">
+                                <li v-for="tab, index in tabs" class="border-l-4 border-white pl-4 pr-8 py-3 flex hover:bg-gray-200" :class="[{'border-l-4 border-blue-500 text-blue-700 font-bold': tab == activeTab.tab}]">
+                                    <a href="#" @click="activeTab.tab = tab">
+                                        {{tab}}</a>
+                                </li>
+                            </ul>
+
+                            <div class="mt-4 px-2 py-6 flex flex-col space-y-3">
+                                <a href="" class="px-3 py-2 bg-blue-700 text-white text-center">
+                                    Speichern</a>
+                                <a href="" class="px-3 py-2 text-blue-700 hover:underline text-center">
+                                    Abbrechen</a>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="px-4 py-4 border-l pb-12">
+
+                        <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                            <StammdatenPersoenlich />
+                            <StammdatenLand />
+                            <StammdatenFamilienstand />
                         </div>
-                    </nav>
-                </div>
-                <div class="px-4 py-4 border-l pb-12">
-
-                    <div v-show="tabs[0] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenPersoenlich />
-                        <StammdatenLand />
-                        <StammdatenFamilienstand />
+                        <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                            <StammdatenAdresse />
+                        </div>
+                        <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                            <StammdatenBankverbindung />
+                        </div>
+                        <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                            <StammdatenBehinderung />
+                        </div>
+                        <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                            <StammdatenFamilienangehoerige />
+                        </div>
+                        <div v-show="tabs[5] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                            
+                            <HRAPersonBewilligungen />
+                        </div>
                     </div>
-                    <div v-show="tabs[1] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenAdresse />
-                    </div>
-                    <div v-show="tabs[2] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenBankverbindung />
-                    </div>
-                    <div v-show="tabs[3] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenBehinderung />
-                    </div>
-                    <div v-show="tabs[4] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <StammdatenFamilienangehoerige />
-                    </div>
-                    <div v-show="tabs[5] == activeTab.tab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        
-                        <HRAPersonBewilligungen />
-                    </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
     </main>
     <dialog id="erinnerungen-dialog" class="modal-erinnerungen border rounded-lg bg-gray-200 " style="height: 52vh; width: 66vw; overflow-y: hidden; ">
