@@ -21,13 +21,10 @@
     document.getElementById('erinnerungen-dialog').showModal();
   }
 
-  function erinnerungLoeschen() {
-    alert('Wirklich löschen?')
-  }
 </script>
 <template>
     
-    <main class="grid grid-rows-[auto_auto_auto] gap-8 mt-4">
+    <main class="mt-4">
         <header class="px-16">
             <div class="text-xs font-light text-Blaugrau">
                 Eintrittsmanagement > Eintrittsdaten bearbeiten
@@ -42,7 +39,7 @@
         </div>
         
 
-        <div class="px-16">
+        <div class="mt-6 px-16">
             <div class="bg-white border border-t rounded overflow-hidden">
                 <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                     <div>
