@@ -6,6 +6,7 @@
     } from '@heroicons/vue/24/outline' ;
 
     const inBearbeitung = ref(false);
+    const buttonText = ''
     const showDocumentUpload = ref(false);
     const title = "Fehlende Dokumente"
     const dokumente = ref([

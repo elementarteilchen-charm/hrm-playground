@@ -2,13 +2,15 @@
     const props = defineProps({
         label: {type: String, default: ''}, 
         checkboxLabel: {type: String}, 
-        name: {type: String, default: 'Checkbox' + Math.floor(Math.random() * 100)}, 
+        name: {type: String, default: ''}, 
         checked: {type: Boolean, default: false}, 
         labelStyle: {type: String, default: ''},
         checkboxStyle: {type: String, default: ''}
     })
 
     let checkboxToggle = props.checked;
+    let id = props.name ? props.name : props.checkboxLabel
+
 </script>
 
 <template>
@@ -22,8 +24,8 @@
                     class="border border-gray-300 rounded-sm w-5 h-5" 
                     style="box-shadow:inset 2px 2px 2px 0 rgba(51, 51, 51, 0.1);" 
                     :class="checkboxStyle" 
-                    :id="name" :name="name" />
-            <label :for="name"  :class="labelStyle">
+                    :id="id" :name="id" />
+            <label :for="id"  :class="labelStyle">
                 <span v-if="checkboxLabel">{{checkboxLabel}}</span>
                 <span v-else><slot></slot></span>
             </label>

@@ -14,13 +14,16 @@
       <div class="mt-8 grid grid-cols-2 gap-8">
         <!-- <HRMFehlendeDokumente /> -->
 
-        <HRMDatenschutz /> 
-        <HRMPrivatadresse />
-        <HRMZutrittskarte />
-        <HRMPrivateKontaktdaten />
-        <!-- <HRMKFZKennzeichen />  -->
+        <HRMSelfServicePrivatadresse />
+        <HRMSelfServiceStaatsbuergerschaft />
+        <HRMSelfServiceZutrittskarte />
+
+        <HRMSelfServicePrivateKontaktdaten />
+        <HRMSelfServiceKFZKennzeichen /> 
+        <HRMSelfServiceDatenschutz />
+        <HRMSelfServiceNotfallkontakt />
+        <HRMSelfServiceSozialversicherung /> 
         <!-- <HRMQualifikationen />  -->
-        <!-- <HRMNotfallkontakt /> -->
 
       </div>
     </div>

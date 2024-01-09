@@ -10,7 +10,7 @@
     let selectedOption = props.selected ? props.selected : props.options[0];
     
     const nameAndId = computed(() => {
-        return 'XSelect' + Math.floor(Math.random() * 1000)
+        return props.options[0]
     })
 </script>
 <template>

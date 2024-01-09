@@ -17,44 +17,66 @@
   <LayoutFormSection title="Vertragsdatensätze verwalten">
     <h3 class="text-lg font-bold text-gray-900 "></h3>
     
-      <table class="table w-full text-sm bg-gray-50">
-        <thead class="bg-gray-200 text-left text-gray-500 ">
+      <table class="table w-full text-sm bg-white">
+        <thead class="bg-gray-200 h-16 _text-left text-gray-500 ">
           <tr>
             <th class="px-2 py-3 text-sm ">PersonalNr</th>
-            <th class="px-2 py-1 text-sm ">Neueintritt</th>
-            <th class="px-2 py-1 text-sm ">Dienstantritt</th>
-            <th class="px-2 py-1 text-sm ">DV Beginn</th>
-            <th class="px-2 py-1 text-sm ">DV Ende</th>
-            <th class="px-2 py-1 text-sm ">Mandant <br> Standort</th>
-            <!-- <th class="px-2 py-1 text-sm ">Standort</th> -->
-            <th class="px-2 py-1 text-sm ">Geringfügig Karenz</th>
-            <th class="px-2 py-1 text-sm text-center">Austrittsdatum</th>
+            <th class="px-2 py-1 text-sm 2xl:table-cell hidden transition">Grfg. Karenz</th>
+            <th class="px-2 py-1 text-sm ">
+              Dienstantritt
+            </th>
+            <th class="px-2 py-1 text-sm 2xl:table-cell hidden transition whitespace-pre">
+              DV Beginn
+            </th>
+            <th class="px-2 py-1 text-sm 2xl:table-cell hidden transition whitespace-pre">DV Ende</th>
+            <th class="px-2 py-1 text-sm ">Mandant</th>
+            <th class="px-2 py-1 text-sm ">Standort</th>
+            <th class="px-2 py-1 text-sm ">Arbeitsverhältnis</th>
             <th class="px-2 py-1 text-sm text-center">Letzter Arbeitstag</th>
             <th class="px-2 py-1 text-sm text-center">Techn. Austrittsdatum</th>
+            <th class="px-2 py-1 text-sm ">Freigegeben</th>
             <th class="px-2 py-1 text-sm text-center">Edit</th>
           </tr>
+          <tr class="bg-gray-100 border-b 2xl:hidden transition" >
+            <th></th>
+            
+            <th class="px-2 py-1 text-xs ">
+              <dl class="2xl:hidden transition  text-Blaugrau">
+                <dd>DV Beginn</dd>
+                <dd>DV Ende</dd>
+              </dl>
+            </th>
+            <th colspan="7"></th>
+          </tr>
         </thead>
-        <tbody class="bg-white_ ">
+        <tbody class="">
           <tr 
               v-for="vertrag, index in vertragsdatensaetze" 
-              class="h-10_">
-            <td class="border-b py-3 px-2 ">{{vertrag.personalnr}}</td>
+              class="h-10">
+            <td class="border-b py-1 pl-1 pr-4 tabular-nums text-right border-r">{{vertrag.personalnr}}</td>
+            <td class="border-b py-1 px-2 2xl:table-cell hidden transition border-r"><CheckCircleIcon class="mx-auto w-5 h-5" v-if="vertrag.geringfuegig"/></td>
+            <td class="border-b py-1 px-2 tabular-nums border-r">
+              {{vertrag.dienstantritt}}
+              <dl class="2xl:hidden transition space-y-1 mt-1 text-Blaugrau">
+                <dd>{{vertrag.dvbeginn}}</dd>
+                <dd>{{vertrag.dvende}}</dd>
+              </dl>
+            </td>
+            <td class="border-b py-1 px-2 tabular-nums border-r 2xl:table-cell hidden transition whitespace-pre">{{vertrag.dvbeginn}}</td>
+            <td class="border-b py-1 px-2 tabular-nums border-r 2xl:table-cell hidden transition whitespace-pre">{{vertrag.dvende}}</td>
+            <td class="border-b py-1 px-2 text-center ">{{vertrag.mandant}} </td>
+            <td class="border-b py-1 px-2 text-center border-r ">{{vertrag.standort}}</td>
+            <td class="border-b py-1 px-2 text-center border-r">{{vertrag.arbeitsverhaeltnis}}</td>
+            <td class="border-b py-1 px-2 text-center tabular-nums border-r whitespace-pre">{{vertrag.letzterArbeitstag}}</td>
+            <td class="border-b py-1 px-2 text-center tabular-nums border-r whitespace-pre">{{vertrag.technischesAustrittsdatum}}</td>
+            <td class="border-b py-1 px-2 text-center border-r">Ja</td>
             <td class="border-b py-1 px-2 ">{{vertrag.neueintrit}}</td>
-            <td class="border-b py-1 px-2 ">{{vertrag.dienstantritt}}</td>
-            <td class="border-b py-1 px-2 ">{{vertrag.dvbeginn}}</td>
-            <td class="border-b py-1 px-2 ">{{vertrag.dvende}}</td>
-            <td class="border-b py-1 px-2 ">{{vertrag.mandant}} <br> {{vertrag.standort}}</td>
-            <!-- <td class="border-b py-1 px-2 ">{{vertrag.standort}}</td> -->
-            <td class="border-b py-1 px-2 "><CheckCircleIcon class="mx-auto w-5 h-5" v-if="vertrag.geringfuegig"/></td>
-            <td class="border-b py-1 px-2 ">{{vertrag.austrittsdatum}}</td>
-            <td class="border-b py-1 px-2 ">{{vertrag.letzterArbeitstag}}</td>
-            <td class="border-b py-1 px-2 ">{{vertrag.technischesAustrittsdatum}}</td>
-            <td class="border-b px-2 ">
+            <!-- <td class="border-b px-2 ">
               <div class="flex items-center gap-2 h-full">
                 <a @click="showDialog('Vertragsdatensatz')"><PencilIcon class="w-5 h-5 text-Mittelblau" /></a>
                 <TrashIcon class="w-5 h-5 text-Mittelblau" />
               </div>
-            </td>
+            </td> -->
           </tr>
         </tbody>
       </table>

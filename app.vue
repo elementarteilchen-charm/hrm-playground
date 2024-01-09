@@ -2,14 +2,21 @@
 import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/outline';
 
 // const zeigeHRM = ref(false)
-const zeigeHRM = ref(true)
+const zeigeHRM = useCookie('zeigeHRM')
 const route = useRoute()
+
 </script>
 <template>
     <div class="grid grid-rows-[55px_1fr_1rem] bg-Blaugrau-10 h-screen">
         <div class="bg-Mittelblau flex items-center h-[55px] print:hidden">
             <div class="pl-4 text-2xl font-bold italic place-self-center text-white uppercase">Walter Group
-                <span class="text-Gruen-logo">HRA</span></div>
+                <button v-on:click="zeigeHRM = !zeigeHRM">
+                    <span class="text-Gruen-logo italic">
+                        <span v-show="zeigeHRM">HRM</span>
+                        <span v-show="!zeigeHRM">HRA</span>
+                    </span>
+                </button>
+            </div>
         </div>
 
         <div class="grid grid-cols-[250px_1fr] print:block">
@@ -18,7 +25,7 @@ const route = useRoute()
                     <a href="/" class="hover:bg-Mittelblau hover:text-white text-Mittelblau">
                         <Bars3Icon class="w-5 h-5" /></a>
                 </div>
-                <nav class="">
+                <nav v-show="!zeigeHRM" class="">
                     <ul class="space-y-1 text-sm">
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                             <UserCircleIcon class="w-5 h-5 text-Mittelblau" />
@@ -66,77 +73,14 @@ const route = useRoute()
                         </li>
                     </ul>
                 </nav>
-                <div v-if="zeigeHRM" class="px-4 mt-12 mb-6 py-2 bg-OrangeGelb text-white">
-                    HRM
+
+                <div v-show="zeigeHRM">
+                    <NavigationHrmMain />
                 </div>
-                <nav v-if="zeigeHRM">
-                    <div class="flex gap-2 px-4 py-2 items-center font-bold hover:bg-Hellblau hover:text-white">
-                        <ChatBubbleBottomCenterTextIcon class="w-5 h-5 text-blue-800 flex-shrink-0" />
-                        Entwicklungsgespräche
-                    </div>
-                    <ul class="ml-7 space-y-1 text-sm">
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/entwicklungsgespraeche/planen">
-                                Planen
-                            </a>
-                        </li>
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/entwicklungsgespraeche/durchfuehren">
-                                Durchführen
-                            </a>
-                        </li>
-                      </ul>         
-                    <div class="flex gap-2 px-4 py-1 items-center font-bold hover:bg-Hellblau hover:text-white">
-                        <ChatBubbleBottomCenterTextIcon class="w-5 h-5 text-blue-800" />
-                        Zukunftsgespräche
-                    </div>    
-                     <ul class="ml-7 space-y-1">
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/zukunftsgespraeche/planen">
-                                Planen
-                            </a>
-                        </li>
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/zukunftsgespraeche/durchfuehren">
-                                Durchführen
-                            </a>
-                        </li>
-                    </ul>           
-                    <ul class="mt-3 space-y-1 text-sm">
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <span class="">Self Service</span>
-                        </li>
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/personalabteilung-kontaktieren" class="">
-                                Personalabteilung kontaktieren
-                            </a>
-                        </li>
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/anfragenbearbeiten" class="">
-                                Anfragen bearbeiten
-                            </a>
-                        </li>
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/meine-anfragen" class="">
-                                Meine Anfragen
-                            </a>
-                        </li>
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/meine-daten" class="">
-                                Meine Daten
-                            </a>
-                        </li>
-                        <li class="flex gap-2 px-4 py-1 items-center hover:bg-Hellblau hover:text-white">
-                            <a href="/hrm/downloads" class="">
-                                Downloads
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
 
             <div class="bg-Blaugrau-10 print:h-full print:overflow-auto" style="height: calc(100vh - 55px - 1rem); overflow-y: auto;">
-                <div class="max-w-[1600px] print:w-auto">
+                <div class="_max-w-[1600px] print:w-auto">
                     <NuxtPage />
                 </div>
             </div>

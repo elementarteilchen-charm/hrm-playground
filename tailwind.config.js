@@ -36,9 +36,10 @@ module.exports = {
         'Blaugrau-25': '#DFE5E8',
         'Blaugrau-10': '#F2F4F6' ,
         'Orange': '#FF8C04',
+        'Orange-hell': '#f0c675',
         'Orange-10': '#FFE8CD',
         'Orange-80': '#FFAF4F',
-        'Gruen-10': '#CCEECC',
+        'Gruen-10': '#CCEECC', 
         'Gruen-logo': '#c3f000'
     },
     extend: {

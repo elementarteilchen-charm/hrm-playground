@@ -10,7 +10,7 @@
     })
 
     const nameAndId = computed(() => {
-        return 'XText' + Math.floor(Math.random() * 1000)
+        return props.label
     })
 </script>
 <template>

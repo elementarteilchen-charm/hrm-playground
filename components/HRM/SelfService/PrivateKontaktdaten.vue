@@ -1,14 +1,13 @@
 <script setup>
     import {  PencilSquareIcon } from '@heroicons/vue/24/outline' ;
     import {  EnvelopeIcon, PhoneIcon, HomeIcon, InformationCircleIcon, QuestionMarkCircleIcon} from '@heroicons/vue/24/outline' ;
-    import { showDialog } from '/utils/modal.js'
     
     const title = "Email und Telefon";
     const inBearbeitung = ref(false);
 </script>
 
 <template>
-    <MeineDatenBox :title="title" buttonText="" >
+    <MeineDatenBox :title="title" buttonText="Bearbeiten" >
         <div class="grid grid-cols-[1fr_auto] gap-4">
             <div class="flex gap-2">
                 <ul>
@@ -22,14 +21,7 @@
                     </li>
                 </ul>
             </div>
-            <div @click="showDialog(title)" 
-                class=" w-9 h-9 border-transparent rounded-full 
-                        text-blue-600
-                        hover:bg-blue-700 hover:text-white hover:text-white
-                        p-2 
-                        transition duration-300">
-                <PencilSquareIcon class="w-5 h-5 " />
-            </div>
+
         </div>
     </MeineDatenBox>
 
