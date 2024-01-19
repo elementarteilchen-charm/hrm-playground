@@ -40,6 +40,7 @@ module.exports = {
         'Orange-10': '#FFE8CD',
         'Orange-80': '#FFAF4F',
         'Gruen-10': '#CCEECC', 
+        'Gruen': '#00AA00',
         'Gruen-logo': '#c3f000'
     },
     extend: {

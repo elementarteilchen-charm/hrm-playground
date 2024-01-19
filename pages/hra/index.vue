@@ -32,7 +32,7 @@
             <h2 class="text-3xl text-Blaugrau">Details der eintretenden Person bearbeiten</h2>
         </header>   
 
-        <EintretendePersonHeader vorname="Stephanie" anrede="Fr." nachname="Babunek" />
+        <HRAEintrittHeader vorname="Stephanie" anrede="Fr." nachname="Babunek" />
 
         <div class="px-16">
             <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="0" />

@@ -4,6 +4,7 @@ export const aktionenFuerMA = [
       items: [
         {text: "Stammdaten", process: false, link: "/hra/mitarbeiterinnen/stammdaten"},
         {text: "Ausbildung", process: false, link: "/hra/mitarbeiterinnen/ausbildung"},
+        {text: "Datenschutz", process: false, link: "/hra/datenschutz/"},
         {text: "Vertrag", process: false, link: "/hra/mitarbeiterinnen/vertrag"},
         {text: "Dokumente", process: false, link: "/hra/mitarbeiterinnen/dokumente"},
       ]

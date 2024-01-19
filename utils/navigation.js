@@ -8,7 +8,11 @@ export  const topMenuItems = [
         link: "/hra/firmendaten/",
       },
       {
-        linkText: "Ausbildung",
+        linkText: "Datenschutz",
+        link: "/hra/datenschutz",
+      },
+      {
+        linkText: "Werdegang",
         link: "/hra/mitarbeiterinnen/ausbildung",
       },
       {

@@ -12,6 +12,7 @@ export const mitarbeiterListe = [{
         geburtsdatum: '23.04.1988',
         alter: 35,
         staatsbuergerschaft: 'AT',
+        staatsbuergerschaft2: 'SK',
         kontonummer: 'AT88 1234 4567 2345 9874',
         eintrittstag: '02.01.2024',
         durchwahl: '2002',

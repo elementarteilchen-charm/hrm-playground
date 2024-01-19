@@ -10,9 +10,8 @@
 
     let checkboxToggle = props.checked;
 
-    const nameAndId = computed(() => {
-        return 'XCheckbox' + Math.floor(Math.random() * 1000)
-    })
+function  nameAndId() { return props.label }
+    // 
 </script>
 
 <template>
@@ -26,8 +25,9 @@
                 class="border border-gray-300 rounded-sm w-5 h-5" 
                 style="box-shadow:inset 2px 2px 2px 0 rgba(51, 51, 51, 0.1);"
                 :class="checkboxStyle" 
-                :id="nameAndId" :name="nameAndId" />
-        <label :for="nameAndId"  :class="labelStyle">
+                :checked="checked"
+                :id="nameAndId()" :name="nameAndId" />
+        <label :for="nameAndId()"  :class="labelStyle">
             <span v-if="checkboxLabel">{{checkboxLabel}}</span>
             <span v-else><slot></slot></span>
         </label>

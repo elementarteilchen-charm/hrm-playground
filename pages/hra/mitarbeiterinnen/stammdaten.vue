@@ -28,31 +28,24 @@ const ma = mitarbeiterListe[0]
 </script>
 
 <template>
-    <div class="px-16 flex items-center py-3 justify-between">    
-        <h1 class=" text-3xl font-light text-Blaugrau">
-            Persönliche Daten bearbeiten
-        </h1>
-        <HRAMitarbeiterSuchfeld class="w-1/3"/>
-    </div>
+    <header class="px-16 py-4">
+        
+        <div class="text-gray-500 text-sm">
+            <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
+                Persönliche Daten bearbeiten</a> &gt; Stammdaten
+        </div>
     
-    <div class="px-16">
-        <HRAMitarbeiterInfoBox class="mb-6"/>   
-    </div>
+        <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class="mb-6"/>   
+    </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-8 px-16">
 
-        <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="0" />
+        <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Stammdaten" />
 
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
-                
-                <nav>
-                    <h3 class="px-4 mt-6 text-lg font-light text-Blaugrau">
-                        Persönliche Daten
-                    </h3>        
                     
-                    <NavigationHraTabMenu :tabs="tabs" @newtab="newTab"/>
-                </nav>
+                <NavigationHraTabMenu heading="Persönliche Daten bearbeiten" :tabs="tabs" @newtab="newTab"/>
 
                 <div class="px-4 my-4 border-l pb-12">
 

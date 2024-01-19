@@ -24,8 +24,8 @@ export const vertragsdatensaetze = [
 	dvbeginn: '2016-08-01',
 	dvende: '2019-12-31',
 	geringfuegig: false,
-	austrittsdatum: '',
-	letzterArbeitstag: '',
+	austrittsdatum: '2019-12-31',
+	letzterArbeitstag: '2019-12-17',
 	technischesAustrittsdatum: '',
 	bemerkung: "Ex Praktikum"
 },

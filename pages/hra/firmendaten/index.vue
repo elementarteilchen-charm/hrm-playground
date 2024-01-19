@@ -20,20 +20,18 @@
 </script>
 
 <template>
-  <div class="px-16 flex items-center py-3 justify-between">    
-      <h1 class=" text-3xl font-light text-Blaugrau">
-          Firmenbezogene Daten bearbeiten
-      </h1>
-      <HRAMitarbeiterSuchfeld class="w-1/3"/>
-  </div>
-  
-  <div class="px-16">
-      <HRAMitarbeiterInfoBox class="mb-6"/>   
-  </div>
+  <header class="px-16 py-4  print:hidden">
+      <div class="text-gray-500 text-sm">
+          <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
+              Persönliche Daten bearbeiten</a> &gt; Firmendaten
+      </div>
+
+      <HRAMitarbeiterInfoBox headline="Firmenbezogene Daten bearbeiten" class="mb-6"/>
+  </header>
 
   <main class="grid grid-rows-[auto_auto_auto] gap-8 px-16">
 
-      <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="1" />
+      <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Firmendaten" />
 
       <div class="bg-white border border-t rounded overflow-hidden">
           <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">

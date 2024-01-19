@@ -4,6 +4,7 @@ import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRig
 // const zeigeHRM = ref(false)
 const zeigeHRM = useCookie('zeigeHRM')
 const route = useRoute()
+const menuOpen = ref(true)
 
 </script>
 <template>
@@ -19,54 +20,55 @@ const route = useRoute()
             </div>
         </div>
 
-        <div class="grid grid-cols-[250px_1fr] print:block">
+        <!-- <div class="grid grid-cols-[250px_1fr] print:block"> -->
+        <div class="grid print:block" :class="[menuOpen ? 'grid-cols-[2.5rem_1fr]' : 'grid-cols-[250px_1fr]']">
             <div class="overflow-y-auto border-r print:hidden" style="height: calc(100vh - 55px - 1rem);">
                 <div class="flex justify-end p-2">
-                    <a href="/" class="hover:bg-Mittelblau hover:text-white text-Mittelblau">
-                        <Bars3Icon class="w-5 h-5" /></a>
+                    <a v-on:click="menuOpen = !menuOpen" class="hover:bg-Mittelblau hover:text-white text-Mittelblau">
+                        <Bars3Icon class="w-5 h-5"flex-shrink-0  /></a>
                 </div>
                 <nav v-show="!zeigeHRM" class="">
                     <ul class="space-y-1 text-sm">
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <UserCircleIcon class="w-5 h-5 text-Mittelblau" />
+                            <UserCircleIcon class="w-5 h-5 flex-shrink-0 text-Mittelblau" />
                             <a href="/hra/mitarbeiterinnen/suche" :class="{'font-bold': route.path === '/hra/mitarbeiterinnen/suche'}">
                                 Mitarbeiter*innen</a>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <ArrowRightOnRectangleIcon class="w-5 h-5 text-blue-800" />
-                            <a href="/hra-stammdaten" class="">
+                            <ArrowRightOnRectangleIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
+                            <a href="/hra" class="">
                                 Eintritte</a>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <ArrowRightOnRectangleIcon class="w-5 h-5 text-blue-800" />
+                            <ArrowRightOnRectangleIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
                             <a href="/hra/wiedereintritte" class="">
                                 Wiedereintritte</a>
                         </li>
                         <li class="">
                             <div class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                                <ClockIcon class="w-5 h-5 text-blue-800" />
+                                <ClockIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
                                 <a href="/hra/events/" :class="{'font-bold': route.path === '/hra/events/'}">
                                     Events & Änderungen</a>
                             </div>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <ClockIcon class="w-5 h-5 text-blue-800" />
+                            <ClockIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
                             <a href="/hra/abwesenheiten/" class="">
                                 Abwesenheiten</a>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <ArrowLeftOnRectangleIcon class="w-5 h-5 text-blue-800" />
+                            <ArrowLeftOnRectangleIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
                             <a href="/" class="">
                                 Austritte</a>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <DocumentTextIcon class="w-5 h-5 text-blue-800" />
+                            <DocumentTextIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
                             <a href="/hra-dokumente">
                                 Dokumente
                             </a>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <CurrencyEuroIcon class="w-5 h-5 text-blue-800" />
+                            <CurrencyEuroIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
                             <a href="/hra/personalverrechnung/" :class="{'font-bold': route.path === '/hra/personalverrechnung/'}">
                                 Personalverrechnung
                             </a>

@@ -5,6 +5,17 @@ export const HRM_menuitems = [
 		'subitems': []
 	},
 	{
+		'text': "Dashboard",
+		'link': '/hrm/dashboard',
+		'subitems': [
+			{
+				'text': "Gespräche",
+				'link': '/hrm/dashboard/gespraeche',
+				'subitems': []
+			},
+		]
+	},
+	{
 		'text': "Self Service",
 		'link': '',
 		'subitems': [

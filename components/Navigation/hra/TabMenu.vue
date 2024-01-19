@@ -16,15 +16,15 @@
 </script>
 <template>
     <div class="">
-        <h3 v-if="heading" class="px-4 mt-6 text-lg font-light text-Blaugrau">
+        <h3 v-if="heading" class="px-4 mt-6  font-bold text-Mittelgrau leading-tight">
             {{heading}}
         </h3>   
         <nav class="mt-2">
             <ul class="text-sm">
                 <li v-for="tab, index in tabs" 
-                    class="border-l-4 border-white pl-4 pr-8 py-3 flex gap-2 hover:bg-gray-200" 
+                    class="border-l-2  pl-4 pr-8 py-3 flex gap-2 hover:bg-gray-200 font-bold text-Mittelblau" 
                     :class="[{
-                        'border-l-4 border-blue-500 text-blue-700 font-bold': tab == activeTab
+                        'border-Mittelblau text-black': tab == activeTab
                     }]">
 
                     <div class="flex gap-2">
