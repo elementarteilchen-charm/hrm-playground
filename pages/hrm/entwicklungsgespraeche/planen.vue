@@ -206,14 +206,14 @@ const anstehend = [
                     </div>
                 </div>
 
-
+<!-- 
                 <div>
                     <div class="flex justify-center">
                         <div class="text-sm px-2 py-1 bg-Rot text-white">
                             Überfällige Gespräche
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

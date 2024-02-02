@@ -22,6 +22,8 @@ module.exports = {
         green: colors.green,
         orange: colors.orange,
         yellow: colors.yellow,
+        'primary': '#0D6EFD',
+        'secondary': '#6C757D',
         'Rot': '#DB0000',
         'Blau': '#3F69FF',
         'Dunkelblau': '#0F2765',
@@ -46,6 +48,9 @@ module.exports = {
     extend: {
       screens: {
         '8xl': '1920px'
+      },
+      boxShadow: {
+        'inner': 'inset 0 2px 4px 0 rgba(50, 50, 50, 0.1)'
       }
     },
   },

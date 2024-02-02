@@ -16,7 +16,7 @@
 </script>
 <template>
     <div class="">
-        <h3 v-if="heading" class="px-4 mt-6  font-bold text-Mittelgrau leading-tight">
+        <h3 v-if="heading" class="px-4 mt-6  font-bold text-Mittelgrau_ text-secondary leading-tight">
             {{heading}}
         </h3>   
         <nav class="mt-2">

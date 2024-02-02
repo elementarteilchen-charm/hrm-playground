@@ -86,6 +86,7 @@ function prozessStarten() {
             <!--  Content -->
             <div v-if="!neuesZGvereinbaren" class="mt-3 my-6">
                 <InputButton @click="neuesZGvereinbaren = true" >Neues Zukunftsgespräch anlegen</InputButton>
+
             </div>
             <div v-show="neuesZGvereinbaren" class="bg-white px-3 py-3">
                 <div  class="space-y-6">
@@ -99,7 +100,8 @@ function prozessStarten() {
                     <div class="font-bold text-sm text-gray-900">Themen für das Zukunftsgespräch:</div>
                         <InputTextarea title="" class="w-3/4 h-36"></InputTextarea>
                     </div>
-                    <InputButton @click="prozessStarten">Zukunftsgespräch anlegen</InputButton>
+                    <InputButton :secondary="true" >Speichern</InputButton>
+                    <InputButton @click="prozessStarten">Einladung für Zukunftsgespräch versenden</InputButton>
                 </div>
             </div>
 

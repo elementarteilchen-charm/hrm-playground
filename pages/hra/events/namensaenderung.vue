@@ -1,6 +1,7 @@
 <script setup>
 import { ExclamationTriangleIcon, TrashIcon, CloudArrowUpIcon } from '@heroicons/vue/24/outline'
 import { showDialog } from '/utils/modal.js'
+
 const title = "Anforderungen"
 
 const tabs = [
@@ -15,24 +16,14 @@ const stammdatenfelder = ['Nachname', 'Vorname', 'Personal-Nr', 'Standort', 'Man
 const ma = mitarbeiterListe[0]
 const activeTab = ref(tabs[0]);
 </script>
+
 <template>
-    <header class="px-16 mt-3 print:hidden">
-        <div>
-            <a href="/hra/events" class=" hover:text-Mittelblau text-gray-500 text-sm">
-                Events & Änderungen</a>
-        </div>
-        <div class="flex items-center py-3 justify-between">
-            <h1 class="my-3 text-3xl font-light text-Blaugrau">
-                Events & Änderungen
-            </h1>
-            <HRAMitarbeiterSuchfeld class="w-1/3" />
-        </div>
-    </header>
+    
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-16 ">
         
-        <HRAMitarbeiterInfoBox />
-        <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" :active="0" />
+        <HRAMitarbeiterInfoBox headline="Events und Änderungen"/>
+        <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" :active="Namensänderung" />
         
         <div class="bg-white border border-t rounded overflow-hidden print:border-0">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
@@ -143,6 +134,7 @@ const activeTab = ref(tabs[0]);
             </main>
         </div>
     </main>
+    
     <div @click="showDialog(title)" class="hover:cursor-pointer text-Mittelblau print:hidden">
         Anforderungen
     </div>

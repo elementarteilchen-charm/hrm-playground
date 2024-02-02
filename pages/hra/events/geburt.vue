@@ -8,6 +8,12 @@
         'Familienangehörige',
         'Benachrichtigungen'
     ];
+    const schritte = [
+        'Geburtstermin',
+        'Schulungen',
+        'Familienangehörige',
+        'Benachrichtigungen'
+    ]
     const activeTab = ref(tabs[0]);
     const zeigeAnforderungen = ref(false)
     
@@ -15,37 +21,47 @@
 </script>
 
 <template>
-    <div class="flex items-center py-3 justify-between">
-        <h1 class="my-3 text-3xl font-light text-Blaugrau">
-            Events & Änderungen
-        </h1>
-        <HRAMitarbeiterSuchfeld class="w-1/3"/>
-    </div>
 
+    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8">
 
-    <main class="grid grid-rows-[auto_auto_auto] gap-6">
-        <HRAMitarbeiterInfoBox />
-        <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" :active="2" />
+        <HRAMitarbeiterInfoBox headline="Events & Änderungen" />
+        <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" active="Geburt" />
 
+    
         <div class="bg-white border border-t rounded overflow-hidden">
             
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 
-                <NavigationHraTabMenu heading="Geburt" :tabs="tabs"  @newtab="(ev) => activeTab = ev" />
+                <!-- <NavigationHraTabMenu heading="Geburt" :tabs="tabs"  @newtab="(ev) => activeTab = ev" /> -->
+
                 <div class="px-4 py-4 border-l pb-12">
+
+                    <div class="flex items-center gap-x-4 mb-6 border rounded bg-Blaugrau-10">
+                        <div v-for="schritt, index in schritte" >
+                            <button 
+                                @click="activeTab = schritt"
+                                class="border-transparent rounded px-2 py-3 flex gap-2 items-center group">
+                                <div 
+                                    class="rounded-full  text-white p-1 w-8 group-hover:bg-Orange-80"
+                                    :class="{'bg-Orange-80 drop-shadow-none': activeTab === schritt, 'drop-shadow-md bg-Blaugrau': activeTab != schritt}">
+                                    {{index+1}} 
+                                </div> 
+                                <div class="text-Mittelblau" >
+                                    {{schritt}}
+                                </div>
+                            </button>
+                        </div>
+                    </div>
 
                     <div v-show="'Geburtstermin' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Geburtstermin</h3>  
                         
-                        <LayoutFormSection title="Wochenhilfe">
-                          Weitere Geburt hinzufügen
+                        <LayoutFormSection title="Schwangerschaft">
+                         
                           <div class="grid lg:grid-cols-1 gap-4">
                               <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                                 <InputDate label="Schwangerschaftsbestätigung" />
                                 <InputDate label="Voraussichtlicher Geburtstermin" />
-                                <InputDate label="Tatsächlicher Geburtstermin" />
-                                <InputDate label="Wochenhilfe Start" />
-                                <InputDate label="Wochenhilfe Ende" />
                               </div>
                           </div>
                           <HRAFormsNachweisUploadBox 
@@ -53,33 +69,46 @@
                                   ordner="05 Dokumente + Urkunden" 
                                   kategorie="Geburtsurkunde" />
                         </LayoutFormSection>
+
+                        <LayoutFormSection title="Wochenhilfe">
+                         
+                          <div class="grid lg:grid-cols-1 gap-4">
+                              <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                                <InputDate label="Tatsächlicher Geburtstermin" />
+                                <InputDate label="Wochenhilfe Start" :reminder="true" />
+                                <InputDate label="Wochenhilfe Ende" reminderIsSet="2024-06-12" />
+                              </div>
+                          </div>
+                          <HRAFormsNachweisUploadBox 
+                                  dateiname="" 
+                                  ordner="05 Dokumente + Urkunden" 
+                                  kategorie="Geburtsurkunde" />
+                        </LayoutFormSection>
+                        <div class="flex justify-end">
+                            <InputButton>
+                                    Speichern
+                            </InputButton>
+                        </div>
                        
                     </div>
 
                     <div v-show="'Schulungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Schulungen</h3>  
                         
-                        <LayoutFormSection>
-                            <ul class="text-sm list-disc">
+                        <LayoutFormSection title="Geplante Schulungen">
+                            <ul class="text-sm list-disc mb-6">
                               <li class="ml-6">12.08.2023: Polnisch B1</li>
                               <li class="ml-6">03.09.2023: Polnisch B2</li>
                             </ul>
-                            
-                            <div class="my-3 bg-Orange-10 flex gap-4 items-center p-3">
-                                <ExclamationTriangleIcon class="flex-shrink-0 w-6 h-6"/>
-                                <p>
-                                  Soll für Regina Aberl die Kurssperre aktiviert werden?
-                                  Dadurch werden alle geplanten Kurse abgesagt
-                                </p>
-                            </div>
                           
-                            <button class="px-4 py-2 bg-Orange text-white border-Orange hover:shadow-lg">
+                            
+                            <InputButton>
                                 Kursperre jetzt aktivieren
-                            </button>
+                            </InputButton>
                             
                         </LayoutFormSection>
-                        <div class="mt-6 border bg-Hellgrau p-3">
-                            <h3 class="text-sm font-bold text-gray-700">Vorherige Aktionen</h3>
+                        <div class="mt-6 border bg-Dungelgrau-8 p-3">
+                            <h3 class="text-sm font-bold text-gray-700">Vorige Aktionen</h3>
                             <ul>
                                 <li>
                                     Die Kursperre wurde am 15.06.2023 von Diren Akbulut aktiviert.   
@@ -94,29 +123,36 @@
                     </div>
                     
                     <div v-show="'Benachrichtigungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                        <h3 class="font-bold text-xl">Benachrichtigungen</h3>  
                         <LayoutFormSection>
 
                             <div class="space-y-3">
-                                <InputCheckbox checkboxLabel="(Glückwunsch?) Email-Info an Verteiler" />
+                                <InputCheckbox checkboxLabel="Email-Info an Verteiler" />
                                 <InputCheckbox checkboxLabel="Austrittsmeldung (Wochenhilfe) an Verteiler verschicken" />
                                 <InputCheckbox checkboxLabel="Weitere Excel Info Liste an IT, Schulung und Telefonzentrale" />
-                                <button class="bg-Orange hover:bg-Orange-80 text-white px-3 py-2">Infos jetzt versenden</button>
+                                <InputButton>
+                                    Benachrichtigungen jetzt versenden
+                                </InputButton>
                             </div>
-                                
-                                <h3 class="mt-6 text-sm text-Mittelblau mb-3">Zuletzt versendet</h3>
-                                <div class=" p-3 bg-white">
-                                    <dl class="text-sm text-gray-600 space-y-1">
-                                        <dt class="font-bold">14.06.2023</dt>
-                                        <dd class="pl-3">Email-Info an Verteiler</dd>
-                                        <dd class="pl-3">Austrittsmeldung (Wochenhilfe) </dd>
-                                        
-
-                                        <dt class="font-bold">13.06.2023</dt>
-                                        <dd class="pl-3">Info Liste an IT.</dd>
-                                    </dl>
-                                </div>
                             
                         </LayoutFormSection>
+
+                        <div class="mt-6 border bg-Dungelgrau-8 p-3">
+                            <h3 class="text-sm font-bold text-gray-700">Vorige Aktionen</h3>
+
+                            <div class=" ">
+                                <dl class="text-sm text-gray-600 space-y-1">
+                                    <dt class="font-bold">14.06.2023</dt>
+                                    <dd class="pl-3">Email-Info an Verteiler</dd>
+                                    <dd class="pl-3">Austrittsmeldung (Wochenhilfe) </dd>
+                                    
+
+                                    <dt class="font-bold">13.06.2023</dt>
+                                    <dd class="pl-3">Info Liste an IT.</dd>
+                                </dl>
+                            </div>    
+                        </div>
+                        
                     </div>
 
                 </div>

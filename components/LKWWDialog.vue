@@ -3,6 +3,7 @@
     
     const props = defineProps({
         title: {type: String, default: ''}, 
+        id: {type: String, default: ''}, 
         width: {type: String, default: '50vw'},
         height: {type: String, default: '50vh'}
     })
@@ -10,7 +11,7 @@
 
 </script>
 <template>
-	<dialog :id="title"  
+	<dialog :id="id ? id : title"
 	        class="shadow-lg p-0 bg-Blaugrau-10" 
 	        :style="'width:' + width + ';height:' + height +';'">
 
@@ -18,11 +19,8 @@
 	            <div class="grid grid-rows-[auto_1fr_3rem] h-full">
 	        
 	                <header class="px-6 py-6 text-xl text-Blaugrau flex justify-between">
-	                    <div>{{title}}</div>
+	                    <div v-if="title">{{title}}</div>
 	                    <slot name="header"></slot>
-	                    <div>
-	                        <button><XCircleIcon class="w-6 h-6" /></button>
-	                    </div>
 	                </header>
 	            
 	                <main class="px-6" 

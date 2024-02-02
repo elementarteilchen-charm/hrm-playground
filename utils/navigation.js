@@ -21,7 +21,7 @@ export  const topMenuItems = [
       },
       {
         linkText: "Dokumente",
-        link: "/hra/mitarbeiterinnen/dokumente",
+        link: "/hra/dokumente",
       },
     ];
 

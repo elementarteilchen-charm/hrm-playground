@@ -28,8 +28,7 @@ const ma = mitarbeiterListe[0]
 </script>
 
 <template>
-    <header class="px-16 py-4">
-        
+    <header class="px-8 py-4">
         <div class="text-gray-500 text-sm">
             <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
                 Persönliche Daten bearbeiten</a> &gt; Stammdaten
@@ -38,7 +37,7 @@ const ma = mitarbeiterListe[0]
         <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class="mb-6"/>   
     </header>
 
-    <main class="grid grid-rows-[auto_auto_auto] gap-8 px-16">
+    <main class="grid grid-rows-[auto_auto_auto] gap-8 px-8">
 
         <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Stammdaten" />
 

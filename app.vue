@@ -4,7 +4,7 @@ import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRig
 // const zeigeHRM = ref(false)
 const zeigeHRM = useCookie('zeigeHRM')
 const route = useRoute()
-const menuOpen = ref(true)
+const menuOpen = useCookie('menuOpen')
 
 </script>
 <template>
@@ -20,8 +20,8 @@ const menuOpen = ref(true)
             </div>
         </div>
 
-        <!-- <div class="grid grid-cols-[250px_1fr] print:block"> -->
         <div class="grid print:block" :class="[menuOpen ? 'grid-cols-[2.5rem_1fr]' : 'grid-cols-[250px_1fr]']">
+            
             <div class="overflow-y-auto border-r print:hidden" style="height: calc(100vh - 55px - 1rem);">
                 <div class="flex justify-end p-2">
                     <a v-on:click="menuOpen = !menuOpen" class="hover:bg-Mittelblau hover:text-white text-Mittelblau">
@@ -82,7 +82,7 @@ const menuOpen = ref(true)
             </div>
 
             <div class="bg-Blaugrau-10 print:h-full print:overflow-auto" style="height: calc(100vh - 55px - 1rem); overflow-y: auto;">
-                <div class="_max-w-[1600px] print:w-auto">
+                <div class="print:w-auto">
                     <NuxtPage />
                 </div>
             </div>

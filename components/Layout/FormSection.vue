@@ -5,8 +5,8 @@ const props = defineProps({
 </script>
 <template>
     <div>
-        <h3 v-if="title" class="mb-1 text-lg text-Dungelblau font-light text-gray-900 ">{{title}}</h3>
-        <div class="bg-gray-100 p-4 rounded">
+        <div class="bg-gray-100 px-4 py-3 rounded">
+        <h3 v-if="title" class="mb-3 text-lg font-light text-secondary  text-gray-900 ">{{title}}</h3>
             <slot></slot>
         </div>
     </div>
