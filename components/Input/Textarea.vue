@@ -20,7 +20,8 @@
         <textarea 
             v-model="content"
             :name="nameAndId()" :id="nameAndId()"
-            class="px-2 py-1 border border-gray-300 rounded text-sm"
+            class="shadow-inner px-2 py-1 border border-gray-300 rounded text-sm"
+            rows=5
             :class="class"
             :placeholder="placeholder"
             :style="style">

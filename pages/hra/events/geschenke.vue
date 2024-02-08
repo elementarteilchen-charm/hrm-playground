@@ -18,6 +18,7 @@ const datenfelder = ['Kategorie', 'Bezeichnung', 'Betrag', 'Ereignisdatum', 'Aus
 </script>
 
 <template>
+    {{datenfelder}}
     <header class="px-16 mt-3 print:hidden">
         <div class="text-gray-500 text-sm">
             <a href="/hra/events" class=" hover:text-Mittelblau ">

@@ -6,7 +6,7 @@
 <template>
 
   <div class="mb-8 py-4 px-4 bg-gray-100">
-    <Suche />
+    <HRASuche />
   </div>
 
 </template>

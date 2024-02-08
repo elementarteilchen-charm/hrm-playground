@@ -19,7 +19,7 @@
   <main class="px-16 grid grid-rows-[auto_auto_auto] gap-8">
 
     <div class="my-6">
-      <Suche @ma-gewaehlt="callback"/>
+      <HRASuche @ma-gewaehlt="callback"/>
     </div>
     
   </main>

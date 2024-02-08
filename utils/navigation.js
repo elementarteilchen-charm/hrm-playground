@@ -34,7 +34,7 @@ export  const eventMenuItems = [
       },
       {
         linkText: "Hochzeit",
-        link: "/hra/events/Hochzeit",
+        link: "/hra/events/Hochzeit-stepper",
       },
 
       {
@@ -63,50 +63,161 @@ export  const eventMenuItems = [
     stammdaten: {
       headline: "Stammdaten",
       items: [
-        {text: "Stammdaten", link: "/hra/mitarbeiterinnen/stammdaten"},
-        {text: "Ausbildung", link: "/hra/mitarbeiterinnen/ausbildung"},
-        {text: "Vertrag", link: "/hra/mitarbeiterinnen/vertrag"},
-        {text: "Dokumente", link: "/hra/mitarbeiterinnen/dokumente"},
+        { 
+          text: "Stammdaten", 
+          link: "/hra/mitarbeiterinnen/stammdaten",
+          erinnerungen: 1
+        },
+        { 
+          text: "Ausbildung", 
+          link: "/hra/mitarbeiterinnen/ausbildung",
+          erinnerungen: 0
+        },
+        { 
+          text: "Vertrag", 
+          link: "/hra/mitarbeiterinnen/vertrag",
+          erinnerungen: 0
+        },
+        { 
+          text: "Dokumente", 
+          link: "/hra/mitarbeiterinnen/dokumente",
+          erinnerungen: 0
+        },
       ]
     },
     events: {
       headline: "Events & Änderungen",
       items: [
-        {text: 'Hochzeit', link: '/hra/events/Hochzeit'},
-        {text: 'Hochzeit AllInOne', link: '/hra/events/Hochzeit-allinone'},
-        {text: 'Namensaenderung', link: '/hra/events/Namensaenderung'},
-        {text: 'Geburt', link: '/hra/events/Geburt'},
-        {text: 'Ernennungen', link: '/hra/events/Ernennungen'},
-        {text: 'Ummeldungen', link: '/hra/events/Ummeldungen'},
-        {text: 'Arbeitszeitmodell', link: '/hra/events/Arbeitszeitmodell'},
-        {text: 'Signatur', link: '/hra/events/Signatur'},
-        {text: 'Visitenkarten', link: '/hra/events/Visitenkarten'},
-        {text: 'Zusatzqualifikationen', link: '/hra/events/Zusatzqualifikationen'},
-        {text: 'Geschenke', link: '/hra/events/Geschenke'},
-        {text: 'Jubiläum', link: '/hra/events/Jubiläum'},
+        { 
+          text: 'Hochzeit', 
+          link: '/hra/events/Hochzeit-stepper',
+          erinnerungen: 2
+        },
+        { 
+          text: 'Hochzeit AllInOne', 
+          link: '/hra/events/Hochzeit-allinone',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Namensaenderung', 
+          link: '/hra/events/Namensaenderung',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Geburt', 
+          link: '/hra/events/Geburt',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Ernennungen', 
+          link: '/hra/events/Ernennungen',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Ummeldungen', 
+          link: '/hra/events/Ummeldungen',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Arbeitszeitmodell', 
+          link: '/hra/events/Arbeitszeitmodell',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Signatur', 
+          link: '/hra/events/Signatur',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Visitenkarten', 
+          link: '/hra/events/Visitenkarten',
+          erinnerungen: 1
+        },
+        { 
+          text: 'Zusatzqualifikationen', 
+          link: '/hra/events/Zusatzqualifikationen',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Geschenke', 
+          link: '/hra/events/Geschenke',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Jubiläum', 
+          link: '/hra/events/Jubiläum',
+          erinnerungen: 0
+        },
       ]
     },
     auszeiten: {
       headline: "Temporäre Auszeiten",
       items: [
-        {text: 'Karenz', link: '/hra/abwesenheiten/elternkarenz'},
-        {text: 'Bildungskarenz', link: '/hra/abwesenheiten/Bildungskarenz'},
-        {text: 'Karenz', link: '/hra/abwesenheiten/Karenz'},
-        {text: 'Wochenhilfe', link: '/hra/abwesenheiten/Wochenhilfe'},
-        {text: 'Unbezahlter Urlaub', link: '/hra/abwesenheiten/UnbezahlterUrlaub'},
-        {text: 'Milizübungen', link: '/hra/abwesenheiten/Milizübungen'},
-        {text: 'Teilzeit', link: '/hra/abwesenheiten/Teilzeit'},
-        {text: 'Elternteilzeit', link: '/hra/abwesenheiten/Elternteilzeit'},
-        {text: 'Geringfügigkeiten', link: '/hra/abwesenheiten/Geringfügigkeiten'},
+        { 
+          text: 'Wochenhilfe', 
+          link: '/hra/abwesenheiten/Wochenhilfe',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Elternkarenz', 
+          link: '/hra/abwesenheiten/elternkarenz',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Papamonat', 
+          link: '/hra/abwesenheiten/Karenz',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Elternteilzeit', 
+          link: '/hra/abwesenheiten/Elternteilzeit',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Bildungskarenz', 
+          link: '/hra/abwesenheiten/Bildungskarenz',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Unbezahlter Urlaub', 
+          link: '/hra/abwesenheiten/UnbezahlterUrlaub',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Milizübungen', 
+          link: '/hra/abwesenheiten/Milizübungen',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Teilzeit', 
+          link: '/hra/abwesenheiten/Teilzeit',
+          erinnerungen: 0
+        },
       ]
     },
     austritt: {
       headline: "Austritt",
       items: [
-        {text: 'Kündigung', link: '/hra/mitarbeiterinnen/karenz'},
-        {text: 'DG Kündigung', link: '/hra/mitarbeiterinnen/Bildungskarenz'},
-        {text: 'Pension', link: '/hra/mitarbeiterinnen/Karenz'},
-        {text: 'Todesfall', link: '/hra/mitarbeiterinnen/Wochenhilfe'},
+        { 
+          text: 'Kündigung', 
+          link: '/hra/austritt/Kuendigung',
+          erinnerungen: 0
+        },
+        { 
+          text: 'DG Kündigung', 
+          link: '/hra/austritt/Kuendigung',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Pensionierung', 
+          link: '/hra/austritt/Pensionierung',
+          erinnerungen: 0
+        },
+        { 
+          text: 'Todesfall', 
+          link: '/hra/austritt/Todesfall',
+          erinnerungen: 0
+        },
       ]
     }
   } 

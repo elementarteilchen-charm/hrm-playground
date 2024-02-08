@@ -14,11 +14,19 @@ const props = defineProps({
             </h1>
             <HRAMitarbeiterSuchfeld class="w-1/3" />
         </div>
+
         <div class="grid grid-cols-[16rem_1fr] gap-2 border bg-white print:hidden">
+            
             <div :style="'background-image: url(/img/'+ ma.avatar + ');'" class="bg-cover bg-center"> </div>
+            
             <div class="py-3 ">
                 <div class="px-4 space-y-1">
-                    <span class="px-2 py-1 rounded-md font-bold text-xs text-white bg-Gruen">Aktiv</span>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="px-2 py-1 rounded-md font-bold text-xs text-white bg-Gruen">Aktiv</span>
+                        <span class="px-2 py-1 rounded-md font-bold text-xs text-white bg-Orange">3 Erinnerungen</span>
+                    </div>
+
                     <div class="font-bold text-2xl">
                         {{ma.vorname}} {{ma.name}}
                     </div>

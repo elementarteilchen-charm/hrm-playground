@@ -4,7 +4,6 @@
 	const tabs = [
 	    'HRA Dokumentenverwaltung',
 	    'Persis Digitale Akte',
-	    // 'Dokumente hochladen', 
 	];
 
 	const activeTab = ref(tabs[0]);

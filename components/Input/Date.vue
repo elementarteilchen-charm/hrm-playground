@@ -1,6 +1,6 @@
 <script setup>
     
-    import {CalendarDaysIcon} from '@heroicons/vue/24/outline'
+    import {HandRaisedIcon, PlusCircleIcon, CalendarDaysIcon} from '@heroicons/vue/24/outline'
     import { showDialog } from '/utils/modal.js'
 
     const props = defineProps({
@@ -10,18 +10,16 @@
         width: {type: String, default: 'w-32'},
         required: {type: Boolean, default: false},
         reminder: {type: Boolean, default: false},
-        reminderIsSet: {type: String, default: ''}  // nur für den ClickDummy
+        reminderIsSet: {type: Date, default: null}  // nur für den ClickDummy
     })
 
     const dialog = "Erinnerung"
-    
-    let d = new Date()
-    let daysInFuture = ref(7)
-    d.setDate(d.getDate() + daysInFuture.value);
-    let m = d.getMonth()+1 
-    let days = d.getDate()
-    let reminderDate = `${d.getFullYear()}-${m <= 9 ? '0' + m : m}-${days <= 9 ? '0' + days : days}`
-    let erledigen = props.reminderIsSet
+
+function erinnerungsDatum() {
+    let dateFormatter = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: '2-digit', day: '2-digit' });
+    let formattedDate = dateFormatter.format(props.reminderIsSet);
+    return formattedDate
+}
 
 </script>
 
@@ -37,19 +35,30 @@
             :value="value" />
         
         <button v-if="reminder" @click="showDialog(dialog)" 
-                class="border border-Blaugrau-25 rounded-full bg-Blaugrau-25 p-2 text-Mittelblau 
+                class="hidden border border-Blaugrau-25 rounded-full bg-Blaugrau-25 p-2 text-Mittelblau 
                     hover:text-white hover:bg-Mittelblau
                 ">
             <CalendarDaysIcon class="w-5 h-5 flex-shrink-0"/>
+        </button>
+
+         <button v-if="reminder" @click="showDialog(dialog)" class="flex gap-x-2 items-center">
+            <div class="border border-Blaugrau-25 rounded-full bg-Blaugrau-25 p-2 text-Mittelblau 
+                    hover:text-white hover:bg-Mittelblau">
+                        
+                <!-- <PlusCircleIcon class="w-5 h-5 flex-shrink-0"/> -->
+                <HandRaisedIcon class="w-5 h-5 flex-shrink-0"/>
+            </div>
+            <div>Erinnerung</div>
         </button>
 
         <div v-if="reminderIsSet" class="flex gap-x-2 items-center">
             <button @click="showDialog(dialog)" 
                 class="border border-Blaugrau rounded-full bg-Blaugrau p-2 text-Blaugrau-10 
                     hover:text-white hover:bg-Mittelblau ">
-                <CalendarDaysIcon class="w-5 h-5 flex-shrink-0"/>
+                <!-- <CalendarDaysIcon class="w-5 h-5 flex-shrink-0"/> -->
+                <HandRaisedIcon class="w-5 h-5 flex-shrink-0"/>
             </button>
-            <div>{{reminderIsSet}}</div>
+            <div>{{erinnerungsDatum()}}</div>
         </div>
 
     </div>

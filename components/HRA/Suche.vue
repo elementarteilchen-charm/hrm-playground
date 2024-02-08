@@ -25,7 +25,7 @@
 
   <div v-for="ma in mitarbeiterListe" class="mb-6">
     <div class="grid grid-cols-[2fr_5fr_5fr] gap-2  border bg-white w-4/5">
-      <a href="/hra/mitarbeiterinnen/stammdaten" >
+      <a href="/hra/mitarbeiterinnen/dashboard" >
         <div class="bg-cover bg-center h-full" :style="avatar(ma)"></div>
       </a>
       <div class="px-4 py-6">

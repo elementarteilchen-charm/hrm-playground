@@ -76,7 +76,7 @@
                               <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                                 <InputDate label="Tatsächlicher Geburtstermin" />
                                 <InputDate label="Wochenhilfe Start" :reminder="true" />
-                                <InputDate label="Wochenhilfe Ende" reminderIsSet="2024-06-12" />
+                                <InputDate label="Wochenhilfe Ende" :reminderIsSet="new Date()" />
                               </div>
                           </div>
                           <HRAFormsNachweisUploadBox 
