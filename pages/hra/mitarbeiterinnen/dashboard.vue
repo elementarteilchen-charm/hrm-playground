@@ -1,16 +1,7 @@
 <script setup>
 import {
-    UserIcon,
-    UserGroupIcon,
-    CalendarIcon,
-    CheckCircleIcon,
-    XCircleIcon,
-    ChevronRightIcon,
-    PencilIcon,
-    BookmarkIcon,
-    PlusCircleIcon,
-}
-from '@heroicons/vue/24/outline'
+    UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon, XCircleIcon, ChevronRightIcon, PencilIcon,
+    BookmarkIcon, PlusCircleIcon, } from '@heroicons/vue/24/outline'
 
 const tabs = [
     'Persönliche Daten',
@@ -22,13 +13,14 @@ const tabs = [
 ];
 const activeTab = reactive({ tab: tabs[0] });
 const addNewItem = ref(false);
+
 </script>
+
 <template>
     <header class="px-8 py-4  print:hidden">
-        <div class="text-gray-500 text-sm">
-            <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
-                Persönliche Daten bearbeiten</a> &gt; Vertrag
-        </div>
+
+        <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell=""/>
+
         <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class="mb-6" />
     </header>
     
@@ -68,9 +60,9 @@ const addNewItem = ref(false);
                                 </div>
                                 <div class="flex gap-2 items-center">
                                     {{item.text}}
-                                    <div v-show="item.erinnerungen>0" class="px-2 py-1 rounded-full bg-Orange text-white text-xs">
+                                    <!-- <div v-show="item.erinnerungen>0" class="px-2 py-1 rounded-full bg-Orange text-white text-xs">
                                         {{item.erinnerungen}}    
-                                    </div>
+                                    </div> -->
                                     
                                 </div>
                             </div>

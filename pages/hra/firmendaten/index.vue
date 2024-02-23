@@ -7,8 +7,8 @@
 
   const tabs = [
         'Zutritt', 
-        'Kennzeichen', 
-        'Konkurrenzklauseln', 
+        'Kennzeichen und Firmenbus',
+        
         
     ];
   
@@ -49,8 +49,24 @@
                   <div v-show="activeTab == 'Zutritt'" class="px-2 grid grid-rows-1 gap-4">
                       <HRAOrganisationZutritt />
                   </div>
-                  <div v-show="activeTab == 'Kennzeichen'" class="px-2 grid grid-rows-1 gap-4">
+                  <div v-show="activeTab == 'Kennzeichen und Firmenbus'" class="px-2 grid grid-rows-1 gap-4">
                       <HRAOrganisationKennzeichen />
+                      <div>
+                        <h3 class="text-lg font-bold text-gray-900 ">Firmenbus</h3>
+                      </div>
+
+                        <LayoutFormSection title="">
+                          <div class="grid lg:grid-cols-1 gap-4">
+                            <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">  
+                              
+                              <InputCheckbox label="Firmenbus" checkboxLabel="Ja" width="w-64"/>
+                              
+                            </div>
+                          </div>
+                      </LayoutFormSection>
+                  </div>
+                  <div v-show="activeTab == 'Firmenbus'" class="px-2 grid grid-rows-1 gap-4">
+                          <!-- <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="Attest.pdf" kategorie="Sonstiges" />       -->
                   </div>
                   <div v-show="activeTab == 'Konkurrenzklauseln'" class="px-2 grid grid-rows-1 gap-4">
                       <HRAOrganisationKonkurrenz />

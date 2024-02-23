@@ -19,6 +19,8 @@
     const namensaenderung = ref(true)
     const geschenkeAnzeigen = ref(false)
 
+const ma = mitarbeiterListe[0]
+
 function disableNameInput() {
     namensaenderung.value = !namensaenderung.value
 }
@@ -27,10 +29,13 @@ function disableNameInput() {
 
 <template>
 
-    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8">
+    <header class="px-8 py-4">
+        <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell="Hochzeit"/>
 
         <HRAMitarbeiterInfoBox headline="Events & Änderungen" />
+    </header>
 
+    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8">
         <!-- <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" active="Hochzeit" /> -->
     
         <div class="flex items-center gap-x-4 border rounded bg-white">

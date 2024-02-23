@@ -16,16 +16,18 @@
     ]
     const activeTab = ref(tabs[0]);
     const zeigeAnforderungen = ref(false)
-    
+    const ma = mitarbeiterListe[0]
+
 
 </script>
 
 <template>
+    <header class="px-8 py-4">
+        <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell="Geburt"/>
+        <HRAMitarbeiterInfoBox headline="Events & Änderungen" />
+    </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8">
-
-        <HRAMitarbeiterInfoBox headline="Events & Änderungen" />
-        <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" active="Geburt" />
 
     
         <div class="bg-white border border-t rounded overflow-hidden">
@@ -75,8 +77,8 @@
                           <div class="grid lg:grid-cols-1 gap-4">
                               <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                                 <InputDate label="Tatsächlicher Geburtstermin" />
-                                <InputDate label="Wochenhilfe Start" :reminder="true" />
-                                <InputDate label="Wochenhilfe Ende" :reminderIsSet="new Date()" />
+                                <InputDate label="Wochenhilfe Start"  />
+                                <InputDate label="Wochenhilfe Ende"  />
                               </div>
                           </div>
                           <HRAFormsNachweisUploadBox 

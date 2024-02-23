@@ -1,15 +1,18 @@
 <script setup>
 import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/outline';
 
+
 // const zeigeHRM = ref(false)
 const zeigeHRM = useCookie('zeigeHRM')
 const route = useRoute()
 const menuOpen = useCookie('menuOpen')
 
+
 </script>
 <template>
     <div class="grid grid-rows-[55px_1fr_1rem] bg-Blaugrau-10 h-screen">
-        <div class="bg-Mittelblau flex items-center h-[55px] print:hidden">
+
+        <div class="bg-Mittelblau flex items-center justify-between h-[55px] print:hidden">
             <div class="pl-4 text-2xl font-bold italic place-self-center text-white uppercase">Walter Group
                 <button v-on:click="zeigeHRM = !zeigeHRM">
                     <span class="text-Gruen-logo italic">
@@ -17,6 +20,18 @@ const menuOpen = useCookie('menuOpen')
                         <span v-show="!zeigeHRM">HRA</span>
                     </span>
                 </button>
+            </div>
+            <div class="flex gap-x-4 items-center">
+                <div class="text-white">
+                    Anna-Maria Walisch
+                </div>
+                <div class="text-white ">
+                    <NavigationHraErinnerungen />
+                </div>
+
+                <div class="mr-4 text-white">
+                    <NavigationHraBenachrichtigungen />
+                </div>
             </div>
         </div>
 
@@ -90,3 +105,4 @@ const menuOpen = useCookie('menuOpen')
         <div class="bg-gray-600 text-white text-gray-200 text-xs print:hidden">Footer</div>
     </div>
 </template>
+

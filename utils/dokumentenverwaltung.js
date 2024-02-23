@@ -1,6 +1,12 @@
 export const ukoDokumente = {
     '01': [{ file: " PA Bewerbung ", typ: 'Sonstiges', datum: "2019-07-08"}],
+    '02': [{ file: " Home Office ", typ: 'Sonstiges', datum: "2019-07-08"}],
     '03': [
+        { file: " Elternteilzeitvertrag + Erg\u00e4nzung PAW  ", typ: '', datum: "2020-05-12"},
+        { file: " PA LKW DV + KK ", typ: 'Verpflichtungserklärung', datum: "2019-07-08"},
+        { file: " Stundenreduzierung Elternteilzeitvertrag ab 01.10.2019 ", typ: '', datum: "2020-05-12"},
+        { file: " Ummeldung zur WGS per 01.01.20 ", typ: 'Dienstvertrag', datum: "2020-06-17"},
+        { file: " Zusatzvereinbarung Homeoffice ", typ: 'Dienstvertrag', datum: "2020-10-27"},
         { file: " Elternteilzeitvertrag + Erg\u00e4nzung PAW  ", typ: '', datum: "2020-05-12"},
         { file: " PA LKW DV + KK ", typ: 'Verpflichtungserklärung', datum: "2019-07-08"},
         { file: " Stundenreduzierung Elternteilzeitvertrag ab 01.10.2019 ", typ: '', datum: "2020-05-12"},
@@ -15,6 +21,11 @@ export const ukoDokumente = {
         { file: "Security-Card", typ: 'Sonstiges', datum: "2019-03-06"}
     ],
     '07': [
+        { file: " Mail wg Karenzdauer ", typ: 'Verpflichtungserklärung', datum: "2018-05-28"},
+        { file: " Mail wg. R\u00fcckkehr aus Karenz ", typ: '', datum: "2020-05-12"},
+        { file: " PA Diverses", typ: '', datum: "2019-07-08"},
+        { file: " Schwangerschaftsbest\u00e4tigung + Brief Arbeitsinspektorat ", typ: '', datum: "2018-05-28"},
+        { file: "Gratulationsschreiben Geburt Sohn", typ: '', datum: "2017-07-14"},
         { file: " Mail wg Karenzdauer ", typ: 'Verpflichtungserklärung', datum: "2018-05-28"},
         { file: " Mail wg. R\u00fcckkehr aus Karenz ", typ: '', datum: "2020-05-12"},
         { file: " PA Diverses", typ: '', datum: "2019-07-08"},

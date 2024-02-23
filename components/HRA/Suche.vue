@@ -30,7 +30,7 @@
       </a>
       <div class="px-4 py-6">
         <div class="font-bold text-xl">
-          <a href="/hra/mitarbeiterinnen/stammdaten" class="text-Mittelblau hover:underline">
+          <a href="/hra/mitarbeiterinnen/dashboard" class="text-Mittelblau hover:underline">
           {{ma.vorname}} {{ma.name}}</a>
         </div>
         <div>

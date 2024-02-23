@@ -1,5 +1,6 @@
 <script setup>
-import { UserGroupIcon, ArrowDownCircleIcon, ArrowUpCircleIcon, HomeIcon, EnvelopeIcon, PhoneIcon, ExclamationTriangleIcon, TrashIcon, CloudArrowUpIcon } from '@heroicons/vue/24/outline'
+
+import { UserGroupIcon, ArrowDownCircleIcon, ArrowUpCircleIcon, HomeIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/vue/24/outline'
 
 const ma = mitarbeiterListe[0]
 const expandedProfileSection = useCookie('expandedProfileSection')
@@ -9,34 +10,46 @@ const props = defineProps({
 })
 </script>
 <template>
-    <div>
-        <div class="flex items-center py-3 justify-between">
-            <h1 class="my-3 text-3xl font-light text-Blaugrau">
-                {{headline}}
-            </h1>
+
+    <header class="sticky top-0 pb-4 px-8 bg-Blaugrau-10">
+        
+
+        <div class="flex justify-between items-center">
+            <slot name="breadcrumb"></slot>
             <HRAMitarbeiterSuchfeld class="w-1/3" />
         </div>
-        <div class="grid grid-cols-[16rem_1fr] gap-2 border bg-white print:hidden">
+            <h1 class="mb-4 text-3xl font-light text-Blaugrau">
+                {{headline}}
+            </h1>
+
+        <div class="mb-4 grid grid-cols-[16rem_1fr] gap-2 border bg-white print:hidden">
+            
             <div :style="'background-image: url(/img/'+ ma.avatar + ');'" class="bg-cover bg-center"> </div>
+            
             <div class="py-3">
                 <div class="px-4 space-y-1">
+                    
                     <div class="flex items-center justify-between">
                         <span class="px-2 py-1 rounded-md font-bold text-xs text-white bg-Gruen">Aktiv</span>
                         <span class="px-2 py-1 rounded-md font-bold text-xs text-white bg-Orange">3 Erinnerungen</span>
                     </div>
+
                     <div class="font-bold text-2xl">
                         {{ma.vorname}} {{ma.name}}
                     </div>
-                    <div class="text-sm flex items-center gap-x-2">
+                    <div class="text-sm flex items-center gap-x-6">
                         <span>{{ma.taetigkeit}}</span>
+                       
                         <button @click="expandedProfileSection = !expandedProfileSection" class="text-Mittelblau hover:scale-150 hover:text-Orange transition">
-                            <ArrowUpCircleIcon v-if="expandedProfileSection" class="w-5 h-5" />
-                            <ArrowDownCircleIcon v-if="!expandedProfileSection" class="w-5 h-5" />
+                            <ArrowUpCircleIcon   v-if="expandedProfileSection" class="w-5 h-5"/>
+                            <ArrowDownCircleIcon v-if="!expandedProfileSection" class="w-5 h-5"/>
                         </button>
                     </div>
                 </div>
-                <hr class="ml-4 mt-4 border-t-2 border-Mittelblau w-8" />
+                
+
                 <div v-if="expandedProfileSection" class="mt-3 grid grid-cols-3 px-4 py-3">
+                    <!-- <hr class="ml-4 mt-4 border-t-2 border-Mittelblau w-8" /> -->
                     <ul class="text-sm space-y-1 text-Blaugrau">
                         <li v-for="abteilung in ma.abteilungen" class="flex items-center gap-x-2">
                             <UserGroupIcon class="w-5 h-5" />
@@ -70,5 +83,8 @@ const props = defineProps({
                 </div>
             </div>
         </div>
-    </div>
+
+        <slot></slot>
+
+    </header>
 </template>

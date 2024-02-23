@@ -14,25 +14,57 @@ const stammdatenfelder = ['Nachname', 'Vorname', 'Personal-Nr', 'Standort', 'Man
     'von / nach Abteilung ', 'Beschäftigungsart', '(Wieder)Eintritt am', 'Austritt am ',
 ]
 const ma = mitarbeiterListe[0]
-const activeTab = ref(tabs[0]);
+// const activeTab = ref(tabs[0]);
+
+    const schritte = [
+        'Namensänderung',
+        'Stammdatenblatt',
+        'Benachrichtigungen'
+    ]
+    const activeTab = ref(schritte[0])
+
 </script>
 
 <template>
-    
 
-    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-16 ">
+    <header class="px-8 py-4">
+        <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell="Hochzeit"/>
+
+        <HRAMitarbeiterInfoBox headline="Events & Änderungen" />
+    </header>
+    
+    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8">
         
-        <HRAMitarbeiterInfoBox headline="Events und Änderungen"/>
-        <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" :active="Namensänderung" />
+        <div class="flex items-center gap-x-4 border rounded bg-white">
+            
+            <div v-for="schritt, index in schritte">
+                <button 
+                    @click="activeTab = schritt"
+                    class="border-transparent rounded px-2 py-3 flex gap-2 items-center group">
+                    <div 
+                        class="rounded-full  text-white p-1 w-8 
+                                group-hover:bg-Mittelblau 
+                                group-hover:scale-125
+                                transition"
+                        :class="{'bg-Mittelblau': activeTab === schritt, 'bg-Blaugrau': activeTab != schritt}">
+                        {{index+1}} 
+                    </div> 
+                    <div class="group-hover:text-Mittelblau"
+                        :class="{'text-Mittelblau': activeTab === schritt, 'text-Blaugrau': activeTab != schritt}" >
+                        {{schritt}}
+                    </div>
+                </button>
+            </div>
+        </div>
         
         <div class="bg-white border border-t rounded overflow-hidden print:border-0">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 
-                <div class="print:hidden">
+               <!--  <div class="print:hidden">
                     <NavigationHraTabMenu heading="Namensänderung" :tabs="tabs" @newtab="(ev) => activeTab = ev" />
-                </div>
+                </div> -->
                 <div class="px-4 py-4 border-l pb-12 print:border-0">
-                    <div v-if="'Nachname' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <div v-if="'Namensänderung' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <div>
                             <h3 class="text-lg font-bold text-gray-900 ">Namensänderung</h3>
                             <p class="text-gray-400 text-sm flex items-center gap-2">

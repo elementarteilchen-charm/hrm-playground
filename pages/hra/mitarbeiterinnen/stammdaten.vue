@@ -1,6 +1,6 @@
 <script setup>
 import {
-     CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon, ArchiveBoxIcon,
+     CheckCircleIcon, ArrowDownCircleIcon, XCircleIcon, ClockIcon, PencilIcon, ArchiveBoxIcon,
     BookmarkIcon, PlusCircleIcon, }
 from '@heroicons/vue/24/outline'
 
@@ -28,20 +28,26 @@ const ma = mitarbeiterListe[0]
 </script>
 
 <template>
-    <header class="px-8 py-4">
-        <div class="text-gray-500 text-sm">
-            <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
-                Persönliche Daten bearbeiten</a> &gt; Stammdaten
-        </div>
-    
-        <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class="mb-6"/>   
-    </header>
-
-    <main class="grid grid-rows-[auto_auto_auto] gap-8 px-8">
-
+    <NavigationHraStickyHeader headline="Persönliche Daten bearbeiten">
+        
+        <template #breadcrumb>
+            <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell="Stammdaten"/>    
+        </template>
+        
         <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Stammdaten" />
 
-        <div class="bg-white border border-t rounded overflow-hidden">
+    </NavigationHraStickyHeader>
+
+<!--     <header class="px-8 py-4">
+        <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell="Stammdaten"/>
+        <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class=""/>   
+    </header> -->
+
+    <main class="grid grid-rows-[auto_auto_auto] gap-x-8 px-8">
+
+        <!-- <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Stammdaten" /> -->
+
+        <div class="mt-0 bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                     
                 <NavigationHraTabMenu heading="Persönliche Daten bearbeiten" :tabs="tabs" @newtab="newTab"/>

@@ -1,4 +1,6 @@
 <script setup>
+        import { DocumentTextIcon, PencilIcon, TrashIcon } from '@heroicons/vue/24/outline'
+
 const Ordner = {
     '01': 'Bewerbungen Zeugnisse',
     '02': 'Bewilligungen',
@@ -11,16 +13,32 @@ const Ordner = {
 const aktiverOrdner = ref('01')
 </script>
 <template>
-    <div class="grid grid-cols-[1fr_auto] gap-x-6">
+    <div class="grid grid-cols-[26ch_1fr] pb-12 mt-3">
+        
+        <div class="py-3 bg-Blaugrau-10">
+            <h3 class="px-3 font-bold">
+                Persis
+            </h3>
+            <div v-for="ordner, index in Ordner" class="mt-2 text-sm" style="width: 28ch;">
+                <button @click="aktiverOrdner = index" class="px-3 py-1 hover:bg-Blaugrau-25 rounded" :class="{'text-red-500': aktiverOrdner == index}">
+                    <span class="font-bold text-Mittelblau " :class="{'text-red-500': aktiverOrdner == index}">{{index}} {{ordner}}</span>
+                    <span class="text-Blaugrau pl-2">({{ukoDokumente[index]?.length ? ukoDokumente[index]?.length  : '0'}})</span>
+                </button>
+            </div>
+        </div>
+
         <div class="grid grid-rows-[auto_24rem]">
-            <div class="mr-6">
-                <h3 class="mt-4 font-bold">Persis Digitale Akte</h3>
-                <table class="table w-full mt-6 ">
+            <div class="ml-4 pr-4">
+                <h3 class="mt-3 font-bold">Persis Digitale Akte</h3>
+                <small>Dokumente können nur aufgelistet werden. Anzeige und Download ist nur über Persis möglich.</small>
+                <table class="table w-full mt-6 text-sm">
                     <thead>
-                        <th>Dokumente</th>
-                        <th>Typ</th>
-                        <th>Datum</th>
-                        <th>Aktion</th>
+                        <tr>
+                            <th>Dokumente</th>
+                            <th>Typ</th>
+                            <th style="width: 12ch;">Datum</th>
+                            <th>Aktion</th>
+                        </tr>
                     </thead>
                     <tbody class="border rounded">
                         <tr v-for="item in persisDigitaleAkte[aktiverOrdner]" class="border-b h-10">
@@ -51,14 +69,6 @@ const aktiverOrdner = ref('01')
             <div class="py-6 pr-6">
             </div>
         </div>
-        <div class="space-y-2 pl-2 border-r">
-            <h3 class="mt-4 ml-2 font-bold">Ordner</h3>
-            <div v-for="ordner, index in Ordner">
-                <button @click="aktiverOrdner = index" class="py-1 px-2 hover:bg-Blaugrau-25 rounded" :class="{'text-red-500': aktiverOrdner == index}">
-                    <span class="font-bold text-Mittelblau " :class="{'text-red-500': aktiverOrdner == index}">{{index}} {{ordner}}</span>
-                    <span class="text-Blaugrau pl-2">({{persisDigitaleAkte[index]?.length}})</span>
-                </button>
-            </div>
-        </div>
+
     </div>
 </template>

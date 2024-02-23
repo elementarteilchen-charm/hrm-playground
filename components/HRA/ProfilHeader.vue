@@ -14,7 +14,7 @@
                     {{ma.vorname}} {{ma.name}}</a>
             </div>
             <div>
-                {{ma.taetigkeit}}
+                {{ma.taetigkeit}} 
             </div>
             <ul class="text-sm space-y-1 text-Mittelblau">
                 <li v-for="abteilung in ma.abteilungen">
