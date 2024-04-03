@@ -13,11 +13,11 @@ export  const topMenuItems = [
       },
       {
         linkText: "Werdegang",
-        link: "/hra/mitarbeiterinnen/ausbildung",
+        link: "/hra/werdegang",
       },
       {
         linkText: "Vertrag",
-        link: "/hra/mitarbeiterinnen/vertrag",
+        link: "/hra/vertrag",
       },
       {
         linkText: "Dokumente",

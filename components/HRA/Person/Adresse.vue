@@ -26,17 +26,21 @@
                 <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] items-baseline gap-2">
                     <InputText label="Straße" value="Hauptstraße 23/5/4" />
                     <InputText label="PLZ" value="3210" width="w-16" />
+                    <InputText label="Ort" value="Krems" />
+                </div>
+                <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">
+                    <InputDate label="Gültig ab" value="2024-01-01" />
+                    <InputText label="Region" value="Burgenland"  />
+                    <InputSelect label="Land" :options="['AT','DE', 'PL']" width="w-32" />
+                    <!-- damit die beiden cols gleich hoch sind -->
+                    <!-- <div>&nbsp;</div> -->
+                </div>
+                <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">
                     <InputCheckbox label="Hauptwohnsitz" checkboxLabel="" />
                     <InputCheckbox label="Home Office" checkboxLabel="" />
                 </div>
-                <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">
-                    <InputText label="Ort" value="Krems" />
-                    <InputSelect label="Land" :options="['AT','DE', 'PL']" width="w-32" />
-                    <!-- damit die beiden cols gleich hoch sind -->
-                    <div>&nbsp;</div>
-                </div>
             </div>
-            <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="Aberl Meldezettel.jpg" kategorie="Meldezettel" />
+            <!-- <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="Aberl Meldezettel.jpg" kategorie="Meldezettel" /> -->
         </LayoutFormSection>
         <LayoutFormSection title="Heimatadresse">
             <div class="grid lg:grid-cols-2 gap-4">
