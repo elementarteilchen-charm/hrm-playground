@@ -40,7 +40,7 @@ const menuOpen = useCookie('menuOpen')
             <div class="overflow-y-auto border-r print:hidden" style="height: calc(100vh - 55px - 1rem);">
                 <div class="flex justify-end p-2">
                     <a v-on:click="menuOpen = !menuOpen" class="hover:bg-Mittelblau hover:text-white text-Mittelblau">
-                        <Bars3Icon class="w-5 h-5"flex-shrink-0  /></a>
+                        <Bars3Icon class="w-5 h-5 flex-shrink-0"  /></a>
                 </div>
                 <nav v-show="!zeigeHRM" class="">
                     <ul class="space-y-1 text-sm">

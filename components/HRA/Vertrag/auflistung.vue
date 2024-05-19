@@ -1,5 +1,6 @@
 <script setup>
-    import { DocumentTextIcon, ChevronDownIcon, ChevronUpIcon, PlusCircleIcon, CheckCircleIcon, XCircleIcon, PencilIcon, TrashIcon } from '@heroicons/vue/24/outline' 
+    import { UserIcon, ArrowRightEndOnRectangleIcon, ArrowLeftStartOnRectangleIcon, ArrowTopRightOnSquareIcon,  NoSymbolIcon } from '@heroicons/vue/24/outline' 
+    import { MinusCircleIcon, PlusCircleIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid' 
 
   const vertragBearbeitenDialog = "Vertrag bearbeiten"
   const vertragBeendenDialog = "Vertrag beenden"
@@ -11,14 +12,85 @@
         document.getElementById(dialogId).showModal();
     }
 
-  const vertrag = vertragsdatensaetze[1]
+  // const vertrag = vertragsdatensaetze[1]
   const austritt = ref(true)
 
   const zeigeVertragsdokument = ref(false)
 
 </script>
 <template>
+    
+    <div>
+
+        <div v-for="vertrag, index in vertragsdatensaetze" 
+            class="grid grid-cols-[2rem_6ch_6ch_1fr_1fr] gap-x-2 py-2 border-b text-sm" :class="{'bg-Blaugrau-10': vertrag.aktiv}">
+            
+            <div class="pl-1 py-1">
+                <CheckCircleIcon v-if="vertrag.freigegeben && vertrag.aktiv" class="w-5 h-5 text-green-500"/>
+                <CheckCircleIcon v-if="vertrag.freigegeben && !vertrag.aktiv" class="w-5 h-5 text-gray-500" />
+                <MinusCircleIcon v-if="!vertrag.freigegeben && !vertrag.aktiv" class="w-5 h-5 text-gray-500" />
+                
+            </div>
+            <div class="pl-0 py-1 tabular-nums font-bold">
+                {{vertrag.personalnr}}
+            </div>
+            <div class="px-3 py-1 space-y-2">
+                <div>{{vertrag.mandant}}</div>
+                <div>{{vertrag.standort}}</div>
+            </div>
+            <div class="px-3 py-1 space-y-2">
+                <div class="flex gap-x-2">
+                    <UserIcon class="w-5 h-5 text-Gruen"/>
+                    {{vertrag.arbeitsverhaeltnis}}
+                </div>
+                <div class="flex gap-x-2">
+                    <ArrowRightEndOnRectangleIcon class="w-5 h-5 text-Mittelgrau"/>
+                    {{vertrag.dvbeginn}} <span class="text-Mittelgrau">({{vertrag.dienstantritt}})</span>
+                </div>
+                <div v-if="vertrag.dvende" class="flex gap-x-2">
+                    <ArrowLeftStartOnRectangleIcon class="w-5 h-5 text-Mittelgrau" :class="{'text-Orange-80': vertrag.dvende}"/>
+                    {{vertrag.dvende}}
+                </div>
+                <div v-if="vertrag.letzterArbeitstag" class="flex gap-x-2" >
+                    <ArrowTopRightOnSquareIcon class="w-5 h-5 text-Orange-80 "/>
+                    {{vertrag.letzterArbeitstag}}
+                </div>
+                <div v-if="vertrag.technischesAustrittsdatum" class="flex gap-x-2" >
+                    <NoSymbolIcon class="w-5 h-5 text-Orange-80 "/>
+                    {{vertrag.technischesAustrittsdatum}}
+                </div>
+
+            </div>
+ 
+            <div>
+                <!-- {{vertrag}} -->
+            </div>
+        </div>
+<!--         <details >
+            <summary class="bg-Mittelblau flex text-white items-center p-3 rounded-lg">
+                
+                    <div class="grid grid-cols-3 gap-x-3">
+                        <div>
+                            one
+                        </div>
+                        <div>
+                            two
+                        </div>
+                    </div>
+                
+            </summary>
+          <div class="py-3 bg-gray-100">
+              Something small enough to escape casual notice.
+          </div>
+        </details>    
+ -->   
+    </div>
+    
+
+
     <div class="space-y-6">
+
+
     <LayoutFormSection title="Freigegebene Verträge">
 
         <table class=" table w-full text-sm bg-white">
@@ -131,7 +203,7 @@
     </LayoutFormSection>
     </div>
 
-    <LKWWDialog :title="vertragBearbeitenDialog" height="70vh" width="75vw">
+<!--     <LKWWDialog :title="vertragBearbeitenDialog" height="70vh" width="75vw">
         <div class="grid lg:grid-cols-1 gap-4_">
             <div class="grid grid-rows-1 gap-y-4">
                 <div class=" grid grid-cols-[minmax(12rem,min-content)_1fr] items-baseline gap-3">
@@ -149,7 +221,7 @@
             </div>
         </div>
         
-    </LKWWDialog>
+    </LKWWDialog> -->
 
 <!--     <LKWWDialog :title="vertragBeendenDialog" height="70vh" width="75vw">
         <div class="grid lg:grid-cols-1 gap-4_">
