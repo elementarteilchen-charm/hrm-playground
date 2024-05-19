@@ -16,23 +16,28 @@
   const austritt = ref(true)
 
   const zeigeVertragsdokument = ref(false)
-
+  const konkurrenzklauseln = ['KK', 'HO', 'FXT', 'VPE', ]
 </script>
 <template>
     
-    <div>
+    <div >
 
         <div v-for="vertrag, index in vertragsdatensaetze" 
-            class="grid grid-cols-[2rem_6ch_6ch_1fr_1fr] gap-x-2 py-2 border-b text-sm" :class="{'bg-Blaugrau-10': vertrag.aktiv}">
+            class="overflow-x-auto grid grid-cols-[7ch_7ch_6ch_1fr_1fr] gap-x-2 py-2 border-b text-sm" :class="{'bg-Blaugrau-10': vertrag.aktiv}">
             
-            <div class="pl-1 py-1">
-                <CheckCircleIcon v-if="vertrag.freigegeben && vertrag.aktiv" class="w-5 h-5 text-green-500"/>
-                <CheckCircleIcon v-if="vertrag.freigegeben && !vertrag.aktiv" class="w-5 h-5 text-gray-500" />
-                <MinusCircleIcon v-if="!vertrag.freigegeben && !vertrag.aktiv" class="w-5 h-5 text-gray-500" />
-                
+            <div class="px-2 py-1 tabular-nums ">
+                <span class="font-bold">{{vertrag.personalnr}}</span>
             </div>
-            <div class="pl-0 py-1 tabular-nums font-bold">
-                {{vertrag.personalnr}}
+            <div class="pl-1 py-1">
+                <!-- <CheckCircleIcon v-if="vertrag.freigegeben && vertrag.aktiv" class="w-5 h-5 text-green-500"/> -->
+                <!-- <CheckCircleIcon v-if="vertrag.freigegeben && !vertrag.aktiv" class="w-5 h-5 text-gray-500" /> -->
+                <!-- <MinusCircleIcon v-if="!vertrag.freigegeben && !vertrag.aktiv" class="w-5 h-5 text-gray-500" /> -->
+                <span v-if="vertrag.freigegeben && vertrag.aktiv"
+                    class="border-transparent rounded-sm h-5 px-1 py-[1px] bg-green-500 text-white text-xs">aktiv</span>
+                <span v-if="vertrag.freigegeben && !vertrag.aktiv"
+                    class="border-transparent rounded-sm h-5 px-1 py-[1px] bg-Blaugrau-25 text-black text-xs">inaktiv</span>
+                <span v-if="!vertrag.freigegeben && !vertrag.aktiv"
+                    class="border-transparent rounded-sm h-5 px-1 py-[1px] bg-Orange text-white text-xs">in Arbeit</span>
             </div>
             <div class="px-3 py-1 space-y-2">
                 <div>{{vertrag.mandant}}</div>
@@ -62,7 +67,23 @@
 
             </div>
  
-            <div>
+            <div >
+                
+                <details name="klauseln">
+                    <summary class="flex items-center gap-x-2">
+                        <div v-for="vertragsklausel in vertrag.konkurrenzklauseln">
+                            {{vertragsklausel}}
+                        </div>
+                    </summary>
+                    <div class="p-2 bg-white border rounded shadow-sm flex gap-x-4">
+                        <template v-for="klausel in konkurrenzklauseln">
+                            <InputCheckbox 
+                                :label="klausel" 
+                                :checked="vertrag.konkurrenzklauseln.includes(klausel)"/>
+                        </template>
+                        <button class="text-Mittelblau hover:underline">Speichern</button>
+                    </div>
+                </details>
                 <!-- {{vertrag}} -->
             </div>
         </div>

@@ -15,8 +15,8 @@ export const vertragsdatensaetze = [
         austrittsdatum: '',
         technischesAustrittsdatum: '',
         freigegeben: true,
-        aktiv: true
-
+        aktiv: true,
+        konkurrenzklauseln: ['KK', 'HO', 'VPE', 'FXT']
     },
 
     {
@@ -33,7 +33,8 @@ export const vertragsdatensaetze = [
         austrittsdatum: '',
         technischesAustrittsdatum: '',
         freigegeben: false,
-        aktiv: false
+        aktiv: false,
+        konkurrenzklauseln: ['KK', 'HO', 'VPE']
     },
 
     {
@@ -50,7 +51,8 @@ export const vertragsdatensaetze = [
         austrittsdatum: '',
         technischesAustrittsdatum: '',
         freigegeben: true,
-        aktiv: false
+        aktiv: false,
+        konkurrenzklauseln: ['KK', 'VPE']
     },
 
         {
@@ -67,7 +69,8 @@ export const vertragsdatensaetze = [
         austrittsdatum: '2007-12-31',
         technischesAustrittsdatum: '2007-12-30',
         freigegeben: true,
-        aktiv: false
+        aktiv: false,
+        konkurrenzklauseln: ['KK', 'VPE']
     },
 
     // {
