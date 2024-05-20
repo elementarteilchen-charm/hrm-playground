@@ -2,29 +2,20 @@
     import { UserIcon, ArrowRightEndOnRectangleIcon, ArrowLeftStartOnRectangleIcon, ArrowTopRightOnSquareIcon,  NoSymbolIcon } from '@heroicons/vue/24/outline' 
     import { PencilIcon, MinusCircleIcon, PlusCircleIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid' 
 
-  const vertragBearbeitenDialog = "Vertrag bearbeiten"
-  const vertragBeendenDialog = "Vertrag beenden"
-  const vertragsDatei = "Vertrag"
-  const derVertrag = ref(vertragsdatensaetze[0])
+    const konkurrenzklauseln = ['KK', 'HO', 'FXT', 'VPE', ]
 
-  function showDialog(dialogId, vertrag) {
-        derVertrag.value = vertrag;
-        document.getElementById(dialogId).showModal();
+    function vertragHinzufuegen() {
+        document.getElementById("VertragHinzufuegen").showModal();
     }
 
-  // const vertrag = vertragsdatensaetze[1]
-  const austritt = ref(true)
-
-  const zeigeVertragsdokument = ref(false)
-  const konkurrenzklauseln = ['KK', 'HO', 'FXT', 'VPE', ]
 </script>
 <template>
-    
-    <div class="grid grid-rows-[1fr_auto] overflow-x-auto">
+    <div class="grid grid-rows-[1fr_auto] overflow-x-auto rounded-lg">
         
         <div class="grid 
-                    grid-cols-[7ch_7ch_6ch_32ch_1fr_12ch] gap-x-3 py-1 
-                    bg-Hellgrau border-b-2 border-b-Blaugrau text-sm">
+                    grid-cols-[7ch_7ch_6ch_32ch_1fr_12ch] gap-x-3 py-1 my-2
+                    bg-Blaugrau-25 border-b border-b-Mittelgrau text-sm">
+
             <div class="place-self-center px-2 py-1 text-xs font-bold">PNR</div>
             <div class="place-self-center px-2 py-1 text-xs font-bold">Status</div>
             <div class="place-self-center px-2 py-1 text-xs font-bold">
@@ -49,22 +40,22 @@
                     py-2 border-b border-b-Blaugrau text-sm"
         >
             
-            <div class="px-2 py-1 tabular-nums ">
+            <div class="px-2 py-1 tabular-nums text-right">
                 <span class="font-bold">{{vertrag.personalnr}}</span>
             </div>
             
-            <div class="pl-1 py-1">
+            <div class="pl-1 py-1 space-y-2">
                 <span v-if="vertrag.freigegeben && vertrag.aktiv" 
-                    class="inline-block border-transparent rounded-sm h-5 px-1 py-[1px] bg-green-500 text-white text-xs">Aktiv</span>
+                    class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Gruen text-white text-xs">Aktiv</span>
                 <span v-if="vertrag.freigegeben && !vertrag.aktiv"
-                    class="inline-block border-transparent rounded-sm h-5 px-1 py-[1px] bg-Mittelgrau text-white text-xs">Beendet</span>
+                    class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Mittelgrau text-white text-xs">Beendet</span>
                 <span v-if="!vertrag.freigegeben && !vertrag.aktiv"
-                    class="inline-block border-transparent rounded-sm h-5 px-1 py-[1px] bg-Orange text-white text-xs">Erstellt</span>
+                    class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Orange-80 text-white text-xs">Erstellt</span>
                 <span v-if="vertrag.geringfuegig"
-                    class="inline-block border-transparent rounded-sm h-5 px-1 py-[1px] bg-Gruen-10  text-xs">GFG</span>                    
+                    class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Gruen-10  text-xs">GFG</span>                 
             </div>
             
-            <div class="px-3 py-1 space-y-2">
+            <div class="px-1 py-1 space-y-2 font-bold">
                 <div>{{vertrag.mandant}}</div>
                 <div>{{vertrag.standort}}</div>
             </div>
@@ -74,7 +65,7 @@
                     <UserIcon class="w-5 h-5 text-Gruen"/>
                     {{vertrag.arbeitsverhaeltnis}}
                 </div>
-                <div class="tabular-nums">
+                <div class="tabular-nums space-y-2">
                     <div class="flex gap-x-2">
                         <ArrowRightEndOnRectangleIcon class="w-5 h-5 text-Mittelgrau"/>
                         {{vertrag.dvbeginn}} 
@@ -119,5 +110,10 @@
             </div>
         </div>
     </div>
+    <div class="flex justify-end">
+        <InputButton v-on:click="vertragHinzufuegen">Neuen Vertrag anlegen</InputButton>
+    </div>
     
+    <HRAVertragHinzufuegen />
+
 </template>

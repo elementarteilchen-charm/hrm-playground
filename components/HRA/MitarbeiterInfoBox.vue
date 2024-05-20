@@ -10,21 +10,21 @@ const props = defineProps({
 </script>
 <template>
     <div>
-        <div class="flex items-center py-3 justify-between">
-            <h1 class="my-3 text-3xl font-light text-Blaugrau">
+        <div class="flex items-center py-1 justify-between">
+            <h1 class="text-2xl 2xl:text-3xl font-light text-Blaugrau">
                 {{headline}}
             </h1>
             <HRAMitarbeiterSuchfeld class="w-1/3" />
         </div>
+
         <div class="grid grid-cols-[16rem_1fr] gap-2 border bg-white print:hidden">
             <div :style="'background-image: url(/img/'+ ma.avatar + ');'" class="bg-cover bg-center"> </div>
             <div class="py-3">
                 <div class="px-4 space-y-1">
                     <div class="flex items-center justify-between">
-                        <span class="px-2 py-1 rounded-md font-bold text-xs text-white bg-Gruen">Aktiv</span>
-                        <span class="px-2 py-1 rounded-md font-bold text-xs text-white bg-Orange">3 Erinnerungen</span>
+                        <span class="px-2 py-[1px] rounded _font-bold text-xs text-white bg-Gruen">Aktiv</span>
                     </div>
-                    <div class="font-bold text-2xl">
+                    <div class="font-bold text-xl 2xl:text-2xl">
                         {{ma.vorname}} {{ma.name}}
                     </div>
                     <div class="text-sm flex items-center gap-x-2">

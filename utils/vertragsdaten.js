@@ -40,7 +40,7 @@ export const vertragsdatensaetze = [
     {
         personalnr: '10714',
         neueintritt: false,
-        geringfuegig: false,
+        geringfuegig: true,
         dienstantritt: '2008-01-08',
         dvbeginn: '2008-01-08',
         dvende: '2019-12-31',
