@@ -21,7 +21,6 @@ module.exports = {
         blue: colors.sky,
         green: colors.green,
         orange: colors.orange,
-        yellow: colors.yellow,
         'primary': '#0D6EFD',
         'secondary': '#6C757D',
         'Rot': '#DB0000',
