@@ -4,10 +4,15 @@
 
     const konkurrenzklauseln = ['KK', 'HO', 'FXT', 'VPE', ]
 
+    const gewaehlterVertrag = ref()
+
     function vertragHinzufuegen() {
         document.getElementById("VertragHinzufuegen").showModal();
     }
 
+    function vertragBearbeiten(vertrag) {
+        document.getElementById("VertragBearbeiten").showModal();
+    }
 </script>
 <template>
     <div class="grid grid-rows-[1fr_auto] overflow-x-auto rounded-lg">
@@ -106,7 +111,7 @@
                 </details>
             </div>
             <div class="place-items-center">
-                <button class="text-Mittelblau hover:underline">Bearbeiten</button>
+                <button v-on:click="vertragBearbeiten(index)" class="text-Mittelblau hover:underline">Bearbeiten</button>
             </div>
         </div>
     </div>
@@ -115,5 +120,6 @@
     </div>
     
     <HRAVertragHinzufuegen />
+    <HRAVertragBearbeiten />
 
 </template>
