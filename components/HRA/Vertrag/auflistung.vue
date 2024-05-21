@@ -52,12 +52,12 @@
             <div class="pl-1 py-1 space-y-2">
                 <span v-if="vertrag.freigegeben && vertrag.aktiv" 
                     class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Gruen text-white text-xs">Aktiv</span>
-                <span v-if="vertrag.freigegeben && !vertrag.aktiv"
-                    class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Mittelgrau text-white text-xs">Beendet</span>
+                <!-- <span v-if="vertrag.freigegeben && !vertrag.aktiv"
+                    class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Mittelgrau text-white text-xs">Beendet</span> -->
                 <span v-if="!vertrag.freigegeben && !vertrag.aktiv"
                     class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Orange-80 text-white text-xs">Erstellt</span>
                 <span v-if="vertrag.geringfuegig"
-                    class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Gruen-10  text-xs">GFG</span>                 
+                    class="inline-block border border-black h-5 px-2 py-[2px] rounded _bg-Hellgrau  text-xs">GFG</span>                 
             </div>
             
             <div class="px-1 py-1 space-y-2 font-bold">
@@ -73,21 +73,23 @@
                 <div class="tabular-nums space-y-2">
                     <div class="flex gap-x-2">
                         <ArrowRightEndOnRectangleIcon class="w-5 h-5 text-Mittelgrau"/>
-                        {{vertrag.dvbeginn}} 
+                        <span class="text-Gruen">{{vertrag.dvbeginn}}</span>
                         <span class="text-Mittelgrau">({{vertrag.dienstantritt}})</span>
                     </div>
                     <div v-if="vertrag.dvende" class="flex gap-x-2">
-                        <ArrowLeftStartOnRectangleIcon class="w-5 h-5 text-Mittelgrau" :class="{'text-Orange-80': vertrag.dvende}"/>
-                        {{vertrag.dvende}}
+                        <ArrowLeftStartOnRectangleIcon class="w-5 h-5 text-Mittelgrau" :class="{'text-Orange': vertrag.dvende}"/>
+                        <span class="font-bold_ _text-Orange">{{vertrag.dvende}}</span>
                     </div>
                     <div v-if="vertrag.letzterArbeitstag" class="flex gap-x-2" >
-                        <ArrowTopRightOnSquareIcon class="w-5 h-5 text-Orange-80 "/>
-                        {{vertrag.letzterArbeitstag}}
-                    </div>
                     <div v-if="vertrag.technischesAustrittsdatum" class="flex gap-x-2" >
-                        <NoSymbolIcon class="w-5 h-5 text-Orange-80 "/>
+                        <NoSymbolIcon class="w-5 h-5 text-Orange "/>
                         {{vertrag.technischesAustrittsdatum}}
                     </div>
+                    <div v-if="vertrag.letzterArbeitstag" class="flex gap-x-2" >
+                        <ArrowTopRightOnSquareIcon class="w-5 h-5 text-Orange "/>
+                        {{vertrag.letzterArbeitstag}}
+                    </div>
+                </div>
                 </div>
             </div>
  
