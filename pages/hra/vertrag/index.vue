@@ -16,13 +16,12 @@ const ma = mitarbeiterListe[0]
 </script>
 
 <template>
-    <header class="px-8 py-4  print:hidden">
+    <header class="px-8 py-1 print:hidden">
         <div class="text-gray-500 text-sm">
             <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
                 Persönliche Daten bearbeiten</a> &gt; Vertrag
         </div>
-
-        <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class="mb-6"/>
+        <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class="mb-2"/>
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-8 px-8">
@@ -38,7 +37,7 @@ const ma = mitarbeiterListe[0]
 
                     <div v-show="activeTab == 'Verträge'" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <HRAVertragAuflistung />
-                        <HRAVertragVertragsdatensatzneu />
+                        <!-- <HRAVertragVertragsdatensatzneu /> -->
                     </div>
 
                     <div v-show="activeTab == 'Beschäftigung'" class="px-2 pt-2 grid grid-rows-1 gap-4">
