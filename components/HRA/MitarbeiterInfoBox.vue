@@ -17,7 +17,7 @@ const props = defineProps({
             <HRAMitarbeiterSuchfeld class="w-1/3" />
         </div>
 
-        <div class="grid grid-cols-[16rem_1fr] gap-2 border bg-white print:hidden">
+        <div class="grid grid-cols-[12rem_1fr] gap-2 border bg-white print:hidden">
             <div :style="'background-image: url(/img/'+ ma.avatar + ');'" class="bg-cover bg-center"> </div>
             <div class="py-3">
                 <div class="px-4 space-y-1">

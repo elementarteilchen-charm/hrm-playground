@@ -62,21 +62,12 @@ export const mitarbeiterListe = [{
             { von: '01.03.1999', bis: '30.06.2000', anrechenbare_zeit: 16.00, beruf: 'nicht erfasst', firma: 'Softcom, Wien 12' },
             { von: '01.10.1987', bis: '14.06.1988', anrechenbare_zeit: 0, beruf: 'nicht erfasst', firma: 'Öst.Bundesheer' },
         ],
-        milizuebungen: [
-            { von: '01.04.2009', bis: '31.03.2014' },
-            { von: '01.05.2001', bis: '31.07.2008' },
-            { von: '01.03.1999', bis: '30.06.2000' },
-            { von: '01.10.1987', bis: '14.06.1988' },
-        ],
-        bisherigeGeburten: [
-          {
-            schwangerschaftsbestaetigung: '2020-03-01',
-            voraussichtlicherGeburtstermin: '2020-10-15',
-            geburtsdatum: '2020-10-18',
-            wochenhilfeStart: '2020-08-15',
-            wochenhilfeEnde: '2020-12-18',
-            name: 'Valentin'
-          }, 
+        abwesenheiten: [
+            { art: "Bildungskarenz", von: '2024-04-01', bis: '2024-08-31', aktiv: true },
+            { art: "Unbezahlter Urlaub", von: '2019-09-01', bis: '2019-09-30' },
+            { art: "Bildungskarenz", von: '2014-05-01', bis: '2015-04-30' },
+            { art: "Elternkarenz", von: '2013-05-01', bis: '2014-04-30' },
+            { art: "Elternkarenz", von: '2009-04-01', bis: '2011-03-31' },
         ]
     },
     {
