@@ -2,6 +2,10 @@ export const mitarbeiterListe = [{
         anrede: 'Frau',
         vorname: 'Regina',
         name: 'Aberl',
+        strasse: 'Zuhausegasse 33/12',
+        plz: '2530',
+        ort: 'Wiener Neustadt',
+        land: 'Österreich',
         taetigkeit: 'Transport Manager (TM)',
         abteilungen: ['Trucking IT - Ost • V13T00', 'GD IT,ES,PT - PL,CZ,SK • VG14C', 'VDI IT / ES / PT (W) / Hirzer•VDA3', 'SMO Hr. Ehrenhöfer•SMO1'],
         mandant: 'LKW',
@@ -68,6 +72,10 @@ export const mitarbeiterListe = [{
             { art: "Bildungskarenz", von: '2014-05-01', bis: '2015-04-30' },
             { art: "Elternkarenz", von: '2013-05-01', bis: '2014-04-30' },
             { art: "Elternkarenz", von: '2009-04-01', bis: '2011-03-31' },
+        ],
+        events: [
+            { art: "Geburt", von: '2023-11-18', bis: '', aktiv: false },
+            { art: "Hochzeit", von: '2022-05-22', bis: '', aktiv: false },
         ]
     },
     {

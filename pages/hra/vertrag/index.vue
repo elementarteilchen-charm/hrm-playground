@@ -36,15 +36,12 @@ const ma = mitarbeiterListe[0]
                 <div class="px-4 my-4 border-l pb-12">
 
                     <div v-show="activeTab == 'Verträge'" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <HRAVertragAuflistung />
+                        <HRAVertragAuflistungVoll />
                         <!-- <HRAVertragVertragsdatensatzneu /> -->
                     </div>
 
                     <div v-show="activeTab == 'Beschäftigung'" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         
-               <!--          <header class=" py-2  text-xl font-bold ">
-                            Beschäftigung & Befristung
-                        </header> -->
                         <LayoutFormSection title="Jubiläumsdatum und aktives DV">
                             <div class=" grid grid-cols-[minmax(14rem,min-content)_1fr] gap-2">  
                               <InputDate label="Datum Jubiläumsberechnung" />
