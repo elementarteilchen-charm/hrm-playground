@@ -1,5 +1,5 @@
 <script setup>
-    import { PencilIcon, PencilSquareIcon, MinusCircleIcon, PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid' 
+    import { PencilIcon, MinusCircleIcon, PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid' 
 
     const ma = mitarbeiterListe[0]
 </script>

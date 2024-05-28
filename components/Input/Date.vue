@@ -15,6 +15,8 @@
 
     const dialog = "Erinnerung"
 
+    const reminderDate=ref()
+
 function erinnerungsDatum() {
     let dateFormatter = new Intl.DateTimeFormat('de-AT', { year: 'numeric', month: '2-digit', day: '2-digit' });
     let formattedDate = dateFormatter.format(props.reminderIsSet);

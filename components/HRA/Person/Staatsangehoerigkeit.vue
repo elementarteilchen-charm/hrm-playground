@@ -15,7 +15,7 @@
         <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-y-3 gap-x-2">
             <InputSelect label="Staatsangehörigkeit" :options="['Österreich','Deutschland', 'Polen']" selected="Österreich" width="w-4/5"/>
             <InputSelect label="Staatsangehörigkeit&nbsp;2" :options="['-','DE', 'PL']" width="w-4/5" />
-            <InputTextarea label="Bemerkung" placeholder="Hier wird bei Änderung der Staatsangehörigkeit eine Bemerkung erfasst."/>
+            <InputTextarea label="Bemerkung1" placeholder="Hier wird bei Änderung der Staatsangehörigkeit eine Bemerkung erfasst."/>
         </div>
         
         <HRAFormsNachweisUploadBox dateiname="Aberl Reisepass.png" ordner="05 Dokumente + Urkunden" kategorie="Reisepass"/>
@@ -28,7 +28,7 @@
         <div class="grid grid-cols-[minmax(6rem,min-content)_1fr] gap-x-2 gap-y-3">
             <InputText label="Geburtsort" value="Krems an der Donau" />
             <InputSelect label="Geburtsland" :options="['Österreich','Deutschland', 'Polen']" selected="Österreich" width="w-32" />
-            <InputTextarea label="Bemerkung"  placeholder="Hier wird bei Änderung der Staatsangehörigkeit eine Bemerkung erfasst."/>
+            <InputTextarea label="Bemerkung2"  placeholder="Hier wird bei Änderung der Staatsangehörigkeit eine Bemerkung erfasst."/>
         </div>       
 
     </LayoutFormSection>

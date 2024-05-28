@@ -1,5 +1,6 @@
 <script setup>
-
+import { PencilSquareIcon }
+    from '@heroicons/vue/24/outline'
 const props = defineProps({
     header: { type: String, default: null },
     buttonText: { type: String, default: 'Bearbeiten' },
