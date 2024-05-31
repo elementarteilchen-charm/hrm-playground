@@ -108,36 +108,36 @@ export  const eventMenuItems = [
           link: '/hra/events/Geburt',
           erinnerungen: 0
         },
-        { 
-          text: 'Ernennungen', 
-          link: '/hra/events/Ernennungen',
-          erinnerungen: 0
-        },
+        // { 
+        //   text: 'Ernennungen', 
+        //   link: '/hra/events/Ernennungen',
+        //   erinnerungen: 0
+        // },
         { 
           text: 'Ummeldungen', 
           link: '/hra/events/Ummeldungen',
           erinnerungen: 0
         },
-        { 
-          text: 'Arbeitszeitmodell', 
-          link: '/hra/events/Arbeitszeitmodell',
-          erinnerungen: 0
-        },
-        { 
-          text: 'Signatur', 
-          link: '/hra/events/Signatur',
-          erinnerungen: 0
-        },
-        { 
-          text: 'Visitenkarten', 
-          link: '/hra/events/Visitenkarten',
-          erinnerungen: 1
-        },
-        { 
-          text: 'Zusatzqualifikationen', 
-          link: '/hra/events/Zusatzqualifikationen',
-          erinnerungen: 0
-        },
+        // { 
+        //   text: 'Arbeitszeitmodell', 
+        //   link: '/hra/events/Arbeitszeitmodell',
+        //   erinnerungen: 0
+        // },
+        // { 
+        //   text: 'Signatur', 
+        //   link: '/hra/events/Signatur',
+        //   erinnerungen: 0
+        // },
+        // { 
+        //   text: 'Visitenkarten', 
+        //   link: '/hra/events/Visitenkarten',
+        //   erinnerungen: 1
+        // },
+        // { 
+        //   text: 'Zusatzqualifikationen', 
+        //   link: '/hra/events/Zusatzqualifikationen',
+        //   erinnerungen: 0
+        // },
         { 
           text: 'Geschenke', 
           link: '/hra/events/Geschenke',
@@ -153,11 +153,11 @@ export  const eventMenuItems = [
     auszeiten: {
       headline: "Temporäre Auszeiten",
       items: [
-        { 
-          text: 'Wochenhilfe', 
-          link: '/hra/abwesenheiten/Wochenhilfe',
-          erinnerungen: 0
-        },
+        // { 
+        //   text: 'Wochenhilfe', 
+        //   link: '/hra/abwesenheiten/Wochenhilfe',
+        //   erinnerungen: 0
+        // },
         { 
           text: 'Elternkarenz', 
           link: '/hra/abwesenheiten/elternkarenz',
