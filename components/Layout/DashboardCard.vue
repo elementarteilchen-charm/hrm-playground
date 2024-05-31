@@ -1,10 +1,10 @@
 <script setup>
-import { PencilSquareIcon }
-    from '@heroicons/vue/24/outline'
+import { PencilSquareIcon } from '@heroicons/vue/24/outline'
+
 const props = defineProps({
     header: { type: String, default: null },
     buttonText: { type: String, default: 'Bearbeiten' },
-    buttonLink: { type: String}
+    buttonLink: { type: String},
 })
 </script>
 
@@ -14,7 +14,7 @@ const props = defineProps({
             <h2 class="font-light: text-xl text-Mittelblau">{{header}}</h2>
         </div>
         
-        <div class="overflow-auto max-h-44 min-h-32">
+        <div class="min-h-32 overflow-auto max-h-44">
             <slot></slot>
         </div>
 

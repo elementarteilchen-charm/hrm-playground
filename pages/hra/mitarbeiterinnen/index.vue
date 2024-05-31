@@ -17,7 +17,7 @@ const ma = mitarbeiterListe[0]
     <div class="grid grid-cols-1 lg:grid lg:grid-cols-2 gap-6 px-8">
       <HRAPersonStammdatenAuflistung />
       <HRAVertragAuflistung />
-      <HRAAbwesenheitAuflistung />
+      <HRAAbwesenheitAuflistung fixedHeight="max-h-44"/>
       <HRAEventsAuflistung />
     </div>
 
