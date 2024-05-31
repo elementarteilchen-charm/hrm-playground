@@ -68,9 +68,11 @@
     </div>
     
     <template v-for="abwesenheit in abwesenheitenActions">
-      <dialog title="{{abwesenheit.art}}">
+     {{abwesenheit}}
+      <dialog :id="abwesenheit">
         {{abwesenheit}}
       </dialog>
+    
     </template>
 </template>
 
