@@ -1,14 +1,6 @@
 <script setup>
-import {
-     CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon, ArchiveBoxIcon, BookmarkIcon, PlusCircleIcon, }
+import { CheckCircleIcon, XCircleIcon, PlusCircleIcon }
     from '@heroicons/vue/24/outline'
-
-const abwesenheitenActions = [
-    'Elternkarenz',
-    'Bildungskarenz',
-    'Unbezahlter Urlaub',
-    'Milizübung'
-  ]
 
 const ma = mitarbeiterListe[0]
 

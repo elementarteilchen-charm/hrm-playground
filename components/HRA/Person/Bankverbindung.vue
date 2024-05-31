@@ -63,15 +63,6 @@
 
   </LayoutFormSection>
 
-<!-- 
-  <LayoutFormSection title="Übermittlung an die Personalverrechnung">
-    <p class=" text-gray-500 mt-3 mb-6">
-      Alle notwendigen Daten für die Personalverrechnung sind vorhanden:
-    </p>
-    <div class=" grid grid-cols-[minmax(6rem,min-content)_1fr] gap-2">  
-      <InputCheckbox label="Fertig für Personalverrechnung" />
-    </div>
-  </LayoutFormSection> -->
 
   <dialog id="bankverbindung-dialog" class="modal-bankverbindung shadow-lg bg-gray-100 p-4">
     <form action="" method="dialog" class="h-full">

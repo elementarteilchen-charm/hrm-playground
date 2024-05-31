@@ -1,12 +1,38 @@
 <script setup>
-    import { PencilIcon, PencilSquareIcon, MinusCircleIcon, PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid' 
+    import { PencilIcon, MinusCircleIcon, PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid' 
 
     const ma = mitarbeiterListe[0]
+    const quickNav = ref(true)
+
+    const quickLinks = [
+        {
+            text: 'Persönlich',
+            link: '/hra/mitarbeiterinnen/stammdaten'
+        },
+        {
+            text: 'Adresse & Kontakt',
+            link: '/hra/mitarbeiterinnen/stammdaten'
+        },
+        {
+            text: 'Bankverbindung',
+            link: '/hra/mitarbeiterinnen/stammdaten'
+        },
+        {
+            text: 'Bewilligungen',
+            link: '/hra/mitarbeiterinnen/stammdaten'
+        },
+    ]
 </script>
 
 <template>
     <LayoutDashboardCard header="Stammdaten" buttonText="Bearbeiten" buttonLink="/hra/mitarbeiterinnen/stammdaten">
-        <div class="grid grid-cols-2 text-sm">
+        <div v-if="quickNav" class="px-3">
+            <div v-for="link in quickLinks" class="text-Mittelblau space-y-2 text-sm">
+                <a :href="link.link">{{link.text}}</a>
+            </div>
+            
+        </div>
+        <div v-if="!quickNav" class="grid grid-cols-2 text-sm">
             <div class="px-3 space-y-1">
                 <div class="font-bold">
                     Hauptwohnsitz 
