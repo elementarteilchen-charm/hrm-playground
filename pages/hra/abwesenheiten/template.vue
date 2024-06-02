@@ -20,8 +20,8 @@ const historieAbwesenheiten = [
     <header class="px-8 py-4">
         <NavigationHraBreadcrumb 
                 :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
-                aktuell="Milizübung"/>
-        <HRAMitarbeiterInfoBox headline="Milizübung" />
+                aktuell="Das hier"/>
+        <HRAMitarbeiterInfoBox headline="Das hier" />
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >
@@ -50,19 +50,18 @@ const historieAbwesenheiten = [
         <div class="bg-white border  rounded">
             <div class="px-4 py-4 ">
                 <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                    
-                    <LayoutFormSection title="Dauer">
+                    <LayoutFormSection title="Anfrage Unbezahlter Urlaub">
+                        <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                            <InputDate label="Gesprächstermin" />
+                            <InputTextarea label="Gesprächsnotizen" class="w-4/5 h-24" />
+                        </div>
+                    </LayoutFormSection>
+                    <LayoutFormSection title="Beginn und Ende des unbezahlten Urlaubs">
                         <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                             <InputDate label="Beginn" />
                             <InputDate label="Ende" />
                             <InputDate label="Wiedereintrittsdatum" />
                         </div>
-                    </LayoutFormSection>
-                    <LayoutFormSection title="Einberufungsbefehl">
-                        <h2 class="mt-3">
-                            Bitte hier den aktuellen Einberufungsbefehl hochladen:
-                        </h2>
-                        <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="Einberufungsbefehl.pdf" kategorie="Sonstiges" />
                     </LayoutFormSection>
                     <div class="flex justify-end">
                         <InputButton>Speichern</InputButton>
@@ -81,33 +80,9 @@ const historieAbwesenheiten = [
                         </div>
                         <InputButton :secondary="true">Dokument erstellen</InputButton>
                     </LayoutFormSection>
-                    <div v-show="'Bestätigung für BH' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection title="Bestätigung für BH erstellen">
-                            <p class="mb-3 text-gray-400 text-sm flex items-center gap-2">
-                                <ExclamationTriangleIcon class="w-4 h-4 text-orange-500" />
-                                <span>Diese Daten werden nicht in Persis erfasst und werden nur in HRA gespeichert</span>
-                            </p>
-                            <InputButton>Bestätigung erstellen / runter laden</InputButton>
-                        </LayoutFormSection>
-                    </div>
                 </div>
 
                 <div v-show="'Benachrichtigungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                    <LayoutFormSection title="Info an die Personalverrechnung">
-                        <p class="text-gray-400 text-sm flex items-center gap-2">
-                            <CheckCircleIcon class="w-4 h-4 text-green-500" />
-                            <span>Diese Daten können direkt geschrieben werden.</span>
-                        </p>
-                        <p class="mb-3 text-gray-400 text-sm flex items-center gap-2">
-                            <ExclamationTriangleIcon class="w-4 h-4 text-orange-500" />
-                            <span>Diese Daten werden nicht in Persis erfasst und werden nur in HRA gespeichert</span>
-                        </p>
-                        <InputButton>Personalverrechnung über die Milizübung informieren</InputButton>
-                        <div class="mt-6">
-                            <h3 class="mb-1 font-bold">Verlauf</h3>
-                            31.07.2023: Info an Personalverrechnung versendet.
-                        </div>
-                    </LayoutFormSection>
                     <LayoutFormSection title="Benachrichtigungen">
                         <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                             <InputCheckbox label="Personalverrechnung" />
