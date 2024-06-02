@@ -36,7 +36,6 @@ function disableNameInput() {
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8">
-        <!-- <NavigationHraMitarbeiterinnen :topMenuItems="eventMenuItems" active="Hochzeit" /> -->
     
         <div class="flex items-center gap-x-4 border rounded bg-white">
             

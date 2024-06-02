@@ -2,95 +2,133 @@
 import { CheckCircleIcon, EnvelopeIcon, ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 import { showDialog } from '/utils/modal.js'
 
-const tabs = [
+const schritte = [
     'Bildungsziele',
-    'Dauer',
-    'AMS Formular',
-    'Firmenvereinbarung',
-    'Vordienstzeiten'
-];
-
-const activeTab = ref(tabs[0]);
+    // 'Dauer',
+    'Dokumente',
+    'Vordienstzeiten',
+    'Benachrichtigungen'
+]
+const activeTab = ref(schritte[0]);
 const zeigeAnforderungen = ref(false)
+
 </script>
 <template>
-    <div class="flex items-center py-3 justify-between">
-        <h1 class="my-3 text-3xl font-light text-Blaugrau">
-            Abwesenheiten
-        </h1>
-        <HRAMitarbeiterSuchfeld class="w-1/3" />
-    </div>
-    <main class="grid grid-rows-[auto_auto_auto] gap-6">
-        <HRAMitarbeiterInfoBox />
-        <NavigationHraMitarbeiterinnen :topMenuItems="abwesenheitenMenuItems" :active="2" />
+    
+    <header class="px-8 py-4">
+        <NavigationHraBreadcrumb 
+                :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
+                aktuell="Bildungskarenz"/>
+        <HRAMitarbeiterInfoBox headline="Abwesenheiten" />
+    </header>
+
+    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >
+
+        <div class="flex items-center gap-x-4 border rounded bg-white">
+
+            <div v-for="schritt, index in schritte">
+                <button 
+                    @click="activeTab = schritt"
+                    class="border-transparent rounded px-2 py-3 flex gap-2 items-center group">
+                    <div 
+                        class="rounded-full  text-white p-1 w-8 
+                                group-hover:bg-Mittelblau 
+                                group-hover:scale-125
+                                transition"
+                        :class="{'bg-Mittelblau': activeTab === schritt, 'bg-Blaugrau': activeTab != schritt}">
+                        {{index+1}} 
+                    </div> 
+                    <div class="group-hover:text-Mittelblau"
+                        :class="{'text-Mittelblau': activeTab === schritt, 'text-Blaugrau': activeTab != schritt}" >
+                        {{schritt}}
+                    </div>
+                </button>
+            </div>
+        </div>
+
         <div class="bg-white border border-t rounded overflow-hidden">
-            <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
-                <NavigationHraTabMenu heading="Bildungskarenz" :tabs="tabs" @newtab="(ev) => activeTab = ev" />
-                <div class="px-4 py-4 border-l pb-12">
+           
+            <div class="px-4 py-2 border-l pb-12">
 
-                    <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection title="Beginn und Ende der Bildungskarenz">
-                            <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
-                                <InputDate label="Beginn" />
-                                <InputDate label="Ende" />
-                            </div>
-                            <p class="text-gray-400 text-sm flex items-center gap-2 w-1/2 my-3">
-                                <ExclamationTriangleIcon class="w-4 h-4 text-orange-500 flex-shrink-0" />
-                                <span>Bildungskarenzzeit reduziert die Summe der anrechenbaren Zeit → wird aktuell in Persis als Eintrag in Vordienstzeiten erfasst</span>
-                            </p>
-                            <InputButton @click="activeTab = 'Vordienstzeiten'">Vordienstzeiten Eintrag erstellen</InputButton>
-                        </LayoutFormSection>
-                    </div>
-                    
-                    <div v-show="'Bildungsziele' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection title="Bildungsziele">
-	                        <p class="text-gray-400 text-sm flex items-center gap-2">
-	                            <CheckCircleIcon class="w-4 h-4 text-green-500" />
-	                            <span>Diese Daten können direkt geschrieben werden.</span>
-	                        </p>
-	                        <p class="text-gray-400 text-sm flex items-center gap-2">
-	                            <ExclamationTriangleIcon class="w-4 h-4 text-orange-500" />
-	                            <span>Diese Daten sind nicht in Persis vorhanden und werden nur in HRA erfasst</span>
-	                        </p>
-                            <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
-                                <InputDate label="Gesprächstermin" />
-                                <InputTextarea label="Gesprächsnotizen" class="w-4/5 h-24" />
-                                <InputCheckbox label="AMS Bestätigung" checkboxLabel="liegt vor" />
-                            </div>
-                            <div class="mt-6 font-bold">Bestätigung über geplante Ausbildung</div>
-                            <p class="text-sm font-light text-Mittelgrau">Kursanmeldung, Inskriptionsbestätigung, ...</p>
-                            <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="WIFI Kurs SocialMedia.pdf" kategorie="Sonstiges" />
-                        </LayoutFormSection>
-                    </div>
-
-                    <div v-show="'AMS Formular' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <p class="text-gray-400 text-sm flex items-center gap-2">
-                            <CheckCircleIcon class="w-4 h-4 text-green-500" />
-                            <span>Diese Daten können direkt geschrieben werden.</span>
+                <div v-show="'Bildungsziele' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <LayoutFormSection title="Bildungsziele">
+                        
+                        <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                            <InputDate label="Gesprächstermin" />
+                            <InputTextarea label="Gesprächsnotizen" class="w-4/5 h-24" />
+                            <InputCheckbox label="AMS Bestätigung" checkboxLabel="liegt vor" />
+                        </div>
+                        
+                    </LayoutFormSection>
+                    <LayoutFormSection title="Beginn und Ende">
+                        <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                            <InputDate label="Beginn" value="2024-10-01"/>
+                            <InputDate label="Ende" value="2025-01-30"/>
+                            <InputDate label="Wiedereintrittsdatum" value="2025-02-01"/>
+                        </div>
+                        <p class="text-gray-400 text-sm flex items-center gap-2 w-1/2 my-3">
+                            <ExclamationTriangleIcon class="w-4 h-4 text-orange-500 flex-shrink-0" />
+                            <span>Bildungskarenzzeit reduziert die Summe der anrechenbaren Zeit → Eintrag in Vordienstzeiten</span>
                         </p>
-                        <LayoutFormSection title="AMS Formular">
-                            <p>Bitte laden Sie hier das AMS Formular hoch.</p>
-                            <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="AMS Formular.pdf" kategorie="Sonstiges" />
-                        </LayoutFormSection>
-                    </div>
+                        <InputButton @click="activeTab = 'Vordienstzeiten'">Vordienstzeiten Eintrag erstellen</InputButton>
+                    </LayoutFormSection>
+                </div>
 
-                    <div v-show="'Firmenvereinbarung' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection>
-                            <p class="text-gray-400 text-sm flex items-center gap-2 w-1/2 my-3">
-                                <ExclamationTriangleIcon class="w-4 h-4 text-orange-500 flex-shrink-0" />
-                                <span>Download des Templates oder andere Lösung</span>
-                            </p>
-                            <p>Von HR wird eine Firmenvereinbarung erstellt (Dauer, Klauseln, Wiedereintrittsdatum)</p>
-                        </LayoutFormSection>
-                    </div>
+                <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <LayoutFormSection title="Beginn und Ende der Bildungskarenz">
+                        <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                            <InputDate label="Beginn" />
+                            <InputDate label="Ende" />
+                            
+                        </div>
+                        <p class="text-gray-400 text-sm flex items-center gap-2 w-1/2 my-3">
+                            <ExclamationTriangleIcon class="w-4 h-4 text-orange-500 flex-shrink-0" />
+                            <span>Bildungskarenzzeit reduziert die Summe der anrechenbaren Zeit → wird aktuell in Persis als Eintrag in Vordienstzeiten erfasst</span>
+                        </p>
+                        <InputButton @click="activeTab = 'Vordienstzeiten'">Vordienstzeiten Eintrag erstellen</InputButton>
+                    </LayoutFormSection>
+                </div>
+                
 
-                    <div v-show="'Vordienstzeiten' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <HRAPersonVordienstzeiten />
-                    </div>
+
+                <div v-show="'Dokumente' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <LayoutFormSection title="AMS Formular">
+                        <div class="mt-6 font-bold">Bestätigung über geplante Ausbildung</div>
+                        <p class="text-sm font-light text-Mittelgrau">Kursanmeldung, Inskriptionsbestätigung, ...</p>
+                        <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="WIFI Kurs SocialMedia.pdf" kategorie="Sonstiges" />
+                        <div class="mt-6 font-bold">AMS Formular</div>
+                        <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="AMS Bildungskarent Formular.pdf" kategorie="Sonstiges" />
+                    </LayoutFormSection>
+
+                    <LayoutFormSection title="Firmenvereinbarung">
+                        <div>
+                            <div class="grid grid-cols-[minmax(0rem,min-content)_1fr] gap-2 items-center">
+                                <InputCheckbox checkboxLabel="Klausel A"/>
+                                <InputCheckbox checkboxLabel="Klausel B"/>
+                                <InputCheckbox checkboxLabel="Klausel C"/>
+                            </div>
+                            <InputTextarea label="Klauseln" />    
+                        </div>
+                        <InputButton :secondary="true">Dokument erstellen</InputButton>
+                    </LayoutFormSection>
+                </div>
+
+                <div v-show="'Firmenvereinbarung' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                     
                 </div>
-            </main>
+
+                <div v-show="'Vordienstzeiten' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <HRAPersonVordienstzeiten />
+                </div>
+
+                <div v-show="'Benachrichtigungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    Hier können Benachrichtigungen versendet werden
+                </div>
+                
+            </div>
+            
         </div>
+
     </main>
     <div @click="showDialog('Anforderungen')" class="hover:cursor-pointer text-Mittelblau">Anforderungen</div>
     <LKWWDialog title="Anforderungen">

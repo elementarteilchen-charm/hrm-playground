@@ -5,11 +5,12 @@
         title: {type: String, default: ''}, 
         id: {type: String, default: ''}, 
         width: {type: String, default: '50vw'},
-        height: {type: String, default: '50vh'}
+        height: {type: String, default: '50vh'},
+        buttonCancel: {type: String, default: 'Abbrechen'},
+        buttonProceed: {type: String, default: 'Speichern'},
     })
-
-
 </script>
+
 <template>
 	<dialog :id="id ? id : title"
 	        class="shadow-lg p-0 bg-Blaugrau-10" 
@@ -31,10 +32,10 @@
 	                </main>
 
 	                <footer class="px-4 ">
-	                        <div class="flex justify-end space-x-6">
-	                            <button class="text-sm text-Mittelblau font-bold hover:underline">Abbrechen</button>
-	                            <button type="submit" class="bg-Mittelblau hover:bg-Hellblau text-white text-sm font-bold px-4 py-2">Speichern</button>
-	                        </div>
+                        <div class="flex justify-end space-x-6">
+                        	<InputButton :secondary="true">{{buttonCancel}}</InputButton>
+                            <InputButton>{{buttonProceed}}</InputButton>
+                        </div>
 	                </footer>
 	            </div>
 	        </form>

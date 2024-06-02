@@ -66,10 +66,17 @@ const menuOpen = useCookie('menuOpen')
                                     Events & Änderungen</a>
                             </div>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <ClockIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
-                            <a href="/hra/abwesenheiten/" class="">
-                                Abwesenheiten</a>
+                        <li >
+                            <div class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                                <ClockIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
+                                <a href="/hra/abwesenheiten/" class="">
+                                    Abwesenheiten</a>
+                            </div>
+                            <div class="flex ml-6 gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                                <Bars3Icon class="w-5 h-5 flex-shrink-0 text-blue-800" />
+                                <a href="/hra/abwesenheiten/" class="">
+                                    Reports</a>
+                            </div>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                             <ArrowLeftOnRectangleIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />

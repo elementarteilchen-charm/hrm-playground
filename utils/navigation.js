@@ -26,7 +26,6 @@ export  const topMenuItems = [
     ];
 
 
-
 export  const eventMenuItems = [
       {
         linkText: "Namensänderung",

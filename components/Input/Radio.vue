@@ -6,7 +6,9 @@
         checkedIdx: {type: Number, default: 0},
         width: {type: String, default: 'w-48 lg:w-5/6'}
     })
+
 const model = ref(props.options[props.checkedIdx]);
+
 </script>
 <template>
     <div class="self-center text-sm font-bold text-gray-700">

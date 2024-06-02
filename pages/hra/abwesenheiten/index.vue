@@ -1,16 +1,55 @@
 <script setup>
-  import {ChevronRightIcon, UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon} from '@heroicons/vue/24/outline'
-  const abwesenheitenActions = [
+  
+  const ma = mitarbeiterListe[0]
+  
+  const abwesenheitenListe = [
         'Elternkarenz',
+        'Familienzeit',
         'Bildungskarenz',
+        'Langzeitkrankenstand',
         'Unbezahlter Urlaub',
+        'Wehrdienst',
         'Milizübung'
       ]
-  const ma = mitarbeiterListe[0]
+  
+    const abwesenheitenLinks = {
+        'Elternkarenz': '/hra/abwesenheiten/elternkarenz',
+        'Familienzeit': '/hra/abwesenheiten/familienzeit',
+        'Bildungskarenz': '/hra/abwesenheiten/bildungskarenz',
+        'Langzeitkrankenstand': '/hra/abwesenheiten/langzeitkrankenstand',
+        'Unbezahlter Urlaub': '/hra/abwesenheiten/unbezahlterurlaub',
+        'Wehrdienst': '/hra/abwesenheiten/wehrdienst',
+        'Milizübung': '/hra/abwesenheiten/milizuebung' 
+    }
 
-  function bearbeiten(abwesenheitBezeichnung) {
-    alert(abwesenheitBezeichnung)
+  const gewaehlteAbwesenheit = ref('Elternkarenz');
+
+  function bearbeiten(abwesenheitBezeichnung, index) {
+    gewaehlteAbwesenheit.value = ma.abwesenheiten[index]
     document.getElementById(abwesenheitBezeichnung).showModal();
+  }
+
+  function showAbwesenheitSelektor() {
+    document.getElementById('abwesenheitSelektor').showModal();
+  }
+
+  function showNeueAbwesenheit() {
+    document.getElementById('abwesenheitSelektor').close();
+    document.getElementById(abwesenheitenListe[1]).showModal();
+  }
+
+  function verbleibendeTage(abwesenheit) {
+    let bisDate = new Date(abwesenheit.bis);
+    let currentDate = new Date();
+    let differenceInTime = bisDate - currentDate;
+    let differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
+    return differenceInDays;
+  }
+
+  function abgelaufen(abwesenheit) {
+    if (verbleibendeTage(abwesenheit) < 0)
+      return true
+    return false
   }
 
 </script>
@@ -26,107 +65,93 @@
 
     
     <div class="p-8">
-      <div class="bg-white p-3">
-        
+      <div class="bg-white pt-6 px-3">
+        <h2 class="text-Blaugrau text-xl mb-3">Bisherige Abwesenheiten</h2>
       
-        <table class="bg-white border-b text-sm  w-3/4">
+        <table class="table-auto bg-white border-b text-sm ">
           <thead class="font-bold text-muted bg-Blaugrau-10 ">
             <tr>
-              <th class="px-2 py-1">Abwesenheit</th>
-              <th class="px-2 py-1">Status</th>
-              <th class="px-2 py-1 text-center">Von</th>
-              <th class="px-2 py-1 text-center">Bis</th>
-              <th class="px-2 py-1 text-center">Bearbeiten</th>
+              <th class="px-3 py-1">Abwesenheit</th>
+              <th class="px-3 py-1 text-center">Von</th>
+              <th class="px-3 py-1 text-center">Bis</th>
+              <th class="px-3 py-1 text-center">Wiedereintritt</th>
+              <!-- <th class="px-3 py-1 text-center">Status</th> -->
+              <th class="px-3 py-1 text-center">Bemerkung</th>
+              <th class="px-3 py-1 text-center">Bearbeiten</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="abwesenheit, index in ma.abwesenheiten" 
                 class="hover:bg-Blaugrau-10 py-1 border-b ">
-              <td class="px-2 py-1">
+              <td class="px-3 py-2">
                 {{abwesenheit.art}}
               </td>
-              <td class="px-2 py-1">
-                <span v-if="abwesenheit.aktiv" 
-                      class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Gruen text-white text-xs">Laufend</span>
-              </td>
-              <td class="px-2 py-1 tabular-nums text-center">
+              <td class="px-3 py-1 tabular-nums text-center">
                 {{abwesenheit.von}}
               </td>
-              <td class="px-2 py-1 tabular-nums text-center">
+              <td class="px-3 py-1 tabular-nums text-center" 
+                  :class="{'bg-Orange-10': abgelaufen(abwesenheit), 'bg-Gruen-10': !abgelaufen(abwesenheit)}">
                 {{abwesenheit.bis}}
               </td>
-              <td class="px-2 py-1 text-center">
-                <button v-on:click="bearbeiten(abwesenheit.art)" href=""  class="text-Mittelblau hover:underline">
+              <td class="px-3 py-1 tabular-nums text-center">
+                {{abwesenheit.wiedereintritt}}
+              </td>
+<!--               <td class="px-3 py-1">
+                <span v-if="abwesenheit.aktiv" 
+                      class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Gruen text-white text-xs">Laufend</span>
+              </td> -->
+              <td class="px-3 py-1 w-[32ch]">
+                {{abwesenheit.bemerkung}}
+              </td>
+              <td class="px-3 py-1 text-center">
+                <button v-on:click="bearbeiten(abwesenheit.art, index)" href=""  class="text-Mittelblau hover:underline">
                   Bearbeiten
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
+
+        <div class="py-3 flex gap-6">
+          <InputButton v-on:click="showAbwesenheitSelektor" >Neue Abwesenheit erfassen</InputButton>
+        </div>
       </div>
 
     </div>
     
-    <template v-for="abwesenheit in abwesenheitenActions">
-     {{abwesenheit}}
-      <dialog :id="abwesenheit">
-        {{abwesenheit}}
-      </dialog>
+    <LKWWDialog id="abwesenheitSelektor" title="Neue Abwesenheit erfassen" buttonProceed="OK">
+      <p>Welche Abwesenheit soll erfasst werden?</p>
+      <div class="grid grid-cols-2">
+        <div class="space-y-2">
+          <InputRadio :options="abwesenheitenListe" />
+        </div>
+        <div class="">
+          <div v-for="abwesenheit in abwesenheitenListe">
+            <a :href="abwesenheitenLinks[abwesenheit]" class="text-Mittelblau hover:underline">{{abwesenheit}}</a>
+          </div>
+        </div>
+      </div>
+
+
+    </LKWWDialog>
+
+
+    <template v-for="abwesenheit in abwesenheitenListe">
+      <LKWWDialog :title="abwesenheit" height="60vh">
+        <div class="py-3">
+
+          <div class="grid grid-cols-[15ch_auto] gap-3">
+            <InputDate label="Beginn" :value="gewaehlteAbwesenheit.von"></InputDate>
+            <InputDate label="Ende" :value="gewaehlteAbwesenheit.bis"></InputDate>
+            <InputDate label="Wiedereintritt" :value="gewaehlteAbwesenheit.wiedereintritt"></InputDate>
+            <InputTextarea label="Bemerkung" :text="gewaehlteAbwesenheit.bemerkung"></InputTextarea>
+          </div>
+            <HRAFormsNachweisUploadBox />
+        </div>
+      </LKWWDialog>
     
     </template>
 </template>
 
-     <!--  <div class="px-3 py-3 bg-white border rounded">
-      <dialog :id="abwesenheit.art">
-        {{abwesenheit}}
-        
-      </dialog>
-          <div class="grid grid-cols-[19ch_8ch_12ch_12ch_12ch] border-b text-sm font-bold text-muted bg-Blaugrau-10"> 
-              <div class="px-2 py-1"> Abwesenheit </div>
-              <div class="px-2 py-1"> Status </div>
-              <div class="px-2 py-1 text-center"> Von </div>
-              <div class="px-2 py-1 text-center"> Bis </div>
-              <div class="px-2 py-1 text-center"> Bearbeiten </div>
-          </div>
-
-          <div v-for="abwesenheit, index in ma.abwesenheiten"  
-              class="grid grid-cols-[20ch_8ch_12ch_12ch_12ch]  
-                    hover:bg-Blaugrau-10
-                    py-1 border-b border-b-Blaugrau text-sm">
-            <div class="px-2 py-1">
-              {{abwesenheit.art}}
-            </div>
-            <div class="px-2 py-1">
-              <span v-if="abwesenheit.aktiv" 
-                  class="inline-block border-transparent h-5 px-2 py-[2px] rounded bg-Gruen text-white text-xs">Aktiv</span>
-            </div>
-            <div class="px-2 py-1 tabular-nums">
-              {{abwesenheit.von}}
-            </div>
-            <div class="px-2 py-1 tabular-nums">
-              {{abwesenheit.bis}}
-            </div>
-            <div class="px-2 py-1">
-              <a href="" class="text-Mittelblau hover:underline">Bearbeiten</a> 
-            </div>
-          </div>        
-
-      </div>
-       -->
-<!-- <div class="grid grid-cols-1 lg:grid lg:grid-cols-2 gap-6 px-8">
-    
-    <main>
-        <ul class="space-y-1">
-            <li v-for="item in eventsAktionen.auszeiten.items" class="">
-                <a :href="item.link" class="">
-                    <div class="flex gap-1 items-center inline-block text-Mittelblau hover:bg-Mittelblau hover:text-white hover:border-Mittelblau transition">
-                        <div class="p-1  transition">
-                            <ChevronRightIcon class="w-4 h-4" />
-                        </div>
-                        {{item.text}}
-                    </div>
-                </a>
-            </li>
-        </ul>
-    </main>
-</div> -->
+<style>
+</style>

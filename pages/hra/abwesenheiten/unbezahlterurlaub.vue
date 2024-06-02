@@ -1,127 +1,122 @@
 <script setup>
-import { CheckCircleIcon, EnvelopeIcon, ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
+import { ClockIcon, CheckCircleIcon, EnvelopeIcon, ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 import { showDialog } from '/utils/modal.js'
 
-const tabs = [
-    'Anfrage',
+const schritte = [
     'Dauer',
-    'Firmenvereinbarung',
-    'Historie',
-    'Durchführen'
-];
-
-const activeTab = ref(tabs[0]);
+    'Dokumente',
+    'Vordienstzeiten',
+    'Benachrichtigungen'
+]
+const activeTab = ref(schritte[0]);
 const zeigeAnforderungen = ref(false)
-const ma = mitarbeiterListe[0]
-
-const urlaubsanfrage = {
-	von: '2023-09-01',
-	bis: '2023-12-31',
-	gespraechsdatum: '2023-06-04',
-	firmenvereinbarung: true
-}
-
-const anfrage = ref(urlaubsanfrage)
+const historieAbwesenheiten = [
+    "Martina Daum am 23.05.2024 um 9:42",
+    "Petra Koller am 21.05.2024 um 14:12",
+    "Petra Koller am 03.05.2024 um 10:18",
+    ]
 </script>
 <template>
-    <div class="flex items-center py-3 justify-between">
-        <h1 class="my-3 text-3xl font-light text-Blaugrau">
-            Abwesenheiten
-        </h1>
-        <HRAMitarbeiterSuchfeld class="w-1/3" />
-    </div>
-    <main class="grid grid-rows-[auto_auto_auto] gap-6">
-        <HRAMitarbeiterInfoBox />
-        <div class="flex justify-between">
-            <NavigationHraMitarbeiterinnen :topMenuItems="abwesenheitenMenuItems" :active="5" />
-            <InputButton>Abschließen</InputButton>
+    
+    <header class="px-8 py-4">
+        <NavigationHraBreadcrumb 
+                :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
+                aktuell="Unbezahlter Urlaub"/>
+        <HRAMitarbeiterInfoBox headline="Abwesenheiten" />
+    </header>
+
+    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >
+
+        <div class="flex items-center gap-x-4 border rounded bg-white">
+            <div v-for="schritt, index in schritte">
+                <button 
+                    @click="activeTab = schritt"
+                    class="border-transparent rounded px-2 py-3 flex gap-2 items-center group">
+                    <div 
+                        class="rounded-full  text-white p-1 w-8 
+                                group-hover:bg-Mittelblau 
+                                group-hover:scale-125
+                                transition"
+                        :class="{'bg-Mittelblau': activeTab === schritt, 'bg-Blaugrau': activeTab != schritt}">
+                        {{index+1}} 
+                    </div> 
+                    <div class="group-hover:text-Mittelblau"
+                        :class="{'text-Mittelblau': activeTab === schritt, 'text-Blaugrau': activeTab != schritt}" >
+                        {{schritt}}
+                    </div>
+                </button>
+            </div>
         </div>
-        <div class="bg-white border border-t rounded overflow-hidden">
-            <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
-                <div>
-                    <NavigationHraTabMenu heading="Unbezahlter Urlaub" :tabs="tabs" @newtab="(ev) => activeTab = ev" />
-                </div>
-                <div class="px-4 py-4 border-l pb-12">
-                    <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection title="Beginn und Ende des unbezahlten Urlaubs">
-                            <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
-                                <InputDate label="Beginn" :value="anfrage.von" />
-                                <InputDate label="Ende" :value="anfrage.bis"/>
-                            </div>
-                            <!-- <p class="text-gray-400 text-sm flex items-center gap-2 w-1/2 my-3">
-                                   <ExclamationTriangleIcon class="w-4 h-4 text-orange-500 flex-shrink-0" />
-                                   <span>Bildungskarenzzeit reduziert die Summe der anrechenbaren Zeit → wird aktuell in Persis als Eintrag in Vordienstzeiten erfasst</span>
-                               </p> -->
-                        </LayoutFormSection>
-                    </div>
 
-                    <div v-show="'Anfrage' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection title="Anfrage">
-                            <p class="text-gray-400 text-sm flex items-center gap-2">
-                                <CheckCircleIcon class="w-4 h-4 text-green-500" />
-                                <span>Diese Daten können direkt geschrieben werden.</span>
-                            </p>
-                            <p class="text-gray-400 text-sm flex items-center gap-2">
-                                <ExclamationTriangleIcon class="w-4 h-4 text-orange-500" />
-                                <span>Diese Daten sind nicht in Persis vorhanden und werden nur in HRA erfasst</span>
-                            </p>
-                            <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
-                                <InputDate label="Gesprächstermin" />
-                                <InputTextarea label="Gesprächsnotizen" class="w-4/5 h-24" />
-                            </div>
-                        </LayoutFormSection>
-                    </div>
-
-                    <div v-show="'Firmenvereinbarung' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection>
-                            <p class="text-gray-400 text-sm flex items-center gap-2 w-1/2 my-3">
-                                <ExclamationTriangleIcon class="w-4 h-4 text-orange-500 flex-shrink-0" />
-                                <span>Download des Templates oder andere Lösung</span>
-                            </p>
-                            <p>Von HR wird eine Firmenvereinbarung erstellt (Dauer, Klauseln, Wiedereintrittsdatum)</p>
-                            <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="Firmenvereinbarung UU.pdf" kategorie="Sonstiges" />
-
-                        </LayoutFormSection>
-                    </div>
-                    <div v-show="'Historie' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection title="Vorige unbezahlte Urlaube">
-                            <table class="table-auto bg-white w-1/2">
-                                <thead>
-                                    <tr class="font-bold h-12 bg-gray-100">
-                                        <th class="text-left px-2">Von</th>
-                                        <th class="text-left px-2">Bis</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="milizuebung in ma.milizuebungen" class="text-sm hover:bg-blue-200 cursor-pointer">
-                                        <td class="px-2 py-1 border-b">{{milizuebung.von}}</td>
-                                        <td class="px-2 py-1 border-b">{{milizuebung.bis}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </LayoutFormSection>
-                    </div>
-                    <div v-show="'Durchführen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection title="Kontrolle und Abschluss">
-                        	<div class="space-y-3 mb-6">
-	                        	<CheckedItem>
-	                        		<p> {{ma.vorname}} {{ma.name}} hat am {{anfrage.gespraechsdatum}} unbezahlten Urlaub beantragt.</p>
-	                        	</CheckedItem>
-	                        	<CheckedItem>
-	                        		Beginn: {{anfrage.von}} <br>
-	                        		Ende: {{anfrage.bis}}
-	                        	</CheckedItem>
-	                        	<CheckedItem>
-	                        		<p> Die Firmenvereinbarung wurde hochgeladen.</p>
-	                        	</CheckedItem>
-                        	</div>
-                        	<InputButton>Alle Daten übernehmen und Benachrichtigungen versenden</InputButton>
-                        </LayoutFormSection>
+        <div class="bg-white border  rounded">
+            <div class="px-4 py-4 ">
+                <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <LayoutFormSection title="Anfrage Unbezahlter Urlaub">
+                        <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                            <InputDate label="Gesprächstermin" />
+                            <InputTextarea label="Gesprächsnotizen" class="w-4/5 h-24" />
+                        </div>
+                    </LayoutFormSection>
+                    <LayoutFormSection title="Beginn und Ende des unbezahlten Urlaubs">
+                        <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                            <InputDate label="Beginn" />
+                            <InputDate label="Ende" />
+                            <InputDate label="Wiedereintrittsdatum" />
+                        </div>
+                        <!-- <p class="text-gray-400 text-sm flex items-center gap-2 w-1/2 my-3">
+                               <ExclamationTriangleIcon class="w-4 h-4 text-orange-500 flex-shrink-0" />
+                               <span>Bildungskarenzzeit reduziert die Summe der anrechenbaren Zeit → wird aktuell in Persis als Eintrag in Vordienstzeiten erfasst</span>
+                           </p> -->
+                    </LayoutFormSection>
+                    <div class="flex justify-end">
+                        <InputButton>Speichern</InputButton>
                     </div>
                 </div>
-            </main>
+
+                <div v-show="'Benachrichtigungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <LayoutFormSection title="Benachrichtigungen">
+                        <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                            <InputCheckbox label="Personalverrechnung" />
+                        </div>
+                    </LayoutFormSection>
+                    <div class=" flex justify-start">
+                        <InputButton>Benachrichtigung jetzt versenden</InputButton>
+                    </div>
+                </div>
+
+                <div v-show="'Dokumente' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <LayoutFormSection title="Firmenvereinbarung">
+                        <div>
+                            <div class="grid grid-cols-[minmax(0rem,min-content)_1fr] gap-2 items-center">
+                                <InputCheckbox checkboxLabel="Klausel A"/>
+                                <InputCheckbox checkboxLabel="Klausel B"/>
+                                <InputCheckbox checkboxLabel="Klausel C"/>
+                            </div>
+                            <InputTextarea label="Klauseln" />    
+                        </div>
+                        <InputButton :secondary="true">Dokument erstellen</InputButton>
+                    </LayoutFormSection>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-4 py-2 bg-white border rounded ">
+            <details class="text-sm">
+                <summary>
+                    Letzte Änderung durch <b>Martina Daum</b>  am <b>23.05.2024</b> um 9:42
+                </summary>
+                <div class="mt-4 mb-2 ml-4 font-bold">
+                    Vorherige Änderungen:
+                </div>
+                <ul class="mt-1 ml-4 space-y-1">
+                    <li v-for="item in historieAbwesenheiten">{{item}}</li>
+                </ul>
+                    
+            </details>
         </div>
     </main>
+
+   
     <div @click="showDialog('Anforderungen')" class="hover:cursor-pointer text-Mittelblau">Anforderungen</div>
     <LKWWDialog title="Anforderungen">
         <ul>

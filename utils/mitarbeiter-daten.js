@@ -67,11 +67,11 @@ export const mitarbeiterListe = [{
             { von: '01.10.1987', bis: '14.06.1988', anrechenbare_zeit: 0, beruf: 'nicht erfasst', firma: 'Öst.Bundesheer' },
         ],
         abwesenheiten: [
-            { art: "Bildungskarenz", von: '2024-04-01', bis: '2024-08-31', aktiv: true },
-            { art: "Unbezahlter Urlaub", von: '2019-09-01', bis: '2019-09-30' },
-            { art: "Bildungskarenz", von: '2014-05-01', bis: '2015-04-30' },
-            { art: "Elternkarenz", von: '2013-05-01', bis: '2014-04-30' },
-            { art: "Elternkarenz", von: '2009-04-01', bis: '2011-03-31' },
+            { art: "Bildungskarenz", von: '2024-04-01', bis: '2024-08-31', wiedereintritt: '2024-09-01',  aktiv: true, bemerkung: '' },
+            { art: "Unbezahlter Urlaub", von: '2019-09-01', bis: '2019-09-30', wiedereintritt: '2019-10-02',  bemerkung: 'Vorzeitig beendet.' },
+            { art: "Bildungskarenz", von: '2014-05-01', bis: '2015-04-30', wiedereintritt: '',  bemerkung: 'Karenzverlängerung' },
+            { art: "Elternkarenz", von: '2013-05-01', bis: '2014-04-30', wiedereintritt: '',  bemerkung: 'Von 2 Jahren auf 18 Monate verkürzt.' },
+            { art: "Elternkarenz", von: '2009-04-01', bis: '2011-03-31', wiedereintritt: '',  bemerkung:  '' },
         ],
         events: [
             { art: "Geburt", von: '2023-11-18', bis: '', aktiv: false },
