@@ -5,16 +5,12 @@ import { showDialog } from '/utils/modal.js'
 const schritte = [
     'Dauer',
     'Dokumente',
-    'Vordienstzeiten',
+    // 'Vordienstzeiten',
     'Benachrichtigungen'
 ]
 const activeTab = ref(schritte[0]);
 const zeigeAnforderungen = ref(false)
-const historieAbwesenheiten = [
-    "Martina Daum am 23.05.2024 um 9:42",
-    "Petra Koller am 21.05.2024 um 14:12",
-    "Petra Koller am 03.05.2024 um 10:18",
-    ]
+
 </script>
 <template>
     
@@ -22,11 +18,14 @@ const historieAbwesenheiten = [
         <NavigationHraBreadcrumb 
                 :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
                 aktuell="Unbezahlter Urlaub"/>
-        <HRAMitarbeiterInfoBox headline="Abwesenheiten" />
+        <HRAMitarbeiterInfoBox headline="" />
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >
 
+        <div class="text-xl text-Mittelblau font-light">
+            Unbezahlter Urlaub
+        </div>
         <div class="flex items-center gap-x-4 border rounded bg-white">
             <div v-for="schritt, index in schritte">
                 <button 
@@ -47,6 +46,8 @@ const historieAbwesenheiten = [
                 </button>
             </div>
         </div>
+
+        
 
         <div class="bg-white border  rounded">
             <div class="px-4 py-4 ">

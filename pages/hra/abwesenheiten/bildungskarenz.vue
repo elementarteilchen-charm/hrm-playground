@@ -23,7 +23,9 @@ const zeigeAnforderungen = ref(false)
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >
-
+        <div class="text-xl text-Mittelblau font-light">
+            Bildungskarenz
+        </div>
         <div class="flex items-center gap-x-4 border rounded bg-white">
 
             <div v-for="schritt, index in schritte">
@@ -128,7 +130,19 @@ const zeigeAnforderungen = ref(false)
             </div>
             
         </div>
-
+        <div class="px-4 py-2 bg-white border rounded ">
+            <details class="text-sm">
+                <summary>
+                    Letzte Änderung durch <b>Martina Daum</b>  am <b>23.05.2024</b> um 9:42
+                </summary>
+                <div class="mt-4 mb-2 ml-4 font-bold">
+                    Vorherige Änderungen:
+                </div>
+                <ul class="mt-1 ml-4 space-y-1">
+                    <li v-for="item in historieAbwesenheiten">{{item}}</li>
+                </ul>
+            </details>
+        </div>
     </main>
     <div @click="showDialog('Anforderungen')" class="hover:cursor-pointer text-Mittelblau">Anforderungen</div>
     <LKWWDialog title="Anforderungen">

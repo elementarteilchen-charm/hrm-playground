@@ -1,13 +1,31 @@
 <script setup>
 import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/outline';
-
+import {abwesenheitenListe, abwesenheitenMenuItems} from '/utils/abwesenheitenConfig.js'
 
 // const zeigeHRM = ref(false)
 const zeigeHRM = useCookie('zeigeHRM')
 const route = useRoute()
 const menuOpen = useCookie('menuOpen')
 
-
+  // const abwesenheitenListe = [
+  //       'Elternkarenz',
+  //       'Familienzeit',
+  //       'Bildungskarenz',
+  //       'Langzeitkrankenstand',
+  //       'Unbezahlter Urlaub',
+  //       'Wehrdienst',
+  //       'Milizübung'
+  //     ]
+  
+  //   const abwesenheitenLinks = {
+  //       'Elternkarenz': '/hra/abwesenheiten/elternkarenz',
+  //       'Familienzeit': '/hra/abwesenheiten/familienzeit',
+  //       'Bildungskarenz*': '/hra/abwesenheiten/bildungskarenz',
+  //       'Langzeitkrankenstand': '/hra/abwesenheiten/langzeitkrankenstand',
+  //       'Unbezahlter Urlaub*': '/hra/abwesenheiten/unbezahlterurlaub',
+  //       'Wehrdienst': '/hra/abwesenheiten/wehrdienst',
+  //       'Milizübung': '/hra/abwesenheiten/milizuebung' 
+  //   }
 </script>
 <template>
     <div class="grid grid-rows-[55px_1fr_1rem] bg-Blaugrau-10 h-screen">
@@ -76,6 +94,12 @@ const menuOpen = useCookie('menuOpen')
                                 <Bars3Icon class="w-5 h-5 flex-shrink-0 text-blue-800" />
                                 <a href="/hra/abwesenheiten/" class="">
                                     Reports</a>
+                            </div>
+                            <div class="text-sm">
+                              <div v-for="abwesenheit in abwesenheitenListe" class="flex ml-6 gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                                <ChevronRightIcon class="w-5 h-5 flex-shrink-0 text-blue-800"/>
+                                <a :href="abwesenheitenLinks[abwesenheit]" class="">{{abwesenheit}}</a>
+                              </div>
                             </div>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">

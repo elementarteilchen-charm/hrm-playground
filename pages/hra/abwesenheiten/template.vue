@@ -9,11 +9,7 @@ const schritte = [
 ]
 const activeTab = ref(schritte[0]);
 const zeigeAnforderungen = ref(false)
-const historieAbwesenheiten = [
-    "Martina Daum am 23.05.2024 um 9:42",
-    "Petra Koller am 21.05.2024 um 14:12",
-    "Petra Koller am 03.05.2024 um 10:18",
-    ]
+
 </script>
 <template>
     
@@ -106,7 +102,6 @@ const historieAbwesenheiten = [
                 <ul class="mt-1 ml-4 space-y-1">
                     <li v-for="item in historieAbwesenheiten">{{item}}</li>
                 </ul>
-                    
             </details>
         </div>
     </main>

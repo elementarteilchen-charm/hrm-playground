@@ -4,16 +4,11 @@ import { showDialog } from '/utils/modal.js'
 const schritte = [
     'Dauer',
     'Dokumente',
-    'Vordienstzeiten',
     'Benachrichtigungen'
 ]
 const activeTab = ref(schritte[0]);
 const zeigeAnforderungen = ref(false)
-const historieAbwesenheiten = [
-    "Martina Daum am 23.05.2024 um 9:42",
-    "Petra Koller am 21.05.2024 um 14:12",
-    "Petra Koller am 03.05.2024 um 10:18",
-    ]
+
 </script>
 <template>
     
@@ -70,47 +65,19 @@ const historieAbwesenheiten = [
                 </div>
 
                 <div v-show="'Dokumente' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                    <LayoutFormSection title="Firmenvereinbarung">
+                    <LayoutFormSection title="Bestätigung für das Bundesheer">
                         <div>
-                            <div class="grid grid-cols-[minmax(0rem,min-content)_1fr] gap-2 items-center">
-                                <InputCheckbox checkboxLabel="Klausel A"/>
-                                <InputCheckbox checkboxLabel="Klausel B"/>
-                                <InputCheckbox checkboxLabel="Klausel C"/>
-                            </div>
-                            <InputTextarea label="Klauseln" />    
+                            <InputTextarea label="Zusatztext" />    
                         </div>
-                        <InputButton :secondary="true">Dokument erstellen</InputButton>
+                        <InputButton>Bestätigung erstellen</InputButton>
                     </LayoutFormSection>
-                    <div v-show="'Bestätigung für BH' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <LayoutFormSection title="Bestätigung für BH erstellen">
-                            <p class="mb-3 text-gray-400 text-sm flex items-center gap-2">
-                                <ExclamationTriangleIcon class="w-4 h-4 text-orange-500" />
-                                <span>Diese Daten werden nicht in Persis erfasst und werden nur in HRA gespeichert</span>
-                            </p>
-                            <InputButton>Bestätigung erstellen / runter laden</InputButton>
-                        </LayoutFormSection>
-                    </div>
+ 
                 </div>
 
                 <div v-show="'Benachrichtigungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                    <LayoutFormSection title="Info an die Personalverrechnung">
-                        <p class="text-gray-400 text-sm flex items-center gap-2">
-                            <CheckCircleIcon class="w-4 h-4 text-green-500" />
-                            <span>Diese Daten können direkt geschrieben werden.</span>
-                        </p>
-                        <p class="mb-3 text-gray-400 text-sm flex items-center gap-2">
-                            <ExclamationTriangleIcon class="w-4 h-4 text-orange-500" />
-                            <span>Diese Daten werden nicht in Persis erfasst und werden nur in HRA gespeichert</span>
-                        </p>
-                        <InputButton>Personalverrechnung über die Milizübung informieren</InputButton>
-                        <div class="mt-6">
-                            <h3 class="mb-1 font-bold">Verlauf</h3>
-                            31.07.2023: Info an Personalverrechnung versendet.
-                        </div>
-                    </LayoutFormSection>
                     <LayoutFormSection title="Benachrichtigungen">
                         <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
-                            <InputCheckbox label="Personalverrechnung" />
+                            <InputCheckbox label="Personalverrechnung" :checked="true"/>
                         </div>
                     </LayoutFormSection>
                     <div class=" flex justify-start">
@@ -140,18 +107,13 @@ const historieAbwesenheiten = [
     <div @click="showDialog('Anforderungen')" class="hover:cursor-pointer text-Mittelblau">Anforderungen</div>
     <LKWWDialog title="Anforderungen">
         <ul>
-            <li>Anfrage für unbezahlten Urlaub -> Gespräch mit HR</li>
-            <li>Es wird eine Firmenvereinbarung erstellt (Dauer, Klauseln, Wiedereintrittsdatum)</li>
-            <li>Erfassung in "Beschäftigung" in Persis</li>
-            <li>Es erfolgt die Meldung an die Personalverrechnung</li>
-            <li>MA*in wird "Inaktiv" in MATATOR</li>
-            <li>Verbesserungswunsch:
-                <ul class="ml-6">
-                    <li>Derzeit ist nur ein Datensatz möglich.</li>
-                    <li>Dadurch geht die Historie verloren</li>
-                    <li>Erfassung mehrere Datensätze ist wünschenswert</li>
-                </ul>
-            </li>
+            <li>Notwendig ist die Vorlage des Einberufungsbefehls</li>
+            <li>Ablage in Digitaler Akte</li>
+            <li>Bestätigung vom Unternehmen für BH</li>
+            <li>Frage: Word Vorlage? Oder wird individuell erstellt?</li>
+            <li>Info an Personalverrechung</li>
+            <li>MA bleibt aktiv</li>
+            <li>Eintrag in AnAb für Abwesenheit</li>
         </ul>
     </LKWWDialog>
 </template>

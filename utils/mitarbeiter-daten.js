@@ -126,3 +126,8 @@ export const mitarbeiterListe = [{
     },
 
 ]
+export const historieAbwesenheiten = [
+    "Bis-Datum eingetragen. Martina Daum am 23.05.2024 um 9:42",
+    "Dokument 'Nachweis.pdf' hochgeladen. Petra Koller am 21.05.2024 um 14:12",
+    "Von-Datum eingetragen. Petra Koller am 03.05.2024 um 10:18",
+]

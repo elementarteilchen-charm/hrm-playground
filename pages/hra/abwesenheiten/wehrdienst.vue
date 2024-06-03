@@ -22,7 +22,7 @@ const ma = mitarbeiterListe[0]
     </div>
     <main class="grid grid-rows-[auto_auto_auto] gap-6">
         <HRAMitarbeiterInfoBox />
-        <NavigationHraMitarbeiterinnen :topMenuItems="abwesenheitenMenuItems" :active="4" />
+        
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
                 <NavigationHraTabMenu heading="Wehr- & Zivildienst" :tabs="tabs" @newtab="(ev) => activeTab = ev" />

@@ -220,34 +220,3 @@ export  const eventMenuItems = [
       ]
     }
   } 
-export  const abwesenheitenMenuItems = [
-      {
-        linkText: "Karenz",
-        link: "/hra/abwesenheiten/elternkarenz",
-      },
-      {
-        linkText: "Familienzeit",
-        link: "/hra/abwesenheiten/familienzeit",
-      },
-      {
-        linkText: "Bildungskarenz",
-        link: "/hra/abwesenheiten/Bildungskarenz",
-      },
-      {
-        linkText: "Milizübung",
-        link: "/hra/abwesenheiten/Milizuebung",
-      },
-      {
-        linkText: "Wehr- & Zivildienst  ",
-        link: "/hra/abwesenheiten/wehrdienst",
-      },
-      {
-        linkText: "Unbezahlter Urlaub",
-        link: "/hra/abwesenheiten/unbezahlterurlaub",
-      },
-      {
-        linkText: "Langzeit Krankenstand ",
-        link: "/hra/abwesenheiten/langzeitkrankenstand",
-      },
-
-    ];

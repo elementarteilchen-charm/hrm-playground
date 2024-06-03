@@ -15,9 +15,9 @@
     const abwesenheitenLinks = {
         'Elternkarenz': '/hra/abwesenheiten/elternkarenz',
         'Familienzeit': '/hra/abwesenheiten/familienzeit',
-        'Bildungskarenz*': '/hra/abwesenheiten/bildungskarenz',
+        'Bildungskarenz': '/hra/abwesenheiten/bildungskarenz',
         'Langzeitkrankenstand': '/hra/abwesenheiten/langzeitkrankenstand',
-        'Unbezahlter Urlaub*': '/hra/abwesenheiten/unbezahlterurlaub',
+        'Unbezahlter Urlaub': '/hra/abwesenheiten/unbezahlterurlaub',
         'Wehrdienst': '/hra/abwesenheiten/wehrdienst',
         'Milizübung': '/hra/abwesenheiten/milizuebung' 
     }
