@@ -19,7 +19,7 @@ const zeigeAnforderungen = ref(false)
         <NavigationHraBreadcrumb 
                 :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
                 aktuell="Bildungskarenz"/>
-        <HRAMitarbeiterInfoBox headline="Abwesenheiten" />
+        <HRAMitarbeiterInfoBox headline="" />
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >
@@ -62,7 +62,7 @@ const zeigeAnforderungen = ref(false)
                         </div>
                         
                     </LayoutFormSection>
-                    <LayoutFormSection title="Beginn und Ende">
+                    <LayoutFormSection title="Beginn und Ende der Bildungskarenz">
                         <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                             <InputDate label="Beginn" value="2024-10-01"/>
                             <InputDate label="Ende" value="2025-01-30"/>

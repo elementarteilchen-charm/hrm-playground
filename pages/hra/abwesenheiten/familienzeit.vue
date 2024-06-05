@@ -10,25 +10,7 @@
     
     const activeTab = ref(schritte[0]);
     const zeigeAnforderungen = ref(false)
-    const abwesenheitenListe = [
-          'Elternkarenz',
-          'Familienzeit',
-          'Bildungskarenz',
-          'Langzeitkrankenstand',
-          'Unbezahlter Urlaub',
-          'Wehrdienst',
-          'Milizübung'
-        ]
-    
-      const abwesenheitenLinks = {
-          'Elternkarenz': '/hra/abwesenheiten/elternkarenz',
-          'Familienzeit': '/hra/abwesenheiten/familienzeit',
-          'Bildungskarenz*': '/hra/abwesenheiten/bildungskarenz',
-          'Langzeitkrankenstand': '/hra/abwesenheiten/langzeitkrankenstand',
-          'Unbezahlter Urlaub*': '/hra/abwesenheiten/unbezahlterurlaub',
-          'Wehrdienst': '/hra/abwesenheiten/wehrdienst',
-          'Milizübung': '/hra/abwesenheiten/milizuebung' 
-      }
+
 </script>
 
 <template>
@@ -71,7 +53,7 @@
                 <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                     <h3 class="font-bold text-xl">Geburtstermin und Geburtsurkunde</h3>  
                     
-                    <LayoutFormSection title="Wochenhilfe">
+                    <LayoutFormSection title="">
                       <div class="grid lg:grid-cols-1 gap-4">
                           <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                             <InputDate label="Schwangerschaftsbestätigung" />
