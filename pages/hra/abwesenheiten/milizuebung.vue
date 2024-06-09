@@ -16,11 +16,14 @@ const zeigeAnforderungen = ref(false)
         <NavigationHraBreadcrumb 
                 :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
                 aktuell="Milizübung"/>
-        <HRAMitarbeiterInfoBox headline="Milizübung" />
+        <HRAMitarbeiterInfoBox headline="" />
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >
-
+        <div class="text-xl text-Mittelblau font-light">
+            Milizübung
+        </div>
+        
         <div class="flex items-center gap-x-4 border rounded bg-white">
             <div v-for="schritt, index in schritte">
                 <button 
@@ -46,25 +49,26 @@ const zeigeAnforderungen = ref(false)
             <div class="px-4 py-4 ">
                 <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                     
-                    <LayoutFormSection title="Dauer">
+                    <LayoutFormSection title="Beginn und Ende der Milizübung">
                         <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                             <InputDate label="Beginn" />
                             <InputDate label="Ende" />
                             <InputDate label="Wiedereintrittsdatum" />
                         </div>
                     </LayoutFormSection>
-                    <LayoutFormSection title="Einberufungsbefehl">
-                        <h2 class="mt-3">
-                            Bitte hier den aktuellen Einberufungsbefehl hochladen:
-                        </h2>
-                        <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="Einberufungsbefehl.pdf" kategorie="Sonstiges" />
-                    </LayoutFormSection>
+
                     <div class="flex justify-end">
                         <InputButton>Speichern</InputButton>
                     </div>
                 </div>
 
                 <div v-show="'Dokumente' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                    <LayoutFormSection title="Einberufungsbefehl">
+                        <h2 class="mt-3">
+                            Bitte hier den aktuellen Einberufungsbefehl hochladen:
+                        </h2>
+                        <HRAFormsNachweisUploadBox ordner="05 Dokumente + Urkunden" dateiname="Einberufungsbefehl.pdf" kategorie="Sonstiges" />
+                    </LayoutFormSection>
                     <LayoutFormSection title="Bestätigung für das Bundesheer">
                         <div>
                             <InputTextarea label="Zusatztext" />    
