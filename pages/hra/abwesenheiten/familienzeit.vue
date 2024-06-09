@@ -2,7 +2,7 @@
     import { showDialog } from '/utils/modal.js'
 
     const schritte = [
-        'Dauer',
+        'Termine und Dauer',
         'Dokumente',
         'Familienangehörige',
         'Benachrichtigungen'
@@ -50,19 +50,43 @@
         
         <div class="bg-white border  rounded">
             <div class="px-4 py-4">
-                <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                <div v-show="'Termine und Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                     <h3 class="font-bold text-xl">Geburtstermin und Geburtsurkunde</h3>  
                     
                     <LayoutFormSection title="">
-                      <div class="grid lg:grid-cols-1 gap-4">
-                          <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                        <div class="space-y-8">
+                        <div class="grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                             <InputDate label="Schwangerschaftsbestätigung" />
-                            <InputDate label="Voraussichtlicher Geburtstermin" />
-                            <InputDate label="Tatsächlicher Geburtstermin" />
-                            <InputDate label="Wochenhilfe Start" />
-                            <InputDate label="Wochenhilfe Ende" />
+                        </div>
+
+                        <div class="grid grid-cols-2">  
+                            <div class="grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                                <InputDate label="Voraussichtlicher Geburtstermin" />
+                            </div>
+                            <div class="grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                                <InputDate label="Tatsächlicher Geburtstermin" />
+                            </div>
+                        </div>
+                          
+                        <div class="grid grid-cols-2">  
+                            <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                                <InputDate label="Wochenhilfe Start" />
+                            </div>
+                              <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                                <InputDate label="Wochenhilfe Ende" />
+                              </div>
                           </div>
-                      </div>
+
+                          <div class="grid grid-cols-2">  
+                            <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                                <InputDate label="Familienzeit Start" />
+                            </div>
+
+                            <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                                <InputDate label="Familienzeit Ende" />
+                            </div>
+                          </div>
+                          </div>
                     </LayoutFormSection>
                     
                    <div>

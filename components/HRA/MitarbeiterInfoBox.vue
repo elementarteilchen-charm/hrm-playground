@@ -11,6 +11,7 @@ const props = defineProps({
 <template>
     <div>
         <div class="flex items-center py-1 justify-between">
+            <LayoutMAHauptbereiche />
             <h1 class="text-2xl 2xl:text-3xl font-light text-Blaugrau">
                 {{headline}}
             </h1>

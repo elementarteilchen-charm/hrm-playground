@@ -18,12 +18,9 @@ const addNewItem = ref(false);
 
 <template>
     <header class="px-8 py-4  print:hidden">
-
-        <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell=""/>
-
         <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class="mb-6" />
     </header>
-    
+        <!-- <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell=""/> -->
     <main class="px-8 grid grid-cols-4 gap-4 2xl:gap-8">
         <div class="bg-white p-4 rounded">
             <header class="font-bold text-xl mb-2">

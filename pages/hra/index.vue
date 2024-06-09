@@ -38,7 +38,6 @@
             <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" :active="0" />
         </div>
         
-
         <div class="mt-6 px-16">
             <div class="bg-white border border-t rounded overflow-hidden">
                 <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">

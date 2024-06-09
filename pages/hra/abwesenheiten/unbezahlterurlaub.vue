@@ -3,7 +3,7 @@ import { ClockIcon, CheckCircleIcon, EnvelopeIcon, ExclamationTriangleIcon } fro
 import { showDialog } from '/utils/modal.js'
 
 const schritte = [
-    'Dauer',
+    'Dauer und Termine',
     'Dokumente',
     // 'Vordienstzeiten',
     'Benachrichtigungen'
@@ -51,7 +51,7 @@ const zeigeAnforderungen = ref(false)
 
         <div class="bg-white border  rounded">
             <div class="px-4 py-4 ">
-                <div v-show="'Dauer' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                <div v-show="'Dauer und Termine' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                     <LayoutFormSection title="Anfrage Unbezahlter Urlaub">
                         <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                             <InputDate label="Gesprächstermin" />
@@ -69,7 +69,7 @@ const zeigeAnforderungen = ref(false)
                                <span>Bildungskarenzzeit reduziert die Summe der anrechenbaren Zeit → wird aktuell in Persis als Eintrag in Vordienstzeiten erfasst</span>
                            </p> -->
                     </LayoutFormSection>
-                    <div class="flex justify-end">
+                    <div class="">
                         <InputButton>Speichern</InputButton>
                     </div>
                 </div>
