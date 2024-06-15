@@ -13,14 +13,13 @@ const props = defineProps({
 
     <header class="sticky top-0 pb-4 px-8 bg-Blaugrau-10">
         
-
         <div class="flex justify-between items-center">
             <slot name="breadcrumb"></slot>
             <HRAMitarbeiterSuchfeld class="w-1/3" />
         </div>
-            <h1 class="mb-4 text-3xl font-light text-Blaugrau">
-                {{headline}}
-            </h1>
+        <h1 class="mb-4 text-3xl font-light text-Blaugrau">
+            {{headline}} 
+        </h1>
 
         <div class="mb-4 grid grid-cols-[16rem_1fr] gap-2 border bg-white print:hidden">
             

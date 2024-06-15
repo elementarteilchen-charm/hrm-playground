@@ -2,30 +2,10 @@
 import { CurrencyEuroIcon, DocumentTextIcon, UserCircleIcon, ClockIcon, ArrowRightOnRectangleIcon, ArrowLeftOnRectangleIcon, PlusCircleIcon, Bars3Icon, ChevronRightIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/outline';
 import {abwesenheitenListe, abwesenheitenMenuItems} from '/utils/abwesenheitenConfig.js'
 
-// const zeigeHRM = ref(false)
-const zeigeHRM = useCookie('zeigeHRM')
 const route = useRoute()
+const zeigeHRM = useCookie('zeigeHRM')
 const menuOpen = useCookie('menuOpen')
 
-  // const abwesenheitenListe = [
-  //       'Elternkarenz',
-  //       'Familienzeit',
-  //       'Bildungskarenz',
-  //       'Langzeitkrankenstand',
-  //       'Unbezahlter Urlaub',
-  //       'Wehrdienst',
-  //       'Milizübung'
-  //     ]
-  
-  //   const abwesenheitenLinks = {
-  //       'Elternkarenz': '/hra/abwesenheiten/elternkarenz',
-  //       'Familienzeit': '/hra/abwesenheiten/familienzeit',
-  //       'Bildungskarenz*': '/hra/abwesenheiten/bildungskarenz',
-  //       'Langzeitkrankenstand': '/hra/abwesenheiten/langzeitkrankenstand',
-  //       'Unbezahlter Urlaub*': '/hra/abwesenheiten/unbezahlterurlaub',
-  //       'Wehrdienst': '/hra/abwesenheiten/wehrdienst',
-  //       'Milizübung': '/hra/abwesenheiten/milizuebung' 
-  //   }
 </script>
 <template>
     <div class="grid grid-rows-[55px_1fr_1rem] bg-Blaugrau-10 h-screen">

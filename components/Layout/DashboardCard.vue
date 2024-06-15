@@ -4,7 +4,7 @@ import { PencilSquareIcon } from '@heroicons/vue/24/outline'
 const props = defineProps({
     header: { type: String, default: null },
     buttonText: { type: String, default: 'Bearbeiten' },
-    buttonLink: { type: String},
+    buttonLink: { type: String, default: ''},
 })
 </script>
 
@@ -18,7 +18,7 @@ const props = defineProps({
             <slot></slot>
         </div>
 
-        <div class="pt-3">
+        <div v-if="buttonLink" class="pt-3">
             <div class="px-3 flex justify-end">
                 <a :href="buttonLink"
                 class="flex gap-2 items-center bg-Mittelblau text-white px-3 py-2 text-sm font-bold">

@@ -26,7 +26,7 @@ const ma = mitarbeiterListe[0]
 
     <main class="grid grid-rows-[auto_auto_auto] gap-8 px-8">
 
-        <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Vertrag" />
+        <!-- <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Vertrag" /> -->
 
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">

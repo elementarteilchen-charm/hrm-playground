@@ -2,7 +2,7 @@
     import { PencilIcon, MinusCircleIcon, PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid' 
 
     const ma = mitarbeiterListe[0]
-    const quickNav = ref(true)
+    const quickNav = ref(false)
 
     const quickLinks = [
         {

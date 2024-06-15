@@ -10,11 +10,13 @@ const props = defineProps({
 </script>
 <template>
     <div>
-        <div class="flex items-center py-1 justify-between">
+        <div class="flex items-center mt-3 mb-6 justify-between">
+            
             <LayoutMAHauptbereiche />
-            <h1 class="text-2xl 2xl:text-3xl font-light text-Blaugrau">
+
+            <!-- <h1 class="text-2xl 2xl:text-3xl font-light text-Blaugrau">
                 {{headline}}
-            </h1>
+            </h1> -->
             <!-- <HRAMitarbeiterSuchfeld class="w-1/3" /> -->
         </div>
 

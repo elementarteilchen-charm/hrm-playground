@@ -5,18 +5,9 @@ import {
 from '@heroicons/vue/24/outline'
 
 const tabs = [
-    'Persönlich',
-    'Adressen und Kontakt',
-    'Staatsangehörigkeit',
-    'Bewilligungen',
-    'Bankverbindung',
-    'Familienangehörige',
-    'Familienstand',
-    'Sozialversicherung',
-    'Notfallkontakt',
-    'Invalidität',
-
-];
+    'Persönlich', 'Adressen und Kontakt', 'Staatsangehörigkeit', 'Bewilligungen', 'Bankverbindung',
+    'Familienangehörige', 'Familienstand', 'Sozialversicherung', 'Notfallkontakt', 'Invalidität',
+ ];
 
 const activeTab = ref(tabs[0]);
 
