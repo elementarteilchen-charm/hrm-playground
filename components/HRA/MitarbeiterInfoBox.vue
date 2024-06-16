@@ -11,13 +11,7 @@ const props = defineProps({
 <template>
     <div>
         <div class="flex items-center mt-3 mb-6 justify-between">
-            
             <LayoutMAHauptbereiche />
-
-            <!-- <h1 class="text-2xl 2xl:text-3xl font-light text-Blaugrau">
-                {{headline}}
-            </h1> -->
-            <!-- <HRAMitarbeiterSuchfeld class="w-1/3" /> -->
         </div>
 
         <div class="grid grid-cols-[12rem_1fr] gap-2 border bg-white print:hidden">

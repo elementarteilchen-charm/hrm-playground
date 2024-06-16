@@ -11,14 +11,9 @@ const ma = mitarbeiterListe[0]
 const aktiverOrdner = ref('01')
 </script>
 <template>
-
-    <NavigationHraStickyHeader headline="Persönliche Daten bearbeiten">
-        <template #breadcrumb>
-            <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell="Dokumente" />
-        </template>
-        <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Dokumente" />
-    </NavigationHraStickyHeader>
-
+    <header class="px-8 py-1 print:hidden">
+        <HRAMitarbeiterInfoBox headline="Dokumente" class="mb-2"/>
+    </header>
 
     <div class="mx-8 bg-white border rounded">
 

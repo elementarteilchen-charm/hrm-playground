@@ -15,10 +15,10 @@ const zeigeAnforderungen = ref(false)
 <template>
     
     <header class="px-8 py-4">
-        <NavigationHraBreadcrumb 
-                :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
-                aktuell="Unbezahlter Urlaub"/>
         <HRAMitarbeiterInfoBox headline="" />
+        <NavigationHraBreadcrumb 
+                :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
+                aktuell="Unbezahlter Urlaub"/>
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >

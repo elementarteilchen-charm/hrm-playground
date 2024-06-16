@@ -2,15 +2,15 @@
     const route = useRoute()
 </script>
 <template>
-    <div class="bg-white flex gap-x-8 border shadow-lg">
+    <div class="bg-white flex gap-x-8 border shadow-md">
         <div class="border-b-2 hover:bg-Blaugrau-25 px-3 py-2" 
             :class="{
                 'border-Mittelblau': '/hra/mitarbeiterinnen/stammdaten' == $route.fullPath,
                 'border-transparent ': '/hra/mitarbeiterinnen/stammdaten' != $route.fullPath
             }">
-            <a  href="/hra/mitarbeiterinnen/stammdaten" 
-                :class="{'border-b-2': '/hra/mitarbeiterinnen/stammdaten' == $route.fullPath}">
-                Stammdaten 
+            <a  href="/hra/mitarbeiterinnen/stammdaten" :class="{'font-bold': '/hra/mitarbeiterinnen/stammdaten' == $route.fullPath}">
+                <!-- Mitarbeiter*in -->
+                Daten
             </a>
         </div>
         <div class="border-b-2 hover:bg-Blaugrau-25 px-3 py-2" 

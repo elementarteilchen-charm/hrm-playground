@@ -8,10 +8,6 @@ const ma = mitarbeiterListe[0]
 
 <template>
     <header class="px-8 py-1 print:hidden">
-        <div class="text-gray-500 text-sm">
-            <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
-                Persönliche Daten </a>
-        </div>
         <HRAMitarbeiterInfoBox headline="Persönliche Daten" class="mb-2"/>
     </header>
     

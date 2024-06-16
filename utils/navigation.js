@@ -15,14 +15,14 @@ export  const topMenuItems = [
         linkText: "Werdegang",
         link: "/hra/werdegang",
       },
-      {
-        linkText: "Vertrag",
-        link: "/hra/vertrag",
-      },
-      {
-        linkText: "Dokumente",
-        link: "/hra/dokumente",
-      },
+      // {
+      //   linkText: "Vertrag",
+      //   link: "/hra/vertrag",
+      // },
+      // {
+      //   linkText: "Dokumente",
+      //   link: "/hra/dokumente",
+      // },
     ];
 
 

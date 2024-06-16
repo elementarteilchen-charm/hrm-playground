@@ -19,12 +19,13 @@ const ma = mitarbeiterListe[0]
 </script>
 
 <template>
-    <NavigationHraStickyHeader headline="Persönliche Daten bearbeiten">
-        <template #breadcrumb>
-            <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell="Stammdaten"/>  
-        </template>
+    <header class="px-8 py-1 print:hidden">
+        <HRAMitarbeiterInfoBox headline="Stammdaten" class="mb-2" />
+    </header>
+    
+    <div class="px-8 py-3 ">
         <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Stammdaten" />
-    </NavigationHraStickyHeader>
+    </div>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-x-8 px-8">
 

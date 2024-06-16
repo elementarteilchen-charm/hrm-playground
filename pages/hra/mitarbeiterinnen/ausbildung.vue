@@ -1,10 +1,5 @@
 <script setup>
-import {
-    CheckCircleIcon,
-    XCircleIcon,
-    PlusCircleIcon,
-}
-from '@heroicons/vue/24/outline'
+import {CheckCircleIcon, XCircleIcon, PlusCircleIcon, } from '@heroicons/vue/24/outline'
 
 const tabs = [
     'Sprachkenntnisse',
@@ -18,10 +13,10 @@ const ma = mitarbeiterListe[0]
 </script>
 <template>
     <header class="px-16 py-4  print:hidden">
-        <div class="text-gray-500 text-sm">
+<!--         <div class="text-gray-500 text-sm">
             <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
                 Persönliche Daten bearbeiten</a> &gt; Ausbildung
-        </div>
+        </div> -->
         <HRAMitarbeiterInfoBox headline="Werdegang" class="mb-6" />
     </header>
     <main class="px-16  grid grid-rows-[auto_auto_auto] gap-6">

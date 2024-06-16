@@ -23,13 +23,13 @@
 </script>
 
 <template>
-  <header class="px-16 py-4  print:hidden">
-      <div class="text-gray-500 text-sm">
+  <header class="px-16 py-3  print:hidden">
+<!--       <div class="text-gray-500 text-sm">
           <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
               Persönliche Daten bearbeiten</a> &gt; Werdegang
-      </div>
+      </div> -->
 
-      <HRAMitarbeiterInfoBox headline="Firmenbezogene Daten bearbeiten" class="mb-6"/>
+      <HRAMitarbeiterInfoBox headline="Firmenbezogene Daten bearbeiten" class="mb-0"/>
   </header>
 
   <main class="grid grid-rows-[auto_auto_auto] gap-8 px-16">

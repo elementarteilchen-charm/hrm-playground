@@ -56,10 +56,6 @@
 
 <template>
     <header class="px-8 py-1 print:hidden">
-        <div class="text-gray-500 text-sm">
-            <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
-                Abwesenheiten </a>
-        </div>
         <HRAMitarbeiterInfoBox headline="Abwesenheiten" class="mb-2" />
     </header>
 

@@ -17,16 +17,14 @@ const ma = mitarbeiterListe[0]
 
 <template>
     <header class="px-8 py-1 print:hidden">
-        <div class="text-gray-500 text-sm">
-            <a href="/hra/mitarbeiterinnen" class=" hover:text-Mittelblau ">
-                Persönliche Daten bearbeiten</a> &gt; Vertrag
-        </div>
         <HRAMitarbeiterInfoBox headline="Persönliche Daten bearbeiten" class="mb-2"/>
     </header>
 
     <main class="grid grid-rows-[auto_auto_auto] gap-8 px-8">
-
-        <!-- <NavigationHraMitarbeiterinnen :topMenuItems="topMenuItems" active="Vertrag" /> -->
+                        
+        <div class="px-3 bg-white border  rounded overflow-hidden ">
+            <HRAVertragAuflistungVoll />
+        </div>
 
         <div class="bg-white border border-t rounded overflow-hidden">
             <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
@@ -36,7 +34,6 @@ const ma = mitarbeiterListe[0]
                 <div class="px-4 my-4 border-l pb-12">
 
                     <div v-show="activeTab == 'Verträge'" class="px-2 pt-2 grid grid-rows-1 gap-4">
-                        <HRAVertragAuflistungVoll />
                         <!-- <HRAVertragVertragsdatensatzneu /> -->
                     </div>
 
