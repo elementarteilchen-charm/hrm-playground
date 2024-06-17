@@ -3,6 +3,42 @@
     ChevronRightIcon, ChevronDownIcon, UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon,  } 
       from '@heroicons/vue/24/outline'
 
+    const bisherigeEvents = [
+      { 
+        datum: '2023-06-13',
+        anlass: 'Jubiläum 5J',
+        bemerkung: 'Buch'
+      },
+      { 
+        datum: '2022-03-11',
+        anlass: 'Geburt',
+        bemerkung: 'Glückwunschkarte'
+      },
+    ]
+
+    const eventsZurAuswahl = [
+        { 
+          text: "Stammdaten", 
+          link: "/hra/mitarbeiterinnen/stammdaten",
+        },
+        { 
+          text: 'Hochzeit', 
+          link: '/hra/events/Hochzeit-stepper',
+        },
+        { 
+          text: 'Hochzeit AllInOne', 
+          link: '/hra/events/Hochzeit-allinone',
+        },
+        { 
+          text: 'Namensaenderung', 
+          link: '/hra/events/Namensaenderung',
+        },
+        { 
+          text: 'Geburt', 
+          link: '/hra/events/Geburt',
+        },
+    ]
+
 </script>
 
 <template>
@@ -12,38 +48,58 @@
   
   <div class="p-8">
     <div class="bg-white py-6 px-3">
+      
+
       <h2 class="text-Blaugrau text-xl mb-3">Bisherige Events</h2>
       
-      <div class="mt-3 flex">
-        <details class="">
-          <summary class="block bg-Mittelblau px-3  border border-Mittelblau">
-            <div class="text-white flex items-center gap-x-2 py-2">
-              <div class="text-white">Neues Event erfassen</div>
-              <ChevronDownIcon class="w-4 h-4"/> 
-            </div>
-          </summary>
+      <NavigationHraButtonMenu :options="eventsZurAuswahl" />
+<!--       <div class="mt-3 flex relative">
+        <div class="absolute"> 
           
-          <ul class="space-y-1 py-2 border-l border-r px-2 bg-white shadow">
-            <li v-for="item in eventsAktionen.events.items" class="">
-              <a :href="item.link" class="">
-                <div class="flex gap-1 items-center inline-block hover:underline">
-                    <ChevronRightIcon class="w-4 h-4"/>
-                  <span>{{item.text}}</span>
-                </div>
-              </a>
-            </li>
-          </ul>
+          <details class="text-sm open:shadow-lg hover:cursor-pointer">
+            <summary class="block bg-Mittelblau px-3  border border-Mittelblau">
+              <div class="text-white flex items-center gap-x-2 py-2">
+                <div class="text-white">Neues Event erfassen</div>
+                <ChevronDownIcon class="w-4 h-4"/> 
+              </div>
+            </summary>
+            
+            <ul class="space-y-1 py-2 border-l border-r px-2 bg-white shadow">
+              <li v-for="item in eventsAktionen.events.items" class="">
+                <a :href="item.link" class="">
+                  <div class="flex gap-1 items-center inline-block hover:underline">
+                      <ChevronRightIcon class="w-4 h-4"/>
+                    <span>{{item.text}}</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
 
-        </details>
-      </div>
+          </details>
+        </div>
+      </div> -->
       
-      <div class="mt-3">
-        Hier die Liste der Events
+      <div class="mt-12">
+        <table class="table text-sm w-3/4">
+          <thead class="bg-Hellgrau h-8">
+            <th class="">Datum</th>
+            <th>Anlass</th>
+            <th>Bemerkung</th>
+          </thead>
+          <tbody>
+            <tr v-for="event,idx in bisherigeEvents" class="border border-b">
+              <td class="px-2 py-1 text-center tabular-nums border-r" style="width: 12ch">{{event.datum}}</td>
+              <td class="px-2 py-1 border-r">{{event.anlass}}</td>
+              <td class="px-2 py-1">{{event.bemerkung}}</td>
+
+            </tr>
+          </tbody>
+        </table>
       </div>  
     </div>
   </div>
 
-  <main class="grid grid-cols-2 gap-8 px-8">
+<!--   <main class="grid grid-cols-2 gap-8 px-8">
 
     <div class="bg-white p-4 rounded">
       <header class="font-bold text-xl mb-2">
@@ -64,5 +120,5 @@
         </ul>
       </main>
     </div>
-  </main>
+  </main> -->
 </template>

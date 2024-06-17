@@ -23,12 +23,12 @@ const menuOpen = useCookie('menuOpen')
                 <div class="text-white">
                     Anna-Maria Walisch
                 </div>
-                <div class="text-white ">
-                    <NavigationHraErinnerungen />
+                <div class="text-white h-5 z-10">
+                    <NavigationHraErinnerungen /> 
                 </div>
 
                 <div class="mr-4 text-white">
-                    <NavigationHraBenachrichtigungen />
+                    <!-- <NavigationHraBenachrichtigungen /> -->
                 </div>
             </div>
         </div>

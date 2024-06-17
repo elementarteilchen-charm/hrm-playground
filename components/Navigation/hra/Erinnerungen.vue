@@ -1,4 +1,6 @@
 <script setup>
+    import { BellIcon, CheckCircleIcon, XCircleIcon, PlusCircleIcon, } from '@heroicons/vue/24/solid'
+
     const erinnerungenListe = [
         ]
     let erinnerungsdatum = new Date()
@@ -7,7 +9,42 @@
 </script>
 
 <template>
-    <div class="nav">
+    <div class="flex z-20 ">
+        <details class="">
+            <summary class=" block flex items-center gap-x-2">
+                <BellIcon class="w-5 h-5" />
+            </summary>
+            <div class="bg-white border p-2 shadow-lg">
+                <ul class="text-gray-900 text-sm">
+                    <li>
+                            <div class="px-4">
+                                <div class="font-bold">
+                                    Neue Erinnerung für {{ma.vorname}} {{ma.name}}
+                                </div>
+                                <div>
+                                    <textarea class="w-full border rounded shadow-inner">Aufenthaltsbewilligung</textarea>
+                                </div>
+                                <div class="" 
+                                    style="
+                                        display: grid; 
+                                        grid-template-columns: 14ch repeat(3, 6ch) auto; 
+                                        column-gap: 0.5rem;"
+                                >
+                                    <input type="date"  v-model="datum" class="border rounded" style="font-size:;">
+                                    <button @click.prevent="datum + 1" class="bg-Hellgrau border rounded px-2">+1W</button>
+                                    <button class="bg-Hellgrau border rounded px-2">+2W</button>
+                                    <button class="bg-Hellgrau border rounded px-2">+4W</button>
+                                    <InputButton>Erstellen</InputButton>
+                                </div>
+                                
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- <div class="nav">
         <div class="nav-item dropdown d-flex">
             <button 
             	class="nav-link text-light d-flex align-items-center dropdown-toggle" 
@@ -39,7 +76,6 @@
                             <button @click.prevent="datum + 1" class="bg-Hellgrau small border rounded px-2">+1W</button>
                             <button class="bg-Hellgrau small border rounded px-2">+2W</button>
                             <button class="bg-Hellgrau small border rounded px-2">+4W</button>
-                            <!-- <button class="bg-Hellgrau small border rounded px-2">+12W</button> -->
                             <InputButton>Erstellen</InputButton>
                         </div>
                         
@@ -86,11 +122,7 @@
                     <hr class="dropdown-divider">
                 </li>
                 <li><a class="dropdown-item" href="#">Alle Erinnerungen anzeigen</a></li>
-               <!--  <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Zusammenfassende Action oder nix</a></li> -->
             </ul>
         </div>
-    </div>
+    </div> -->
 </template>
