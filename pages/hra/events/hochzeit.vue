@@ -1,6 +1,6 @@
 <script setup>
 import {
-    UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon, BookmarkIcon, PlusCircleIcon, ArchiveBoxIcon, TrashIcon, ExclamationTriangleIcon, Cog6ToothIcon
+    UserIcon, UserGroupIcon, CalendarIcon, CheckCircleIcon, XCircleIcon, ClockIcon, PencilIcon, BookmarkIcon, PlusCircleIcon
 }
 from '@heroicons/vue/24/outline'
 
@@ -144,6 +144,7 @@ const activeTab = ref(tabs[0]);
                 </div>
             </main>
         </div>
+
         <div    @click="zeigeAnforderungen = !zeigeAnforderungen" 
                 class="hover:cursor-pointer text-Mittelblau">
             Anforderungen

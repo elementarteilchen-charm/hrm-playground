@@ -82,6 +82,7 @@ const zeigeAnforderungen = ref(false)
         </div>
 
         <div class="px-4 py-2 bg-white border rounded ">
+            <AenderungsHistorie />
             <details class="text-sm">
                 <summary>
                     Letzte Änderung durch <b>Martina Daum</b>  am <b>23.05.2024</b> um 9:42

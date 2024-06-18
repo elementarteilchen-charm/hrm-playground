@@ -1,6 +1,7 @@
 <script setup>
 	import { CloudArrowUpIcon } from '@heroicons/vue/24/outline' 
     const props = defineProps({
+    	buttonText: {type: String, default: 'Nachweisdokument hochladen'},
         dateiname: {type: String, default: ''}, 
         ordner: {type: String, default: ''}, 
         kategorie: {type: String, default: ''}, 
@@ -12,7 +13,8 @@
 <template>
 	<div class="my-3 flex justify-{{justfiy}}">
 		<button class="px-3 py-2 flex gap-2 items-center border border-transparent bg-gray-50 hover:bg-Blaugrau-25 transition text-Mittelblau" @click="showUploadBox = !showUploadBox">
-			<CloudArrowUpIcon class="w-5 h-5"/>Nachweisdokument hochladen
+			<CloudArrowUpIcon class="w-5 h-5"/>
+			{{buttonText}}
 		</button>
 	</div>
 

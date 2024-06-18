@@ -1,6 +1,7 @@
 <script setup>
-    import {Cog6ToothIcon, ExclamationTriangleIcon, CloudArrowUpIcon} from '@heroicons/vue/24/outline'
+
     import { showDialog } from '/utils/modal.js'
+    import { Cog6ToothIcon, ExclamationTriangleIcon, CloudArrowUpIcon} from '@heroicons/vue/24/outline'
 
     const tabs = [
         'Geburtstermin',
@@ -150,50 +151,21 @@ function disableNameInput() {
                         </InputButton>
                     </div>
                     
-                </LayoutFormSection>
-
-                <div class="mt-6 border bg-Dungelgrau-8 p-3">
-                    <h3 class="text-sm font-bold text-gray-700">Vorige Aktionen</h3>
-
-                    <div class=" ">
-                        <dl class="text-sm text-gray-600 space-y-1">
-                            <dt class="font-bold">14.06.2023</dt>
-                            <dd class="pl-3">Email-Info an Verteiler</dd>
-                            <dd class="pl-3">Austrittsmeldung (Wochenhilfe) </dd>
-                            
-
-                            <dt class="font-bold">13.06.2023</dt>
-                            <dd class="pl-3">Info Liste an IT.</dd>
-                        </dl>
-                    </div>    
-                </div>
+                </LayoutFormSection>                
                 
             </div>
 
         </div>
+
+        
+        <HRAAenderungsHistorie />
+
+
     </main>
      
-    <div @click="showDialog('Anforderungen')" class="hover:cursor-pointer text-Mittelblau">Anforderungen</div>
-
-    <LKWWDialog title="Anforderungen">
-        <li>MA*in gibt Heirat bekannt (Email oder Telefonisch, Self Service)</li>
-        <li>Namensänderung wird vorgenommen</li>
-        <li>Der neue Name wird im Feld "Name" eingetragen</li>
-        <li>Der alte Name wird im Feld "Geburtsname" gespeichert.</li>
-        <li>Familienstand wird auf "Verheiratet" gesetzt</li>
-        <li>Das Datum der Heirat wird erfasst</li>
-        <li>Als Familienangehöriger wird der/die Partner*in in Persis erfasst</li>
-        <li>Über die Checkbox "Nachweis" wird festgehalten, dass die Heiratsurkunde an HR übermittelt wurde.</li>
-        <li>Heiratsurkunde muss zeitnah an HR übermittelt werden (ist jedoch kein Blocker), damit der Sonderurlaub gewährt werden kann.</li>
-        <li>Der Sonderurlaub wird in An/Ab verwaltet.</li>
-        <li>Die Kopie vom neuen Reisepass ist für HR wünschenswert für den korrekten Namen</li>
-        <li>Notwendig ist der Reisepass für die Meldung an die SVA und die Gehaltsabrechnung</li>
-    </LKWWDialog>
-
+    <div class="ml-8 mt-3 w-3/4 bg-white border rounded-lg ">
+        <AnforderungsDokumentation headerText="Anforderungen Hochzeit" contentPath="/hra/events/hochzeit" />
+    </div>
+    
+   
 </template>
-
-<style>
-dialog.modal-erinnerungen::backdrop {
-    background: rgba(0.2, 0.2, 0.2, 0.3);
-}
-</style>

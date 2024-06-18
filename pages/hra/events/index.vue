@@ -18,16 +18,8 @@
 
     const eventsZurAuswahl = [
         { 
-          text: "Stammdaten", 
-          link: "/hra/mitarbeiterinnen/stammdaten",
-        },
-        { 
           text: 'Hochzeit', 
           link: '/hra/events/Hochzeit-stepper',
-        },
-        { 
-          text: 'Hochzeit AllInOne', 
-          link: '/hra/events/Hochzeit-allinone',
         },
         { 
           text: 'Namensaenderung', 
@@ -36,6 +28,10 @@
         { 
           text: 'Geburt', 
           link: '/hra/events/Geburt',
+        },
+        { 
+          text: 'Jubiläum', 
+          link: '/hra/events/jubilaeum',
         },
     ]
 

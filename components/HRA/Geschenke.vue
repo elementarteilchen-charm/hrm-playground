@@ -27,7 +27,7 @@
 
   </LayoutFormSection>
 
-  <LayoutFormSection> 
+<!--   <LayoutFormSection> 
     <table class="border rounded bg-white">
         <thead>
             <tr class="text-sm h-10 bg-gray-100">
@@ -47,6 +47,7 @@
             </tr>
         </tbody>
     </table>
+</LayoutFormSection> -->
 <!--     <table class="table">
       <thead class="text-sm">
         <th>Kategorie</th>
@@ -69,6 +70,6 @@
         </tr>
       </tbody>
     </table> -->
-  </LayoutFormSection>
+
 
 </template>

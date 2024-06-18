@@ -18,10 +18,11 @@ function showUploadDialog() {
 }
 </script>
 <template>
+
     <!-- <LayoutFormSection title="Familienangehörige verwalten"> -->
-    <LayoutFormSection>
+    
         <h3 class="text-lg font-bold"></h3>
-        <table class="table w-full text-sm bg-Blaugrau-25">
+        <table class="table w-full text-sm bg-white">
             <thead class="bg-Blaugrau-25 text-left ">
                 <tr>
                     <th class="px-2 py-1 text-sm ">Beziehung</th>
@@ -30,7 +31,6 @@ function showUploadDialog() {
                     <th class="px-2 py-1 text-sm ">Telefon</th>
                     <th class="px-2 py-1 text-sm ">Handy</th>
                     <th class="px-2 py-1 text-sm text-center">Notfallkontakt</th>
-                    <th class="px-2 py-1 text-sm text-center"> </th>
                 </tr>
             </thead>
             <tbody class="">
@@ -43,9 +43,7 @@ function showUploadDialog() {
                     <td class="border-b py-1 px-2 ">
                         <CheckCircleIcon class="mx-auto w-5 h-5" v-if="person.notfallkontakt" />
                     </td>
-                    <td class="border-b py-1 px-2 ">
-                        <XCircleIcon class="mx-auto w-5 h-5 text-blue-500 hover:text-blue-600" />
-                    </td>
+                    
                 </tr>
             </tbody>
         </table>
@@ -54,37 +52,37 @@ function showUploadDialog() {
                 Familienmitglied hinzufügen
             </InputButton>
         </div>
-    </LayoutFormSection>
     
-    <LKWWDialog title="Neues Familienmitglied" id="neue-person-dialog" width="80vw" height="80vh">
+    
+    <LKWWDialog title="Neues Familienmitglied" id="neue-person-dialog" width="70vw" height="50vh">
         <main class="px-4 py-2" style="height: calc(100% - 1rem); overflow-y: auto;">
             <div class="mt-4 grid grid-cols-2 gap-4">
                 <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
-                    <InputSelect label="Beziehung" :options="['Vater', 'Nicht verwandt']" width="w-48" />
+                    <InputSelect label="Beziehung" :options="['Kind', 'Nicht verwandt']" selected="Kind" width="w-48" />
                 </div>
-                <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
+                <!-- <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
                     <InputCheckbox name="Notfallkontakt" label="Notfallkontakt" :checked="thePerson.notfallkontakt" checkboxLabel="Ja" />
-                </div>
+                </div> -->
             </div>
             <div class="mt-4 grid grid-cols-2 gap-4">
                 <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
                     <InputText label="Name*" width="w-48" :value="thePerson.name" />
                     <InputText label="Vorname" width="w-48" :value="thePerson.vorname" />
-                    <InputText label="Beruf" width="w-48" />
+                    <!-- <InputText label="Beruf" width="w-48" /> -->
                 </div>
-                <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
+                <!-- <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
                     <InputText label="Handy" width="w-48" :value="thePerson.handy" />
                     <InputText label="Telefon" width="w-48" :value="thePerson.telefon" />
-                </div>
+                </div> -->
             </div>
-            <div class="mt-4 grid grid-cols-2 gap-4">
+            <!-- <div class="mt-4 grid grid-cols-2 gap-4">
                 <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
                     <InputCheckbox label="Verstorben" checkboxLabel="Ja" />
                 </div>
                 <div class=" px-2 grid grid-cols-[minmax(8rem,auto)_1fr_minmax(4rem,auto)_1fr] gap-4">
                     <InputDate label="Sterbedatum" />
                 </div>
-            </div>
+            </div> -->
             <div class="mt-3  px-2 grid grid-cols-[minmax(8rem,auto)_1fr] gap-4">
                 <InputTextarea label="Bemerkung" />
             </div>

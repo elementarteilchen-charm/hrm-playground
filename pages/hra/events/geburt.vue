@@ -1,41 +1,35 @@
 <script setup>
-    import {ExclamationTriangleIcon, CloudArrowUpIcon} from '@heroicons/vue/24/outline'
     import { showDialog } from '/utils/modal.js'
+    import {ExclamationTriangleIcon, CloudArrowUpIcon} from '@heroicons/vue/24/outline'
 
-    const tabs = [
-        'Geburtstermin',
-        'Schulungen',
-        'Familienangehörige',
-        'Benachrichtigungen'
-    ];
     const schritte = [
         'Geburtstermin',
         'Schulungen',
         'Familienangehörige',
+        'Elternkarenz',
         'Benachrichtigungen'
     ]
-    const activeTab = ref(tabs[0]);
+    const activeTab = ref(schritte[0]);
     const zeigeAnforderungen = ref(false)
     const ma = mitarbeiterListe[0]
-
-
 </script>
 
 <template>
+
     <header class="px-8 py-4">
         <NavigationHraBreadcrumb :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}]" aktuell="Geburt"/>
         <HRAMitarbeiterInfoBox headline="Events & Änderungen" />
     </header>
 
-    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8">
+    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8" >
+        <div class="text-xl text-Mittelblau font-light">
+            Geburt und Elternkarenz
+        </div>
 
-    
         <div class="bg-white border border-t rounded overflow-hidden">
             
-            <main class="grid lg:grid-cols-[minmax(12rem,auto)_1fr]">
+            <main class="">
                 
-                <!-- <NavigationHraTabMenu heading="Geburt" :tabs="tabs"  @newtab="(ev) => activeTab = ev" /> -->
-
                 <div class="px-4 py-4 border-l pb-12">
 
                     <div class="flex items-center gap-x-4 mb-6 border rounded bg-Blaugrau-10">
@@ -64,6 +58,7 @@
                               <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
                                 <InputDate label="Schwangerschaftsbestätigung" />
                                 <InputDate label="Voraussichtlicher Geburtstermin" />
+                                <InputDate label="Tatsächlicher Geburtstermin" />
                               </div>
                           </div>
                           <HRAFormsNachweisUploadBox 
@@ -76,7 +71,6 @@
                          
                           <div class="grid lg:grid-cols-1 gap-4">
                               <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
-                                <InputDate label="Tatsächlicher Geburtstermin" />
                                 <InputDate label="Wochenhilfe Start"  />
                                 <InputDate label="Wochenhilfe Ende"  />
                               </div>
@@ -124,13 +118,35 @@
                         <StammdatenFamilienangehoerige />
                     </div>
                     
+                    <div v-show="'Elternkarenz' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
+                        <h3 class="font-bold text-xl">Elternkarenz</h3> 
+                        <LayoutFormSection title="">
+                         
+                          <div class="grid lg:grid-cols-1 gap-4">
+                              <div class=" grid grid-cols-[minmax(15rem,min-content)_1fr] gap-2 items-center">
+                                <InputDate label="Karenz von"  />
+                                <InputDate label="Karenz bis"  />
+                              </div>
+                          </div>
+                          <HRAFormsNachweisUploadBox 
+                                  dateiname="" 
+                                  ordner="05 Dokumente + Urkunden" 
+                                  kategorie="Geburtsurkunde" />
+                        </LayoutFormSection>
+                    </div>
+
                     <div v-show="'Benachrichtigungen' == activeTab" class="px-2 pt-2 grid grid-rows-1 gap-4">
                         <h3 class="font-bold text-xl">Benachrichtigungen</h3>  
                         <LayoutFormSection>
 
                             <div class="space-y-3">
                                 <InputCheckbox checkboxLabel="Email-Info an Verteiler" />
-                                <InputCheckbox checkboxLabel="Austrittsmeldung (Wochenhilfe) an Verteiler verschicken" />
+                                <div>
+                                    <InputCheckbox checkboxLabel="Austrittsmeldung (Wochenhilfe) an Verteiler verschicken" checked />
+                                    <div class="ml-7">
+                                        <small>Versendet am 11.6.2024 durch Martina Daum</small>
+                                    </div>
+                                </div>
                                 <InputCheckbox checkboxLabel="Weitere Excel Info Liste an IT, Schulung und Telefonzentrale" />
                                 <InputButton>
                                     Benachrichtigungen jetzt versenden
@@ -138,23 +154,6 @@
                             </div>
                             
                         </LayoutFormSection>
-
-                        <div class="mt-6 border bg-Dungelgrau-8 p-3">
-                            <h3 class="text-sm font-bold text-gray-700">Vorige Aktionen</h3>
-
-                            <div class=" ">
-                                <dl class="text-sm text-gray-600 space-y-1">
-                                    <dt class="font-bold">14.06.2023</dt>
-                                    <dd class="pl-3">Email-Info an Verteiler</dd>
-                                    <dd class="pl-3">Austrittsmeldung (Wochenhilfe) </dd>
-                                    
-
-                                    <dt class="font-bold">13.06.2023</dt>
-                                    <dd class="pl-3">Info Liste an IT.</dd>
-                                </dl>
-                            </div>    
-                        </div>
-                        
                     </div>
 
                 </div>
@@ -162,40 +161,13 @@
             </main>
 
         </div>
+
+        <HRAAenderungsHistorie />
     </main>
-     
-    <div @click="showDialog('Anforderungen')" class="hover:cursor-pointer text-Mittelblau">Anforderungen</div>
-
-    <LKWWDialog title="Anforderungen">
-            <li>Schwangerschaft wird von MA*in an HR gemeldet (Telefon, Email, Self Service)</li>
-            <li>Wochenhilfe wird manuell berechnet (nach dem voraussichtlichen Geburtstermin)</li>
-            <li>Wochenhilfe wird in Persis erfasst über Beschäftigung > Zeiten und Bewilligungen Formular  Wochenhilfe</li>
-            <li>Tabelle: MA_EINAUS</li>
-            <li>WND: Kursperre wird in Persis eingetragen (Kurssperre ist für easylearn relevant. wird synchronisiert?)</li>
-            <li>KUF: Trägt keine Kurssperre ein</li>
-            <li>Nach der Geburt wird das tatsächliche Geburtsdatum in Persis erfasst</li>
-            <li>Ende der Wochenhilfe wird in Persis erfasst (Verbesserung: das könnte automatisch vorgeschlagen werden, muss jedoch überschreibbar sein)</li>
-            <li>Elternteilzeit wird erfasst wenn MA*in in ETZ geht</li>
-            <li>In An/Ab wird das Zeitmodell eingetragen falls ETZ</li>
-            <li>Gutschein und Glückwunschkarte (Word Vorlage, die vom Vorstand unterschrieben wird) wird an Mutter überreicht</li>
-            <li>KUF hat 2 verschiedene Arten von Gutscheinen</li>
-            <li>KUF verwaltet die Gutscheine in einer Excel Liste von Martina Daum</li>
-            <li>Email Info an (Frage) Verteiler (welcher?)</li>
-            <li>Frau X ist ab DD.MM.YYYY in Wochenhilfe</li>
-            <li>Mutter geht in Karenz</li>
-            <li>"Austrittsmeldung" wird verschickt (Frage) an welchen Verteiler?</li>
-            <li>WND: Geburtsurkunde wird in DA abgelegt</li>
-            <li>Väter Urlaubstag (wird in An/Ab eingetragen)</li>
-            <li>Familienangehörige → Neuer Eintrag</li>
-            <li>Tabelle: MA_KOPERS</li>
-
-
-    </LKWWDialog>
-
+    
+    
+    <div class="ml-8 mt-3 w-3/4 bg-white border rounded-lg shadow-lg z-10">
+        <AnforderungsDokumentation headerText="Anforderungen Geburt" contentPath="/hra/events/geburt" />
+    </div>
+    
 </template>
-
-<style>
-dialog.modal-erinnerungen::backdrop {
-    background: rgba(0.2, 0.2, 0.2, 0.3);
-}
-</style>
