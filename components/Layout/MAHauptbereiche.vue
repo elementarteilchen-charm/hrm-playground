@@ -2,7 +2,7 @@
     const route = useRoute()
 </script>
 <template>
-    <div class="bg-white flex gap-x-8 border shadow-md">
+    <div class="bg-white flex gap-x-8 border shadow">
         <div class="border-b-2 hover:bg-Blaugrau-25 px-3 py-2" 
             :class="{
                 'border-Mittelblau': '/hra/mitarbeiterinnen/stammdaten' == $route.fullPath,

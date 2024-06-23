@@ -1,4 +1,5 @@
 <script setup>
+  import {ChevronRightIcon, ChevronDownIcon, } from '@heroicons/vue/24/outline'
   
   const ma = mitarbeiterListe[0]
   
@@ -52,17 +53,71 @@
     return false
   }
 
+  const neuErfassen = [
+        {
+          text: 'Elternkarenz', 
+          link: '/hra/abwesenheiten/elternkarenz',
+        },
+        {
+          text: 'Familienzeit', 
+          link: '/hra/abwesenheiten/familienzeit',
+        },
+        {
+          text: 'Bildungskarenz', 
+          link: '/hra/abwesenheiten/bildungskarenz',
+        },
+        {
+          text: 'Langzeitkrankenstand', 
+          link: '/hra/abwesenheiten/langzeitkrankenstand',
+        },
+        {
+          text: 'Unbezahlter Urlaub', 
+          link: '/hra/abwesenheiten/unbezahlterurlaub',
+        },
+        {
+          text: 'Wehrdienst', 
+          link: '/hra/abwesenheiten/wehrdienst',
+        },
+        {
+          text: 'Milizübung', 
+          link: '/hra/abwesenheiten/milizuebung' 
+        },
+    ]
 </script>
 
 <template>
-    <header class="px-8 py-1 print:hidden">
+
+    <header class="px-8 py-4">
+        <NavigationHraBreadcrumb 
+                :pfad="[{text: 'Dashboard', link: '/mitarbeiterinnen/dashboard'}, {text: 'Abwesenheiten', link: '/abwesenheiten'} ]" 
+                aktuell="Familienzeit"/>
         <HRAMitarbeiterInfoBox headline="Abwesenheiten" class="mb-2" />
     </header>
 
-    
+    <div class="ml-8 mt-3 text-xl text-Mittelblau font-light">
+        Abwesenheiten verwalten
+    </div>
     <div class="p-8">
-      <div class="bg-white pt-6 px-3">
-        <h2 class="text-Blaugrau text-xl mb-3">Bisherige Abwesenheiten</h2>
+  
+  
+      <div class="bg-white pt-6 px-6">
+        
+        <!-- <div class="grid grid-cols-4 gap-3  "> -->
+        <div class="grid grid-cols-5  gap-6  ">
+          <a v-for="action in neuErfassen" 
+              class="text-center inline-block place-content-center 
+                  border rounded shadow opacity-80 
+                  hover:opacity-100 hover:shadow-lg hover:border-Blaugrau-25
+                  min-w-24 h-24 text-Mittelblau 
+                  bg-Blaugrau-10 hover:bg-Blaugrau-10 
+                  flex items-center"
+              :href="action.link">
+            <ChevronRightIcon class="w-4 h-4" />{{action.text}}
+          </a>
+        </div>
+
+
+        <h2 class="mt-12 text-Blaugrau text-xl mb-3">Bisherige Abwesenheiten</h2>
       
         <table class="table-auto bg-white border-b text-sm ">
           <thead class="font-bold text-muted bg-Blaugrau-10 ">
@@ -108,9 +163,9 @@
           </tbody>
         </table>
 
-        <div class="py-3 flex gap-6">
+<!--         <div class="py-3 flex gap-6">
           <InputButton v-on:click="showAbwesenheitSelektor" >Neue Abwesenheit erfassen</InputButton>
-        </div>
+        </div> -->
       </div>
 
     </div>

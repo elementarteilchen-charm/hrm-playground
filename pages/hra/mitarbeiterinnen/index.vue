@@ -12,7 +12,7 @@ const ma = mitarbeiterListe[0]
     </header>
     
     <div class="grid grid-cols-1 lg:grid lg:grid-cols-2 gap-6 px-8">
-        <div>
+        <!-- <div>
           <LayoutDashboardCard header="Daten bearbeiten" >
             <ul class="ml-3 space-y-3 ">
                 <li class="flex gap-x-2 items-center">
@@ -57,13 +57,13 @@ const ma = mitarbeiterListe[0]
                 </li>
             </ul>      
           </LayoutDashboardCard>
-        </div>
+        </div> -->
         
-      <div class="space-y-6">
-        <HRAVertragAuflistung />
-        <HRAAbwesenheitAuflistung fixedHeight="max-h-44"/>
-        <HRAEventsAuflistung />
-      </div>
+            <HRAAbwesenheitAuflistung/>
+            <HRAEventsAuflistung />
+            <HRAVertragAuflistung />
+        <div class="space-y-6">
+        </div>
     </div>
 
 </template>
