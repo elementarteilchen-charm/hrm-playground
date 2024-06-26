@@ -100,9 +100,8 @@
     <div class="p-8">
   
   
-      <div class="bg-white pt-6 px-6">
+      <div class="bg-white py-6 px-6">
         
-        <!-- <div class="grid grid-cols-4 gap-3  "> -->
         <div class="grid grid-cols-5  gap-6  ">
           <a v-for="action in neuErfassen" 
               class="text-center inline-block place-content-center 
@@ -119,8 +118,8 @@
 
         <h2 class="mt-12 text-Blaugrau text-xl mb-3">Bisherige Abwesenheiten</h2>
       
-        <table class="table-auto bg-white border-b text-sm ">
-          <thead class="font-bold text-muted bg-Blaugrau-10 ">
+        <table class="table-auto bg-white border text-sm ">
+          <thead class="font-bold text-muted bg-Blaugrau-10 h-12">
             <tr>
               <th class="px-3 py-1">Abwesenheit</th>
               <th class="px-3 py-1 text-center">Von</th>
@@ -140,10 +139,13 @@
               <td class="px-3 py-1 tabular-nums text-center">
                 {{abwesenheit.von}}
               </td>
-              <td class="px-3 py-1 tabular-nums text-center" 
-                  :class="{'bg-Orange-10': abgelaufen(abwesenheit), 'bg-Gruen-10': !abgelaufen(abwesenheit)}">
+              <td class="px-3 py-1 tabular-nums text-center">
                 {{abwesenheit.bis}}
               </td>
+              <!-- <td class="px-3 py-1 tabular-nums text-center" 
+                  :class="{'bg-Orange-10': abgelaufen(abwesenheit), 'bg-Gruen-10': !abgelaufen(abwesenheit)}">
+                {{abwesenheit.bis}}
+              </td> -->
               <td class="px-3 py-1 tabular-nums text-center">
                 {{abwesenheit.wiedereintritt}}
               </td>
@@ -158,6 +160,7 @@
                 <button v-on:click="bearbeiten(abwesenheit.art, index)" href=""  class="text-Mittelblau hover:underline">
                   Bearbeiten
                 </button>
+                Löschen
               </td>
             </tr>
           </tbody>
@@ -169,22 +172,7 @@
       </div>
 
     </div>
-    
-    <LKWWDialog id="abwesenheitSelektor" title="Neue Abwesenheit erfassen" buttonProceed="OK">
-      <p>Welche Abwesenheit soll erfasst werden?</p>
-      <div class="grid grid-cols-2">
-        <div class="space-y-2">
-          <InputRadio :options="abwesenheitenListe" />
-        </div>
-        <div class="">
-          <div v-for="abwesenheit in abwesenheitenListe">
-            <a :href="abwesenheitenLinks[abwesenheit]" class="text-Mittelblau hover:underline">{{abwesenheit}}</a>
-          </div>
-        </div>
-      </div>
 
-
-    </LKWWDialog>
 
 
     <template v-for="abwesenheit in abwesenheitenListe">

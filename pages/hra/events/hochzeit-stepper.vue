@@ -36,7 +36,11 @@ function disableNameInput() {
         <HRAMitarbeiterInfoBox headline="Events & Änderungen" />
     </header>
 
-    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8">
+    <div class="ml-8 mt-3 text-xl text-Mittelblau font-light">
+        Hochzeit
+    </div>
+
+    <main class="grid grid-rows-[auto_auto_auto] gap-6 px-8 mt-3">
     
         <div class="flex items-center gap-x-4 border rounded bg-white">
             

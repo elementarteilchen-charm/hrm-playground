@@ -57,6 +57,11 @@ const menuOpen = useCookie('menuOpen')
                             <a href="/hra/wiedereintritte" class="">
                                 Wiedereintritte</a>
                         </li>
+                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                            <ArrowLeftOnRectangleIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
+                            <a href="/" class="">
+                                Austritte</a>
+                        </li>
                         <li class="">
                             <div class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                                 <ClockIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
@@ -64,33 +69,33 @@ const menuOpen = useCookie('menuOpen')
                                     Events & Änderungen</a>
                             </div>
                         </li>
-                        <li >
-                            <div class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                                <ClockIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
-                                <a href="/hra/abwesenheiten/" class="">
-                                    Abwesenheiten</a>
-                            </div>
-                            <div class="flex ml-6 gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                                <Bars3Icon class="w-5 h-5 flex-shrink-0 text-blue-800" />
-                                <a href="/hra/abwesenheiten/" class="">
-                                    Reports</a>
-                            </div>
-                            <div class="text-sm">
-                              <div v-for="abwesenheit in abwesenheitenListe" class="flex ml-6 gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                                <ChevronRightIcon class="w-5 h-5 flex-shrink-0 text-blue-800"/>
-                                <a :href="abwesenheitenLinks[abwesenheit]" class="">{{abwesenheit}}</a>
-                              </div>
-                            </div>
+                        <li class="hover:bg-Hellblau hover:text-white flex">
+                            <details class="">
+                                <summary class="block">
+                                    <div class="flex gap-2 px-4 py-2 items-center ">
+                                        <ClockIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
+                                        <a href="/hra/abwesenheiten/" class="">
+                                            Abwesenheiten</a>
+                                    </div>
+                                </summary>
+                                <div class="flex ml-6 gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                                    <Bars3Icon class="w-5 h-5 flex-shrink-0 text-blue-800" />
+                                    <a href="/hra/abwesenheiten/" class="">
+                                        Reports</a>
+                                </div>
+                                <div class="text-sm">
+                                  <div v-for="abwesenheit in abwesenheitenListe" class="flex ml-6 gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
+                                    <ChevronRightIcon class="w-5 h-5 flex-shrink-0 text-blue-800"/>
+                                    <a :href="abwesenheitenLinks[abwesenheit]" class="">{{abwesenheit}}</a>
+                                  </div>
+                                </div>
+                            </details>
                         </li>
-                        <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
-                            <ArrowLeftOnRectangleIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
-                            <a href="/" class="">
-                                Austritte</a>
-                        </li>
+                        
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">
                             <DocumentTextIcon class="w-5 h-5 flex-shrink-0 text-blue-800" />
-                            <a href="/hra-dokumente">
-                                Dokumente
+                            <a href="/hra/bevollmaechtigungen">
+                                Bevollmächtigungen
                             </a>
                         </li>
                         <li class="flex gap-2 px-4 py-2 items-center hover:bg-Hellblau hover:text-white">

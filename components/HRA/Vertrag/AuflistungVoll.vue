@@ -15,7 +15,7 @@
     }
 </script>
 <template>
-    <div class="grid grid-rows-[1fr_auto] overflow-x-auto rounded-lg">
+    <div class="grid grid-rows-[1fr_auto] overflow-x-auto rounded-lg ">
         
         <div class="grid 
                     grid-cols-[7ch_7ch_6ch_32ch_1fr_12ch] gap-x-3 py-1 my-2
@@ -40,9 +40,9 @@
         <div 
             v-for="vertrag, index in vertragsdatensaetze" 
             class=" 
-                    hover:bg-Blaugrau-10
                     grid grid-cols-[7ch_7ch_6ch_32ch_1fr_12ch] gap-x-3 
-                    py-2 border-b border-b-Blaugrau text-sm"
+                    hover:bg-Blaugrau-10
+                    py-2 border-b border-b-Hellgrau text-sm "
         >
             
             <div class="px-2 py-1 tabular-nums text-right">
@@ -60,14 +60,14 @@
                     class="inline-block border border-black h-5 px-2 py-[2px] rounded _bg-Hellgrau  text-xs">GFG</span>                 
             </div>
             
-            <div class="px-1 py-1 space-y-2 font-bold">
+            <div class="px-1 py-1 space-y-2 font-bold_">
                 <div>{{vertrag.mandant}}</div>
                 <div>{{vertrag.standort}}</div>
             </div>
 
             <div class="px-3 py-1 space-y-2">
                 <div class="flex gap-x-2">
-                    <UserIcon class="w-5 h-5 text-Gruen"/>
+                    <UserIcon class="w-5 h-5 text-Mittelgrau"/>
                     {{vertrag.arbeitsverhaeltnis}}
                 </div>
                 <div class="tabular-nums space-y-2">
@@ -117,7 +117,7 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-end">
+    <div class="py-3 flex justify-start">
         <InputButton v-on:click="vertragHinzufuegen">Neuen Vertrag anlegen</InputButton>
     </div>
     
